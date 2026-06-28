@@ -10,7 +10,14 @@ import { CheckCircle2 } from "lucide-react";
 export const metadata: Metadata = {
   title: "Experiences",
   description:
-    "Discover all Himalayan experiences — adventure, nature, culture, and wellness programs curated for every traveler.",
+    "Discover Himalayan experiences — camping, yoga, bird watching, organic farming, cultural tours, wildlife safaris, mountain cycling, and riverside camping in Kumaon, Uttarakhand.",
+  alternates: { canonical: "https://comet-himalayan-paradise.vercel.app/experiences" },
+  openGraph: {
+    title: "Himalayan Experiences | CHP Himalayan Paradise",
+    description: "Camping, yoga, bird watching, organic farming, cultural tours, and wildlife safaris in the Kumaon Himalayas.",
+    url: "https://comet-himalayan-paradise.vercel.app/experiences",
+    images: [{ url: "https://images.unsplash.com/photo-1571185782564-f0a7d14b5060?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "Himalayan Adventure Experiences" }],
+  },
 };
 
 const adventureHighlights = [

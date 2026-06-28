@@ -8,7 +8,14 @@ import { CTABanner } from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "The story behind CHP Himalayan Paradise — our mission, vision, and decade-long commitment to authentic Himalayan travel.",
+    "The story behind CHP Himalayan Paradise — a decade of authentic Himalayan travel experiences, responsible tourism, and deep mountain expertise in Kumaon.",
+  alternates: { canonical: "https://comet-himalayan-paradise.vercel.app/about" },
+  openGraph: {
+    title: "About CHP Himalayan Paradise",
+    description: "A decade of authentic Himalayan travel — our story, mission, and commitment to responsible mountain tourism.",
+    url: "https://comet-himalayan-paradise.vercel.app/about",
+    images: [{ url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "CHP Himalayan Paradise Story" }],
+  },
 };
 
 const values = [

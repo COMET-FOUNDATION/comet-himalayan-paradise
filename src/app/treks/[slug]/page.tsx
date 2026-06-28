@@ -13,13 +13,22 @@ export async function generateStaticParams() {
   return treks.map((t) => ({ slug: t.slug }));
 }
 
+const BASE_URL = "https://comet-himalayan-paradise.vercel.app";
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const trek = treks.find((t) => t.slug === slug);
   if (!trek) return {};
   return {
-    title: `${trek.name} – CHP Himalayan Paradise`,
-    description: trek.description,
+    title: trek.name,
+    description: `${trek.description.slice(0, 155)}...`,
+    alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+    openGraph: {
+      title: `${trek.name} | CHP Himalayan Paradise`,
+      description: trek.description.slice(0, 155),
+      url: `${BASE_URL}/treks/${trek.slug}`,
+      images: [{ url: trek.image, width: 1200, height: 630, alt: trek.name }],
+    },
   };
 }
 
@@ -35,8 +44,36 @@ export default async function TrekDetailPage({ params }: Props) {
   const trek = treks.find((t) => t.slug === slug);
   if (!trek) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    name: trek.name,
+    description: trek.description,
+    url: `${BASE_URL}/treks/${trek.slug}`,
+    image: trek.image,
+    touristType: trek.difficulty,
+    itinerary: {
+      "@type": "ItemList",
+      itemListElement: (trek.itinerary ?? []).map((day, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: day.title,
+        description: day.description,
+      })),
+    },
+    provider: {
+      "@type": "TravelAgency",
+      name: "CHP Himalayan Paradise",
+      url: BASE_URL,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] overflow-hidden">
         <Image

@@ -8,7 +8,14 @@ import { CTABanner } from "@/components/home/CTABanner";
 export const metadata: Metadata = {
   title: "Accommodation",
   description:
-    "Choose from hotels, homestays, traditional houses, camping tents, and luxury cottages in the Kumaon Himalayas.",
+    "Stay in Himalayan hotels, homestays with local families, traditional stone houses, camping tents, or luxury cottages in Munsiyari, Kumaon, Uttarakhand.",
+  alternates: { canonical: "https://comet-himalayan-paradise.vercel.app/accommodation" },
+  openGraph: {
+    title: "Himalayan Accommodation | CHP Himalayan Paradise",
+    description: "Hotels, homestays, traditional houses, camping tents, and luxury cottages in Munsiyari, Kumaon Himalayas.",
+    url: "https://comet-himalayan-paradise.vercel.app/accommodation",
+    images: [{ url: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "Himalayan Accommodation" }],
+  },
 };
 
 const stays = [
