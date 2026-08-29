@@ -14,7 +14,7 @@ const benefits = [
   {
     icon: "🔑",
     title: "Priority Guest House Access",
-    description: "Avail special access to the Comeset Executive Guest House in Munsyari.",
+    description: "Avail special access to the Comeset Executive Guest House in Munsiyari.",
   },
   {
     icon: "⭐",
@@ -53,22 +53,25 @@ const supportCategories = [
 
 const spaces = [
   {
-    title: "Comet Services",
+    title: "Educational & Skill Services",
     description:
-      "Concierge support for travel, stay, and on-ground logistics — handled end-to-end by the Comet team.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/32308adc-0e58-4a98-acff-3731f0ad7327-scaled-comet-services-2.webp",
+      "Mentorship, scholarships, and skill development programs empowering local Himalayan youth.",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-purpose-education.png",
   },
   {
     title: "Gaushala",
     description:
       "A traditional cattle farm woven into daily life at CHP, reflecting our commitment to rural Himalayan heritage.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9d1fe41e-9c6c-405f-8b10-fe4d7c57e661-scaled-gaushala-png.webp",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-purpose-gaushala.png",
   },
   {
     title: "Isht Dev Sthal",
     description:
       "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a3c6200-6934-459f-8c9e-b8c348d74708-scaled-isht-dev-sthal.webp"
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-purpose-isht-dev-sthal.png",
   },
 ];
 
@@ -94,7 +97,7 @@ export function PurposeDrivenSpace() {
               <motion.article
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.25 }}
-                className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+                className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300 bg-slate-900"
               >
                 <Image
                   src={space.image}

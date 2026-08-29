@@ -8,43 +8,46 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    src: "/assets/images/PLACEHOLDER-gallery-preview-1.png",
     alt: "Snow-capped Himalayan peaks",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=600&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    src: "/assets/images/PLACEHOLDER-gallery-preview-2.png",
     alt: "Camping tent at dusk",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=600&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    src: "/assets/images/PLACEHOLDER-gallery-preview-3.png",
     alt: "Wildlife encounter in Himalayan forest",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    src: "/assets/images/PLACEHOLDER-gallery-preview-4.png",
     alt: "Yoga session with mountain view",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=600&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    src: "/assets/images/PLACEHOLDER-gallery-preview-5.png",
     alt: "Trekker on Himalayan trail",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    src: "/assets/images/PLACEHOLDER-gallery-preview-6.png",
     alt: "Campfire at night",
-    span: "col-span-1 row-span-1",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1571185782564-f0a7d14b5060?w=600&q=80&auto=format&fit=crop",
-    alt: "Mountain cycling adventure",
     span: "col-span-1 row-span-1",
   },
 ];
 
 export function GallerySection() {
+  const visibleImages = images.slice(0, 6);
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,8 +68,8 @@ export function GallerySection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-3 grid-rows-3 gap-3 h-[520px] sm:h-[620px] lg:h-[700px]">
-          {images.map((img, i) => (
+        <div className="grid grid-cols-3 grid-rows-2 gap-3 h-[420px] sm:h-[520px] lg:h-[580px]">
+          {visibleImages.map((img, i) => (
             <motion.div
               key={img.src}
               initial={{ opacity: 0, scale: 0.97 }}
@@ -74,7 +77,7 @@ export function GallerySection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.55, delay: i * 0.07 }}
               whileHover={{ scale: 1.02 }}
-              className={`group relative overflow-hidden rounded-2xl ${img.span}`}
+              className={`group relative overflow-hidden rounded-2xl bg-slate-900 ${img.span}`}
             >
               <Image
                 src={img.src}

@@ -46,8 +46,8 @@ export const treks: Trek[] = [
     ],
     description:
       "A serene walk through towering pine and deodar forests where sunlight filters through ancient canopies. Perfect for nature lovers and families, this trail reveals Kumaon's biodiversity at its most accessible.",
-    image:
-      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-pine-forest-trail.png",
     category: "nature",
     isPopular: true,
   },
@@ -69,8 +69,8 @@ export const treks: Trek[] = [
     ],
     description:
       "The Kumaon Himalayas are a birder's paradise. This guided walk explores birding hotspots where you can spot the resplendent Himalayan Monal, Koklass Pheasant, and over 200 other species across forest and alpine zones.",
-    image:
-      "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-bird-discovery-walk.png",
     category: "nature",
     isPopular: true,
   },
@@ -92,8 +92,8 @@ export const treks: Trek[] = [
     ],
     description:
       "A mindful immersion in Himalayan nature. Our naturalist guides introduce you to the ecology, medicinal plants, and seasonal rhythms of the mountains in this gentle, enriching walk.",
-    image:
-      "/nature walk.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-nature-walk.png",
     category: "nature",
   },
   {
@@ -114,8 +114,8 @@ export const treks: Trek[] = [
     ],
     description:
       "The Himalayas host over 8,000 plant species. This guided exploration reveals the stunning diversity of alpine flora from towering rhododendrons to the sacred Brahmakamal—India's state flower of Uttarakhand.",
-    image:
-      "/flora exploration.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-flora-discovery.png",
     category: "nature",
   },
   {
@@ -136,8 +136,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Walk with a traditional Himalayan vaidya (herbalist) through forests and meadows rich in medicinal plants. Learn how Kumaoni communities have used plants like Tejpat, Kutki, and Jatamansi for millennia.",
-    image:
-      "/Herbal medicinal trail.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-herbal-medicine-trail.png",
     category: "cultural",
   },
   {
@@ -158,8 +158,8 @@ export const treks: Trek[] = [
     ],
     description:
       "An ecological education experience led by naturalists. Understand the layered complexity of Himalayan forests—from mycorrhizal networks underground to the forest canopy above, and every creature that calls it home.",
-    image:
-      "https://images.unsplash.com/photo-1440581572325-0bea30075d9d?w=800&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-forest-ecosystem.png",
     category: "nature",
   },
 
@@ -182,8 +182,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Experience the thrill of cycling through Himalayan terrain on high-altitude routes with jaw-dropping views. Suitable for intermediate cyclists, the routes wind through forests, villages, and mountain passes.",
-    image:
-      "/Mountain cycling.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-mountain-cycling.png",
     category: "adventure",
     isPopular: true,
   },
@@ -204,8 +204,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Camp on the banks of the pristine Ramganga river as it rushes down from Himalayan glaciers. Fish for trout, swim in crystal-clear pools, and spend evenings around a crackling fire under a star-filled sky.",
-    image:
-      "/River camping.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-river-camping.png",
     category: "adventure",
     isPopular: true,
   },
@@ -226,8 +226,8 @@ export const treks: Trek[] = [
     ],
     description:
       "The Himalayan night holds a different magic. Join our expert naturalists after dusk to encounter owls, civets, porcupines, and perhaps the elusive common leopard—all while the Milky Way blazes overhead.",
-    image:
-      "/night safari.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-night-safari.png",
     category: "adventure",
   },
 
@@ -249,8 +249,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Walk through centuries-old Kumaoni villages where traditional stone houses, ancient temples, and artisan communities preserve a way of life unchanged for generations. Share a meal with a local family.",
-    image:
-      "/village heritage tour.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-village-heritage.png",
     category: "cultural",
     isPopular: true,
   },
@@ -271,8 +271,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Experience the rhythm of Himalayan agricultural life. Visit a traditional Gaushala, help with organic farming activities, witness how local families produce everything from dairy to vegetables entirely from their land.",
-    image:
-      "/Gaushla and medicinal farm.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-gaushala-visit.png",
     category: "cultural",
   },
 
@@ -296,23 +296,9 @@ export const treks: Trek[] = [
     ],
     description:
       "Trek through rhododendron-blanketed ridgelines to the sacred Chandika Devi temple, nestled at a forest clearing with commanding views of the Panchachuli massif. An accessible overnight trek for beginners.",
-    image:
-      "/Chandika Ghat Trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-chandika-ghat.png",
     category: "major",
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Munsiyari to Chandika Forest Camp",
-        description:
-          "Begin from Munsiyari (2,200m), trekking through oak and rhododendron forests to reach the forest camp below Chandika.",
-      },
-      {
-        day: "Day 2",
-        title: "Temple Visit and Return",
-        description:
-          "Morning visit to Chandika temple at sunrise, then descent back to Munsiyari via alternate trail.",
-      },
-    ],
   },
   {
     id: "thal-kedar",
@@ -333,29 +319,9 @@ export const treks: Trek[] = [
     ],
     description:
       "An offbeat pilgrimage trek to an ancient Shiva temple set in a stunning high-altitude meadow. The route passes through oak forests, alpine pastures, and glacial moraine with views of the Panchachuli and Nanda Devi groups.",
-    image:
-      "/Thal Kedar Trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-thal-kedar.png",
     category: "major",
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Munsiyari to Railkot",
-        description:
-          "Drive and short trek to Railkot base, overnight at local homestay.",
-      },
-      {
-        day: "Day 2",
-        title: "Railkot to Thal Kedar Meadow",
-        description:
-          "Gradual ascent through forest and pasture to the sacred meadow at 3,000m. Camp overnight.",
-      },
-      {
-        day: "Day 3",
-        title: "Temple Visit and Return",
-        description:
-          "Dawn puja at Thal Kedar temple, panoramic views, then descent to Munsiyari.",
-      },
-    ],
   },
   {
     id: "dhwaj-temple",
@@ -376,8 +342,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Named for its fluttering dhwaj (flags), this temple perched on a forested hilltop offers one of the finest sunrise views in the Munsiyari region. A rewarding moderate trek with deep cultural significance.",
-    image:
-      "/dhwaj temple trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-dhwaj-temple.png",
     category: "major",
   },
   {
@@ -399,24 +365,10 @@ export const treks: Trek[] = [
     ],
     description:
       "Khaliya Top is perhaps the most celebrated viewpoint in Kumaon. The approach through dense rhododendron forests opens to a vast alpine meadow with an unobstructed 360° view of Panchachuli (5 peaks), Nanda Devi, and the entire Kumaon Himalayan arc.",
-    image:
-      "/khalia-top-trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-khaliya-top.png",
     category: "major",
     isPopular: true,
-    itinerary: [
-      {
-        day: "Day 1",
-        title: "Munsiyari to Khaliya Camp",
-        description:
-          "Trek begins at Munsiyari (2,200m). Ascend through rhododendron and oak forests to reach the high camp at 3,000m.",
-      },
-      {
-        day: "Day 2",
-        title: "Summit Khaliya Top (3,500m)",
-        description:
-          "Early morning summit push for sunrise. Panoramic views of Panchachuli and Nanda Devi. Descend to Munsiyari.",
-      },
-    ],
   },
   {
     id: "adi-kailash",
@@ -437,36 +389,10 @@ export const treks: Trek[] = [
     ],
     description:
       "One of the most spiritually significant treks in the Indian Himalayas. Adi Kailash mirrors the shape of Mount Kailash in Tibet, while Om Parvat carries a naturally formed Om symbol in snow—a sight that has drawn pilgrims for centuries.",
-    image:
-      "/Adi Kailash Om Parvat Trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-adi-kailash.png",
     category: "major",
     isPopular: true,
-    itinerary: [
-      {
-        day: "Days 1–2",
-        title: "Drive to Dharchula & Acclimatization",
-        description:
-          "Travel from Pithoragarh to Dharchula. Rest and acclimatize. Local sightseeing.",
-      },
-      {
-        day: "Days 3–4",
-        title: "Dharchula to Gunji",
-        description:
-          "Drive through Tawaghat to Gunji (3,400m), the last major settlement. Permit check.",
-      },
-      {
-        day: "Days 5–7",
-        title: "Gunji to Adi Kailash Base",
-        description:
-          "Trek stages to Jolingkong (4,460m) with views of Adi Kailash. Visit Om Parvat.",
-      },
-      {
-        day: "Days 8–10",
-        title: "Return Journey",
-        description:
-          "Retrace route back to Dharchula and onward to Pithoragarh.",
-      },
-    ],
   },
   {
     id: "panchachuli-base-camp",
@@ -487,8 +413,8 @@ export const treks: Trek[] = [
     ],
     description:
       "The Panchachuli massif—five peaks mythologically representing the five Pandavas' cooking fires—is among the most spectacular in the Himalayas. This trek takes you to the base of these giants through wild, remote terrain.",
-    image:
-      "/Panchachuli Base camp.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-panchachuli-base-camp.png",
     category: "major",
     isPopular: true,
   },
@@ -510,8 +436,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Founded in 1936 by Sri Narayan Swami, this high-altitude ashram at Sarmoli offers a profound experience of Himalayan spirituality. Set amid oak forests with views toward Tibet, it remains a centre for meditation, education, and simple living.",
-    image:
-      "/Narayan Ashram.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-narayan-ashram.png",
     category: "major",
   },
   {
@@ -533,8 +459,8 @@ export const treks: Trek[] = [
     ],
     description:
       "The Mila Glacier trek is a raw, strenuous adventure into the high Himalayan zone where the Panchachuli glaciers originate. Expect demanding ascents, glacial river crossings, and the profound silence of absolute wilderness.",
-    image:
-      "/Milam Glacier Trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-mila-glacier.png",
     category: "major",
     isPopular: true,
   },
@@ -557,8 +483,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Nanda Devi, at 7,816m, is India's second-highest peak and the country's highest entirely within its borders. The base camp approach through Milam Valley is a landmark Himalayan expedition combining wilderness, culture, and high-altitude grandeur.",
-    image:
-      "/Nanda Devi Base Camp.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-nanda-devi-base-camp.png",
     category: "major",
     isPopular: true,
   },
@@ -581,8 +507,8 @@ export const treks: Trek[] = [
     ],
     description:
       "One of Munsiyari's best-kept secrets, the Nagini Dhura ridge offers dramatic camping at altitude with sweeping views of the Panchachuli range. The approach through pristine bugyals makes this one of the most scenic treks in Kumaon.",
-    image:
-      "/Nagini Dhura Trek.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-nagini-dhura.png",
     category: "major",
   },
   {
@@ -604,8 +530,8 @@ export const treks: Trek[] = [
     ],
     description:
       "The Brijganga Pass is an ancient trans-Himalayan route connecting remote valleys. The trek combines dense forest ascents, high-altitude meadows, glacial lake camps, and a technically demanding pass crossing in pristine wilderness.",
-    image:
-      "/Brij Ganga Pass.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-brijganga-pass.png",
     category: "major",
   },
   {
@@ -627,8 +553,8 @@ export const treks: Trek[] = [
     ],
     description:
       "Explore traditional Himalayan farming as you walk through vibrant fields and discover the crops, herbs, and vegetables grown in the mountain communities. Learn about local farming practices, seasonal harvests, and the connection between Himalayan soil, culture, and everyday life.",
-    image:
-      "/HImalayan Crop Discovery.png",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-trek-himalayan-crop-discovery.png",
     category: "major",
   },
 ];

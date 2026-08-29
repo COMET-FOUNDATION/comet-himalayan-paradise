@@ -40,8 +40,15 @@ export default function GalleryPage() {
     <>
       {/* Header */}
       <section className="relative bg-green-950 pt-32 pb-16">
-        <div className="absolute inset-0 opacity-15">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=50')] bg-cover bg-center" />
+        <div className="absolute inset-0 opacity-20">
+          {/* TODO: Replace with final merged gallery header image (5-6 photos combined) — link to be provided. */}
+          <Image
+            src="/assets/images/PLACEHOLDER-gallery-header-merged.png"
+            alt="Merged gallery header"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
@@ -77,11 +84,10 @@ export default function GalleryPage() {
               <button
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
-                className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
-                  activeCategory === cat.value
+                className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 ${activeCategory === cat.value
                     ? "bg-green-900 text-white shadow-md shadow-green-900/20"
                     : "bg-white text-slate-600 hover:bg-slate-100 shadow-sm"
-                }`}
+                  }`}
               >
                 {cat.label}
               </button>

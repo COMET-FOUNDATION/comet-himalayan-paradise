@@ -10,61 +10,69 @@ import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 const experiences = [
   {
     title: "Holiday Camps",
+    slug: "holiday-camps",
     description:
       "Multi-day immersive camps combining adventure, wellness, culture, and nature in stunning Himalayan settings.",
-    image:
-      "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=800&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-experience-holiday-camps.png",
     href: "/camps",
     badge: "1–45 Days",
   },
   {
     title: "Himalayan Treks",
+    slug: "himalayan-treks",
     description:
       "From gentle forest walks to high-altitude glacier expeditions — 20+ curated trails for every fitness level.",
-    image:
-      "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=800&q=80&auto=format&fit=crop",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-experience-himalayan-treks.png",
     href: "/treks",
     badge: "20+ Routes",
   },
   {
     title: "Wellness Retreats",
+    slug: "wellness-retreats",
     description:
       "Yoga, meditation, pranayama, and mindfulness in the natural cathedral of the Himalayas.",
-    image:
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-experience-wellness-retreats.png",
+    href: "/camps",
     badge: "3–14 Days",
   },
   {
     title: "Wildlife & Nature",
+    slug: "wildlife-nature",
     description:
       "Birding walks, jungle safaris, night safaris, and wildlife observation with expert naturalists.",
-    image:
-      "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-experience-wildlife-nature.png",
+    href: "/camps",
     badge: "All Year",
   },
   {
     title: "Cultural Experiences",
+    slug: "cultural-experiences",
     description:
       "Village tours, traditional cooking, folk art, herbal farming, and living heritage of Kumaon.",
-    image:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-experience-cultural-experiences.png",
+    href: "/camps",
     badge: "Immersive",
   },
   {
     title: "Adventure Activities",
+    slug: "adventure-activities",
     description:
       "Mountain cycling, riverside camping, rock scrambling, glacier walks, and adrenaline pursuits.",
-    image:
-      "https://images.unsplash.com/photo-1571185782564-f0a7d14b5060?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    // TODO: Replace with final image from image folder.
+    image: "/assets/images/PLACEHOLDER-experience-adventure-activities.png",
+    href: "/camps",
     badge: "Multi-level",
   },
 ];
 
 export function ExperiencesSection() {
+  const visibleExperiences = experiences.slice(0, 3);
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +84,7 @@ export function ExperiencesSection() {
             align="left"
           />
           <Link
-            href="/experiences"
+            href="/camps"
             className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
           >
             All Experiences
@@ -88,13 +96,13 @@ export function ExperiencesSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           staggerDelay={0.08}
         >
-          {experiences.map((exp) => (
+          {visibleExperiences.map((exp) => (
             <StaggerItem key={exp.title}>
               <Link href={exp.href} className="group block">
                 <motion.article
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.25 }}
-                  className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+                  className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300 bg-slate-900"
                 >
                   <Image
                     src={exp.image}
@@ -131,7 +139,7 @@ export function ExperiencesSection() {
 
         <div className="mt-10 text-center md:hidden">
           <Link
-            href="/experiences"
+            href="/camps"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
             View All Experiences

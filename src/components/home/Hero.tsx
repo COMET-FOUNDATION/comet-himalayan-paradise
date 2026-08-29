@@ -38,7 +38,7 @@ export function Hero() {
       {/* Parallax background */}
       <motion.div className="absolute inset-0 scale-110" style={{ y: bgY }}>
         <Image
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&auto=format&fit=crop"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f1f4b80c-0f19-4c16-8a5c-f462b8487e42-scaled-home-page-image.webp"
           alt="Snow-capped Himalayan peaks at sunrise"
           fill
           priority
@@ -110,7 +110,7 @@ export function Hero() {
             className="group inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white px-8 py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-2xl hover:shadow-green-900/40 hover:-translate-y-0.5"
           >
             <Mountain className="w-4 h-4" />
-            Book Your Journey
+            Booking Options
           </Link>
           <Link
             href="/treks"

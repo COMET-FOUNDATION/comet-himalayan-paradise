@@ -7,28 +7,27 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-// Placeholder facilities — swap names, descriptions, and images for the real 3 once available.
 const facilities = [
   {
-    title: "Dining Hall",
+    title: "HOA-AOA Guest House",
     description:
-      "A warm communal dining space serving fresh, organic Himalayan meals throughout the day.",
-    image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80&auto=format&fit=crop",
+      "Comfortable guest accommodation tailored for visiting association members and guests.",
+    // TODO: Replace with final facility image from image folder.
+    image: "/assets/images/PLACEHOLDER-facility-hoa-aoa-guest-house.png",
   },
   {
-    title: "Wellness Spa",
+    title: "Remote Work Office",
     description:
-      "On-site yoga decks, meditation rooms, and therapy spaces for holistic mountain wellness.",
-    image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop",
+      "High-speed connectivity and quiet workspaces set against majestic mountain backdrops.",
+    // TODO: Replace with final facility image from image folder.
+    image: "/assets/images/PLACEHOLDER-facility-remote-work-office.png",
   },
   {
-    title: "Adventure Gear Center",
+    title: "Destination Wedding Centre",
     description:
-      "Fully stocked trekking and camping gear, maintained and issued by our expert crew.",
-    image:
-      "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?w=800&q=80&auto=format&fit=crop",
+      "A scenic outdoor and indoor venue designed for unforgettable Himalayan celebrations.",
+    // TODO: Replace with final facility image from image folder.
+    image: "/assets/images/PLACEHOLDER-facility-destination-wedding-centre.png",
   },
 ];
 
@@ -39,7 +38,7 @@ export function CHPFacilities() {
         <SectionHeader
           eyebrow="On-Site"
           title="CHP Facilities"
-          subtitle="Everything you need for a comfortable, well-equipped Himalayan stay — all in one place."
+          subtitle="Comprehensive infrastructure and services designed to support memorable stays, productive retreats, and long-term mountain living."
         />
 
         <StaggerContainer
@@ -51,7 +50,7 @@ export function CHPFacilities() {
               <motion.article
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.25 }}
-                className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+                className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300 bg-slate-900"
               >
                 <Image
                   src={facility.image}
@@ -76,7 +75,7 @@ export function CHPFacilities() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/accommodation"
+            href="/facilities"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
             View all 20+ Facilities

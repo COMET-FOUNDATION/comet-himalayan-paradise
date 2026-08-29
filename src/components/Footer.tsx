@@ -1,11 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Mountain, Mail, Phone, MapPin, Share2, Globe, Video, X } from "lucide-react";
+import { Mail, Phone, MapPin, Share2, Globe, Video, X } from "lucide-react";
 
 const footerLinks = {
   Explore: [
     { href: "/camps", label: "Holiday Camps" },
     { href: "/treks", label: "Himalayan Treks" },
-    { href: "/experiences", label: "Experiences" },
     { href: "/accommodation", label: "Accommodation" },
     { href: "/gallery", label: "Gallery" },
   ],
@@ -43,7 +43,13 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2 text-white font-bold text-xl mb-4"
             >
-              <Mountain className="w-6 h-6 text-green-400" />
+              <Image
+                src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/50de644b-531c-4254-95f3-2c31d4f968d7-scaled-logo-final-2026.png"
+                alt="CHP Logo"
+                width={32}
+                height={32}
+                className="w-8 h-8 object-contain"
+              />
               <span>
                 CHP{" "}
                 <span className="font-light text-slate-400">Himalayan</span>
@@ -60,7 +66,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                 <span className="text-slate-400">
-                   Pithoragarh,
+                  Pithoragarh,
                   <br /> Uttarakhand 262554, India
                 </span>
               </li>
@@ -70,7 +76,7 @@ export function Footer() {
                   href="tel:+919876543210"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
-                +91 99499 94989
+                  +91 99499 94989
                 </a>
               </li>
               <li className="flex items-center gap-3">

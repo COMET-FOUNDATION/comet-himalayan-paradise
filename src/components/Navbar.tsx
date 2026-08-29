@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,18 +12,18 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/camps", label: "Holiday Camps" },
   { href: "/treks", label: "Treks & Trails" },
-  { href: "/experiences", label: "Experiences" },
   { href: "/accommodation", label: "Stay" },
-  { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
+  { href: "/chp-enclave", label: "CHP Enclave" },
+  { href: "/chp-gateways", label: "CHP Gateways" },
+  { href: "/gallery", label: "Gallery" },
 ];
 
 const moreLinks = [
-  { href: "/contact", label: "Second Home" },
-  { href: "/#facilities", label: "CHP Facilities" },
-  { href: "/contact", label: "Business & Investment" },
-  { href: "/#purpose-driven-space", label: "Purpose Driven Space" },
-  { href: "/chp-enclave", label: "CHP Enclave" },
+  { href: "/second-home", label: "Second Home" },
+  { href: "/facilities", label: "CHP Facilities" },
+  { href: "/business-and-investment", label: "Business & Investment" },
+  { href: "/purpose-driven-space", label: "Purpose Driven Space" },
 ];
 
 export function Navbar() {
@@ -52,8 +53,8 @@ export function Navbar() {
   const navBg = scrolled
     ? "bg-white/95 backdrop-blur-md shadow-md shadow-black/5"
     : isHome
-    ? "bg-transparent"
-    : "bg-white/95 backdrop-blur-md shadow-sm";
+      ? "bg-transparent"
+      : "bg-white/95 backdrop-blur-md shadow-sm";
 
   const textColor =
     scrolled || !isHome ? "text-slate-800" : "text-white";
@@ -69,19 +70,21 @@ export function Navbar() {
         )}
       >
         <nav
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-18"
+          className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-18"
           aria-label="Main navigation"
         >
           {/* Logo */}
           <Link
             href="/"
-            className={cn(
-              "flex items-center gap-2 font-bold text-lg tracking-tight transition-colors",
-              logoColor
-            )}
+            className="flex items-center transition-opacity hover:opacity-90 shrink-0 -ml-1 sm:-ml-2"
           >
-            <Mountain className="w-6 h-6" />
-            <span>CHP</span>
+            <Image
+              src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/50de644b-531c-4254-95f3-2c31d4f968d7-scaled-logo-final-2026.png"
+              alt="CHP Logo"
+              width={64}
+              height={64}
+              className="w-16 h-16 object-contain"
+            />
           </Link>
 
           {/* Desktop links */}
@@ -99,11 +102,11 @@ export function Navbar() {
                           ? "bg-green-900/10 text-green-900"
                           : "bg-white/20 text-white"
                         : cn(
-                            "hover:bg-black/5",
-                            scrolled || !isHome
-                              ? "text-slate-600 hover:text-slate-900"
-                              : "text-white/80 hover:text-white hover:bg-white/10"
-                          )
+                          "hover:bg-black/5",
+                          scrolled || !isHome
+                            ? "text-slate-600 hover:text-slate-900"
+                            : "text-white/80 hover:text-white hover:bg-white/10"
+                        )
                     )}
                   >
                     {link.label}
@@ -146,11 +149,11 @@ export function Navbar() {
           </ul>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href="tel:+919949994989"
               className={cn(
-                "flex items-center gap-1.5 text-sm transition-colors",
+                "flex items-center gap-1.5 text-sm transition-colors whitespace-nowrap",
                 scrolled || !isHome
                   ? "text-slate-600 hover:text-green-900"
                   : "text-white/70 hover:text-white"
@@ -160,8 +163,14 @@ export function Navbar() {
               <span>99499 94989</span>
             </a>
             <Link
+              href="/chp-growth-partner"
+              className="bg-green-900 hover:bg-green-800 text-white text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5 whitespace-nowrap shrink-0"
+            >
+              CHP Growth Partner
+            </Link>
+            <Link
               href="/contact"
-              className="bg-green-900 hover:bg-green-800 text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
+              className="bg-green-900 hover:bg-green-800 text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5 whitespace-nowrap shrink-0"
             >
               Contact CHP
             </Link>
@@ -253,7 +262,7 @@ export function Navbar() {
                 href="/contact"
                 className="w-full bg-green-900 hover:bg-green-800 text-white font-semibold py-3.5 rounded-xl text-center transition-colors"
               >
-                Book Your Journey
+                Booking Options
               </Link>
             </div>
           </motion.div>
