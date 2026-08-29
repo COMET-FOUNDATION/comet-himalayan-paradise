@@ -79,7 +79,7 @@ export function CHPFacilities() {
             href="/accommodation"
             className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
           >
-            View all 20+ Facilities
+            Explore Facilities
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

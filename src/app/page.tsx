@@ -6,6 +6,8 @@ import { PopularTreks } from "@/components/home/PopularTreks";
 import { StatsSection } from "@/components/home/StatsSection";
 import { CHPFacilities } from "@/components/home/CHPFacilities";
 import { PurposeDrivenSpace } from "@/components/home/PurposeDrivenSpace";
+import { HimalayanParadiseEnclave } from "@/components/home/HimalayanParadiseEnclave";
+import { CHPGatewaysSection } from "@/components/home/CHPGatewaysSection";
 import { GallerySection } from "@/components/home/GallerySection";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FAQ } from "@/components/home/FAQ";
@@ -24,12 +26,14 @@ export default function HomePage() {
       <WhyCHP />
       <ExperiencesSection />
       <PopularTreks />
-      <StatsSection />
       <CHPFacilities />
       <PurposeDrivenSpace />
+      <HimalayanParadiseEnclave />
+      <CHPGatewaysSection />
       <GallerySection />
       <Testimonials />
       <FAQ />
+      <StatsSection />
       <CTABanner />
     </>
   );

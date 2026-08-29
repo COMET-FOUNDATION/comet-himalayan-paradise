@@ -42,7 +42,7 @@ export default function TreksPage() {
         <div className="absolute inset-0 opacity-20">
           <div
   className="absolute inset-0 bg-cover bg-center"
-  style={{ backgroundImage: "url('/new.png')" }}
+  style={{ backgroundImage: "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7faa583a-fae6-42cd-9755-b3ef23cb0a29-scaled-treks-and-trails-header.webp')" }}
 />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -75,7 +75,7 @@ export default function TreksPage() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-16 z-30 bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 shadow-sm">
+      <section className="bg-white border-b border-slate-100 py-4 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             {/* Category filter */}
@@ -85,11 +85,10 @@ export default function TreksPage() {
                 <button
                   key={c.value}
                   onClick={() => setCategory(c.value)}
-                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-colors ${
-                    category === c.value
+                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-colors ${category === c.value
                       ? "bg-green-900 text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
+                    }`}
                 >
                   {c.label}
                 </button>
@@ -105,11 +104,10 @@ export default function TreksPage() {
                 <button
                   key={d.value}
                   onClick={() => setDifficulty(d.value)}
-                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-colors ${
-                    difficulty === d.value
+                  className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-colors ${difficulty === d.value
                       ? "bg-sky-600 text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
+                    }`}
                 >
                   {d.label}
                 </button>

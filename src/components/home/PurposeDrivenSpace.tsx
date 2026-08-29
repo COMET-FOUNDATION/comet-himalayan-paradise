@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
@@ -56,19 +58,19 @@ const spaces = [
     title: "Comet Services",
     description:
       "Concierge support for travel, stay, and on-ground logistics — handled end-to-end by the Comet team.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/32308adc-0e58-4a98-acff-3731f0ad7327-scaled-comet-services-2.webp",
+    image: "/comet services2.png",
   },
   {
     title: "Gaushala",
     description:
       "A traditional cattle farm woven into daily life at CHP, reflecting our commitment to rural Himalayan heritage.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9d1fe41e-9c6c-405f-8b10-fe4d7c57e661-scaled-gaushala-png.webp",
+    image: "/gaushala.png",
   },
   {
     title: "Isht Dev Sthal",
     description:
       "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a3c6200-6934-459f-8c9e-b8c348d74708-scaled-isht-dev-sthal.webp"
+    image: "/isht dev-sthal.png",
   },
 ];
 
@@ -177,7 +179,18 @@ export function PurposeDrivenSpace() {
             ))}
           </div>
         </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/purpose-driven-space"
+            className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
+          >
+            View Details
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
+

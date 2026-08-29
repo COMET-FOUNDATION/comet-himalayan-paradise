@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
       "Sleep under a canopy of stars in pristine Himalayan wilderness. Our camps are set at stunning locations with mountain views, cosy bedding, and bonfires.",
     icon: "Tent",
     image:
-      "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
     duration: "1–5 Days",
     category: "adventure",
     highlights: [
@@ -144,6 +144,22 @@ export const experiences: Experience[] = [
       "Trout fishing experience",
       "Riverside bonfire",
       "Dawn mountain views",
+    ],
+  },
+  {
+    id: "adventure-activities",
+    title: "Adventure Activities",
+    description:
+      "Mountain cycling, riverside camping, rock scrambling, glacier walks, and adrenaline pursuits across the Kumaon Himalayas.",
+    icon: "Zap",
+    image: "/Adventure Activities.png",
+    duration: "Half–Full Day",
+    category: "adventure",
+    highlights: [
+      "Mountain cycling routes",
+      "Rock scrambling & bouldering",
+      "Glacier approach walks",
+      "Guided by certified experts",
     ],
   },
 ];

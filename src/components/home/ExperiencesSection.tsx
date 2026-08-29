@@ -12,54 +12,40 @@ const experiences = [
     title: "Holiday Camps",
     description:
       "Multi-day immersive camps combining adventure, wellness, culture, and nature in stunning Himalayan settings.",
-    image:
-      "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=800&q=80&auto=format&fit=crop",
+    image: "/Holiday Camp 2.png",
     href: "/camps",
     badge: "1–45 Days",
-  },
-  {
-    title: "Himalayan Treks",
-    description:
-      "From gentle forest walks to high-altitude glacier expeditions — 20+ curated trails for every fitness level.",
-    image:
-      "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=800&q=80&auto=format&fit=crop",
-    href: "/treks",
-    badge: "20+ Routes",
   },
   {
     title: "Wellness Retreats",
     description:
       "Yoga, meditation, pranayama, and mindfulness in the natural cathedral of the Himalayas.",
-    image:
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    image: "/Wellness retreat.png",
+    href: "/treks",
     badge: "3–14 Days",
   },
   {
     title: "Wildlife & Nature",
     description:
       "Birding walks, jungle safaris, night safaris, and wildlife observation with expert naturalists.",
-    image:
-      "https://images.unsplash.com/photo-1474511320723-9a56873867b5?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    image: "/Wildlife and nature 2.png",
+    href: "/treks",
     badge: "All Year",
   },
   {
     title: "Cultural Experiences",
     description:
       "Village tours, traditional cooking, folk art, herbal farming, and living heritage of Kumaon.",
-    image:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    image: "/Cultural Experiences.png",
+    href: "/treks",
     badge: "Immersive",
   },
   {
     title: "Adventure Activities",
     description:
       "Mountain cycling, riverside camping, rock scrambling, glacier walks, and adrenaline pursuits.",
-    image:
-      "https://images.unsplash.com/photo-1571185782564-f0a7d14b5060?w=800&q=80&auto=format&fit=crop",
-    href: "/experiences",
+    image: "/Adventure Activities.png",
+    href: "/treks",
     badge: "Multi-level",
   },
 ];
@@ -72,11 +58,11 @@ export function ExperiencesSection() {
           <SectionHeader
             eyebrow="Experiences"
             title="What Awaits You"
-            subtitle="Six worlds to explore — each more extraordinary than the last."
+            subtitle="Curated Himalayan experiences tailored for adventure, wellness, and reflection."
             align="left"
           />
           <Link
-            href="/experiences"
+            href="/treks"
             className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
           >
             All Experiences
@@ -88,7 +74,7 @@ export function ExperiencesSection() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           staggerDelay={0.08}
         >
-          {experiences.map((exp) => (
+          {experiences.slice(0, 3).map((exp) => (
             <StaggerItem key={exp.title}>
               <Link href={exp.href} className="group block">
                 <motion.article
@@ -129,12 +115,12 @@ export function ExperiencesSection() {
           ))}
         </StaggerContainer>
 
-        <div className="mt-10 text-center md:hidden">
+        <div className="mt-12 text-center">
           <Link
-            href="/experiences"
-            className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
+            href="/treks"
+            className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
           >
-            View All Experiences
+            All Experiences
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -1,19 +1,22 @@
 import Link from "next/link";
-import { Mountain, Mail, Phone, MapPin, Share2, Globe, Video, X } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Share2, Globe, Video, X } from "lucide-react";
 
 const footerLinks = {
   Explore: [
+    { href: "/enclave", label: "CHP Enclave" },
+    { href: "/gateways", label: "CHP Gateways" },
     { href: "/camps", label: "Holiday Camps" },
     { href: "/treks", label: "Himalayan Treks" },
-    { href: "/experiences", label: "Experiences" },
     { href: "/accommodation", label: "Accommodation" },
     { href: "/gallery", label: "Gallery" },
   ],
-  Company: [
-    { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
-    { href: "/about#mission", label: "Our Mission" },
-    { href: "/about#story", label: "Our Story" },
+  Offerings: [
+    { href: "/second-home", label: "Second Home" },
+    { href: "/facilities", label: "Facilities" },
+    { href: "/purpose-driven-space", label: "Purpose Driven Space" },
+    { href: "/business-investment", label: "Business & Investment" },
+    { href: "/growth-partner", label: "CHP Growth Partner" },
   ],
   Popular: [
     { href: "/treks/khaliya-top", label: "Khaliya Top Trek" },
@@ -41,13 +44,18 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link
               href="/"
-              className="flex items-center gap-2 text-white font-bold text-xl mb-4"
+              className="inline-block mb-5 transition-transform duration-200 hover:scale-[1.02]"
+              aria-label="CHP Himalayan Paradise Home"
             >
-              <Mountain className="w-6 h-6 text-green-400" />
-              <span>
-                CHP{" "}
-                <span className="font-light text-slate-400">Himalayan</span>
-              </span>
+              <div className="bg-white/95 backdrop-blur-sm p-2 rounded-xl inline-flex items-center shadow-md border border-white/20">
+                <Image
+                  src="/Logo final 2026.png"
+                  alt="CHP Himalayan Paradise"
+                  width={200}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto object-contain"
+                />
+              </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs mb-6">
               Immersive Himalayan travel experiences — holiday camps, guided
@@ -67,10 +75,10 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-green-400 shrink-0" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+9199499 94989"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
-                +91 99499 94989
+                  +91 99499 94989
                 </a>
               </li>
               <li className="flex items-center gap-3">

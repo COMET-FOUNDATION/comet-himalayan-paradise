@@ -1,20 +1,30 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Shield,
+  Map,
+  Sun,
   Users,
   Leaf,
-  Map,
-  Star,
+  Compass,
   Heart,
   Clock,
-  Compass,
+  Star,
+  ArrowRight,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
 const features = [
+  {
+    icon: Sun,
+    title: "Cool summers",
+    description:
+      "Escape the sweltering plains to pleasant mountain climates with refreshing alpine breeze all summer long.",
+    color: "bg-amber-50 text-amber-600",
+  },
   {
     icon: Shield,
     title: "Safety First",
@@ -80,14 +90,14 @@ export function WhyCHP() {
         <SectionHeader
           eyebrow="Why Choose Us"
           title="Why CHP Himalayan Paradise"
-          subtitle="We don't sell tours — we craft transformative Himalayan experiences that change the way you see the world and yourself."
+          subtitle="Join CHP and unlock opportunities in hospitality, tourism, events, remote work, and sustainable living."
         />
 
         <StaggerContainer
-          className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6"
           staggerDelay={0.08}
         >
-          {features.map((f) => {
+          {features.slice(0, 3).map((f) => {
             const Icon = f.icon;
             return (
               <StaggerItem key={f.title}>
@@ -112,6 +122,15 @@ export function WhyCHP() {
             );
           })}
         </StaggerContainer>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/why-chp"
+            className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
+          >
+            All Driving factors &gt;&gt;
+          </Link>
+        </div>
       </div>
     </section>
   );

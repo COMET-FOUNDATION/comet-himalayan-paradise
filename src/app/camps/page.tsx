@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Himalayan Holiday Camps | CHP Himalayan Paradise",
     description: "Immersive Himalayan holiday camps combining trekking, wellness, culture, and nature. Programs for all ages from 1 day to 45 days.",
     url: "https://comet-himalayan-paradise.vercel.app/camps",
-    images: [{ url: "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "Himalayan Holiday Camp" }],
+    images: [{ url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "Himalayan Holiday Camp" }],
   },
 };
 
@@ -130,7 +130,7 @@ export default function CampsPage() {
       {/* Hero */}
       <section className="relative h-[65vh] min-h-[480px] overflow-hidden">
         <Image
-          src="/Holiday Camp Header 1.png"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/38f2e4c5-2d33-48f0-9695-8f607faf69d8-scaled-holiday-camp-header-1.webp"
           alt="Himalayan holiday camp"
           fill
           priority
@@ -206,7 +206,7 @@ export default function CampsPage() {
               <div className="relative">
                 <div className="relative h-80 rounded-2xl overflow-hidden">
                   <Image
-                    src="/Holiday Camp 2.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp"
                     alt="Himalayan camp aerial view"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -301,7 +301,7 @@ export default function CampsPage() {
       {/* Image */}
       <div className="relative h-[420px] rounded-2xl overflow-hidden lg:order-1">
   <Image
-    src="/Activities.png"
+    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e45036b6-876b-4a8e-8064-d28299e4f2e3-scaled-activities.webp"
     alt="Camp activities in the Himalayas"
     fill
     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -434,7 +434,7 @@ export default function CampsPage() {
       {/* IMAGE — RIGHT SIDE */}
       <div className="relative h-[420px] rounded-2xl overflow-hidden">
         <Image
-          src="/schedule.png"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/976486cc-548b-42f2-ae8d-b2d827dc3448-scaled-schedule.webp"
           alt="Himalayan camp schedule"
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"

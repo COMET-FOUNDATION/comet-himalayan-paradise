@@ -79,7 +79,7 @@ const stays = [
     description:
       "Premium canvas tents set at spectacular riverside, meadow, or forest locations. All bedding and equipment provided — bring only yourself and your sense of wonder.",
     image:
-      "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=900&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=900&q=80&auto=format&fit=crop",
     amenities: [
       "Insulated premium tents",
       "Comfortable sleeping bags & mattresses",
@@ -154,15 +154,13 @@ export default function AccommodationPage() {
               <StaggerContainer key={stay.type} staggerDelay={0.1}>
                 <StaggerItem>
                   <div
-                    className={`group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/8 transition-shadow duration-300 ${
-                      i % 2 !== 0 ? "lg:grid-flow-dense" : ""
-                    }`}
+                    className={`group grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/8 transition-shadow duration-300 ${i % 2 !== 0 ? "lg:grid-flow-dense" : ""
+                      }`}
                   >
                     {/* Image */}
                     <div
-                      className={`relative h-64 lg:h-auto overflow-hidden ${
-                        i % 2 !== 0 ? "lg:col-start-2" : ""
-                      }`}
+                      className={`relative h-64 lg:h-auto overflow-hidden ${i % 2 !== 0 ? "lg:col-start-2" : ""
+                        }`}
                     >
                       <Image
                         src={stay.image}

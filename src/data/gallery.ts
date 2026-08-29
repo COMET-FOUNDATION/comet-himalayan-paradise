@@ -28,7 +28,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     id: "g2",
-    src: "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=800&q=80&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
     alt: "Camping tent beneath starry Himalayan sky",
     category: "camping",
     width: 800,
