@@ -120,6 +120,43 @@ const partnerPerks = [
     "Priority investment rights in upcoming CHP flagship expansion sites",
 ];
 
+const marketingPillars = [
+    {
+        num: "01",
+        text: "Listing CHP cottages and dream spaces on Global Booking Platforms for Maximum Reach",
+        icon: Globe,
+    },
+    {
+        num: "02",
+        text: "Strategic Partnerships with Tour Operators across Uttarakhand & India",
+        icon: Handshake,
+    },
+    {
+        num: "03",
+        text: "Strategic Partnership with Digital Marketing Companies across India and globally",
+        icon: TrendingUp,
+    },
+];
+
+const businessDevelopmentTargets = [
+    "Corporate HR Partnerships for Employee Retreats, Workations & Holiday Packages",
+    "Strategic Partnerships with Educational Institutions for Experiential Learning through Yoga Camps, STEM Labs and Smart Holiday Camps.",
+    "Strategic Partnerships with NGOs to host year-round social, educational, environmental and cultural initiatives at CHP.",
+    "Connecting AOAs & HOAs with CHP for Exclusive Group Stays and Association-Owned Guest Houses.",
+    "Strategic Alliances with Medical Tourism & Health Retreat Organizations",
+    "Strategic Adventure Club Partnerships for Himalayan Treks, Trails & Exploration",
+    "Strategic alliances with leading travel agencies and tour operators",
+];
+
+const repeatCustomerPerks = [
+    "Delivering exceptional guest experiences",
+    "Referral Rewards for existing customers",
+    "Exclusive discounts for CHP partners",
+    "Attractive long-stay packages",
+    "Corporate group discounts",
+    "Seasonal promotional offers and loyalty benefits",
+];
+
 const faqs = [
     {
         q: "Who can become a CHP Business Growth Partner?",
@@ -425,6 +462,110 @@ As the CHP ecosystem grows, every Growth Partner benefits from greater visibilit
                             ))}
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Marketing and Promotion Strategy */}
+            <section id="marketing-strategy" className="py-20 lg:py-28 bg-slate-950 border-t border-slate-800 scroll-mt-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <SectionHeader
+                        eyebrow="Market Outreach"
+                        title="Marketing and Promotion Strategy"
+                        subtitle="CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:"
+                        light
+                    />
+
+                    {/* Strategic Initiatives 1, 2, 3 */}
+                    <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {marketingPillars.map((pillar) => {
+                            const Icon = pillar.icon;
+                            return (
+                                <StaggerItem key={pillar.num}>
+                                    <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-amber-500/40 transition-all duration-300 h-full flex flex-col justify-between group">
+                                        <div>
+                                            <div className="flex items-center justify-between mb-6">
+                                                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 group-hover:scale-105 transition-transform">
+                                                    <Icon className="w-6 h-6" />
+                                                </div>
+                                                <span className="text-3xl font-bold text-slate-700 group-hover:text-amber-400/40 transition-colors">
+                                                    {pillar.num}
+                                                </span>
+                                            </div>
+                                            <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">
+                                                {pillar.num}. {pillar.text}
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </StaggerItem>
+                            );
+                        })}
+                    </StaggerContainer>
+
+                    {/* Strategic Initiatives 4 & 5 */}
+                    <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* 4. Dedicated Marketing Executive Network */}
+                        <ScrollReveal direction="up" delay={0.1}>
+                            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all duration-300 h-full flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-sm">
+                                            04
+                                        </span>
+                                        <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+                                            Nationwide Business Development
+                                        </span>
+                                    </div>
+                                    <h3 className="text-lg sm:text-xl font-bold text-white mb-4 leading-snug">
+                                        4. CHP plans to build a nationwide network of dedicated marketing executives across major Indian cities, with clearly defined business development targets focused on:
+                                    </h3>
+                                    <ul className="space-y-3 mt-6">
+                                        {businessDevelopmentTargets.map((target, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                                <span className="leading-snug">{target}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+
+                        {/* 5. Strong Repeat Customer Program */}
+                        <ScrollReveal direction="up" delay={0.2}>
+                            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all duration-300 h-full flex flex-col justify-between">
+                                <div>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-sm">
+                                            05
+                                        </span>
+                                        <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">
+                                            Guest Retention &amp; Loyalty
+                                        </span>
+                                    </div>
+                                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug">
+                                        5. Strong Repeat Customer Program: CHP aims to build a loyal customer base through an attractive guest retention program that includes:
+                                    </h3>
+                                    <ul className="space-y-3 mt-6">
+                                        {repeatCustomerPerks.map((perk, idx) => (
+                                            <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
+                                                <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                                                <span className="leading-snug">{perk}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </ScrollReveal>
+                    </div>
+
+                    {/* Ending Statement */}
+                    <ScrollReveal direction="up" delay={0.25}>
+                        <div className="mt-12 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-amber-950/40 border border-emerald-500/30 text-center max-w-4xl mx-auto shadow-xl">
+                            <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-medium">
+                                Together, these initiatives are designed to create sustainable guest occupancy, repeat business, and long-term revenue growth for every business operating within the CHP Ecosystem.
+                            </p>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
