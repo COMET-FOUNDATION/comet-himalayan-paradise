@@ -268,10 +268,10 @@ export default function ContactPage() {
                         >
                           <option value="">Select size</option>
                           <option>Solo</option>
-                          <option>1-4 Guest</option>
-                          <option>5-8 Guest</option>
-                          <option>9-12 Guest</option>
-                          <option>12+ Guests</option>
+                          <option>2–4 Guest</option>
+                          <option>5–10 Guest</option>
+                          <option>11–20 Guest</option>
+                          <option>20+ Guests</option>
                         </select>
                       </div>
                     </div>

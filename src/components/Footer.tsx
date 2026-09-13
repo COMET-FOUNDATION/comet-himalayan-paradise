@@ -49,7 +49,7 @@ export function Footer() {
             >
               <div className="bg-white/95 backdrop-blur-sm p-2 rounded-xl inline-flex items-center shadow-md border border-white/20">
                 <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/79abc1c0-afd2-4cfe-bfe3-c8ce0b20faf5-chatgpt-image-aug-31-2026-11-56-21-pm.png"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/efdbeeb0-f4a0-4e5a-ad96-19a2adad9aa4-scaled-logo-final-2026.webp"
                   alt="CHP Himalayan Paradise"
                   width={200}
                   height={60}
@@ -68,7 +68,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                 <span className="text-slate-400">
-                  Pithoragarh,
+                   Pithoragarh,
                   <br /> Uttarakhand 262501, India
                 </span>
               </li>

@@ -29,14 +29,10 @@ export default function ExperiencesPage() {
     return (
         <>
             {/* Hero */}
-            <section className="relative bg-black pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0">
-                    <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ab74ec0a-4d09-40a2-b3d5-e249041fed33-chatgpt-image-sep-3-2026-02-25-33-am.webp')" }}
-                    />
+            <section className="relative bg-green-950 pt-32 pb-20 overflow-hidden">
+                <div className="absolute inset-0 opacity-20">
+                    <div className="absolute inset-0 bg-[url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp')] bg-cover bg-center" />
                 </div>
-                <div className="absolute inset-0 bg-black/45" />
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.p
                         initial={{ opacity: 0, y: 16 }}

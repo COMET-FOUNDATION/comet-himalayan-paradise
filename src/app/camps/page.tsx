@@ -110,17 +110,17 @@ const accommodationTypes = [
   {
     type: "Homestays",
     desc: "Stay with a warm Kumaoni family. Experience local food, culture, and genuine mountain life.",
-    image: "/homestay.png",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4aa5f027-ca69-446e-abe4-64319a668b0d-scaled-stay-options.webp",
   },
   {
     type: "Traditional Houses",
     desc: "Stone-and-wood heritage homes with centuries of Himalayan character and craftsmanship.",
-    image: "/th.png",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d6e7b927-f6b1-4320-9c7c-320e04e15101-scaled-traditinoal-house.webp",
   },
   {
     type: "Camping Tents",
     desc: "Premium canvas tents at scenic riverside or meadow locations. Bedding provided.",
-    image: "/ct.png",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fb51f723-c566-4148-84a4-99c66ea3e7a4-camping-tents.webp",
   },
 ];
 

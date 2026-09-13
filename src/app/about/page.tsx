@@ -4,7 +4,6 @@ import { Mountain, Heart, Leaf, Globe, Compass } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
-import { AboutHero } from "@/components/about/AboutHero";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -100,7 +99,35 @@ const timeline = [
 export default function AboutPage() {
   return (
     <>
-      <AboutHero />
+      {/* Hero */}
+      <section className="relative h-[68vh] min-h-[480px] overflow-hidden">
+        <Image
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4425a0c8-b7a1-4e60-b237-8478c7107de6-scaled-chp-intro-image.webp"
+          alt="CHP Himalayan Paradise"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/20 to-green-950/60" />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="h-px w-8 bg-orange-400/70" />
+            <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.25em]">
+              Our Story
+            </p>
+            <span className="h-px w-8 bg-orange-400/70" />
+          </div>
+          <h1 className="text-white text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-5 drop-shadow-sm">
+            About CHP
+          </h1>
+          <p className="text-white/75 text-lg sm:text-xl max-w-xl leading-relaxed">
+            Born in the Himalayas, built on authenticity — a decade of sharing
+            the world&apos;s greatest mountains with travelers who truly seek.
+          </p>
+        </div>
+      </section>
 
       {/* Story */}
       <section id="story" className="py-20 bg-white">

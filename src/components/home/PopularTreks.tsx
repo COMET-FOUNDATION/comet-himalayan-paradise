@@ -9,12 +9,13 @@ import { popularTreks } from "@/data/treks";
 
 export function PopularTreks() {
   return (
-    <section className="py-14 lg:py-20 bg-stone-50">
+    <section className="py-20 lg:py-28 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
           <SectionHeader
+            eyebrow="Treks & Trails"
             title="Treks and Trails"
-            subtitle="Discover the Himalayas Beyond the Tourist Trail — Explore Its Villages, Nature, Culture, Forests, Lifestyle & Majestic Peaks."
+            subtitle="Hand-picked routes from gentle forest walks to epic base camp expeditions."
             align="left"
           />
           <Link

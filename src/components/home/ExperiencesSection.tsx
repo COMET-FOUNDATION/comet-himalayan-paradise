@@ -12,8 +12,7 @@ const experiences = [
     title: "Holiday Camps",
     description:
       "Multi-day immersive camps combining adventure, wellness, culture, and nature in stunning Himalayan settings.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp",
     href: "/camps",
     badge: "1–45 Days",
   },
@@ -21,50 +20,49 @@ const experiences = [
     title: "Wellness Retreats",
     description:
       "Yoga, meditation, pranayama, and mindfulness in the natural cathedral of the Himalayas.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2f042686-f530-4008-abba-f1f06a67a846-wellness.webp",
-    href: "/experiences",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/dfbd9646-5068-49d8-93e3-157c49ce622f-scaled-wellness-retreat.webp",
+    href: "/treks",
     badge: "3–14 Days",
   },
   {
     title: "Wildlife & Nature",
     description:
       "Birding walks, jungle safaris, night safaris, and wildlife observation with expert naturalists.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/21ce77df-8ab2-4920-a9eb-f7ca749c5cee-chp-enclave.png",
-    href: "/experiences",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b22899bc-85ed-42c5-804a-3895234e3d9d-scaled-wildlife-and-nature-2.webp",
+    href: "/treks",
     badge: "All Year",
   },
   {
     title: "Cultural Experiences",
     description:
       "Village tours, traditional cooking, folk art, herbal farming, and living heritage of Kumaon.",
-    image: "/Cultural Experiences.png",
-    href: "/experiences",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4f6a2f86-a8fc-441a-a79d-657e92ca7a5e-scaled-village-heritage-tour.webp",
+    href: "/treks",
     badge: "Immersive",
   },
   {
     title: "Adventure Activities",
     description:
       "Mountain cycling, riverside camping, rock scrambling, glacier walks, and adrenaline pursuits.",
-    image: "/Adventure Activities.png",
-    href: "/experiences",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6b4639aa-6587-42b1-b090-25528b23f341-scaled-adventure-club.webp",
+    href: "/treks",
     badge: "Multi-level",
   },
 ];
 
 export function ExperiencesSection() {
   return (
-    <section className="py-14 lg:py-20 bg-white">
+    <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
           <SectionHeader
-            title="CHP Experiences"
-            subtitle="Go Beyond Destinations. See the Himalayas. Feel the Himalayas. Discover the Himalayan Experience."
+            eyebrow="Experiences"
+            title="What Awaits You"
+            subtitle="Curated Himalayan experiences tailored for adventure, wellness, and reflection."
             align="left"
           />
           <Link
-            href="/experiences"
+            href="/treks"
             className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
           >
             All Experiences
@@ -119,7 +117,7 @@ export function ExperiencesSection() {
 
         <div className="mt-12 text-center">
           <Link
-            href="/experiences"
+            href="/treks"
             className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
           >
             All Experiences

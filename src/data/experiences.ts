@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
       "Sleep under a canopy of stars in pristine Himalayan wilderness. Our camps are set at stunning locations with mountain views, cosy bedding, and bonfires.",
     icon: "Tent",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
     duration: "1–5 Days",
     category: "adventure",
     highlights: [
@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
       "The Himalayas have long been a sanctuary for inner seekers. Our wellness programs offer daily yoga, guided meditation, pranayama, and silent walks in nature.",
     icon: "Heart",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2f042686-f530-4008-abba-f1f06a67a846-wellness.webp",
+      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop",
     duration: "3–14 Days",
     category: "wellness",
     highlights: [
@@ -46,12 +46,12 @@ export const experiences: Experience[] = [
   },
   {
     id: "bird-watching",
-    title: "Bird Watching & Nature",
+    title: "Bird Watching",
     description:
       "The Kumaon Himalayas are home to over 500 bird species. Join expert birders at dawn to discover Himalayan Monals, Koklass Pheasants, Sunbirds, and more.",
     icon: "Bird",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/21ce77df-8ab2-4920-a9eb-f7ca749c5cee-chp-enclave.png",
+      "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&q=80&auto=format&fit=crop",
     duration: "Half–Full Day",
     category: "nature",
     highlights: [
@@ -152,7 +152,7 @@ export const experiences: Experience[] = [
     description:
       "Mountain cycling, riverside camping, rock scrambling, glacier walks, and adrenaline pursuits across the Kumaon Himalayas.",
     icon: "Zap",
-    image: "/Adventure Activities.png",
+    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6b4639aa-6587-42b1-b090-25528b23f341-scaled-adventure-club.webp",
     duration: "Half–Full Day",
     category: "adventure",
     highlights: [

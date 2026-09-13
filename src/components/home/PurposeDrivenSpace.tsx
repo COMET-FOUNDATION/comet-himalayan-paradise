@@ -7,6 +7,52 @@ import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
+const benefits = [
+  {
+    icon: "🏡",
+    title: "Exclusive Cottage Benefits",
+    description: "Enjoy privileged discounts on CHP cottages.",
+  },
+  {
+    icon: "🔑",
+    title: "Priority Guest House Access",
+    description: "Avail special access to the Comeset Executive Guest House in Munsyari.",
+  },
+  {
+    icon: "⭐",
+    title: "VIP Access to CHP Programs",
+    description: "Receive priority participation, exclusive guidance, and special privileges across all CHP initiatives.",
+  },
+  {
+    icon: "📄",
+    title: "Tax Benefits",
+    description: "All eligible contributions will be acknowledged with 80G tax exemption receipts.",
+  },
+];
+
+const supportCategories = [
+  {
+    title: "Comet Educational Services",
+    icon: "🎓",
+    items: [
+      "Fund an underprivileged school",
+      "Fund underprivileged students",
+      "Support Comet Students with Mentorship",
+      "Internship opportunity for students pursuing graduation course",
+      "Job placement for fresh graduates",
+    ],
+  },
+  {
+    title: "Comet Gaushala",
+    icon: "🐄",
+    items: [
+      "Adopt an abandoned cow in Comet Gaushala",
+      "Donations in cash or kind to support the feeding of adopted cows at the cow-care center",
+      "Sponsor for infrastructure setup in Gaushala",
+    ],
+  },
+];
+
 const spaces = [
   {
     title: "Comet Services",
@@ -32,12 +78,13 @@ export function PurposeDrivenSpace() {
   return (
     <section
       id="purpose-driven-space"
-      className="py-14 lg:py-20 bg-white scroll-mt-20"
+      className="py-20 lg:py-28 bg-white scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
+          eyebrow="Beyond Travel"
           title="Purpose Driven Space"
-          subtitle="Purposeful Spaces. Meaningful Experiences. Meaningful Contributions."
+          subtitle="CHP is more than a destination—it is a community built around meaningful initiatives. From serving abandoned cows and promoting spiritual well-being to empowering underprivileged students, every space at CHP reflects a deeper purpose that creates lasting social impact."
         />
 
         <StaggerContainer
@@ -63,29 +110,74 @@ export function PurposeDrivenSpace() {
                   <h3 className="text-white font-bold text-xl mb-1.5">
                     {space.title}
                   </h3>
-                  <p className="text-white/65 text-sm leading-relaxed mb-3">
+                  <p className="text-white/65 text-sm leading-relaxed">
                     {space.description}
                   </p>
-                  <Link
-                    href="/purpose-driven-space"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-amber-300 transition-colors"
-                  >
-                    View Details <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
                 </div>
               </motion.article>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
-        {/* View Details CTA */}
-        <div className="mt-12 flex justify-center">
-          <Link
-            href="/purpose-driven-space"
-            className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-orange-600/25 hover:-translate-y-0.5"
-          >
-            View Details <ArrowRight className="w-4 h-4" />
-          </Link>
+        {/* Ways to Support */}
+        <div className="mt-20">
+          <SectionHeader
+            eyebrow="Get Involved"
+            title="Ways to Support These Spaces"
+            subtitle="Your contribution — big or small — helps sustain these meaningful initiatives and creates lasting impact in the Himalayan community."
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {supportCategories.map((cat) => (
+              <motion.div
+                key={cat.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5 }}
+                className="bg-slate-50 border border-slate-100 rounded-2xl p-6"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-2xl">{cat.icon}</span>
+                  <h3 className="text-slate-800 font-bold text-lg">{cat.title}</h3>
+                </div>
+                <ul className="space-y-2.5">
+                  {cat.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2.5 text-slate-600 text-sm">
+                      <span className="mt-1 w-4 h-4 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center text-xs font-bold shrink-0">
+                        {i + 1}
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Benefits of Supporting */}
+        <div className="mt-20">
+          <SectionHeader
+            eyebrow="Why Support"
+            title="Benefits of Supporting These Spaces"
+            subtitle="As a supporter of CHP's mission, you receive meaningful recognition and exclusive privileges in return for your generosity."
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-orange-50 border border-orange-100 rounded-2xl p-6 flex flex-col gap-3"
+              >
+                <span className="text-3xl">{benefit.icon}</span>
+                <h3 className="text-slate-800 font-bold text-base">{benefit.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -5,7 +5,6 @@ import path from "path";
 const supabaseHostname = process.env.NEXT_PUBLIC_SUPABASE_URL
   ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname
   : undefined;
-const supabaseAssetHostname = "gmnnifngyjjksorcziow.supabase.co";
 
 const nextConfig: NextConfig = {
   turbopack: {
@@ -20,11 +19,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "plus.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: supabaseAssetHostname,
-        pathname: "/storage/v1/object/public/**",
       },
       ...(supabaseHostname
         ? [
