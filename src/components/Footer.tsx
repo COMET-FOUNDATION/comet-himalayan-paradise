@@ -20,11 +20,11 @@ const footerLinks = {
     { href: "/growth-partner", label: "CHP Growth Partner" },
   ],
   Popular: [
-    { href: "/treks/khaliya-top", label: "Khaliya Top Trek" },
-    { href: "/treks/panchachuli-base-camp", label: "Panchachuli Base Camp" },
-    { href: "/treks/adi-kailash", label: "Adi Kailash Trek" },
-    { href: "/treks/nanda-devi-base-camp", label: "Nanda Devi Base Camp" },
-    { href: "/treks/mila-glacier", label: "Mila Glacier Trek" },
+    { href: "/treks/khalia-top-trek", label: "Khalia Top Trek" },
+    { href: "/treks/panchachuli-base-camp-trek", label: "Panchachuli Base Camp" },
+    { href: "/treks/adi-kailash-om-parvat-trek", label: "Adi Kailash Om Parvat" },
+    { href: "/treks/chandika-ghat-trek", label: "Chandika Ghat Trek" },
+    { href: "/treks/milam-glacier-trek", label: "Milam Glacier Trek" },
   ],
 };
 

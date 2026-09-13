@@ -11,6 +11,7 @@ export interface Trek {
   id: string;
   name: string;
   slug: string;
+  aliases?: string[];
   tagline: string;
   difficulty: Difficulty;
   duration: string;
@@ -27,235 +28,90 @@ export interface Trek {
 }
 
 export const treks: Trek[] = [
-  // ── Nature & Discovery Trails ──────────────────────────────────────────────
+  // 1. Village heritage tour and nature walk
   {
-    id: "pine-forest-trail",
-    name: "Pine Forest Trail",
-    slug: "pine-forest-trail",
-    tagline: "Walk beneath ancient deodar canopies",
+    id: "village-heritage-and-nature-walk",
+    name: "Village heritage tour and nature walk",
+    slug: "village-heritage-and-nature-walk",
+    aliases: ["nature-walk", "village-heritage"],
+    tagline: "Living culture, village traditions and serene nature walks",
     difficulty: "Easy",
-    duration: "Half Day",
+    duration: "Full Day",
     distance: "4–6 km",
-    bestSeason: "March – November",
-    location: "Munsiyari, Kumaon",
+    bestSeason: "Year Round",
+    location: "Kumaoni Villages & Camp Surroundings",
     highlights: [
-      "Dense deodar & pine groves",
-      "Bird watching opportunities",
-      "Himalayan views through forest clearings",
-      "Nature photography spots",
+      "Traditional stone architecture & local craft",
+      "Home-cooked meal with local families",
+      "Medicinal plant & nature discovery",
+      "Cultural performances & village life",
     ],
     description:
-      "A serene walk through towering pine and deodar forests where sunlight filters through ancient canopies. Perfect for nature lovers and families, this trail reveals Kumaon's biodiversity at its most accessible.",
+      "A rich cultural and nature walk combining centuries-old Kumaoni village traditions with mindful immersion in mountain ecology. Walk through traditional stone villages, share home-cooked meals with local families, and explore native medicinal plants, mountain streams, and forest bathing paths guided by local naturalists.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8f1f669f-d982-4c4f-9ad8-75042903195f-scaled-pine-forest-1.webp",
-    category: "nature",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4f6a2f86-a8fc-441a-a79d-657e92ca7a5e-scaled-village-heritage-tour.webp",
+    category: "cultural",
     isPopular: true,
   },
+
+  // 2. Bird watching and crop discovery walk
   {
-    id: "bird-discovery-walk",
-    name: "Himalayan Bird Discovery Walk",
-    slug: "bird-discovery-walk",
-    tagline: "Over 200 species await the patient observer",
+    id: "bird-watching-and-crop-discovery-walk",
+    name: "Bird watching and crop discovery walk",
+    slug: "bird-watching-and-crop-discovery-walk",
+    aliases: ["bird-discovery-walk", "Himalayan-Crop-Discovery", "Himalayan-Crop"],
+    tagline: "Spot rare Himalayan birds & explore mountain crop farming",
     difficulty: "Easy",
     duration: "Full Day",
     distance: "6–8 km",
     bestSeason: "April – June, September – November",
     location: "Munsiyari Region",
     highlights: [
-      "Himalayan Monal sightings",
-      "Monticola flycatchers & sunbirds",
-      "Expert birding guides",
-      "Dawn chorus experience",
+      "Himalayan Monal & rare species sightings",
+      "Traditional mountain farming & crop discovery",
+      "Expert birding & agricultural guides",
+      "Dawn chorus & seasonal harvest experience",
     ],
     description:
-      "The Kumaon Himalayas are a birder's paradise. This guided walk explores birding hotspots where you can spot the resplendent Himalayan Monal, Koklass Pheasant, and over 200 other species across forest and alpine zones.",
+      "Explore the birding hotspots and vibrant agricultural terraces of the Kumaon Himalayas. Spot the resplendent Himalayan Monal and over 200 other bird species while discovering traditional farming practices, mountain crops, herbs, and the deep connection between Himalayan soil and local community life.",
     image:
       "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2c4f9283-5476-4a35-80cf-d3ddda2787ba-scaled-bird-watching-1.webp",
     category: "nature",
     isPopular: true,
   },
+
+  // 3. Forest Ecosystem Discovery and Herbal Medicine trail
   {
-    id: "nature-walk",
-    name: "Himalayan Nature Walk",
-    slug: "nature-walk",
-    tagline: "Reconnect with the living mountain",
-    difficulty: "Easy",
-    duration: "3–4 Hours",
-    distance: "3–5 km",
-    bestSeason: "Year Round",
-    location: "Camp Surroundings",
-    highlights: [
-      "Medicinal plant discovery",
-      "Mountain stream crossings",
-      "Wildflower meadows",
-      "Forest bathing (Shinrin-yoku)",
-    ],
-    description:
-      "A mindful immersion in Himalayan nature. Our naturalist guides introduce you to the ecology, medicinal plants, and seasonal rhythms of the mountains in this gentle, enriching walk.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/647a938e-3b8f-426b-9ee6-088dae1717c9-scaled-nature-walk.webp",
-    category: "nature",
-  },
-  {
-    id: "flora-discovery",
-    name: "Himalayan Flora Exploration",
-    slug: "flora-discovery",
-    tagline: "A botanical journey through alpine meadows",
+    id: "forest-ecosystem-discovery-and-herbal-medicine-trail",
+    name: "Forest Ecosystem Discovery and Herbal Medicine trail",
+    slug: "forest-ecosystem-discovery-and-herbal-medicine-trail",
+    aliases: ["pine-forest-trail", "forest-ecosystem", "herbal-medicine-trail"],
+    tagline: "Walk beneath ancient pine canopies & discover mountain herbal wisdom",
     difficulty: "Easy",
     duration: "Full Day",
-    distance: "5–8 km",
-    bestSeason: "May – September",
-    location: "Munsiyari & Surroundings",
+    distance: "4–8 km",
+    bestSeason: "March – November",
+    location: "Oak, Pine & Rhododendron Forests",
     highlights: [
-      "Alpine wildflowers in bloom",
-      "Rare orchid sightings",
-      "Brahmakamal discovery",
-      "Botanical sketching sessions",
+      "Dense deodar & pine grove walks",
+      "Ayurvedic herb identification with local vaidya",
+      "Forest layering & soil ecology explained",
+      "Traditional herbal tea & medicine demonstrations",
     ],
     description:
-      "The Himalayas host over 8,000 plant species. This guided exploration reveals the stunning diversity of alpine flora from towering rhododendrons to the sacred Brahmakamal—India's state flower of Uttarakhand.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/811aa391-a63b-4a5e-b694-4c291032ca77-scaled-flora-exploration.webp",
-    category: "nature",
-  },
-  {
-    id: "herbal-medicine-trail",
-    name: "Herbal Medicine Trail",
-    slug: "herbal-medicine-trail",
-    tagline: "Ancient mountain wisdom through plants",
-    difficulty: "Easy",
-    duration: "Half Day",
-    distance: "3–4 km",
-    bestSeason: "May – October",
-    location: "Munsiyari Village Area",
-    highlights: [
-      "Ayurvedic herb identification",
-      "Local vaidya (healer) interaction",
-      "Traditional medicine demonstrations",
-      "Herbal tea experience",
-    ],
-    description:
-      "Walk with a traditional Himalayan vaidya (herbalist) through forests and meadows rich in medicinal plants. Learn how Kumaoni communities have used plants like Tejpat, Kutki, and Jatamansi for millennia.",
+      "A comprehensive forest and botanical exploration through ancient pine, oak, and rhododendron canopies. Guided by naturalists and traditional Himalayan vaidyas (herbalists), learn about forest ecosystems, mycorrhizal networks, wildlife tracking, and ancient Ayurvedic medicinal plants like Tejpat, Kutki, and Jatamansi.",
     image:
       "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ccaff259-4530-4541-87b0-bad911d54579-scaled-herbal-medicinal-trail.webp",
-    category: "cultural",
-  },
-  {
-    id: "forest-ecosystem",
-    name: "Forest Ecosystem Discovery",
-    slug: "forest-ecosystem",
-    tagline: "See the forest as a living system",
-    difficulty: "Easy",
-    duration: "Full Day",
-    distance: "6–10 km",
-    bestSeason: "March – November",
-    location: "Oak & Rhododendron Forests",
-    highlights: [
-      "Forest layering explained",
-      "Fungi & lichen identification",
-      "Wildlife tracking",
-      "Soil & water ecology",
-    ],
-    description:
-      "An ecological education experience led by naturalists. Understand the layered complexity of Himalayan forests—from mycorrhizal networks underground to the forest canopy above, and every creature that calls it home.",
-    image:
-      "https://images.unsplash.com/photo-1440581572325-0bea30075d9d?w=800&q=80&auto=format&fit=crop",
     category: "nature",
-  },
-
-  // ── Adventure Activities ───────────────────────────────────────────────────
-  {
-    id: "mountain-cycling",
-    name: "Mountain Cycling",
-    slug: "mountain-cycling",
-    tagline: "Conquer mountain roads on two wheels",
-    difficulty: "Moderate",
-    duration: "Full Day",
-    distance: "20–40 km",
-    bestSeason: "March – June, September – November",
-    location: "Munsiyari – Khalia Loop",
-    highlights: [
-      "Panoramic mountain highway riding",
-      "Village-to-village routes",
-      "Panchachuli views on descent",
-      "Support vehicle included",
-    ],
-    description:
-      "Experience the thrill of cycling through Himalayan terrain on high-altitude routes with jaw-dropping views. Suitable for intermediate cyclists, the routes wind through forests, villages, and mountain passes.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d50b361e-88d5-4d7e-8716-6f1ee6941dd6-scaled-himalayan-cycling-1.webp",
-    category: "adventure",
-    isPopular: true,
-  },
-  {
-    id: "river-camping",
-    name: "Ramganga River Camping",
-    slug: "river-camping",
-    tagline: "Sleep to the sound of glacial waters",
-    difficulty: "Easy",
-    duration: "2–3 Days",
-    bestSeason: "March – June, September – November",
-    location: "Ramganga River, Munsiyari",
-    highlights: [
-      "Riverside tent camp",
-      "Mountain trout fishing",
-      "Bonfire evenings",
-      "Glacial river swimming",
-    ],
-    description:
-      "Camp on the banks of the pristine Ramganga river as it rushes down from Himalayan glaciers. Fish for trout, swim in crystal-clear pools, and spend evenings around a crackling fire under a star-filled sky.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/29038f8a-40b2-4d3d-9808-a5b9aa443cf6-scaled-river-camping.webp",
-    category: "adventure",
     isPopular: true,
   },
 
+  // 4. Gaushala and medicine farm visit
   {
-    id: "night-safari",
-    name: "Night-Jungle Safari",
-    slug: "night-safari",
-    tagline: "The mountain awakens after dark",
-    difficulty: "Easy",
-    duration: "Evening",
-    bestSeason: "March – November",
-    location: "Forest Fringe Zones",
-    highlights: [
-      "Nocturnal wildlife observation",
-      "Leopard territory walks",
-      "Stargazing at altitude",
-      "Expert naturalist guide",
-    ],
-    description:
-      "The Himalayan night holds a different magic. Join our expert naturalists after dusk to encounter owls, civets, porcupines, and perhaps the elusive common leopard—all while the Milky Way blazes overhead.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a0802c74-5a6e-4926-b586-3202851a9940-scaled-night-safari.webp",
-    category: "adventure",
-  },
-
-  // ── Cultural Experiences ───────────────────────────────────────────────────
-  {
-    id: "village-heritage",
-    name: "Village Heritage Tour",
-    slug: "village-heritage",
-    tagline: "Living culture, living history",
-    difficulty: "Easy",
-    duration: "Full Day",
-    bestSeason: "Year Round",
-    location: "Kumaoni Villages",
-    highlights: [
-      "Traditional stone architecture",
-      "Local craft demonstrations",
-      "Home-cooked meal experience",
-      "Cultural performance",
-    ],
-    description:
-      "Walk through centuries-old Kumaoni villages where traditional stone houses, ancient temples, and artisan communities preserve a way of life unchanged for generations. Share a meal with a local family.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4f6a2f86-a8fc-441a-a79d-657e92ca7a5e-scaled-village-heritage-tour.webp",
-    category: "cultural",
-    isPopular: true,
-  },
-  {
-    id: "gaushala-visit",
-    name: "Gaushala & medicinal farm visit",
-    slug: "gaushala-visit",
+    id: "gaushala-and-medicine-farm-visit",
+    name: "Gaushala and medicine farm visit",
+    slug: "gaushala-and-medicine-farm-visit",
+    aliases: ["gaushala-visit"],
     tagline: "The heartbeat of Himalayan village life",
     difficulty: "Easy",
     duration: "Half Day",
@@ -274,11 +130,86 @@ export const treks: Trek[] = [
     category: "cultural",
   },
 
-  // ── Major Himalayan Treks ──────────────────────────────────────────────────
+  // 5. Mountain cycling
   {
-    id: "chandika-ghat",
+    id: "mountain-cycling",
+    name: "Mountain cycling",
+    slug: "mountain-cycling",
+    tagline: "Conquer mountain roads on two wheels",
+    difficulty: "Moderate",
+    duration: "Full Day",
+    distance: "20–40 km",
+    bestSeason: "March – June, September – November",
+    location: "Munsiyari – Khalia Loop",
+    highlights: [
+      "Panoramic mountain highway riding",
+      "Village-to-village routes",
+      "Panchachuli views on descent",
+      "Support vehicle included",
+    ],
+    description:
+      "Experience the thrill of cycling through Himalayan terrain on high-altitude routes with jaw-dropping views. Suitable for intermediate cyclists, the routes wind through forests, villages, and mountain passes.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/aadc0bc3-dfb1-448e-aace-a05fcd7df376-scaled-mountain-cycling.webp",
+    category: "adventure",
+    isPopular: true,
+  },
+
+  // 6. Ram Ganga River camping
+  {
+    id: "ram-ganga-river-camping",
+    name: "Ram Ganga River camping",
+    slug: "ram-ganga-river-camping",
+    aliases: ["river-camping"],
+    tagline: "Sleep to the sound of glacial waters",
+    difficulty: "Easy",
+    duration: "2–3 Days",
+    bestSeason: "March – June, September – November",
+    location: "Ramganga River, Munsiyari",
+    highlights: [
+      "Riverside tent camp",
+      "Mountain trout fishing",
+      "Bonfire evenings",
+      "Glacial river swimming",
+    ],
+    description:
+      "Camp on the banks of the pristine Ramganga river as it rushes down from Himalayan glaciers. Fish for trout, swim in crystal-clear pools, and spend evenings around a crackling fire under a star-filled sky.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/29038f8a-40b2-4d3d-9808-a5b9aa443cf6-scaled-river-camping.webp",
+    category: "adventure",
+    isPopular: true,
+  },
+
+  // 7. Night Jungle Safari
+  {
+    id: "night-jungle-safari",
+    name: "Night Jungle Safari",
+    slug: "night-jungle-safari",
+    aliases: ["night-safari"],
+    tagline: "The mountain awakens after dark",
+    difficulty: "Easy",
+    duration: "Evening",
+    bestSeason: "March – November",
+    location: "Forest Fringe Zones",
+    highlights: [
+      "Nocturnal wildlife observation",
+      "Leopard territory walks",
+      "Stargazing at altitude",
+      "Expert naturalist guide",
+    ],
+    description:
+      "The Himalayan night holds a different magic. Join our expert naturalists after dusk to encounter owls, civets, porcupines, and perhaps the elusive common leopard—all while the Milky Way blazes overhead.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a0802c74-5a6e-4926-b586-3202851a9940-scaled-night-safari.webp",
+    category: "adventure",
+  },
+
+  // 8. Chandika Ghat Trek
+  {
+    id: "chandika-ghat-trek",
     name: "Chandika Ghat Trek",
-    slug: "chandika-ghat",
+    slug: "chandika-ghat-trek",
+    aliases: ["chandika-ghat"],
     tagline: "Sacred forests and ancient temples",
     difficulty: "Moderate",
     duration: "2 Days",
@@ -312,10 +243,63 @@ export const treks: Trek[] = [
       },
     ],
   },
+
+  // 9. Kapileshwar Mahadev cave temple trek
   {
-    id: "thal-kedar",
-    name: "Thal Kedar Trek",
-    slug: "thal-kedar",
+    id: "kapileshwar-mahadev-cave-temple-trek",
+    name: "Kapileshwar Mahadev cave temple trek",
+    slug: "kapileshwar-mahadev-cave-temple-trek",
+    tagline: "Sacred subterranean shrine hidden in Himalayan cliffs",
+    difficulty: "Moderate",
+    duration: "1–2 Days",
+    distance: "8–12 km",
+    maxAltitude: "2,100m",
+    bestSeason: "Year Round",
+    location: "Pithoragarh Region",
+    highlights: [
+      "Ancient subterranean cave temple",
+      "Natural stalactite Shiva lingams",
+      "Scenic valley and cliffside trails",
+      "Rich spiritual heritage of Kumaon",
+    ],
+    description:
+      "A spiritual journey to the sacred Kapileshwar Mahadev cave temple, dedicated to Lord Shiva. Hidden within limestone cliffs, this ancient natural cave features subterranean formations and sacred stalactites, accessible via scenic mountain trails through pine forests.",
+    image:
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80&auto=format&fit=crop",
+    category: "major",
+  },
+
+  // 10. Kotvi Devi cave temple trail
+  {
+    id: "kotvi-devi-cave-temple-trail",
+    name: "Kotvi Devi cave temple trail",
+    slug: "kotvi-devi-cave-temple-trail",
+    tagline: "Pilgrimage to the revered cliffside goddess shrine",
+    difficulty: "Easy",
+    duration: "Half Day",
+    distance: "4–6 km",
+    maxAltitude: "1,900m",
+    bestSeason: "Year Round",
+    location: "Kumaon Hills",
+    highlights: [
+      "Sacred cliffside cave temple",
+      "Panoramas of Kumaon valleys",
+      "Rhododendron and oak tree trail",
+      "Local folklore and traditions",
+    ],
+    description:
+      "Walk along a picturesque forest trail to the sacred Kotvi Devi cave temple. Perched high on a ridge overlooking lush Kumaon valleys, this traditional shrine is deeply revered by local villagers and offers a quiet, spiritual nature walk.",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
+    category: "cultural",
+  },
+
+  // 11. Thalkedar Trek
+  {
+    id: "thalkedar-trek",
+    name: "Thalkedar Trek",
+    slug: "thalkedar-trek",
+    aliases: ["thal-kedar"],
     tagline: "The hidden Shiva shrine of Kumaon",
     difficulty: "Moderate",
     duration: "3 Days",
@@ -331,7 +315,8 @@ export const treks: Trek[] = [
     ],
     description:
       "An offbeat pilgrimage trek to an ancient Shiva temple set in a stunning high-altitude meadow. The route passes through oak forests, alpine pastures, and glacial moraine with views of the Panchachuli and Nanda Devi groups.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/36b5aa64-6160-4a09-8eee-f0b2dc23d1a5-scaled-thal-kedar-trek.webp",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/36b5aa64-6160-4a09-8eee-f0b2dc23d1a5-scaled-thal-kedar-trek.webp",
     category: "major",
     itinerary: [
       {
@@ -354,10 +339,13 @@ export const treks: Trek[] = [
       },
     ],
   },
+
+  // 12. Dhwaj Temple Trek
   {
-    id: "dhwaj-temple",
+    id: "dhwaj-temple-trek",
     name: "Dhwaj Temple Trek",
-    slug: "dhwaj-temple",
+    slug: "dhwaj-temple-trek",
+    aliases: ["dhwaj-temple"],
     tagline: "Above the clouds, where flags touch sky",
     difficulty: "Moderate",
     duration: "2 Days",
@@ -373,13 +361,17 @@ export const treks: Trek[] = [
     ],
     description:
       "Named for its fluttering dhwaj (flags), this temple perched on a forested hilltop offers one of the finest sunrise views in the Munsiyari region. A rewarding moderate trek with deep cultural significance.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/0028597f-8c77-44d9-af2f-8becf794e97e-scaled-dhwaj-temple-trek.webp",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/0028597f-8c77-44d9-af2f-8becf794e97e-scaled-dhwaj-temple-trek.webp",
     category: "major",
   },
+
+  // 13. Khalia Top Trek
   {
-    id: "khaliya-top",
-    name: "Khaliya Top Trek",
-    slug: "khaliya-top",
+    id: "khalia-top-trek",
+    name: "Khalia Top Trek",
+    slug: "khalia-top-trek",
+    aliases: ["khaliya-top"],
     tagline: "The crown of Munsiyari",
     difficulty: "Moderate",
     duration: "2–3 Days",
@@ -394,7 +386,7 @@ export const treks: Trek[] = [
       "Snow in winter",
     ],
     description:
-      "Khaliya Top is perhaps the most celebrated viewpoint in Kumaon. The approach through dense rhododendron forests opens to a vast alpine meadow with an unobstructed 360° view of Panchachuli (5 peaks), Nanda Devi, and the entire Kumaon Himalayan arc.",
+      "Khalia Top is perhaps the most celebrated viewpoint in Kumaon. The approach through dense rhododendron forests opens to a vast alpine meadow with an unobstructed 360° view of Panchachuli (5 peaks), Nanda Devi, and the entire Kumaon Himalayan arc.",
     image:
       "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d71e5529-dec8-417a-af68-fab37f0015ae-scaled-khalia-top-trek.webp",
     category: "major",
@@ -414,10 +406,40 @@ export const treks: Trek[] = [
       },
     ],
   },
+
+  // 14. Milam Glacier Trek
   {
-    id: "adi-kailash",
-    name: "Adi Kailash & Om Parvat Trek",
-    slug: "adi-kailash",
+    id: "milam-glacier-trek",
+    name: "Milam Glacier Trek",
+    slug: "milam-glacier-trek",
+    aliases: ["mila-glacier"],
+    tagline: "Touch a living river of ancient ice",
+    difficulty: "Strenuous",
+    duration: "6–8 Days",
+    distance: "70–90 km",
+    maxAltitude: "4,900m",
+    bestSeason: "May – June, September",
+    location: "Munsiyari",
+    highlights: [
+      "Active glacier exploration",
+      "High-altitude moraines",
+      "Remote wilderness camping",
+      "Technical mountain terrain",
+    ],
+    description:
+      "The Milam Glacier trek is a raw, strenuous adventure into the high Himalayan zone where the Panchachuli glaciers originate. Expect demanding ascents, glacial river crossings, and the profound silence of absolute wilderness.",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/86737e32-02f5-4782-a098-962015e5382b-scaled-milam-glacier-trek.webp",
+    category: "major",
+    isPopular: true,
+  },
+
+  // 15. Adi Kailash Om Parvat Trek
+  {
+    id: "adi-kailash-om-parvat-trek",
+    name: "Adi Kailash Om Parvat Trek",
+    slug: "adi-kailash-om-parvat-trek",
+    aliases: ["adi-kailash"],
     tagline: "The divine abode in the trans-Himalaya",
     difficulty: "Challenging",
     duration: "7–10 Days",
@@ -433,7 +455,8 @@ export const treks: Trek[] = [
     ],
     description:
       "One of the most spiritually significant treks in the Indian Himalayas. Adi Kailash mirrors the shape of Mount Kailash in Tibet, while Om Parvat carries a naturally formed Om symbol in snow—a sight that has drawn pilgrims for centuries.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f22a5ca5-f78c-4727-b9c3-66d3198b1350-scaled-adi-kailash-om-parvat-trek.webp",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f22a5ca5-f78c-4727-b9c3-66d3198b1350-scaled-adi-kailash-om-parvat-trek.webp",
     category: "major",
     isPopular: true,
     itinerary: [
@@ -463,10 +486,13 @@ export const treks: Trek[] = [
       },
     ],
   },
+
+  // 16. Panchachuli Base Camp Trek
   {
-    id: "panchachuli-base-camp",
+    id: "panchachuli-base-camp-trek",
     name: "Panchachuli Base Camp Trek",
-    slug: "panchachuli-base-camp",
+    slug: "panchachuli-base-camp-trek",
+    aliases: ["panchachuli-base-camp"],
     tagline: "At the feet of five eternal flames",
     difficulty: "Challenging",
     duration: "7–9 Days",
@@ -487,144 +513,39 @@ export const treks: Trek[] = [
     category: "major",
     isPopular: true,
   },
-  {
-    id: "narayan-ashram",
-    name: "Narayan Ashram Visit",
-    slug: "narayan-ashram",
-    tagline: "Serenity at the confluence of worlds",
-    difficulty: "Easy",
-    duration: "2–3 Days",
-    maxAltitude: "2,734m",
-    bestSeason: "March – November",
-    location: "Sarmoli, Pithoragarh",
-    highlights: [
-      "Historic mountain ashram",
-      "Organic ashram gardens",
-      "Meditation & yoga sessions",
-      "Trans-Himalayan border views",
-    ],
-    description:
-      "Founded in 1936 by Sri Narayan Swami, this high-altitude ashram at Sarmoli offers a profound experience of Himalayan spirituality. Set amid oak forests with views toward Tibet, it remains a centre for meditation, education, and simple living.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ffa9b132-9ba3-44f1-8727-6fe6b2afef61-scaled-narayan-ashram.webp",
-    category: "major",
-  },
-  {
-    id: "mila-glacier",
-    name: "Milam Glacier Trek",
-    slug: "mila-glacier",
-    tagline: "Touch a living river of ancient ice",
-    difficulty: "Strenuous",
-    duration: "6–8 Days",
-    distance: "70–90 km",
-    maxAltitude: "4,900m",
-    bestSeason: "May – June, September",
-    location: "Munsiyari",
-    highlights: [
-      "Active glacier exploration",
-      "High-altitude moraines",
-      "Remote wilderness camping",
-      "Technical mountain terrain",
-    ],
-    description:
-      "The Mila Glacier trek is a raw, strenuous adventure into the high Himalayan zone where the Panchachuli glaciers originate. Expect demanding ascents, glacial river crossings, and the profound silence of absolute wilderness.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/86737e32-02f5-4782-a098-962015e5382b-scaled-milam-glacier-trek.webp",
-    category: "major",
-    isPopular: true,
-  },
-  {
-    id: "nanda-devi-base-camp",
-    name: "Nanda Devi Base Camp Trek",
-    slug: "nanda-devi-base-camp",
-    tagline: "India's highest mountain, face to face",
-    difficulty: "Strenuous",
-    duration: "10–12 Days",
-    distance: "100–120 km",
-    maxAltitude: "5,200m",
-    bestSeason: "May – June, September",
-    location: "Milam Valley, Pithoragarh",
-    highlights: [
-      "Nanda Devi (7,816m) close views",
-      "Milam Glacier crossing",
-      "Remote Johar Valley culture",
-      "Himalayan Wildlife Sanctuary",
-    ],
-    description:
-      "Nanda Devi, at 7,816m, is India's second-highest peak and the country's highest entirely within its borders. The base camp approach through Milam Valley is a landmark Himalayan expedition combining wilderness, culture, and high-altitude grandeur.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea85b896-ebcc-49e9-a660-3d787cc10515-scaled-nanda-devi-base-camp.webp",
-    category: "major",
-    isPopular: true,
-  },
-  {
-    id: "nagini-dhura",
-    name: "Nagini Dhura Trek",
-    slug: "nagini-dhura",
-    tagline: "A serpentine ridge above the clouds",
-    difficulty: "Challenging",
-    duration: "5–7 Days",
-    distance: "55–70 km",
-    maxAltitude: "4,200m",
-    bestSeason: "May – June, September – October",
-    location: "Munsiyari Region",
-    highlights: [
-      "Dramatic ridge camping",
-      "Panchachuli Group views",
-      "Wild flower bugyals (meadows)",
-      "Offbeat, uncrowded trail",
-    ],
-    description:
-      "One of Munsiyari's best-kept secrets, the Nagini Dhura ridge offers dramatic camping at altitude with sweeping views of the Panchachuli range. The approach through pristine bugyals makes this one of the most scenic treks in Kumaon.",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/0549eac5-b0af-4824-98f7-592f1b8aed5b-scaled-nagini-dhura-trek.webp",
-    category: "major",
-  },
-  {
-    id: "brijganga-pass",
-    name: "Brijganga Pass Trek",
-    slug: "brijganga-pass",
-    tagline: "Cross the high wilderness on ancient trails",
-    difficulty: "Strenuous",
-    duration: "8–10 Days",
-    distance: "85–100 km",
-    maxAltitude: "4,800m",
-    bestSeason: "June, September",
-    location: "Kumaon High Ranges",
-    highlights: [
-      "Remote high-altitude pass",
-      "Panoramic trans-Himalayan views",
-      "Ancient trade route",
-      "Glacial lake camping",
-    ],
-    description:
-      "The Brijganga Pass is an ancient trans-Himalayan route connecting remote valleys. The trek combines dense forest ascents, high-altitude meadows, glacial lake camps, and a technically demanding pass crossing in pristine wilderness.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/092a1ca0-e2ba-4751-99f0-25a0ab0f8e3f-scaled-brij-ganga-pass.webp",
-    category: "major",
-  },
-  {
-    id: "Himalayan-Crop-Discovery",
-    name: "Himalayan Crop Discovery",
-    slug: "Himalayan-Crop",
-    tagline: "Discover the crops that grow in the heart of the Himalayas.",
-    difficulty: "Strenuous",
-    duration: "2-3 Days",
-    distance: "85–100 km",
-    maxAltitude: "4,800m",
-    bestSeason: "June, September",
-    location: "Kumaon High Ranges",
-    highlights: [
-      "Remote high-altitude pass",
-      "Panoramic trans-Himalayan views",
-      "Ancient trade route",
-      "Glacial lake camping",
-    ],
-    description:
-      "Explore traditional Himalayan farming as you walk through vibrant fields and discover the crops, herbs, and vegetables grown in the mountain communities. Learn about local farming practices, seasonal harvests, and the connection between Himalayan soil, culture, and everyday life.",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/147a4784-9785-40be-bac4-f7693b24ed72-scaled-himalayan-crop-discovery.webp",
-    category: "major",
-  },
 ];
+
+// Preserved entry for operator confirmation (Requirement 3: Narayan Ashram)
+export const narayanAshramPending: Trek = {
+  id: "narayan-ashram",
+  name: "Narayan Ashram Visit",
+  slug: "narayan-ashram",
+  tagline: "Serenity at the confluence of worlds",
+  difficulty: "Easy",
+  duration: "2–3 Days",
+  maxAltitude: "2,734m",
+  bestSeason: "March – November",
+  location: "Sarmoli, Pithoragarh",
+  highlights: [
+    "Historic mountain ashram",
+    "Organic ashram gardens",
+    "Meditation & yoga sessions",
+    "Trans-Himalayan border views",
+  ],
+  description:
+    "Founded in 1936 by Sri Narayan Swami, this high-altitude ashram at Sarmoli offers a profound experience of Himalayan spirituality. Set amid oak forests with views toward Tibet, it remains a centre for meditation, education, and simple living.",
+  image:
+    "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ffa9b132-9ba3-44f1-8727-6fe6b2afef61-scaled-narayan-ashram.webp",
+  category: "major",
+};
 
 export const popularTreks = treks.filter((t) => t.isPopular);
 export const treksByCategory = (cat: TrekCategory) =>
   treks.filter((t) => t.category === cat);
+
+export function getTrekBySlug(slug: string): Trek | undefined {
+  const found = treks.find((t) => t.slug === slug || t.aliases?.includes(slug));
+  if (found) return found;
+  if (narayanAshramPending.slug === slug) return narayanAshramPending;
+  return undefined;
+}

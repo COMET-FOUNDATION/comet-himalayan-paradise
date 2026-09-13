@@ -6,19 +6,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     Flower2,
-    Sun,
-    Moon,
-    Heart,
-    Wind,
-    Leaf,
     Flame,
-    Book,
-    Users,
-    Star,
     CheckCircle2,
     ArrowRight,
     Send,
-    MapPin,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
@@ -52,95 +43,32 @@ const supportCategories = [
             "Sponsor for infrastructure setup in Gaushala",
         ],
     },
+    {
+        title: "Isht Dev Sthal",
+        icon: "🪔",
+        items: [
+            "Sponsor for infrastructure setup in Isht Dev Sthal",
+        ],
+    },
 ];
 
 const spaces = [
     {
         title: "Comet Services",
-        description: "Concierge support for travel, stay, and on-ground logistics — handled end-to-end by the Comet team.",
+        description: "Helping underprivileged students from remote places in their career development.",
         image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/32308adc-0e58-4a98-acff-3731f0ad7327-scaled-comet-services-2.webp",
     },
     {
         title: "Gaushala",
-        description: "A traditional cattle farm woven into daily life at CHP, reflecting our commitment to rural Himalayan heritage.",
+        description: "Providing food shelter and protection to abandoned cows in Gaushala village. ",
         image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9d1fe41e-9c6c-405f-8b10-fe4d7c57e661-scaled-gaushala-png.webp",
     },
     {
         title: "Isht Dev Sthal",
-        description: "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
+        description: "One Sacred Premise. Many Deities. One Living Heritage.A spiritual initiative to preserve Uttarakhand’s traditions by bringing together temples and thaans of diverse Isht-Devta and deities, creating a meaningful destination for pilgrims, devotees and generations to come.",
+
         image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a3c6200-6934-459f-8c9e-b8c348d74708-scaled-isht-dev-sthal.webp",
     },
-];
-
-const pillars = [
-    {
-        icon: Sun,
-        title: "Daily Yoga & Pranayama",
-        description:
-            "Guided sunrise yoga on open mountain decks looking towards Panchachuli, followed by guided pranayama and breathwork with trained Himalayan instructors.",
-    },
-    {
-        icon: Moon,
-        title: "Meditation & Mindfulness",
-        description:
-            "Structured morning and evening meditation sessions in our dedicated silence hall, incorporating Vipassana, nature-sound therapy, and guided visualisation.",
-    },
-    {
-        icon: Flame,
-        title: "Isht Dev Sthal & Sacred Fire",
-        description:
-            "Our traditional Isht Dev Sthal hosts daily Agni Puja, Havans, and Kumaoni spiritual ceremonies — rooted in centuries of mountain devotion.",
-    },
-    {
-        icon: Leaf,
-        title: "Gaushala & Ayurvedic Farm",
-        description:
-            "Interact with gentle native Pahadi cattle, participate in Gobar Puja, and collect medicinal herbs from our living Ayurvedic garden.",
-    },
-    {
-        icon: Wind,
-        title: "Forest Bathing & Nature Therapy",
-        description:
-            "Guided Shinrin-Yoku (forest bathing) trails through pine and oak groves. Let the Himalayan birdsong, clean air, and natural soundscapes restore your nervous system.",
-    },
-    {
-        icon: Heart,
-        title: "Satsang & Community Evenings",
-        description:
-            "Campfire satsangs, kirtan evenings, storytelling circles, and Kumaoni folk music nights that foster genuine human connection under the stars.",
-    },
-];
-
-const retreatPrograms = [
-    {
-        title: "Weekend Detox & Reset",
-        duration: "2 Nights / 3 Days",
-        desc: "Digital detox, daily yoga, guided meditation, Sattvic meals, and a Himalayan forest walk to reset your mind and body.",
-        includes: ["Morning & evening yoga", "2 meditation sessions/day", "Sattvic organic meals", "Forest therapy walk", "Campfire satsang"],
-        image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop",
-    },
-    {
-        title: "7-Day Inner Renewal",
-        duration: "7 Nights / 8 Days",
-        desc: "An immersive week of Himalayan healing — yoga, pranayama, Ayurveda, Havan, silent forest walks, and personalised one-on-one guidance.",
-        includes: ["Daily yoga & pranayama", "Havan & Agni Puja ceremony", "Ayurvedic consultation", "Silent nature trail daily", "Gaushala & farm immersion", "Group satsang evenings"],
-        image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80&auto=format&fit=crop",
-        featured: true,
-    },
-    {
-        title: "Purpose & Clarity Retreat",
-        duration: "14 Nights / 15 Days",
-        desc: "A deep-dive program for individuals seeking direction, clarity, and a renewed sense of purpose — combining silence, reflection, and Himalayan wisdom.",
-        includes: ["Personalised guidance sessions", "Purpose journaling workshop", "Sunrise peak treks", "Full Ayurvedic wellness plan", "Group & private meditation", "Cultural immersion visits"],
-        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80&auto=format&fit=crop",
-    },
-];
-
-const traditions = [
-    { label: "Isht Dev Sthal", desc: "CHP's sacred deity space with daily Agni Puja" },
-    { label: "Gaushala", desc: "Native Pahadi cattle sanctuary integral to CHP life" },
-    { label: "Kumaoni Havan", desc: "Traditional fire ceremonies with Vedic chanting" },
-    { label: "Himalayan Herb Garden", desc: "Living Ayurvedic garden of 40+ medicinal plants" },
 ];
 
 export default function PurposeDrivenSpacePage() {
@@ -164,50 +92,11 @@ export default function PurposeDrivenSpacePage() {
             {/* ── Hero ── */}
             <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80&auto=format&fit=crop"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/917e43c6-2650-4cca-b5c1-3c7ccd7fa9bc-purpose-driven-space.png"
                     alt="Purpose Driven Space at CHP"
                     fill priority className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/75" />
-
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-5"
-                    >
-                        <Flower2 className="w-3.5 h-3.5" />
-                        Spiritual & Wellness Sanctuary
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                        className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight max-w-4xl font-serif"
-                    >
-                        Purpose Driven Space <br />
-                        <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-emerald-300 bg-clip-text text-transparent">
-                            Find Your Centre
-                        </span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-                        className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed"
-                    >
-                        A sacred Himalayan environment for yoga, meditation, Ayurveda, spiritual ceremony, and deep inner renewal — far from the noise of modern life.
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-                        className="mt-8 flex flex-wrap gap-4 justify-center"
-                    >
-                        <a href="#retreats" className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full flex items-center gap-2 shadow-lg transition-all">
-                            View Retreat Programs <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a href="#enquire" className="bg-white/10 hover:bg-white/20 text-white font-medium px-7 py-3.5 rounded-full border border-white/30 backdrop-blur-sm transition-all">
-                            Enquire Now
-                        </a>
-                    </motion.div>
-                </div>
             </section>
 
             {/* ── Philosophy ── */}
@@ -218,93 +107,6 @@ export default function PurposeDrivenSpacePage() {
                         &ldquo;The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen.&rdquo;
                     </blockquote>
                     <p className="mt-5 text-amber-400 font-semibold text-sm">— CHP Himalayan Paradise</p>
-                </div>
-            </section>
-
-            {/* ── Wellness Pillars ── */}
-            <section className="py-20 lg:py-28 bg-stone-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Core Practices"
-                        title="Pillars of the Purpose Driven Space"
-                        subtitle="Six integrated practices woven into daily life at CHP — each designed to restore balance, awareness, and inner clarity."
-                    />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {pillars.map((p) => {
-                            const Icon = p.icon;
-                            return (
-                                <StaggerItem key={p.title}>
-                                    <div className="p-7 rounded-2xl bg-white border border-amber-100 hover:shadow-lg hover:shadow-amber-900/5 transition-all h-full">
-                                        <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 mb-4">
-                                            <Icon className="w-5 h-5" />
-                                        </div>
-                                        <h3 className="text-lg font-bold text-slate-800 mb-2">{p.title}</h3>
-                                        <p className="text-slate-500 text-sm leading-relaxed">{p.description}</p>
-                                    </div>
-                                </StaggerItem>
-                            );
-                        })}
-                    </StaggerContainer>
-                </div>
-            </section>
-
-            {/* ── Sacred Traditions ── */}
-            <section className="py-16 bg-amber-950/10 border-y border-amber-200/40">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {traditions.map((t) => (
-                            <div key={t.label} className="text-center p-5 rounded-2xl bg-white border border-amber-100">
-                                <div className="w-10 h-10 rounded-full bg-amber-100 mx-auto flex items-center justify-center text-amber-700 mb-3">
-                                    <Flame className="w-5 h-5" />
-                                </div>
-                                <h4 className="font-bold text-slate-800 text-sm mb-1">{t.label}</h4>
-                                <p className="text-slate-500 text-xs leading-snug">{t.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ── Retreat Programs ── */}
-            <section id="retreats" className="py-20 lg:py-28 bg-white scroll-mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Retreat Programs"
-                        title="Curated Himalayan Retreat Journeys"
-                        subtitle="Choose a program suited to your time, intention, and depth of practice."
-                    />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {retreatPrograms.map((r, i) => (
-                            <StaggerItem key={r.title}>
-                                <div className={`relative flex flex-col h-full rounded-2xl overflow-hidden border transition-all hover:shadow-xl hover:-translate-y-1 ${r.featured ? "border-amber-500 shadow-lg shadow-amber-900/10" : "border-slate-200"}`}>
-                                    {r.featured && (
-                                        <div className="absolute top-4 right-4 z-10 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Most Popular</div>
-                                    )}
-                                    <div className="relative h-52 overflow-hidden">
-                                        <Image src={r.image} alt={r.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                                        <div className="absolute bottom-4 left-4 text-amber-300 font-semibold text-xs">{r.duration}</div>
-                                    </div>
-                                    <div className="p-6 flex-1 flex flex-col justify-between bg-white">
-                                        <div>
-                                            <h3 className="text-xl font-bold text-slate-800 mb-2">{r.title}</h3>
-                                            <p className="text-slate-500 text-sm leading-relaxed mb-4">{r.desc}</p>
-                                            <ul className="space-y-2 mb-5">
-                                                {r.includes.map((inc) => (
-                                                    <li key={inc} className="flex items-center gap-2 text-xs text-slate-600">
-                                                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />{inc}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                        <a href="#enquire" className={`w-full text-center py-3 rounded-xl font-semibold text-sm transition-colors ${r.featured ? "bg-amber-600 hover:bg-amber-700 text-white" : "bg-stone-100 hover:bg-stone-200 text-slate-800"}`}>
-                                            Enquire for {r.title}
-                                        </a>
-                                    </div>
-                                </div>
-                            </StaggerItem>
-                        ))}
-                    </StaggerContainer>
                 </div>
             </section>
 
@@ -374,19 +176,20 @@ export default function PurposeDrivenSpacePage() {
                         title="Purpose Driven Space"
                         subtitle="CHP is more than a destination—it is a community built around meaningful initiatives. From serving abandoned cows and promoting spiritual well-being to empowering underprivileged students, every space at CHP reflects a deeper purpose that creates lasting social impact."
                     />
-                    <StaggerContainer className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6" staggerDelay={0.08}>
-                        {spaces.map((space) => (
+                    <StaggerContainer className="mt-14 flex flex-col gap-10" staggerDelay={0.08}>
+                        {spaces.map((space, i) => (
                             <StaggerItem key={space.title}>
                                 <motion.article
-                                    whileHover={{ y: -5 }}
+                                    whileHover={{ y: -3 }}
                                     transition={{ duration: 0.25 }}
-                                    className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+                                    className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} gap-0 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/10 transition-shadow duration-300`}
                                 >
-                                    <Image src={space.image} alt={space.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 hover:scale-110" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                                    <div className="absolute bottom-0 left-0 right-0 p-5">
-                                        <h3 className="text-white font-bold text-xl mb-1.5">{space.title}</h3>
-                                        <p className="text-white/65 text-sm leading-relaxed">{space.description}</p>
+                                    <div className="relative w-full md:w-1/2 h-[280px] md:h-[420px]">
+                                        <Image src={space.image} alt={space.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 hover:scale-105" />
+                                    </div>
+                                    <div className="w-full md:w-1/2 bg-white flex flex-col justify-center px-8 py-10">
+                                        <h3 className="text-slate-800 font-bold text-2xl mb-3">{space.title}</h3>
+                                        <p className="text-slate-500 text-base leading-relaxed">{space.description}</p>
                                     </div>
                                 </motion.article>
                             </StaggerItem>
@@ -400,30 +203,40 @@ export default function PurposeDrivenSpacePage() {
                             title="Ways to Support These Spaces"
                             subtitle="Your contribution — big or small — helps sustain these meaningful initiatives and creates lasting impact in the Himalayan community."
                         />
-                        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            {supportCategories.map((cat) => (
-                                <motion.div
-                                    key={cat.title}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: "-60px" }}
-                                    transition={{ duration: 0.5 }}
-                                    className="bg-slate-50 border border-slate-100 rounded-2xl p-6"
-                                >
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <span className="text-2xl">{cat.icon}</span>
-                                        <h3 className="text-slate-800 font-bold text-lg">{cat.title}</h3>
-                                    </div>
-                                    <ul className="space-y-2.5">
-                                        {cat.items.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-2.5 text-slate-600 text-sm">
-                                                <span className="mt-1 w-4 h-4 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            ))}
+                        <div className="mt-10 flex flex-col lg:flex-row gap-8 items-start">
+                            <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6">
+                                {supportCategories.map((cat) => (
+                                    <motion.div
+                                        key={cat.title}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, margin: "-60px" }}
+                                        transition={{ duration: 0.5 }}
+                                        className="bg-slate-50 border border-slate-100 rounded-2xl p-6"
+                                    >
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <span className="text-2xl">{cat.icon}</span>
+                                            <h3 className="text-slate-800 font-bold text-lg">{cat.title}</h3>
+                                        </div>
+                                        <ul className="space-y-2.5">
+                                            {cat.items.map((item, i) => (
+                                                <li key={i} className="flex items-start gap-2.5 text-slate-600 text-sm">
+                                                    <span className="mt-1 w-4 h-4 rounded-full bg-orange-100 text-orange-500 flex items-center justify-center text-xs font-bold shrink-0">{i + 1}</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </motion.div>
+                                ))}
+                            </div>
+                            <div className="relative w-full lg:w-[420px] h-[500px] lg:h-auto lg:self-stretch rounded-2xl overflow-hidden shrink-0">
+                                <Image
+                                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/635ae96e-9a39-4d71-af14-c2b1940789d7-img-20260909-192037.jpg"
+                                    alt="Ways to Support"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
                     </div>
 

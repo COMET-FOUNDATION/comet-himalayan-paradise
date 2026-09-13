@@ -24,12 +24,14 @@ const navLinks = [
 // Secondary links — shown in the "More" dropdown on desktop and a grouped section on mobile
 const moreLinks = [
   { href: "/growth-partner", label: "CHP Partnership" },
+  { href: "/promotions", label: "Promotions" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/health-retreat-program", label: "Health retreat program" },
-  { href: "/marking-and-promotion-strategy", label: "Marking and Promotion Strategy" },
-  { href: "/business-investment", label: "Business & Investment" },
+  { href: "/second-home", label: "Second Home" },
+  { href: "/business-investment", label: "Investment Opportunities" },
   { href: "/purpose-driven-space", label: "Purpose Driven Space" },
+  { href: "/health-retreat-program", label: "Health Retreat Program" },
   { href: "/chp-enclave", label: "CHP Enclave" },
+  { name: "Business Proposals", href: "/business-proposals" },
 ];
 
 const socialLinks = [

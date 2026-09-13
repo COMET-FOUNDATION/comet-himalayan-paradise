@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { treks } from "@/data/treks";
+import { treks, getTrekBySlug } from "@/data/treks";
 import { Clock, MapPin, TrendingUp, Calendar, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -10,14 +10,21 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return treks.map((t) => ({ slug: t.slug }));
+  const params: { slug: string }[] = [];
+  treks.forEach((t) => {
+    params.push({ slug: t.slug });
+    if (t.aliases) {
+      t.aliases.forEach((alias) => params.push({ slug: alias }));
+    }
+  });
+  return params;
 }
 
 const BASE_URL = "https://comet-himalayan-paradise.vercel.app";
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const trek = treks.find((t) => t.slug === slug);
+  const trek = getTrekBySlug(slug);
   if (!trek) return {};
   return {
     title: trek.name,
@@ -41,7 +48,7 @@ const difficultyColor: Record<string, string> = {
 
 export default async function TrekDetailPage({ params }: Props) {
   const { slug } = await params;
-  const trek = treks.find((t) => t.slug === slug);
+  const trek = getTrekBySlug(slug);
   if (!trek) notFound();
 
   const jsonLd = {
