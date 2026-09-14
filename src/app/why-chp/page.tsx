@@ -25,6 +25,7 @@ const features = [
         description:
             "Escape the sweltering plains to pleasant mountain climates with refreshing alpine breeze all summer long.",
         color: "bg-amber-50 text-amber-600",
+        surface: "bg-amber-50/70",
     },
     {
         icon: Shield,
@@ -32,6 +33,7 @@ const features = [
         description:
             "Certified guides, comprehensive safety protocols, and emergency response systems across all treks and camps.",
         color: "bg-sky-50 text-sky-600",
+        surface: "bg-sky-50/70",
     },
     {
         icon: Map,
@@ -39,6 +41,7 @@ const features = [
         description:
             "Our naturalists, trekking guides, and cultural experts bring decades of local knowledge to every experience.",
         color: "bg-green-50 text-green-600",
+        surface: "bg-green-50/70",
     },
     {
         icon: Users,
@@ -46,6 +49,7 @@ const features = [
         description:
             "Programs designed for children (5+), families, students, working professionals, and senior citizens alike.",
         color: "bg-orange-50 text-orange-600",
+        surface: "bg-orange-50/70",
     },
     {
         icon: Leaf,
@@ -53,6 +57,7 @@ const features = [
         description:
             "We operate with deep respect for Himalayan ecosystems — minimal-impact camping and community-first practices.",
         color: "bg-emerald-50 text-emerald-600",
+        surface: "bg-emerald-50/70",
     },
     {
         icon: Compass,
@@ -60,6 +65,7 @@ const features = [
         description:
             "1-day adventures to 45-day expeditions — mix treks, camps, wellness, culture, and wildlife to build your perfect journey.",
         color: "bg-purple-50 text-purple-600",
+        surface: "bg-purple-50/70",
     },
     {
         icon: Heart,
@@ -67,6 +73,7 @@ const features = [
         description:
             "Yoga, meditation, organic food, and forest bathing are woven into every program for holistic mountain wellness.",
         color: "bg-rose-50 text-rose-600",
+        surface: "bg-rose-50/70",
     },
     {
         icon: Clock,
@@ -74,6 +81,7 @@ const features = [
         description:
             "Pickup & drop, accommodation, meals, permits, and guides — we handle every detail so you just show up and breathe.",
         color: "bg-amber-50 text-amber-600",
+        surface: "bg-amber-50/70",
     },
     {
         icon: Star,
@@ -81,6 +89,7 @@ const features = [
         description:
             "No manufactured tourism. Real village visits, genuine cultural exchange, and honest Himalayan wilderness.",
         color: "bg-indigo-50 text-indigo-600",
+        surface: "bg-indigo-50/70",
     },
 ];
 
@@ -117,7 +126,7 @@ export default function WhyCHPPage() {
                             return (
                                 <div
                                     key={f.title}
-                                    className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-shadow duration-300"
+                                    className={`${f.surface} rounded-2xl border border-white/80 p-7 shadow-sm hover:shadow-md transition-shadow duration-300`}
                                 >
                                     <div
                                         className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${f.color}`}
