@@ -26,7 +26,6 @@ const moreLinks = [
   { href: "/growth-partner", label: "CHP Partnership" },
   { href: "/promotions", label: "Promotions" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/second-home", label: "Second Home" },
   { href: "/business-investment", label: "Investment Opportunities" },
   { href: "/purpose-driven-space", label: "Purpose Driven Space" },
   { href: "/health-retreat-program", label: "Health Retreat Program" },

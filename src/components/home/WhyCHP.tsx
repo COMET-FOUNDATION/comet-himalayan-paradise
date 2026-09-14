@@ -24,6 +24,7 @@ const features = [
     description:
       "Escape the sweltering plains to pleasant mountain climates with refreshing alpine breeze all summer long.",
     color: "bg-amber-50 text-amber-600",
+    surface: "bg-amber-50/70",
   },
   {
     icon: Shield,
@@ -31,6 +32,7 @@ const features = [
     description:
       "Certified guides, comprehensive safety protocols, and emergency response systems across all treks and camps.",
     color: "bg-sky-50 text-sky-600",
+    surface: "bg-sky-50/70",
   },
   {
     icon: Map,
@@ -38,6 +40,7 @@ const features = [
     description:
       "Our naturalists, trekking guides, and cultural experts bring decades of local knowledge to every experience.",
     color: "bg-green-50 text-green-600",
+    surface: "bg-green-50/70",
   },
   {
     icon: Users,
@@ -85,7 +88,7 @@ const features = [
 
 export function WhyCHP() {
   return (
-    <section className="py-14 lg:py-20 bg-stone-50">
+    <section className="pt-14 pb-12 lg:pt-20 lg:pb-16 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Why Be Part of the CHP Ecosystem?"
@@ -103,7 +106,7 @@ export function WhyCHP() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="rounded-2xl border border-stone-200/80 bg-white/75 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
+                  className={`${f.surface} rounded-2xl border border-white/80 p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full`}
                 >
                   <div
                     className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${f.color}`}

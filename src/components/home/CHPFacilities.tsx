@@ -62,13 +62,13 @@ function FacilityCard({ facility }: { facility: (typeof dreamSpaces)[number] }) 
     <motion.article
       whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
-      className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+      className="relative overflow-hidden rounded-2xl aspect-square shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
     >
       <Image
         src={facility.image}
         alt={facility.title}
         fill
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 640px) 100vw, 33vw"
         className="object-cover transition-transform duration-700 hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
