@@ -20,7 +20,7 @@ export function CHPGatewaysSection() {
                     >
                         <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
                             <img
-                                src="/images/chp-gateways.png"
+                                src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4a56d566-736b-4b08-9377-4d61304207ab-scaled-chp-gateways.webp"
                                 alt="CHP Gateways"
                                 className="w-full h-auto block rounded-3xl transition-transform duration-700 group-hover:scale-[1.02]"
                             />

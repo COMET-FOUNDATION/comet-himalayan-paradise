@@ -2,85 +2,97 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-    Compass,
-    MapPin,
-    Car,
-    ShieldCheck,
-    Plane,
+    Home,
+    HeartHandshake,
+    Award,
+    Heart,
+    Handshake,
     Navigation,
     CheckCircle2,
     ArrowRight,
-    Phone,
-    Clock,
-    Layers,
-    Thermometer,
     Send,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
+import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
-const gatewayHubs = [
+const ecosystemGateways = [
     {
-        name: "Pithoragarh Main Gateway Hub",
-        elevation: "5,400 ft (1,645 m)",
-        role: "Central Valley Portal & Airport Hub",
+        icon: Home,
+        key: "purchase",
+        title: "Purchase",
+        tagline: "Purchase a Cottage, Dream Space, or Any CHP Facility",
         description:
-            "The primary arrival and staging post for all CHP guests arriving via Naini Saini Airport or road transit from Kathgodam/Tanakpur.",
-        services: ["24/7 Airport & Rail Pickup", "Expedition Briefing Room", "Acclimatization Lounge", "Custom 4x4 Fleet"],
-        image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80&auto=format&fit=crop",
+            "Own a piece of the Himalayas outright — a cottage, a custom Dream Space, or any CHP facility built to your vision and lifestyle.",
+        points: [
+            "Freehold cottages & plots at CHP Enclave",
+            "Custom-built Dream Spaces",
+            "Direct ownership of CHP facilities",
+            "End-to-end transaction support",
+        ],
+        cta: "Enquire About Purchase",
     },
     {
-        name: "Munsiyari Expedition Gateway",
-        elevation: "7,200 ft (2,200 m)",
-        role: "Johar Valley & Glacier Basecamp",
+        icon: HeartHandshake,
+        key: "donation",
+        title: "Donation",
+        subtitle: "80G, CSR Eligible",
+        tagline: "Support a Purpose. Own a Dream.",
         description:
-            "Staging portal for Khaliya Top, Milam Glacier, and Panchachuli Base Camp treks with full high-altitude gear issuing and guide team dispatch.",
-        services: ["High-Altitude Gear Rental", "Certified Trek Guides", "Rescue & First-Aid Post", "Alpine Eco-Lodge"],
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80&auto=format&fit=crop",
+            "Support initiatives such as Comet Educational Services, Gaushala, and Isht Dev Sthal, and unlock special plot-price benefits toward a plot at CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
+        points: [
+            "80G & CSR eligible contributions",
+            "Comet Educational Services",
+            "Gaushala & Isht Dev Sthal initiatives",
+            "Special plot-price benefits in return",
+        ],
+        cta: "Explore Donation Benefits",
     },
     {
-        name: "Dharchula Sacred Passage Gateway",
-        elevation: "3,000 ft (915 m)",
-        role: "Adi Kailash & Om Parvat Portal",
+        icon: Award,
+        key: "sponsorship",
+        title: "Sponsorship",
+        tagline: "Support a Cause. Unlock a Himalayan Opportunity.",
         description:
-            "Official transit and permit verification hub for sacred Himalayan pilgrimages, high-pass expeditions, and Indo-Nepal border exploration.",
-        services: ["Inner-Line Permit Facilitation", "Border Transit Desk", "Pilgrims Support Crew", "4x4 Mountain Jeeps"],
-        image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80&auto=format&fit=crop",
+            "Sponsor a student's education, a cow at the Gaushala, or development work at an Isht Dev Sthal, and receive a special discount on plot pricing as a token of appreciation toward a plot in CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
+        points: [
+            "Sponsor a student's education",
+            "Sponsor a cow at the Gaushala",
+            "Sponsor Isht Dev Sthal development",
+            "Special discount on plot pricing",
+        ],
+        cta: "Become a Sponsor",
     },
     {
-        name: "Champawat & Almora Cultural Gateways",
-        elevation: "6,000 ft (1,830 m)",
-        role: "Kumaon Heritage & Scenic Transit",
+        icon: Heart,
+        key: "adoption",
+        title: "Adoption",
+        tagline: "Give with Purpose. Make a Difference.",
         description:
-            "Charming foothill and forest gateways offering cultural heritage walks, organic tea garden tours, and smooth highway connections.",
-        services: ["Heritage Trail Guides", "Organic Cafe & Refreshments", "Luggage Forwarding", "Local Handicraft Hub"],
-        image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
-    },
-];
-
-const gatewayServices = [
-    {
-        icon: Car,
-        title: "All-Terrain 4x4 Mountain Transport",
-        details: "Rugged, climate-controlled 4x4 vehicles driven by mountain-certified drivers with GPS tracking and satellite communication.",
+            "Choose to support education, underprivileged schools, or Gau Seva through COMET, and receive exclusive benefits and privileges as a token of appreciation for your contribution.",
+        points: [
+            "Support education initiatives",
+            "Support underprivileged schools",
+            "Gau Seva through COMET",
+            "Exclusive benefits & privileges",
+        ],
+        cta: "Start an Adoption",
     },
     {
-        icon: ShieldCheck,
-        title: "Inner-Line & Forest Permits",
-        details: "Hassle-free processing of government environmental permits, inner-line clearance, and trek insurance passes.",
-    },
-    {
-        icon: Layers,
-        title: "Expedition Staging & Gear Lockers",
-        details: "Store excess luggage safely while carrying certified high-altitude alpine gear maintained by CHP technicians.",
-    },
-    {
-        icon: Thermometer,
-        title: "High-Altitude Acclimatization",
-        details: "Rest lounges equipped with oxygen monitoring, thermal tea bars, and medical readiness before ascending peaks.",
+        icon: Handshake,
+        key: "partnership",
+        title: "Partnership",
+        tagline: "Your Opportunity to Own, Partner & Belong.",
+        description:
+            "Co-own selected facilities within the CHP Ecosystem, become a CHP Partner, and gain privileged access to a diverse range of CHP facilities, experiences, services, and benefits.",
+        points: [
+            "Co-own selected CHP facilities",
+            "Become an official CHP Partner",
+            "Privileged access across the ecosystem",
+            "Shared experiences, services & benefits",
+        ],
+        cta: "Discuss Partnership",
     },
 ];
 
@@ -90,9 +102,8 @@ export default function GatewaysPage() {
         name: "",
         email: "",
         phone: "",
-        gatewayLocation: "Pithoragarh Main Gateway",
-        travelDate: "",
-        guests: "2",
+        interest: "Purchase",
+        message: "",
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -134,9 +145,9 @@ export default function GatewaysPage() {
                                 transition={{ duration: 0.5, delay: 0.1 }}
                                 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
                             >
-                                CHP Gateways <br />
+                                Gateways to <br />
                                 <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">
-                                    Become Part of the Ecosystem
+                                    CHP Ecosystem
                                 </span>
                             </motion.h1>
 
@@ -146,7 +157,7 @@ export default function GatewaysPage() {
                                 transition={{ duration: 0.5, delay: 0.2 }}
                                 className="mt-6 text-base sm:text-lg lg:text-xl text-slate-200 leading-relaxed font-light"
                             >
-                                CHP Gateways are the different ways to become part of the CHP ecosystem. Whether as an investor, entrepreneur, hospitality partner, service provider, or community member, every gateway opens new opportunities to grow, collaborate, and succeed in the Himalayas.
+                                CHP Gateways are the different ways to become part of the CHP ecosystem. Whether through Purchase, Donation, Sponsorship, Adoption, or Partnership, every gateway opens new opportunities to grow, contribute, and belong in the Himalayas.
                             </motion.p>
 
                             <motion.div
@@ -156,17 +167,17 @@ export default function GatewaysPage() {
                                 className="mt-8 flex flex-wrap gap-4"
                             >
                                 <a
-                                    href="#gateway-pass"
+                                    href="#connect"
                                     className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-amber-900/30 flex items-center gap-2"
                                 >
-                                    <span>Explore Gateway Pass</span>
+                                    <span>Connect With Us</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </a>
                                 <a
-                                    href="#hubs"
+                                    href="#gateways"
                                     className="bg-slate-800 hover:bg-slate-700 text-white font-medium px-7 py-3.5 rounded-full border border-slate-700 transition-all duration-200"
                                 >
-                                    Explore Regional Hubs
+                                    Explore the Gateways
                                 </a>
                             </motion.div>
                         </div>
@@ -187,137 +198,99 @@ export default function GatewaysPage() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10">
                                 <p className="text-xs font-semibold uppercase tracking-wider text-amber-400 mb-1">CHP Gateways</p>
-                                <p className="text-white text-sm font-medium">Portals of entry, collaboration & partnership across the Himalayas.</p>
+                                <p className="text-white text-sm font-medium">Portals of entry, contribution & partnership across the Himalayas.</p>
                             </div>
                         </motion.div>
                     </div>
                 </div>
             </section>
 
-            {/* Gateway Hubs Grid */}
-            <section id="hubs" className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+            {/* Ecosystem Gateways Grid */}
+            <section id="gateways" className="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
                 <SectionHeader
-                    eyebrow="Transit Network"
-                    title="CHP Gateway Regional Hubs"
-                    subtitle="Strategically located stations providing seamless staging, gear rental, and transportation across Kumaon."
+                    eyebrow="Ways to Belong"
+                    title="Five Gateways Into the CHP Ecosystem"
+                    subtitle="Purchase, Donation, Sponsorship, Adoption, or Partnership — choose the gateway that fits your journey with CHP."
                     light
                 />
 
-                <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {gatewayHubs.map((hub) => (
-                        <StaggerItem key={hub.name}>
-                            <div className="bg-slate-800/60 rounded-2xl overflow-hidden border border-slate-700/80 hover:border-emerald-500/50 transition-all duration-300 flex flex-col h-full group">
-                                <div className="relative h-64 w-full overflow-hidden">
-                                    <Image
-                                        src={hub.image}
-                                        alt={hub.name}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
-                                    <div className="absolute top-4 left-4 bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 font-semibold text-xs px-3 py-1 rounded-full backdrop-blur-md">
-                                        {hub.elevation}
-                                    </div>
-                                    <div className="absolute bottom-4 left-4 text-amber-400 font-semibold text-xs uppercase tracking-wider">
-                                        {hub.role}
-                                    </div>
-                                </div>
-
-                                <div className="p-6 flex-1 flex flex-col justify-between">
-                                    <div>
-                                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                                            {hub.name}
-                                        </h3>
-                                        <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                                            {hub.description}
-                                        </p>
-
-                                        <div className="border-t border-slate-700/60 pt-4">
-                                            <span className="text-xs uppercase font-semibold text-slate-400 block mb-2">
-                                                Hub Services & Amenities:
-                                            </span>
-                                            <ul className="grid grid-cols-2 gap-2">
-                                                {hub.services.map((serv) => (
-                                                    <li key={serv} className="flex items-center gap-1.5 text-xs text-slate-300">
-                                                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                                                        <span>{serv}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {ecosystemGateways.map((gateway) => {
+                        const Icon = gateway.icon;
+                        return (
+                            <StaggerItem key={gateway.key}>
+                                <div className="bg-slate-800/60 rounded-2xl overflow-hidden border border-slate-700/80 hover:border-emerald-500/50 transition-all duration-300 flex flex-col h-full group p-7">
+                                    <div className="flex items-center justify-between mb-5">
+                                        <div className="w-14 h-14 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                            <Icon className="w-7 h-7" />
                                         </div>
+                                        {gateway.subtitle && (
+                                            <span className="bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 font-semibold text-xs px-3 py-1 rounded-full">
+                                                {gateway.subtitle}
+                                            </span>
+                                        )}
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">
+                                        {gateway.title}
+                                    </h3>
+                                    <p className="text-amber-400 font-semibold text-sm mb-4">
+                                        {gateway.tagline}
+                                    </p>
+                                    <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-1">
+                                        {gateway.description}
+                                    </p>
+
+                                    <div className="border-t border-slate-700/60 pt-4 mb-2">
+                                        <ul className="space-y-2">
+                                            {gateway.points.map((point) => (
+                                                <li key={point} className="flex items-start gap-1.5 text-xs text-slate-300">
+                                                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                                                    <span>{point}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
 
                                     <a
-                                        href="#gateway-pass"
-                                        className="inline-flex items-center justify-between w-full pt-6 mt-6 border-t border-slate-700/60 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                                        href="#connect"
+                                        className="inline-flex items-center justify-between w-full pt-6 mt-4 border-t border-slate-700/60 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
                                     >
-                                        <span>Reserve Transit at {hub.name.split(" ")[0]}</span>
+                                        <span>{gateway.cta}</span>
                                         <ArrowRight className="w-4 h-4" />
                                     </a>
                                 </div>
-                            </div>
-                        </StaggerItem>
-                    ))}
+                            </StaggerItem>
+                        );
+                    })}
                 </StaggerContainer>
             </section>
 
-            {/* Gateway Support Services */}
-            <section className="py-20 bg-slate-950 border-y border-slate-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <SectionHeader
-                        eyebrow="Logistics"
-                        title="Comprehensive Gateway Services"
-                        subtitle="Eliminating friction from your Himalayan journey with professional on-ground logistics."
-                        light
-                    />
-
-                    <StaggerContainer className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {gatewayServices.map((serv) => {
-                            const Icon = serv.icon;
-                            return (
-                                <StaggerItem key={serv.title}>
-                                    <div className="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/40 transition-all duration-300 h-full flex flex-col justify-between">
-                                        <div>
-                                            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
-                                                <Icon className="w-6 h-6" />
-                                            </div>
-                                            <h3 className="text-lg font-bold text-white mb-2">{serv.title}</h3>
-                                            <p className="text-slate-400 text-xs leading-relaxed">{serv.details}</p>
-                                        </div>
-                                    </div>
-                                </StaggerItem>
-                            );
-                        })}
-                    </StaggerContainer>
-                </div>
-            </section>
-
-            {/* Booking Form */}
-            <section id="gateway-pass" className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+            {/* Connect / Interest Form */}
+            <section id="connect" className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
                 <div className="text-center mb-10">
                     <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">
-                        Traveler Pass
+                        Get Started
                     </span>
-                    <h2 className="text-3xl font-bold text-white mt-2">CHP Gateway Express Transit Pass</h2>
+                    <h2 className="text-3xl font-bold text-white mt-2">Tell Us How You'd Like to Join</h2>
                     <p className="text-slate-400 text-sm mt-2">
-                        Reserve your 4x4 pickup, permit clearance, and gear locker at any CHP Gateway Station.
+                        Share a few details and our CHP team will reach out to guide you through your chosen gateway.
                     </p>
                 </div>
 
                 {formSubmitted ? (
                     <div className="p-8 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 text-center">
                         <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-                        <h3 className="text-xl font-bold text-white">Transit Pass Confirmed</h3>
+                        <h3 className="text-xl font-bold text-white">Request Received</h3>
                         <p className="text-slate-300 text-sm mt-2">
-                            Our Gateway dispatch team will coordinate your pickup details via WhatsApp / Call.
+                            Our CHP team will reach out to you shortly via WhatsApp / Call to discuss the next steps.
                         </p>
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">Lead Traveler Name *</label>
+                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">Full Name *</label>
                                 <input
                                     type="text"
                                     required
@@ -341,7 +314,7 @@ export default function GatewaysPage() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
                                 <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">Phone / WhatsApp *</label>
                                 <input
@@ -355,32 +328,30 @@ export default function GatewaysPage() {
                             </div>
 
                             <div>
-                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">Primary Gateway</label>
+                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">I'm Interested In</label>
                                 <select
-                                    value={formData.gatewayLocation}
-                                    onChange={(e) => setFormData({ ...formData, gatewayLocation: e.target.value })}
+                                    value={formData.interest}
+                                    onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                                     className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-500"
                                 >
-                                    <option value="Pithoragarh Main Gateway">Pithoragarh Main Gateway</option>
-                                    <option value="Munsiyari Expedition Gateway">Munsiyari Expedition Gateway</option>
-                                    <option value="Dharchula Sacred Passage">Dharchula Sacred Passage</option>
-                                    <option value="Champawat / Almora Gateway">Champawat / Almora Gateway</option>
+                                    <option value="Purchase">Purchase</option>
+                                    <option value="Donation">Donation (80G, CSR)</option>
+                                    <option value="Sponsorship">Sponsorship</option>
+                                    <option value="Adoption">Adoption</option>
+                                    <option value="Partnership">Partnership</option>
                                 </select>
                             </div>
+                        </div>
 
-                            <div>
-                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">Travelers Count</label>
-                                <select
-                                    value={formData.guests}
-                                    onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                                    className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-500"
-                                >
-                                    <option value="1">1 Traveler</option>
-                                    <option value="2">2 Travelers</option>
-                                    <option value="3-5">3–5 Group</option>
-                                    <option value="6+">6+ Large Group</option>
-                                </select>
-                            </div>
+                        <div>
+                            <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">Message (Optional)</label>
+                            <textarea
+                                rows={3}
+                                placeholder="Tell us a bit more about what you're looking for..."
+                                value={formData.message}
+                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                className="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-500 resize-none"
+                            />
                         </div>
 
                         <button
@@ -388,7 +359,7 @@ export default function GatewaysPage() {
                             className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2"
                         >
                             <Send className="w-4 h-4" />
-                            <span>Request Gateway Transit Pass</span>
+                            <span>Submit Request</span>
                         </button>
                     </form>
                 )}

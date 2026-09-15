@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CHPEnclaveHero } from "./CHPEnclaveHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
 
@@ -17,27 +18,14 @@ export const metadata: Metadata = {
 };
 
 const locationHighlights = [
-  { src: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8f689330-8332-45f3-b9bf-7ba38d02b375-scaled-zero-risk-zone.webp", alt: "Zero risk zone" },
-  { src: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/778db5f4-90a2-45f0-9599-5dcb15c64f43-scaled-location2.webp", alt: "CHP Enclave location" },
+  { src: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f0841be0-04b5-4136-ae0f-da5e299c6ae7-scaled-zero-risk-zone.webp", alt: "Zero risk zone" },
+  { src: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/218a7bc0-de4b-47ee-81f2-3dfec8de611b-scaled-location2.webp", alt: "CHP Enclave location" },
 ];
 
 export default function CHPEnclavePage() {
   return (
     <>
-      {/* Header */}
-      <section className="relative bg-green-950 pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=50')] bg-cover bg-center" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-            A New Way to Belong
-          </p>
-          <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight">
-            CHP Enclave
-          </h1>
-        </div>
-      </section>
+      <CHPEnclaveHero />
 
       {/* Intro */}
       <section id="intro" className="py-20 bg-white overflow-hidden">
@@ -66,7 +54,7 @@ export default function CHPEnclavePage() {
               <div className="group flex justify-center lg:justify-start">
                 <div className="rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8a2998d6-8c90-4122-848d-917500bfc92d-scaled-chp-enclave-2.webp"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/62177696-0ba9-4d9f-aaf5-75b042433e8f-scaled-chp-enclave-2.webp"
                     alt="CHP Enclave"
                     width={640}
                     height={480}
@@ -204,6 +192,18 @@ export default function CHPEnclavePage() {
                 housekeeping and security to landscaping and common
                 infrastructure, everything is managed by the community.
               </p>
+              <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-600 text-lg leading-relaxed">
+                <li>Camp fire facility</li>
+                <li>Common Fencing wall</li>
+                <li>24X7 Electricity &amp; water</li>
+                <li>Security service</li>
+                <li>CCTV camera</li>
+                <li>Solar lights</li>
+                <li>Watchman service</li>
+                <li>Gardener service</li>
+                <li>Common kitchen</li>
+                <li>Open area/garden</li>
+              </ul>
             </ScrollReveal>
           </div>
         </div>
@@ -230,6 +230,18 @@ export default function CHPEnclavePage() {
                 Narayan Ashram. Experience a perfect blend of peaceful living
                 and year-round spiritual journeys.
               </p>
+              <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-600 text-lg leading-relaxed">
+                <li>Nanda devi</li>
+                <li>Adi-Kailash</li>
+                <li>Narayan ashram</li>
+                <li>Dol Ashram</li>
+                <li>Paataal Bhuvneshwar</li>
+                <li>Bal Jageshwar</li>
+                <li>Chandika Ghat</li>
+                <li>Dhwaj</li>
+                <li>Mayawati Ashram</li>
+                <li>Haat Kalika</li>
+              </ul>
             </ScrollReveal>
 
             <ScrollReveal direction="right">

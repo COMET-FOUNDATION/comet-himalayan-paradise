@@ -320,7 +320,7 @@ export default function SecondHomePage() {
                                         <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                                     ))}
                                 </div>
-                                <p className="text-slate-600 text-sm leading-relaxed mb-4 italic">"{t.quote}"</p>
+                                <p className="text-slate-600 text-sm leading-relaxed mb-4 italic">&ldquo;{t.quote}&rdquo;</p>
                                 <div className="flex items-center justify-between">
                                     <div>
                                         <p className="text-slate-800 font-semibold text-sm">{t.name}</p>

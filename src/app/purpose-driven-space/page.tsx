@@ -104,7 +104,7 @@ export default function PurposeDrivenSpacePage() {
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
                     <blockquote className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic">
-                        "The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen."
+                        &ldquo;The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen.&rdquo;
                     </blockquote>
                     <p className="mt-5 text-amber-400 font-semibold text-sm">— CHP Himalayan Paradise</p>
                 </div>

@@ -62,13 +62,13 @@ function FacilityCard({ facility }: { facility: (typeof dreamSpaces)[number] }) 
     <motion.article
       whileHover={{ y: -5 }}
       transition={{ duration: 0.25 }}
-      className="relative overflow-hidden rounded-2xl aspect-[4/5] shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+      className="relative overflow-hidden rounded-2xl aspect-square shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
     >
       <Image
         src={facility.image}
         alt={facility.title}
         fill
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 640px) 100vw, 33vw"
         className="object-cover transition-transform duration-700 hover:scale-110"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -112,6 +112,15 @@ export function CHPFacilities() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+          <div className="mt-8 text-center">
+            <Link
+              href="/facilities#chp-dream-spaces-heading"
+              className="inline-flex items-center gap-2 border border-green-900/20 text-green-900 font-semibold text-sm px-6 py-3 rounded-full hover:bg-green-900/5 transition-colors"
+            >
+              Explore Dream Spaces
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
 
         {/* Row 2 — Facilities */}

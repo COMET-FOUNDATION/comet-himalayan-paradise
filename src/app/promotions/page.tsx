@@ -164,6 +164,31 @@ const benefits = [
     },
 ];
 
+const marketingStrategies = [
+    "Listing CHP cottages and dream spaces on Global Booking Platforms for Maximum Reach",
+    "Strategic Partnerships with Tour Operators across Uttarakhand & India",
+    "Strategic Partnership with Digital Marketing Companies across India and globally",
+];
+
+const marketingNetworkPriorities = [
+    "Corporate HR Partnerships for Employee Retreats, Workations & Holiday Packages",
+    "Strategic Partnerships with Educational Institutions for Experiential Learning through Yoga Camps, STEM Labs and Smart Holiday Camps.",
+    "Strategic Partnerships with NGOs to host year-round social, educational, environmental and cultural initiatives at CHP.",
+    "Connecting AOAs & HOAs with CHP for Exclusive Group Stays and Association-Owned Guest Houses.",
+    "Strategic Alliances with Medical Tourism & Health Retreat Organizations",
+    "Strategic Adventure Club Partnerships for Himalayan Treks, Trails & Exploration",
+    "Strategic alliances with leading travel agencies and tour operators",
+];
+
+const repeatCustomerPriorities = [
+    "Delivering exceptional guest experiences",
+    "Referral Rewards for existing customers",
+    "Exclusive discounts for CHP partners",
+    "Attractive long-stay packages",
+    "Corporate group discounts",
+    "Seasonal promotional offers and loyalty benefits",
+];
+
 /* -------------------------------------------------------------------------- */
 /* SMALL COMPONENTS                                                           */
 /* -------------------------------------------------------------------------- */
@@ -326,6 +351,22 @@ export default function PromotionsPage() {
                             </div>
                         </FadeIn>
 
+                    </div>
+                </div>
+            </section>
+
+            {/* ================================================================= */}
+            {/* MARKETING & PROMOTION STRATEGY                                    */}
+            {/* ================================================================= */}
+
+            <section className="bg-white py-24 lg:py-32">
+                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+                    <FadeIn><div className="mx-auto max-w-4xl text-center"><SectionLabel>CHP Growth Strategy</SectionLabel><h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">Marketing and Promotion Strategy</h2><p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg">CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:</p></div></FadeIn>
+                    <div className="mx-auto mt-14 max-w-5xl space-y-5">
+                        {marketingStrategies.map((strategy, index) => (<FadeIn key={strategy} delay={index * 0.05}><article className="flex gap-5 rounded-[26px] border border-slate-200 bg-[#f1f0e9] p-6 shadow-sm sm:items-center sm:p-8"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green-900 text-sm font-bold text-amber-400">0{index + 1}</span><h3 className="text-lg font-semibold leading-snug text-slate-800 sm:text-xl">{strategy}</h3></article></FadeIn>))}
+                        <FadeIn delay={0.15}><article className="rounded-[26px] border border-green-900/10 bg-green-950 p-6 text-white shadow-sm sm:p-8"><div className="flex gap-5"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-bold text-amber-400">04</span><h3 className="pt-1 text-lg font-semibold leading-snug sm:text-xl">CHP plans to build a nationwide network of dedicated marketing executives across major Indian cities, with clearly defined business development targets focused on:</h3></div><ul className="mt-7 grid gap-4 sm:grid-cols-2">{marketingNetworkPriorities.map((priority) => (<li key={priority} className="flex gap-3 text-sm leading-6 text-white/75"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />{priority}</li>))}</ul></article></FadeIn>
+                        <FadeIn delay={0.2}><article className="rounded-[26px] border border-amber-500/15 bg-amber-50 p-6 shadow-sm sm:p-8"><div className="flex gap-5"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-sm font-bold text-slate-950">05</span><h3 className="pt-1 text-lg font-semibold leading-snug text-slate-800 sm:text-xl">Strong Repeat Customer Program: CHP aims to build a loyal customer base through an attractive guest retention program that includes:</h3></div><ul className="mt-7 grid gap-4 sm:grid-cols-2">{repeatCustomerPriorities.map((priority) => (<li key={priority} className="flex gap-3 text-sm leading-6 text-slate-600"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-800" />{priority}</li>))}</ul></article></FadeIn>
+                        <FadeIn delay={0.25}><div className="rounded-[26px] border border-slate-200 bg-[#f1f0e9] p-7 text-center shadow-sm sm:p-10"><p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">Together, these initiatives are designed to create sustainable guest occupancy, repeat business, and long-term revenue growth for every business operating within the CHP Ecosystem.</p></div></FadeIn>
                     </div>
                 </div>
             </section>
@@ -559,6 +600,95 @@ export default function PromotionsPage() {
                     </div>
                 </div>
             </section>
+
+            {/* ================================================================= */}
+            {/* MARKETING & PROMOTION STRATEGY                                    */}
+            {/* ================================================================= */}
+
+            {false && (
+            <section className="bg-[#f1f0e9] py-24 lg:py-32">
+                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+                    <FadeIn>
+                        <div className="mx-auto max-w-4xl text-center">
+                            <SectionLabel>
+                                CHP Growth Strategy
+                            </SectionLabel>
+                            <h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                                Marketing and Promotion Strategy
+                            </h2>
+                            <p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg">
+                                CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:
+                            </p>
+                        </div>
+                    </FadeIn>
+
+                    <div className="mx-auto mt-14 max-w-5xl space-y-5">
+                        {marketingStrategies.map((strategy, index) => (
+                            <FadeIn key={strategy} delay={index * 0.05}>
+                                <article className="flex gap-5 rounded-[26px] border border-slate-200 bg-white p-6 shadow-sm sm:items-center sm:p-8">
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green-900 text-sm font-bold text-amber-400">
+                                        0{index + 1}
+                                    </span>
+                                    <h3 className="text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
+                                        {strategy}
+                                    </h3>
+                                </article>
+                            </FadeIn>
+                        ))}
+
+                        <FadeIn delay={0.15}>
+                            <article className="rounded-[26px] border border-green-900/10 bg-green-950 p-6 text-white shadow-sm sm:p-8">
+                                <div className="flex gap-5">
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-bold text-amber-400">
+                                        04
+                                    </span>
+                                    <h3 className="pt-1 text-lg font-semibold leading-snug sm:text-xl">
+                                        CHP plans to build a nationwide network of dedicated marketing executives across major Indian cities, with clearly defined business development targets focused on:
+                                    </h3>
+                                </div>
+                                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
+                                    {marketingNetworkPriorities.map((priority) => (
+                                        <li key={priority} className="flex gap-3 text-sm leading-6 text-white/75">
+                                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+                                            {priority}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        </FadeIn>
+
+                        <FadeIn delay={0.2}>
+                            <article className="rounded-[26px] border border-amber-500/15 bg-amber-50 p-6 shadow-sm sm:p-8">
+                                <div className="flex gap-5">
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-sm font-bold text-slate-950">
+                                        05
+                                    </span>
+                                    <h3 className="pt-1 text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
+                                        Strong Repeat Customer Program: CHP aims to build a loyal customer base through an attractive guest retention program that includes:
+                                    </h3>
+                                </div>
+                                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
+                                    {repeatCustomerPriorities.map((priority) => (
+                                        <li key={priority} className="flex gap-3 text-sm leading-6 text-slate-600">
+                                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-800" />
+                                            {priority}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        </FadeIn>
+
+                        <FadeIn delay={0.25}>
+                            <div className="rounded-[26px] border border-slate-200 bg-white p-7 text-center shadow-sm sm:p-10">
+                                <p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+                                    Together, these initiatives are designed to create sustainable guest occupancy, repeat business, and long-term revenue growth for every business operating within the CHP Ecosystem.
+                                </p>
+                            </div>
+                        </FadeIn>
+                    </div>
+                </div>
+            </section>
+            )}
 
             {/* ================================================================= */}
             {/* CTA                                                               */}

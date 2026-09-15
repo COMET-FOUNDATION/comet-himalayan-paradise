@@ -18,7 +18,6 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
     const duration = 1800;
     const startTime = performance.now();
     const tick = (now: number) => {

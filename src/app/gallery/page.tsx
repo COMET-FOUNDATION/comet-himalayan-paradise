@@ -39,6 +39,13 @@ export default function GalleryPage() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = lightbox ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
   const filtered =
     activeCategory === "all"
       ? galleryImages
@@ -46,11 +53,9 @@ export default function GalleryPage() {
 
   const openImage = (src: string) => {
     setLightbox(src);
-    document.body.style.overflow = "hidden";
   };
   const closeImage = () => {
     setLightbox(null);
-    document.body.style.overflow = "";
   };
 
   return (

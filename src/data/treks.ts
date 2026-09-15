@@ -75,7 +75,7 @@ export const treks: Trek[] = [
     description:
       "Explore the birding hotspots and vibrant agricultural terraces of the Kumaon Himalayas. Spot the resplendent Himalayan Monal and over 200 other bird species while discovering traditional farming practices, mountain crops, herbs, and the deep connection between Himalayan soil and local community life.",
     image:
-      "https://images.unsplash.com/photo-1444464666168-49d633b86797?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2c4f9283-5476-4a35-80cf-d3ddda2787ba-scaled-bird-watching-1.webp",
     category: "nature",
     isPopular: true,
   },

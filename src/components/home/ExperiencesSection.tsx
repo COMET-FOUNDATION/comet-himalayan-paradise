@@ -13,7 +13,7 @@ const experiences = [
     description:
       "Multi-day immersive camps combining adventure, wellness, culture, and nature in stunning Himalayan settings.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/dd7132e9-55bd-4e30-a4d1-f675eea12691-scaled-holiday-camp-1.webp",
     href: "/camps",
     badge: "1–45 Days",
   },
@@ -31,7 +31,7 @@ const experiences = [
     description:
       "Birding walks, jungle safaris, night safaris, and wildlife observation with expert naturalists.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/21ce77df-8ab2-4920-a9eb-f7ca749c5cee-chp-enclave.png",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ef0dce1-95f8-4169-bd40-8515d71e066d-scaled-wildlife-nature-1.webp",
     href: "/experiences",
     badge: "All Year",
   },

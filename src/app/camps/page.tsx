@@ -10,12 +10,12 @@ import {
   Star,
   Users,
   Clock,
-  CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
+import { campFeatures, campFeaturePreviewTitles } from "@/data/campFeatures";
 
 export const metadata: Metadata = {
   title: "Holiday Camps",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const campFeatures = [
+const legacyCampFeatures = [
   {
     icon: Mountain,
     title: "Scenic Himalayan Locations",
@@ -141,7 +141,7 @@ export default function CampsPage() {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
           <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-            Holiday Camps
+            CHP All season Holiday Camp
           </p>
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
             Live the Himalayan Life
@@ -150,15 +150,27 @@ export default function CampsPage() {
             Immersive camp programs combining adventure, wellness, culture, and
             nature. From a weekend to 45 days — at your pace.
           </p>
+          </div>
+      </section>
+          <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <Link
+            href="/camp-activities"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
+          >
+            Show All Camp activities
+            <ArrowRight className="w-4 h-4" />
+          </Link>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
+            className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
           >
-            Book a Camp
+            Book Your Holiday Camp
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-      </section>
+      </div>
+        
 
       {/* Overview */}
       <section className="py-20 bg-white">
@@ -173,7 +185,7 @@ export default function CampsPage() {
               </h2>
               <p className="text-slate-600 leading-relaxed mb-6">
                 CHP Holiday Camps are designed to give you the full Himalayan
-                experience without any of the complexity. We take care of
+                experience hassle free. We take care of
                 everything — from accommodation and meals to guided activities,
                 permits, and logistics — so you can simply arrive, breathe, and
                 explore.
@@ -186,20 +198,7 @@ export default function CampsPage() {
                 you.
               </p>
 
-              <ul className="space-y-3">
-                {[
-                  "Easy accessibility via air, train, bus, or private cab",
-                  "All meals included — organic, locally sourced",
-                  "Expert guides for every activity",
-                  "Flexible durations: 1 day to 45 days",
-                  "Suitable for all age groups 5+",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-slate-700 text-sm">
-                    <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              
             </ScrollReveal>
 
             <ScrollReveal direction="right">
@@ -230,11 +229,12 @@ export default function CampsPage() {
           />
 
           <StaggerContainer
-            className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4 lg:mx-auto"
             staggerDelay={0.07}
           >
-            {campFeatures.map((f) => {
-  const Icon = f.icon;
+            {campFeatures.filter((f) => campFeaturePreviewTitles.includes(f.title)).map((f) => {
+  const iconMap = { Mountain, Tent, Flame, Leaf, Heart, Star, Users, Clock };
+  const Icon = iconMap[f.icon];
 
   const colorStyles = {
     blue: "bg-blue-100 text-blue-700",
@@ -272,6 +272,11 @@ export default function CampsPage() {
   );
 })}
           </StaggerContainer>
+          <div className="mt-10 text-center">
+            <Link href="/features" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
+              Show All Features <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -286,7 +291,7 @@ export default function CampsPage() {
       </p>
 
       <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-4">
-        Adventure Awaits
+        A World of Full Experiences Awaits
       </h2>
 
       <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
@@ -301,7 +306,7 @@ export default function CampsPage() {
       {/* Image */}
       <div className="relative h-[420px] rounded-2xl overflow-hidden lg:order-1">
   <Image
-    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e45036b6-876b-4a8e-8064-d28299e4f2e3-scaled-activities.webp"
+    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5ac86d4d-7771-4cca-b4db-ecedda76f1c3-scaled-adventure-activities.webp"
     alt="Camp activities in the Himalayas"
     fill
     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -342,37 +347,12 @@ export default function CampsPage() {
           </p>
         </div>
 
-        <div className="p-5 rounded-2xl bg-yellow-50">
-          <h3 className="font-semibold text-yellow-900 mb-2">
-            🧘 Yoga & Wellness
-          </h3>
-          <p className="text-sm text-slate-600">
-            Start your day with yoga, meditation and peaceful moments in
-            fresh Himalayan air.
-          </p>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-purple-50">
-          <h3 className="font-semibold text-purple-900 mb-2">
-            🌿 Organic Farming
-          </h3>
-          <p className="text-sm text-slate-600">
-            Experience organic farming, herbal cultivation and traditional
-            Himalayan practices.
-          </p>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-red-50">
-          <h3 className="font-semibold text-red-900 mb-2">
-            🌌 Stargazing
-          </h3>
-          <p className="text-sm text-slate-600">
-            Experience clear Himalayan skies, peaceful nights and magical
-            stargazing away from city lights.
-          </p>
-        </div>
-
       </div>
+    </div>
+    <div className="mt-12 text-center">
+      <Link href="/camp-activities" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
+        Show All Camp activities <ArrowRight className="w-4 h-4" />
+      </Link>
     </div>
   </div>
 </section>
@@ -446,7 +426,7 @@ export default function CampsPage() {
   </div>
 </section>
 
-      {/* Accommodation */}
+      {false && <>
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -486,6 +466,7 @@ export default function CampsPage() {
         </div>
       </section>
 
+      </>}
       <CTABanner />
     </>
   );

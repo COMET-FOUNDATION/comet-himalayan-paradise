@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Share2, Globe, Video, X } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 
 const footerLinks = {
   Explore: [
@@ -28,10 +29,10 @@ const footerLinks = {
 };
 
 const socials = [
-  { href: "#", label: "Instagram", Icon: Share2 },
-  { href: "#", label: "Facebook", Icon: Globe },
-  { href: "#", label: "YouTube", Icon: Video },
-  { href: "#", label: "Twitter / X", Icon: X },
+  { href: "https://www.linkedin.com/in/ram-datt-bhatt-06122818/", label: "LinkedIn", brand: "linkedin" as const },
+  { href: "https://www.instagram.com/chphimalayanparadise/", label: "Instagram", brand: "instagram" as const },
+  { href: "https://www.youtube.com/@CHP_2316", label: "YouTube", brand: "youtube" as const },
+  { label: "Facebook (URL not verified)", brand: "facebook" as const },
 ];
 
 export function Footer() {
@@ -94,15 +95,14 @@ export function Footer() {
 
             {/* Socials */}
             <div className="flex gap-3 mt-6">
-              {socials.map(({ href, label, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="w-9 h-9 rounded-full bg-slate-800 hover:bg-green-900 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200"
-                >
-                  <Icon className="w-4 h-4" />
+              {socials.map(({ href, label, brand }) => href ? (
+                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className="w-9 h-9 rounded-full bg-slate-800 hover:bg-green-900 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">
+                  <SocialBrandIcon name={brand} className="w-4 h-4" />
                 </a>
+              ) : (
+                <span key={label} aria-label={label} title={label} className="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center text-slate-500">
+                  <SocialBrandIcon name={brand} className="w-4 h-4" />
+                </span>
               ))}
             </div>
           </div>

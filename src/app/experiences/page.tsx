@@ -60,9 +60,7 @@ export default function ExperiencesPage() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="text-white/60 text-lg max-w-2xl mx-auto"
                     >
-                        From high-altitude treks to cultural immersions, wellness retreats
-                        to wildlife safaris — every experience is thoughtfully crafted for
-                        the Himalayas.
+                        STAY • EXPLORE • ADVENTURE • WELLNESS • FOOD • CULTURE • LEARN • WORK
                     </motion.p>
                 </div>
             </section>

@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 
 // Primary nav — keep the requested order so the main sections are one click away
 const navLinks = [
@@ -18,6 +19,7 @@ const navLinks = [
   { href: "/facilities", label: "Dream Spaces & Facilities" },
   { href: "/accommodation", label: "Homestay" },
   { href: "/gateways", label: "CHP Gateways" },
+  { href: "/partnership-proposals", label: "Partnership Proposals" },
 ];
 
 // Secondary links — shown in the "More" dropdown on desktop and a grouped section on mobile
@@ -25,21 +27,22 @@ const moreLinks = [
   { href: "/growth-partner", label: "CHP Partnership" },
   { href: "/promotions", label: "Promotions" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/second-home", label: "Second Home" },
-  { href: "/business-investment", label: "Business & Investment" },
+  { href: "/business-investment", label: "Investment Opportunities" },
   { href: "/purpose-driven-space", label: "Purpose Driven Space" },
   { href: "/health-retreat-program", label: "Health Retreat Program" },
   { href: "/chp-enclave", label: "CHP Enclave" },
   { name: "Business Proposals", href: "/business-proposals" },
 ];
 
+const socialLinks = [
+  { href: "https://www.linkedin.com/in/ram-datt-bhatt-06122818/", label: "LinkedIn", brand: "linkedin" as const },
+  { href: "https://www.instagram.com/chphimalayanparadise/", label: "Instagram", brand: "instagram" as const },
+  { href: "https://www.youtube.com/@CHP_2316", label: "YouTube", brand: "youtube" as const },
+];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [desktopNavFits, setDesktopNavFits] = useState(false);
-  const navRef = useRef<HTMLElement>(null);
-  const logoRef = useRef<HTMLAnchorElement>(null);
-  const desktopContentRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -51,38 +54,11 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
-
-  useEffect(() => {
-    const updateDesktopNav = () => {
-      const nav = navRef.current;
-      const logo = logoRef.current;
-      const desktopContent = desktopContentRef.current;
-      if (!nav || !logo || !desktopContent) return;
-
-      const availableWidth = nav.clientWidth - logo.offsetWidth;
-      const requiredWidth = desktopContent.scrollWidth + 24;
-      setDesktopNavFits(availableWidth >= requiredWidth);
-    };
-
-    const animationFrame = requestAnimationFrame(updateDesktopNav);
-    const resizeObserver = new ResizeObserver(updateDesktopNav);
-    if (navRef.current) resizeObserver.observe(navRef.current);
-    window.addEventListener("resize", updateDesktopNav);
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      resizeObserver.disconnect();
-      window.removeEventListener("resize", updateDesktopNav);
-    };
-  }, []);
 
   const navBg = scrolled
     ? "bg-white/95 backdrop-blur-md shadow-md shadow-black/5"
@@ -99,13 +75,11 @@ export function Navbar() {
         )}
       >
         <nav
-          ref={navRef}
-          className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-6 flex items-center h-16"
+          className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-6 flex items-center h-16 min-[1440px]:justify-center"
           aria-label="Main navigation"
         >
           {/* ── Logo ── */}
           <Link
-            ref={logoRef}
             href="/"
             className="flex items-center shrink-0 transition-transform duration-200 hover:scale-[1.02]"
             aria-label="CHP Himalayan Paradise Home"
@@ -131,15 +105,9 @@ export function Navbar() {
 
           {/* ── Desktop links (centred) ── */}
           <div
-            ref={desktopContentRef}
-            className={cn(
-              "items-center min-w-max",
-              desktopNavFits
-                ? "flex flex-1 ml-6"
-                : "absolute invisible pointer-events-none flex"
-            )}
+            className="hidden min-[1440px]:flex ml-6 items-center"
           >
-          <ul className="flex items-center gap-0.5 mr-auto">
+          <ul className="flex items-center gap-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -201,7 +169,7 @@ export function Navbar() {
           </div>
 
           {/* ── CTA buttons (right-pinned) ── */}
-          <div className="flex items-center gap-2.5 shrink-0 ml-4">
+          <div className="hidden min-[1440px]:flex items-center gap-2.5 shrink-0 ml-4">
             <a
               href="tel:+919949994989"
               className={cn(
@@ -215,8 +183,19 @@ export function Navbar() {
               <span>+91 99499 94989</span>
             </a>
 
+            <div className="flex items-center gap-1" aria-label="CHP social links">
+              {socialLinks.map(({ href, label, brand }) => (
+                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className={cn("inline-flex h-7 w-7 items-center justify-center rounded-full transition-colors", scrolled || !isHome ? "text-slate-600 hover:bg-slate-100 hover:text-slate-900" : "text-white/80 hover:bg-white/10 hover:text-white")}>
+                  <SocialBrandIcon name={brand} className="h-3.5 w-3.5" />
+                </a>
+              ))}
+              <span aria-label="Facebook (URL not verified)" title="Facebook URL not verified" className={cn("inline-flex h-7 w-7 items-center justify-center rounded-full", scrolled || !isHome ? "text-slate-400" : "text-white/50")}>
+                <SocialBrandIcon name="facebook" className="h-3.5 w-3.5" />
+              </span>
+            </div>
+
             <Link
-              href="/growth-partner"
+              href="/chp-enclave"
               className={cn(
                 "text-[13px] font-semibold px-4 py-2 rounded-full border whitespace-nowrap transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
                 scrolled || !isHome
@@ -224,7 +203,7 @@ export function Navbar() {
                   : "bg-amber-500/90 hover:bg-amber-500 text-white border-amber-300/30 backdrop-blur-sm"
               )}
             >
-              CHP Growth Partner
+              Group Ownership
             </Link>
 
             <Link
@@ -241,8 +220,7 @@ export function Navbar() {
           <button
             onClick={() => setMenuOpen((v) => !v)}
             className={cn(
-              "p-2 rounded-lg transition-colors ml-auto",
-              desktopNavFits ? "hidden" : "inline-flex",
+              "min-[1440px]:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ml-auto text-sm font-semibold",
               scrolled || !isHome
                 ? "text-slate-700 hover:bg-slate-100"
                 : "text-white hover:bg-white/10"
@@ -251,6 +229,7 @@ export function Navbar() {
             aria-expanded={menuOpen}
           >
             {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <span>Menu</span>
           </button>
         </nav>
       </header>
@@ -278,6 +257,7 @@ export function Navbar() {
                   >
                     <Link
                       href={link.href}
+                      onClick={() => setMenuOpen(false)}
                       className={cn(
                         "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
                         isActive
@@ -307,6 +287,7 @@ export function Navbar() {
                 >
                   <Link
                     href={link.href}
+                    onClick={() => setMenuOpen(false)}
                     className="flex items-center py-2.5 px-4 rounded-xl text-base font-medium text-slate-500 hover:bg-slate-50 hover:text-slate-900 transition-colors"
                   >
                     {link.label}
@@ -325,13 +306,15 @@ export function Navbar() {
                 +91 99499 94989
               </a>
               <Link
-                href="/growth-partner"
+                href="/chp-enclave"
+                onClick={() => setMenuOpen(false)}
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3.5 rounded-xl text-center transition-colors"
               >
-                CHP Growth Partner
+                Group Ownership
               </Link>
               <Link
                 href="/contact"
+                onClick={() => setMenuOpen(false)}
                 className="w-full bg-green-900 hover:bg-green-800 text-white font-semibold py-3.5 rounded-xl text-center transition-colors"
               >
                 Contact CHP

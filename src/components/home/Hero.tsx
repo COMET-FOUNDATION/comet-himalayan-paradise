@@ -92,9 +92,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.75 }}
           className="text-white/70 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
         >
-          Immersive treks, holiday camps, wellness retreats, and cultural
-          adventures in the heart of the Indian Himalayas — curated for every
-          soul.
+          A Himalayan second home in the Himalayas, surrounded by nature,
+          adventure, treks, holiday & wellness camps, culture, and experiences
+          — created for living, not just visiting.
         </motion.p>
 
         {/* CTAs */}
@@ -117,21 +117,21 @@ export function Hero() {
             className="group inline-flex items-center gap-2 glass text-white px-8 py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5"
           >
             <Compass className="w-4 h-4" />
-            Explore Treks
+            Treks and Trails
           </Link>
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
           >
             <Briefcase className="w-4 h-4" />
-            Explore Business & Investment Opportunities
+            Biz & investment Opportunities
           </Link>
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 glass text-white px-6 py-3.5 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
           >
             <HomeIcon className="w-4 h-4" />
-            Own a Second Home in the Himalayas
+            Own a second home in Himalayas
           </Link>
           <Link
             href="/#purpose-driven-space"
