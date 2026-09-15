@@ -19,6 +19,7 @@ const navLinks = [
   { href: "/facilities", label: "Dream Spaces & Facilities" },
   { href: "/accommodation", label: "Homestay" },
   { href: "/gateways", label: "CHP Gateways" },
+  { href: "/partnership-proposals", label: "Partnership Proposals" },
 ];
 
 // Secondary links — shown in the "More" dropdown on desktop and a grouped section on mobile
