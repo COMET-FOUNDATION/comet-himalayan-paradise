@@ -173,7 +173,7 @@ export default function AboutPage() {
               <div className="group flex justify-center shrink-0">
                 <div className="inline-block rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-orange-300/40">
                   <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/bc54a26e-71c2-4c7d-987b-03cfac7e8c94-scaled-corp-footprints.webp"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a83d7a70-f05c-4a6f-8e09-6c3e1dc090ac-scaled-corp-footprints.webp"
                     alt="Organizations who have chosen CHP"
                     width={480}
                     height={320}
@@ -186,15 +186,17 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="h-px w-8 bg-orange-500" />
-                  <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
-                    Corporate Ties
-                  </p>
-                </div>
+                
                 <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                   CHP Corp Footprints
                 </h2>
+                <a 
+                  href="/contact" 
+                  className="inline-block text-blue-600 hover:text-blue-800 font-medium mb-4 underline transition-colors"
+                >
+                  Click here to join the CHP Group
+                </a>
+
                 <p className="text-slate-600 leading-relaxed text-lg">
                   Working on our mission to connect visionary leaders with the
                   Himalayas, professionals and industry leaders from the
@@ -234,7 +236,7 @@ export default function AboutPage() {
               <div className="group relative mt-6 mx-3 lg:mt-0">
                 <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d00729b2-da47-4aaf-8b4b-8f750ef0d250-scaled-thingstodo.webp"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a87aeb9b-4231-4bf0-a7aa-2987fc4df906-scaled-thingstodo.webp"
                     alt="Things to do at CHP Himalayan Paradise"
                     width={640}
                     height={480}
@@ -271,41 +273,44 @@ export default function AboutPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <ScrollReveal>
-              <div className="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-colors duration-300 hover:border-orange-400/30">
-                <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-                  Our Mission
-                </p>
-                <h2 className="text-white text-2xl font-bold mb-4">
-                  To Make the Himalayas Accessible to Every Genuine Seeker
-                </h2>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  We exist to create life-enriching Himalayan experiences that
-                  are accessible, authentic, safe, and sustainable. We believe
-                  that every person who journeys into these mountains should
-                  leave feeling more alive, more connected — to nature, to
-                  culture, and to themselves.
-                </p>
-              </div>
-            </ScrollReveal>
+            <div className="lg:col-span-1">
+  <div className="space-y-6">
 
-            <ScrollReveal delay={0.15}>
-              <div className="bg-white/8 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-colors duration-300 hover:border-sky-400/30">
-                <p className="text-sky-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-                  Our Vision
-                </p>
-                <h2 className="text-white text-2xl font-bold mb-4">
-                  A Model for Responsible Himalayan Tourism
-                </h2>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  We envision a future where the Himalayas remain pristine,
-                  where local communities thrive through equitable tourism
-                  revenue, and where every traveler who visits becomes an
-                  ambassador for the mountains they&apos;ve experienced. We are
-                  building that future — one journey at a time.
-                </p>
-              </div>
-            </ScrollReveal>
+    {/* Vision */}
+    <div>
+      <p className="text-sky-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
+        Vision
+      </p>
+      <p className="text-white text-lg font-semibold leading-relaxed">
+        One Stop Destination for all Travel Experiences
+      </p>
+    </div>
+
+    {/* Mission */}
+    <div>
+      <p className="text-orange-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
+        Mission
+      </p>
+      <p className="text-white text-lg font-semibold leading-relaxed">
+        Invest - Build - Grow - Prosper Together — Creating a Meaningful
+        Ecosystem with Purpose
+      </p>
+    </div>
+
+    {/* Values */}
+    <div>
+      <p className="text-emerald-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
+        Values
+      </p>
+      <p className="text-white text-lg font-semibold leading-relaxed">
+        Rooted in Nature. Deep Mountain Knowledge. Authentic Hospitality.
+        Driven by Trust and Commitment.
+      </p>
+    </div>
+
+  </div>
+</div>
+          <img src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/57c52a5a-8cff-4f4a-aba1-f59591d5a443-scaled-vision-mission-values.webp"/>
           </div>
         </div>
       </section>
@@ -313,12 +318,6 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="What We Stand For"
-            title="Our Values"
-            subtitle="Four principles that guide every decision we make."
-          />
-
           <StaggerContainer
             className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
             staggerDelay={0.1}
@@ -356,15 +355,7 @@ export default function AboutPage() {
               </p>
               <span className="h-px w-8 bg-orange-400" />
             </div>
-            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold leading-tight">
-              The Making of CHP
-            </h2>
-            <p className="text-orange-500 text-lg sm:text-xl italic font-medium mt-4">
-              (From Idea to Ecosystem)
-            </p>
-            <p className="text-slate-500 text-sm mt-5 max-w-xl mx-auto">
-              Key milestones that have shaped who we are.
-            </p>
+            <img src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d7e812f0-e184-43e0-b6b4-a6cc4aefe58b-scaled-makingofchp.webp"></img>
           </div>
 
           <div className="mt-14 relative pl-8 border-l-2 border-green-900/15 space-y-10">
