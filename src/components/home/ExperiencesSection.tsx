@@ -12,7 +12,8 @@ const experiences = [
     title: "Holiday Camps",
     description:
       "Multi-day immersive camps combining adventure, wellness, culture, and nature in stunning Himalayan settings.",
-    image: "/Holiday Camp 2.png",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
     href: "/camps",
     badge: "1–45 Days",
   },
@@ -20,16 +21,18 @@ const experiences = [
     title: "Wellness Retreats",
     description:
       "Yoga, meditation, pranayama, and mindfulness in the natural cathedral of the Himalayas.",
-    image: "/Wellness retreat.png",
-    href: "/treks",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2f042686-f530-4008-abba-f1f06a67a846-wellness.webp",
+    href: "/experiences",
     badge: "3–14 Days",
   },
   {
     title: "Wildlife & Nature",
     description:
       "Birding walks, jungle safaris, night safaris, and wildlife observation with expert naturalists.",
-    image: "/Wildlife and nature 2.png",
-    href: "/treks",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/21ce77df-8ab2-4920-a9eb-f7ca749c5cee-chp-enclave.png",
+    href: "/experiences",
     badge: "All Year",
   },
   {
@@ -37,7 +40,7 @@ const experiences = [
     description:
       "Village tours, traditional cooking, folk art, herbal farming, and living heritage of Kumaon.",
     image: "/Cultural Experiences.png",
-    href: "/treks",
+    href: "/experiences",
     badge: "Immersive",
   },
   {
@@ -45,24 +48,23 @@ const experiences = [
     description:
       "Mountain cycling, riverside camping, rock scrambling, glacier walks, and adrenaline pursuits.",
     image: "/Adventure Activities.png",
-    href: "/treks",
+    href: "/experiences",
     badge: "Multi-level",
   },
 ];
 
 export function ExperiencesSection() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
           <SectionHeader
-            eyebrow="Experiences"
-            title="What Awaits You"
-            subtitle="Curated Himalayan experiences tailored for adventure, wellness, and reflection."
+            title="CHP Experiences"
+            subtitle="Go Beyond Destinations. See the Himalayas. Feel the Himalayas. Discover the Himalayan Experience."
             align="left"
           />
           <Link
-            href="/treks"
+            href="/experiences"
             className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
           >
             All Experiences
@@ -117,7 +119,7 @@ export function ExperiencesSection() {
 
         <div className="mt-12 text-center">
           <Link
-            href="/treks"
+            href="/experiences"
             className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
           >
             All Experiences

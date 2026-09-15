@@ -85,12 +85,11 @@ const features = [
 
 export function WhyCHP() {
   return (
-    <section className="py-20 lg:py-28 bg-stone-50">
+    <section className="py-14 lg:py-20 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="Why Choose Us"
-          title="Why CHP Himalayan Paradise"
-          subtitle="Join CHP and unlock opportunities in hospitality, tourism, events, remote work, and sustainable living."
+          title="Why Be Part of the CHP Ecosystem?"
+          subtitle="One Ecosystem. Endless Experiences. A Community That Feels Like Home."
         />
 
         <StaggerContainer

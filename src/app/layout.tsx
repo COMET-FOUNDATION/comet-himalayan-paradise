@@ -95,7 +95,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#organization`,
       name: "CHP Himalayan Paradise",
       url: BASE_URL,
-      logo: OG_IMAGE,
+      logo: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/79abc1c0-afd2-4cfe-bfe3-c8ce0b20faf5-chatgpt-image-aug-31-2026-11-56-21-pm.png",
       description:
         "Immersive Himalayan travel experiences — holiday camps, guided treks, wellness retreats, and cultural adventures in the Indian Himalayas.",
       address: {

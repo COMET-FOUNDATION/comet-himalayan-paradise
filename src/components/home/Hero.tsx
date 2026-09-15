@@ -38,12 +38,12 @@ export function Hero() {
       {/* Parallax background */}
       <motion.div className="absolute inset-0 scale-110" style={{ y: bgY }}>
         <Image
-          src="/Home page Image.png"
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ddcc4252-ab86-4945-8a5f-8be2e830e121-hp.webp"
           alt="CHP Himalayan Paradise"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[center_38%]"
         />
       </motion.div>
 

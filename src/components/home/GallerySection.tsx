@@ -3,32 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { galleryImages } from "@/data/gallery";
 
-const images = [
-  {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&auto=format&fit=crop",
-    alt: "Snow-capped Himalayan peaks",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504609773096-3761a51151b4?w=600&q=80&auto=format&fit=crop",
-    alt: "Camping tent at dusk",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=600&q=80&auto=format&fit=crop",
-    alt: "Trekker on Himalayan trail",
-  },
-];
+const images = galleryImages.slice(0, 3);
 
 export function GallerySection() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-14 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
           <SectionHeader
-            eyebrow="Gallery"
-            title="Life in the Himalayas"
+            title="CHP Image Gallery"
             subtitle="A glimpse of the extraordinary moments that await you."
             align="left"
           />
@@ -44,7 +30,7 @@ export function GallerySection() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {images.map((img, i) => (
             <motion.div
-              key={img.src}
+              key={img.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

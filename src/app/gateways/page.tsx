@@ -106,7 +106,7 @@ export default function GatewaysPage() {
             <section className="relative py-28 lg:py-36 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
                 <div className="absolute inset-0 z-0 opacity-40">
                     <Image
-                        src="/CHP Gateways.png"
+                        src="/images/chp-gateways.png"
                         alt="CHP Gateways"
                         fill
                         priority
@@ -179,7 +179,7 @@ export default function GatewaysPage() {
                             className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-700/80 aspect-[4/3] group"
                         >
                             <Image
-                                src="/CHP Gateways.png"
+                                src="/images/chp-gateways.png"
                                 alt="CHP Gateways Ecosystem"
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"

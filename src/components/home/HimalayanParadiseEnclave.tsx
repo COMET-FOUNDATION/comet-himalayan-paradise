@@ -65,7 +65,7 @@ export function HimalayanParadiseEnclave() {
                     >
                         <div className="w-full rounded-3xl overflow-hidden shadow-2xl border border-stone-700/60 group">
                             <img
-                                src="/CHP Enclave.png"
+                                src="/images/chp-enclave.png"
                                 alt="CHP Himalayan Paradise Enclave"
                                 className="w-full h-auto block rounded-3xl transition-transform duration-700 group-hover:scale-[1.02]"
                             />

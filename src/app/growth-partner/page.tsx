@@ -159,7 +159,7 @@ export default function GrowthPartnerPage() {
     return (
         <main className="min-h-screen bg-slate-900 text-slate-100 pt-20">
             {/* Hero Section */}
-            <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
+                        <section className="relative py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 border-b border-slate-800">
                 <div className="absolute inset-0 z-0 opacity-25">
                     <Image
                         src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80&auto=format&fit=crop"
@@ -170,9 +170,9 @@ export default function GrowthPartnerPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent" />
                 </div>
-
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-3xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div className="lg:col-span-7">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -189,9 +189,9 @@ export default function GrowthPartnerPage() {
                             transition={{ duration: 0.5, delay: 0.1 }}
                             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
                         >
-                            Build the Future of <br />
+                                                       Building the Himalayan Ecosystem,{" "}
                             <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-emerald-400 bg-clip-text text-transparent">
-                                Himalayan Eco-Tourism
+                                Together
                             </span>
                         </motion.h1>
 
@@ -201,8 +201,24 @@ export default function GrowthPartnerPage() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="mt-6 text-lg sm:text-xl text-slate-300 leading-relaxed font-light"
                         >
-                            Partner with CHP Himalayan Paradise to create profitable, sustainable mountain resorts, high-altitude adventure hubs, and organic wellness retreats in Kumaon.
+                            CHP Growth Partners are the driving force behind the expansion of the CHP ecosystem. From cottage owners and facility owners to marketing heads, referral partners, and business associates, every partner plays a valuable role in creating new opportunities and strengthening the community.<br />
+Together, they contribute through hospitality, infrastructure, marketing, guest experiences, referrals, and business development—helping CHP grow into a vibrant destination for tourism, entrepreneurship, wellness, and sustainable living.<br />
+As the CHP ecosystem grows, every Growth Partner benefits from greater visibility, stronger business opportunities, increased visitor engagement, and the shared success of a thriving Himalayan community.<br />
+<br /> 
+<span className="font-semibold text-white">Contact to join CHP as a Business Growth Partner</span>
                         </motion.p>
+
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.25 }}
+                            className="mt-6 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight"
+                        >
+                            Together Towards{" "}
+                            <span className="bg-gradient-to-r from-amber-200 via-amber-400 to-emerald-400 bg-clip-text text-transparent">
+                                Greater Success
+                            </span>
+                        </motion.h2>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -218,12 +234,29 @@ export default function GrowthPartnerPage() {
                                 <ArrowRight className="w-4 h-4" />
                             </a>
                             <a
+                                                           
                                 href="#partner-verticals"
                                 className="bg-slate-800 hover:bg-slate-700 text-white font-medium px-7 py-3.5 rounded-full border border-slate-700 transition-all duration-200"
                             >
                                 Explore Verticals
                             </a>
                         </motion.div>
+                    </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="lg:col-span-5 relative w-full h-72 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden border border-slate-700/60"
+                    >
+                        <Image
+                            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/41e46d9a-b3ec-4d64-a91c-6476d3e30b18-scaled-cgp.webp"
+                            alt="CHP Growth Partners"
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 40vw"
+                            className="object-cover"
+                        />
+                    </motion.div>
                     </div>
 
                     {/* Quick Metrics Bar */}

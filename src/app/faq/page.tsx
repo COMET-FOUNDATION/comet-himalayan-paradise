@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, ArrowRight } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const faqs = [
@@ -84,32 +83,24 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   );
 }
 
-export function FAQ() {
+export default function FAQPage() {
   return (
-    <section className="py-14 lg:py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          eyebrow="FAQ"
-          title="Questions & Answers"
-          subtitle="Everything you need to know before booking your Himalayan journey."
-        />
+    <main className="pt-20 min-h-screen bg-white">
+      <section className="py-16 lg:py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            eyebrow="FAQ"
+            title="Questions & Answers"
+            subtitle="Everything you need to know before booking your Himalayan journey."
+          />
 
-        <div className="mt-12">
-          {faqs.slice(0, 3).map((item, i) => (
-            <FAQItem key={item.q} q={item.q} a={item.a} index={i} />
-          ))}
+          <div className="mt-12">
+            {faqs.map((item, i) => (
+              <FAQItem key={item.q} q={item.q} a={item.a} index={i} />
+            ))}
+          </div>
         </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            href="/faq"
-            className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold text-sm px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
-          >
-            Show All
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }

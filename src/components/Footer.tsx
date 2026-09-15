@@ -19,11 +19,11 @@ const footerLinks = {
     { href: "/growth-partner", label: "CHP Growth Partner" },
   ],
   Popular: [
-    { href: "/treks/khaliya-top", label: "Khaliya Top Trek" },
-    { href: "/treks/panchachuli-base-camp", label: "Panchachuli Base Camp" },
-    { href: "/treks/adi-kailash", label: "Adi Kailash Trek" },
-    { href: "/treks/nanda-devi-base-camp", label: "Nanda Devi Base Camp" },
-    { href: "/treks/mila-glacier", label: "Mila Glacier Trek" },
+    { href: "/treks/khalia-top-trek", label: "Khalia Top Trek" },
+    { href: "/treks/panchachuli-base-camp-trek", label: "Panchachuli Base Camp" },
+    { href: "/treks/adi-kailash-om-parvat-trek", label: "Adi Kailash Om Parvat" },
+    { href: "/treks/chandika-ghat-trek", label: "Chandika Ghat Trek" },
+    { href: "/treks/milam-glacier-trek", label: "Milam Glacier Trek" },
   ],
 };
 
@@ -49,7 +49,7 @@ export function Footer() {
             >
               <div className="bg-white/95 backdrop-blur-sm p-2 rounded-xl inline-flex items-center shadow-md border border-white/20">
                 <Image
-                  src="/Logo final 2026.png"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/79abc1c0-afd2-4cfe-bfe3-c8ce0b20faf5-chatgpt-image-aug-31-2026-11-56-21-pm.png"
                   alt="CHP Himalayan Paradise"
                   width={200}
                   height={60}
@@ -68,7 +68,7 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-green-400 mt-0.5 shrink-0" />
                 <span className="text-slate-400">
-                   Pithoragarh,
+                  Pithoragarh,
                   <br /> Uttarakhand 262501, India
                 </span>
               </li>

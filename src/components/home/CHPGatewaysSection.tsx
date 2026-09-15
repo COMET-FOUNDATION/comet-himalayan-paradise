@@ -7,7 +7,7 @@ import { ArrowRight, Compass, Layers } from "lucide-react";
 
 export function CHPGatewaysSection() {
     return (
-        <section id="gateways-section" className="py-20 lg:py-28 bg-stone-50 overflow-hidden scroll-mt-20">
+        <section id="gateways-section" className="py-14 lg:py-20 bg-stone-50 overflow-hidden scroll-mt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Image */}
@@ -20,7 +20,7 @@ export function CHPGatewaysSection() {
                     >
                         <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
                             <img
-                                src="/CHP Gateways.png"
+                                src="/images/chp-gateways.png"
                                 alt="CHP Gateways"
                                 className="w-full h-auto block rounded-3xl transition-transform duration-700 group-hover:scale-[1.02]"
                             />

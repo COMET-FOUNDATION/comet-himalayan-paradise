@@ -38,13 +38,14 @@ export default function TreksPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[500px] bg-green-950 flex items-center justify-center">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative min-h-[500px] bg-black flex items-center justify-center">
+        <div className="absolute inset-0">
           <div
   className="absolute inset-0 bg-cover bg-center"
-  style={{ backgroundImage: "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7faa583a-fae6-42cd-9755-b3ef23cb0a29-scaled-treks-and-trails-header.webp')" }}
+  style={{ backgroundImage: "url('https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e789e8ce-790a-4886-9c09-8acc4a666db4-chatgpt-image-sep-3-2026-02-21-06-am.webp')" }}
 />
         </div>
+        <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p
             initial={{ opacity: 0, y: 16 }}

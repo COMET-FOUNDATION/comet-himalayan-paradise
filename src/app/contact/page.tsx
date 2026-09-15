@@ -168,7 +168,7 @@ export default function ContactPage() {
               {/* Map placeholder */}
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-52 relative">
                 <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/db273aa7-482e-4423-87c6-4aff2215b27e-images.jpeg"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea85b896-ebcc-49e9-a660-3d787cc10515-scaled-nanda-devi-base-camp.webp"
                   alt="Munsiyari location map"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -268,10 +268,10 @@ export default function ContactPage() {
                         >
                           <option value="">Select size</option>
                           <option>Solo</option>
-                          <option>2–4 Guest</option>
-                          <option>5–10 Guest</option>
-                          <option>11–20 Guest</option>
-                          <option>20+ Guests</option>
+                          <option>1-4 Guest</option>
+                          <option>5-8 Guest</option>
+                          <option>9-12 Guest</option>
+                          <option>12+ Guests</option>
                         </select>
                       </div>
                     </div>

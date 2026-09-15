@@ -48,13 +48,17 @@ export function FacilitiesPage() {
           <p className="text-sm font-semibold uppercase tracking-wide text-green-700 mb-2">
             On-Site
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-stone-900">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-stone-900">
             All CHP Facilities
           </h1>
-          <p className="mt-3 text-stone-600 max-w-2xl mx-auto">
-            20+ tourism and community facilities available for co-ownership
-            through our partnership-based profit-sharing model.
-          </p>
+          <div className="mt-4 space-y-3 max-w-2xl mx-auto">
+                       <p className="text-sm sm:text-base text-stone-600 leading-relaxed text-justify">
+              CHP is creating a first-of-its-kind integrated Himalayan ecosystem where hospitality, wellness, adventure, spirituality, remote work, events, and authentic local experiences come together in one destination. The vision is to establish CHP as a one-stop destination for complete Himalayan experiences, serving travelers, families, corporates, and wellness seekers throughout the year.
+            </p>
+            <p className="text-sm sm:text-base text-stone-600 leading-relaxed text-justify">
+              To make this vision a reality, CHP invites entrepreneurs and investors to co-own 20+ tourism and community facilities through a partnership-based profit-sharing model. Join us in building a sustainable Himalayan destination while creating long-term value and recurring income opportunities.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">

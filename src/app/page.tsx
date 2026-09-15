@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Marquee } from "@/components/home/Marquee";
 import { Hero } from "@/components/home/Hero";
 import { WhyCHP } from "@/components/home/WhyCHP";
 import { ExperiencesSection } from "@/components/home/ExperiencesSection";
@@ -6,7 +7,6 @@ import { PopularTreks } from "@/components/home/PopularTreks";
 import { StatsSection } from "@/components/home/StatsSection";
 import { CHPFacilities } from "@/components/home/CHPFacilities";
 import { PurposeDrivenSpace } from "@/components/home/PurposeDrivenSpace";
-import { HimalayanParadiseEnclave } from "@/components/home/HimalayanParadiseEnclave";
 import { CHPGatewaysSection } from "@/components/home/CHPGatewaysSection";
 import { GallerySection } from "@/components/home/GallerySection";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <Marquee />
       <Hero />
       <WhyCHP />
       <ExperiencesSection />
       <PopularTreks />
       <CHPFacilities />
       <PurposeDrivenSpace />
-      <HimalayanParadiseEnclave />
       <CHPGatewaysSection />
       <GallerySection />
       <Testimonials />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
@@ -18,9 +18,26 @@ const categories: { value: GalleryCategory; label: string }[] = [
   { value: "wellness", label: "Wellness" },
 ];
 
+// Top 5 best images for header cross-blend slideshow
+const headerImages = [
+  galleryImages[0].src,
+  galleryImages[1].src,
+  galleryImages[2].src,
+  galleryImages[4].src,
+  galleryImages[7].src,
+];
+
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>("all");
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBgIndex((prev) => (prev + 1) % headerImages.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   const filtered =
     activeCategory === "all"
@@ -38,27 +55,76 @@ export default function GalleryPage() {
 
   return (
     <>
-      {/* Header */}
-      <section className="relative bg-green-950 pt-32 pb-16">
-        <div className="absolute inset-0 opacity-15">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=50')] bg-cover bg-center" />
+      {/* ── Top Header with 5-image crisp crossfade blend ── */}
+      <section className="relative bg-slate-950 pt-36 pb-24 overflow-hidden border-b border-slate-800">
+        {/* Animated background slideshow with high sharpness & unoptimized full resolution */}
+        <div className="absolute inset-0 z-0">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={headerImages[currentBgIndex]}
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 0.6, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={headerImages[currentBgIndex]}
+                alt="CHP Gallery Header"
+                fill
+                priority
+                quality={100}
+                unoptimized
+                className="object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Multi-image strip blending overlay without blur */}
+          <div className="absolute inset-0 grid grid-cols-5 opacity-30 pointer-events-none mix-blend-overlay">
+            {headerImages.map((imgSrc, idx) => (
+              <div key={idx} className="relative h-full overflow-hidden border-r border-white/10">
+                <Image
+                  src={imgSrc}
+                  alt={`Header blend ${idx}`}
+                  fill
+                  quality={95}
+                  unoptimized
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Clean dark gradient overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/20 to-slate-950/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/40 via-transparent to-slate-950/40" />
         </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4"
           >
-            Visual Stories
-          </motion.p>
+            <span>Visual Stories</span>
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white text-4xl sm:text-5xl font-bold tracking-tight"
+            className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
           >
-            Gallery
+            Himalayan <span className="bg-gradient-to-r from-amber-300 via-emerald-300 to-teal-200 bg-clip-text text-transparent">Gallery</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto font-light leading-relaxed"
+          >
+            Immersive glimpses of guided treks, holiday camps, sacred trails, and mountain living in the Indian Himalayas.
+          </motion.p>
         </div>
       </section>
 
@@ -77,11 +143,10 @@ export default function GalleryPage() {
               <button
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
-                className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 ${
-                  activeCategory === cat.value
+                className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 ${activeCategory === cat.value
                     ? "bg-green-900 text-white shadow-md shadow-green-900/20"
                     : "bg-white text-slate-600 hover:bg-slate-100 shadow-sm"
-                }`}
+                  }`}
               >
                 {cat.label}
               </button>
@@ -113,7 +178,9 @@ export default function GalleryPage() {
                       src={img.src}
                       alt={img.alt}
                       fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      quality={95}
+                      unoptimized
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
@@ -158,6 +225,8 @@ export default function GalleryPage() {
                 src={lightbox}
                 alt="Gallery image"
                 fill
+                quality={100}
+                unoptimized
                 sizes="100vw"
                 className="object-contain"
               />
