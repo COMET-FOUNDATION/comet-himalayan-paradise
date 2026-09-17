@@ -35,9 +35,21 @@ const moreLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/in/ram-datt-bhatt-06122818/", label: "LinkedIn", brand: "linkedin" as const },
-  { href: "https://www.instagram.com/chphimalayanparadise/", label: "Instagram", brand: "instagram" as const },
-  { href: "https://www.youtube.com/@CHP_2316", label: "YouTube", brand: "youtube" as const },
+  {
+    href: "https://www.linkedin.com/in/ram-datt-bhatt-06122818/",
+    label: "LinkedIn",
+    brand: "linkedin" as const,
+  },
+  {
+    href: "https://www.instagram.com/chphimalayanparadise/",
+    label: "Instagram",
+    brand: "instagram" as const,
+  },
+  {
+    href: "https://www.youtube.com/@CHP_2316",
+    label: "YouTube",
+    brand: "youtube" as const,
+  },
 ];
 
 export function Navbar() {
@@ -48,13 +60,16 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
+
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -75,7 +90,7 @@ export function Navbar() {
         )}
       >
         <nav
-          className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-6 flex items-center h-16 min-[1440px]:justify-center"
+          className="navbar-shell max-w-[100rem] mx-auto px-4 sm:px-5 lg:px-6 flex items-center h-16 min-[1100px]:justify-center"
           aria-label="Main navigation"
         >
           {/* ── Logo ── */}
@@ -97,83 +112,97 @@ export function Navbar() {
                 alt="CHP Himalayan Paradise"
                 width={166}
                 height={49}
-                className="h-8 sm:h-9 w-auto object-contain"
+                className="navbar-logo h-8 sm:h-9 w-auto object-contain"
                 priority
               />
             </div>
           </Link>
 
-          {/* ── Desktop links (centred) ── */}
+          {/* ── Desktop links ── */}
           <div
-            className="hidden min-[1440px]:flex ml-6 items-center"
+            className={cn(
+              "navbar-desktop hidden min-[1100px]:flex ml-6 items-center min-w-0",
+              "min-[1400px]:flex-1 min-[1400px]:justify-center min-[1400px]:ml-3"
+            )}
           >
-          <ul className="flex items-center gap-0.5">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <li key={link.label} className="shrink-0">
-                  <Link
-                    href={link.href}
-                    className={cn(
-                      "px-2.5 py-1.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-all duration-200",
-                      isActive
-                        ? scrolled || !isHome
-                          ? "bg-green-900/10 text-green-900 font-semibold"
-                          : "bg-white/20 text-white font-semibold"
-                        : cn(
-                          "hover:bg-black/5",
-                          scrolled || !isHome
-                            ? "text-slate-600 hover:text-slate-900"
-                            : "text-white/80 hover:text-white hover:bg-white/10"
-                        )
-                    )}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+            <ul className="navbar-links flex items-center gap-0.5 min-[1400px]:gap-0">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
 
-          {/* More dropdown (xl screens) */}
-          <div className="relative shrink-0 mr-2">
-            <div className="relative group">
-              <button
-                type="button"
-                className={cn(
-                  "flex items-center gap-1 px-3 py-1.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-all duration-200 hover:bg-black/5",
-                  scrolled || !isHome
-                    ? "text-slate-600 hover:text-slate-900"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                )}
-              >
-                More
-                <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
-              </button>
+                return (
+                  <li key={link.label} className="shrink-0">
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "navbar-link px-2.5 py-1.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-all duration-200",
+                        "min-[1400px]:px-2",
+                        "min-[1400px]:text-[12px]",
+                        isActive
+                          ? scrolled || !isHome
+                            ? "bg-green-900/10 text-green-900 font-semibold"
+                            : "bg-white/20 text-white font-semibold"
+                          : cn(
+                              "hover:bg-black/5",
+                              scrolled || !isHome
+                                ? "text-slate-600 hover:text-slate-900"
+                                : "text-white/80 hover:text-white hover:bg-white/10"
+                            )
+                      )}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
 
-              <div className="absolute right-0 top-full pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-150">
-                <ul className="min-w-[220px] bg-white rounded-xl shadow-lg shadow-black/10 border border-slate-100 py-2 z-50">
-                  {moreLinks.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+            {/* More dropdown */}
+            <div className="navbar-more relative shrink-0 mr-2 min-[1400px]:mr-1">
+              <div className="relative group">
+                <button
+                  type="button"
+                  className={cn(
+                    "navbar-more-button flex items-center gap-1 px-3 py-1.5 rounded-full text-[13px] font-medium whitespace-nowrap transition-all duration-200 hover:bg-black/5",
+                    "min-[1400px]:px-2",
+                    "min-[1400px]:text-[12px]",
+                    scrolled || !isHome
+                      ? "text-slate-600 hover:text-slate-900"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
+                  )}
+                >
+                  More
+                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                </button>
+
+                <div className="absolute right-0 top-full pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-150">
+                  <ul className="min-w-[220px] bg-white rounded-xl shadow-lg shadow-black/10 border border-slate-100 py-2 z-50">
+                    {moreLinks.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="block px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* ── CTA buttons (right-pinned) ── */}
-          <div className="hidden min-[1440px]:flex items-center gap-2.5 shrink-0 ml-4">
+          {/* ── CTA buttons ── */}
+          <div
+            className={cn(
+              "navbar-actions hidden min-[1100px]:flex items-center gap-2.5 shrink-0 ml-4",
+              "min-[1400px]:ml-3"
+            )}
+          >
             <a
               href="tel:+919949994989"
               className={cn(
-                "flex items-center gap-1.5 text-xs font-medium transition-colors mr-1",
+                "navbar-phone flex items-center gap-1.5 text-xs font-medium transition-colors mr-1",
                 scrolled || !isHome
                   ? "text-slate-700 hover:text-green-900"
                   : "text-white/90 hover:text-white"
@@ -183,21 +212,55 @@ export function Navbar() {
               <span>+91 99499 94989</span>
             </a>
 
-            <div className="flex items-center gap-1" aria-label="CHP social links">
+            <div
+              className="navbar-socials flex items-center gap-1"
+              aria-label="CHP social links"
+            >
               {socialLinks.map(({ href, label, brand }) => (
-                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className={cn("inline-flex h-7 w-7 items-center justify-center rounded-full transition-colors", scrolled || !isHome ? "text-slate-600 hover:bg-slate-100 hover:text-slate-900" : "text-white/80 hover:bg-white/10 hover:text-white")}>
-                  <SocialBrandIcon name={brand} className="h-3.5 w-3.5" />
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className={cn(
+                    "navbar-social inline-flex h-7 w-7 items-center justify-center rounded-full transition-colors",
+                    scrolled || !isHome
+                      ? "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                      : "text-white/80 hover:bg-white/10 hover:text-white"
+                  )}
+                >
+                  <SocialBrandIcon
+                    name={brand}
+                    className="h-3.5 w-3.5"
+                  />
                 </a>
               ))}
-              <span aria-label="Facebook (URL not verified)" title="Facebook URL not verified" className={cn("inline-flex h-7 w-7 items-center justify-center rounded-full", scrolled || !isHome ? "text-slate-400" : "text-white/50")}>
-                <SocialBrandIcon name="facebook" className="h-3.5 w-3.5" />
+
+              <span
+                aria-label="Facebook (URL not verified)"
+                title="Facebook URL not verified"
+                className={cn(
+                  "navbar-social inline-flex h-7 w-7 items-center justify-center rounded-full",
+                  scrolled || !isHome
+                    ? "text-slate-400"
+                    : "text-white/50"
+                )}
+              >
+                <SocialBrandIcon
+                  name="facebook"
+                  className="h-3.5 w-3.5"
+                />
               </span>
             </div>
 
             <Link
               href="/chp-enclave"
               className={cn(
-                "text-[13px] font-semibold px-4 py-2 rounded-full border whitespace-nowrap transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
+                "navbar-ownership text-[13px] font-semibold px-4 py-2 rounded-full border whitespace-nowrap transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
+                "min-[1400px]:px-3",
+                "min-[1400px]:text-[12px]",
                 scrolled || !isHome
                   ? "bg-amber-600 hover:bg-amber-700 text-white border-amber-700/20"
                   : "bg-amber-500/90 hover:bg-amber-500 text-white border-amber-300/30 backdrop-blur-sm"
@@ -208,29 +271,15 @@ export function Navbar() {
 
             <Link
               href="/contact"
-              className="bg-green-900 hover:bg-green-800 text-white text-[13px] font-semibold px-4 py-2 rounded-full whitespace-nowrap transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5"
+              className={cn(
+                "navbar-contact bg-green-900 hover:bg-green-800 text-white text-[13px] font-semibold px-4 py-2 rounded-full whitespace-nowrap transition-all duration-200 hover:shadow-lg hover:shadow-green-900/25 hover:-translate-y-0.5",
+                "min-[1400px]:px-3",
+                "min-[1400px]:text-[12px]"
+              )}
             >
               Contact CHP
             </Link>
           </div>
-
-          </div>
-
-          {/* ── Mobile hamburger ── */}
-          <button
-            onClick={() => setMenuOpen((v) => !v)}
-            className={cn(
-              "min-[1440px]:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors ml-auto text-sm font-semibold",
-              scrolled || !isHome
-                ? "text-slate-700 hover:bg-slate-100"
-                : "text-white hover:bg-white/10"
-            )}
-            aria-label="Toggle menu"
-            aria-expanded={menuOpen}
-          >
-            {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            <span>Menu</span>
-          </button>
         </nav>
       </header>
 
@@ -248,6 +297,7 @@ export function Navbar() {
               {/* Primary links */}
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href;
+
                 return (
                   <motion.li
                     key={link.label}
@@ -283,7 +333,9 @@ export function Navbar() {
                   key={link.label}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (navLinks.length + i) * 0.045 }}
+                  transition={{
+                    delay: (navLinks.length + i) * 0.045,
+                  }}
                 >
                   <Link
                     href={link.href}
@@ -305,6 +357,7 @@ export function Navbar() {
                 <Phone className="w-4 h-4 text-green-900" />
                 +91 99499 94989
               </a>
+
               <Link
                 href="/chp-enclave"
                 onClick={() => setMenuOpen(false)}
@@ -312,6 +365,7 @@ export function Navbar() {
               >
                 Group Ownership
               </Link>
+
               <Link
                 href="/contact"
                 onClick={() => setMenuOpen(false)}

@@ -46,19 +46,7 @@ const sourceCategories: SourceCategory[] = [
   { title: "Closing Ceremony", description: "Celebrate achievements, talent, friendship, and every special moment from camp.", image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=80", activities: ["Camp Awards Ceremony", "Lucky Draw", "Talent Showcase Finale", "Best Photography", "Memory Circle", "Best Nature Art", "Secret Appreciation Cards", "Camp Memories", "Max Himalayan Birds", "Max Himalayan Flower Award"] },
 ];
 
-function activityPhoto(title: string, category: SourceCategory) {
-  const key = title.toLowerCase();
-  if (/balloon/.test(key)) return activityPhotos.balloon;
-  if (/rope|tug|skipping|net crawl|monkey/.test(key)) return activityPhotos.rope;
-  if (/water|sponge|sip|spill/.test(key)) return activityPhotos.water;
-  if (/archery|shot|toss|wicket|golf|basket|aim/.test(key)) return activityPhotos.target;
-  if (/yoga|calm|stillness|focus|balance|barefoot/.test(key)) return activityPhotos.mindfulness;
-  if (/art|photo|clay|origami|story/.test(key)) return activityPhotos.creative;
-  if (/airplane|stem|rocket|bridge|climate/.test(key)) return activityPhotos.science;
-  if (/hiking|cycling|fishing|safari|mountain|treasure/.test(key)) return activityPhotos.mountain;
-  if (/song|video|musical|karaoke|antakshiri/.test(key)) return activityPhotos.music;
-  if (/campfire/.test(key)) return activityPhotos.campfire;
-  if (/race|run|walk|crawl|relay|jump/.test(key)) return activityPhotos.active;
+function activityPhoto(category: SourceCategory) {
   return category.image;
 }
 
@@ -81,9 +69,45 @@ function activityDescription(title: string, category: SourceCategory) {
   return `${title} is a guided ${category.title.toLowerCase()} activity designed for participation, connection, and a memorable camp moment.`;
 }
 
-export const campCategories: CampCategory[] = sourceCategories.map((category) => ({
-  ...category,
-  activities: category.activities.map((title) => ({ title, image: activityPhoto(title, category), description: activityDescription(title, category) })),
-}));
+const campActivityPageImages: Record<string, string> = {
+  "Ice Breakers": "/images/camp-activities/ice-breakers.webp",
+  Communication: "/images/camp-activities/communication.webp",
+  "Smart Memory": "/images/camp-activities/smart-memory.webp",
+  "Problem Solving": "/images/camp-activities/problem-solving.webp",
+  Creativity: "/images/camp-activities/creativity.webp",
+  Mindfulness: "/images/camp-activities/mindfulness.webp",
+  "STEM Discovery Zone": "/images/camp-activities/stem-discovery-zone.webp",
+  "Team Building": "/images/camp-activities/team-building.webp",
+  "Cultural & Social": "/images/camp-activities/cultural-social.webp",
+  "Race - The Speed Circuit": "/images/camp-activities/race-the-speed-circuit.webp",
+  "Blindfold Courses": "/images/camp-activities/blindfold-courses.webp",
+  "Balloon Olympic": "/images/camp-activities/balloon-olympic.webp",
+  "Water Games": "/images/camp-activities/water-games.webp",
+  "Rope Riders": "/images/camp-activities/rope-riders.webp",
+  "Tyre Games": "/images/camp-activities/tyre-games.webp",
+  "Creepy Crawly Race": "/images/camp-activities/creepy-crawly-race.webp",
+  "Toss and Shot": "/images/camp-activities/toss-and-shot.webp",
+  "Himalayan Adventure Sports": "/images/camp-activities/himalayan-adventure-sports.webp",
+  "Musical Arena": "/images/camp-activities/musical-arena.webp",
+  "Flour Coin Fun Game": "/images/camp-activities/flour-coin-fun-game.webp",
+  "Desi Khel": "/images/camp-activities/desi-khel.webp",
+  "Evening Campfire": "/images/camp-activities/evening-campfire.webp",
+  "Closing Ceremony": "/images/camp-activities/closing-ceremony.webp",
+};
+
+export const campCategories: CampCategory[] = sourceCategories.map((category) => {
+  const image = campActivityPageImages[category.title];
+  if (!image) throw new Error(`Missing PDF image for camp activity category: ${category.title}`);
+
+  const categoryWithPdfImage = { ...category, image };
+  return {
+    ...categoryWithPdfImage,
+    activities: category.activities.map((title) => ({
+      title,
+      image: activityPhoto(categoryWithPdfImage),
+      description: activityDescription(title, category),
+    })),
+  };
+});
 
 export const categorySlug = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");

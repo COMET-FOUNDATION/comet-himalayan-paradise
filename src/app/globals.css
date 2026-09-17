@@ -130,3 +130,75 @@ body {
   z-index: 9999;
   transform-origin: left;
 }
+
+/* Desktop navigation has many intentionally visible destinations.  Browser zoom
+   reduces the CSS viewport, so compact its individual controls progressively
+   instead of dropping controls or scaling the whole bar. */
+@media (min-width: 1100px) {
+  .navbar-shell {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .navbar-desktop {
+    flex: 1 1 auto;
+    justify-content: center;
+    white-space: nowrap;
+  }
+}
+
+/* A 1920px display at 125% browser zoom is about 1536 CSS pixels wide.
+   Keep the original full-size treatment above the 110% equivalent width. */
+@media (min-width: 1651px) {
+  .navbar-shell {
+    max-width: 100rem;
+  }
+}
+
+@media (max-width: 1650px) and (min-width: 1351px) {
+  .navbar-shell { padding-inline: 1rem; }
+  .navbar-desktop { margin-left: 1rem; }
+  .navbar-links { gap: 0; }
+  .navbar-link { font-size: 12px; padding-inline: 0.45rem; }
+  .navbar-more { margin-right: 0.25rem; }
+  .navbar-more-button { font-size: 12px; padding-inline: 0.5rem; }
+  .navbar-actions { gap: 0.5rem; margin-left: 0.75rem; }
+  .navbar-ownership, .navbar-contact { font-size: 12px; padding: 0.45rem 0.7rem; }
+}
+
+@media (max-width: 1350px) and (min-width: 1221px) {
+  .navbar-shell { height: 3.75rem; padding-inline: 0.65rem; }
+  .navbar-logo { height: 1.85rem; }
+  .navbar-desktop { margin-left: 0.55rem; }
+  .navbar-links { gap: 0; }
+  .navbar-link { font-size: 10px; padding: 0.35rem 0.28rem; }
+  .navbar-more { margin-right: 0; }
+  .navbar-more-button { gap: 0.15rem; font-size: 10px; padding: 0.35rem 0.3rem; }
+  .navbar-actions { gap: 0.3rem; margin-left: 0.45rem; }
+  .navbar-phone { gap: 0.2rem; margin-right: 0; font-size: 10px; }
+  .navbar-phone svg { width: 0.75rem; height: 0.75rem; }
+  .navbar-socials { gap: 0; }
+  .navbar-social { width: 1.35rem; height: 1.35rem; }
+  .navbar-social svg { width: 0.68rem; height: 0.68rem; }
+  .navbar-ownership, .navbar-contact { font-size: 10px; padding: 0.38rem 0.48rem; }
+}
+
+/* Reserve the densest treatment for genuinely constrained desktop widths.
+   The slightly roomier 1221–1350px range covers the 150% zoom viewport. */
+@media (max-width: 1220px) and (min-width: 1100px) {
+  .navbar-shell { height: 3.5rem; padding-inline: 0.4rem; }
+  .navbar-logo { height: 1.65rem; }
+  .navbar-desktop { margin-left: 0.3rem; }
+  .navbar-links { gap: 0; }
+  .navbar-link { font-size: 9px; padding: 0.28rem 0.16rem; }
+  .navbar-more { margin-right: 0; }
+  .navbar-more-button { gap: 0.1rem; font-size: 9px; padding: 0.28rem 0.18rem; }
+  .navbar-more-button svg { width: 0.65rem; height: 0.65rem; }
+  .navbar-actions { gap: 0.18rem; margin-left: 0.25rem; }
+  .navbar-phone { gap: 0.15rem; margin-right: 0; font-size: 9px; }
+  .navbar-phone svg { width: 0.65rem; height: 0.65rem; }
+  .navbar-socials { gap: 0; }
+  .navbar-social { width: 1.15rem; height: 1.15rem; }
+  .navbar-social svg { width: 0.6rem; height: 0.6rem; }
+  .navbar-ownership, .navbar-contact { font-size: 9px; padding: 0.32rem 0.36rem; }
+}

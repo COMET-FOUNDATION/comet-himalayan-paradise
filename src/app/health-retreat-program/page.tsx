@@ -111,7 +111,7 @@ export default function HealthRetreatProgramPage() {
             {/* ── Hero ── */}
             <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80&auto=format&fit=crop"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d24cfc6e-0194-484b-b5ad-ddff2560a032-wrt.webp"
                     alt="Health Retreat Program at CHP"
                     fill priority className="object-cover"
                 />

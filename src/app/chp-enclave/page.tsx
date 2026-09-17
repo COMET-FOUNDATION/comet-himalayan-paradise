@@ -192,7 +192,7 @@ export default function CHPEnclavePage() {
                 housekeeping and security to landscaping and common
                 infrastructure, everything is managed by the community.
               </p>
-              <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-600 text-lg leading-relaxed">
+              <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-1 pl-5 text-sm leading-6 text-slate-600 sm:grid-cols-2 sm:list-disc">
                 <li>Camp fire facility</li>
                 <li>Common Fencing wall</li>
                 <li>24X7 Electricity &amp; water</li>
@@ -230,7 +230,7 @@ export default function CHPEnclavePage() {
                 Narayan Ashram. Experience a perfect blend of peaceful living
                 and year-round spiritual journeys.
               </p>
-              <ul className="mt-6 list-disc space-y-2 pl-5 text-slate-600 text-lg leading-relaxed">
+              <ul className="mt-6 grid grid-cols-1 gap-x-8 gap-y-1 pl-5 text-sm leading-6 text-slate-600 sm:grid-cols-2 sm:list-disc">
                 <li>Nanda devi</li>
                 <li>Adi-Kailash</li>
                 <li>Narayan ashram</li>

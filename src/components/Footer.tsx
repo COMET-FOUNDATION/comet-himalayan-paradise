@@ -96,7 +96,7 @@ export function Footer() {
             {/* Socials */}
             <div className="flex gap-3 mt-6">
               {socials.map(({ href, label, brand }) => href ? (
-                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className="w-9 h-9 rounded-full bg-slate-800 hover:bg-green-900 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label} className="w-9 h-9 rounded-full bg-slate-800 hover:bg-green-900 flex items-center justify-center text-slate-400 hover:text-white transition-all duration-200">
                   <SocialBrandIcon name={brand} className="w-4 h-4" />
                 </a>
               ) : (

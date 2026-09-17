@@ -144,7 +144,7 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative mt-6 mx-3 lg:mt-0">
+              <div className="relative mx-auto mt-6 w-full max-w-md lg:mt-0">
                 <div className="group rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ff715ce-30a4-4356-baa6-3055fdf0caa8-scaled-chp-intro-2.webp"
@@ -152,7 +152,7 @@ export default function AboutPage() {
                     width={640}
                     height={480}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="h-56 w-full object-contain"
                   />
                 </div>
                 <div className="absolute -top-5 -right-5 bg-white rounded-2xl px-5 py-4 shadow-xl">
@@ -170,15 +170,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
             <ScrollReveal direction="left">
-              <div className="group flex justify-center shrink-0">
-                <div className="inline-block rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-orange-300/40">
+              <div className="group flex w-full justify-center shrink-0">
+                <div className="w-full max-w-md rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-orange-300/40">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a83d7a70-f05c-4a6f-8e09-6c3e1dc090ac-scaled-corp-footprints.webp"
                     alt="Organizations who have chosen CHP"
                     width={480}
                     height={320}
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="w-full h-auto max-h-64 object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="h-56 w-full object-contain"
                   />
                 </div>
               </div>
@@ -190,19 +190,18 @@ export default function AboutPage() {
                 <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                   CHP Corp Footprints
                 </h2>
-                <a 
-                  href="/contact" 
-                  className="inline-block text-blue-600 hover:text-blue-800 font-medium mb-4 underline transition-colors"
-                >
-                  Click here to join the CHP Group
-                </a>
-
                 <p className="text-slate-600 leading-relaxed text-lg">
                   Working on our mission to connect visionary leaders with the
                   Himalayas, professionals and industry leaders from the
                   following organizations have already chosen CHP as their
                   second home.
                 </p>
+                <a
+                  href="/contact"
+                  className="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium underline transition-colors"
+                >
+                  Click here to join the CHP Group
+                </a>
               </div>
             </ScrollReveal>
           </div>
@@ -233,7 +232,7 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="group relative mt-6 mx-3 lg:mt-0">
+              <div className="group relative mx-auto mt-6 w-full max-w-md lg:mt-0">
                 <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a87aeb9b-4231-4bf0-a7aa-2987fc4df906-scaled-thingstodo.webp"
@@ -241,7 +240,7 @@ export default function AboutPage() {
                     width={640}
                     height={480}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="h-56 w-full object-contain"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
