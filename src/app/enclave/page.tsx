@@ -30,7 +30,7 @@ export default function CHPEnclavePage() {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=50')] bg-cover bg-center" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          <p className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">
             A New Way to Belong
           </p>
           <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight">

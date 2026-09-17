@@ -578,7 +578,26 @@ export default function ContactPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
       {/* ── Contact section ──────────────────────────────────────── */}
+=======
+  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+    <p className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">
+      Get in Touch
+    </p>
+
+    <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight mb-3">
+      Enter the CHP Himalayan Paradise Ecosystem
+    </h1>
+
+    <p className="text-white/65 text-base max-w-md">
+      Tell us your dream Himalayan experience and we&apos;ll design it for you.
+      Free consultation, no commitment.
+    </p>
+  </div>
+</section>
+      {/* Contact section */}
+>>>>>>> 88677c1 (c3)
       <section className="py-20 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
