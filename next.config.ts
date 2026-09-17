@@ -23,6 +23,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "cdn.s3waas.gov.in",
+      },
+      {
+        protocol: "https",
         hostname: supabaseAssetHostname,
         pathname: "/storage/v1/object/public/**",
       },

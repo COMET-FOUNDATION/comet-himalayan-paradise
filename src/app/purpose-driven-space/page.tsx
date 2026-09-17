@@ -184,10 +184,10 @@ export default function PurposeDrivenSpacePage() {
                                     transition={{ duration: 0.25 }}
                                     className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} gap-0 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/10 transition-shadow duration-300`}
                                 >
-                                    <div className="relative w-full md:w-1/2 h-[280px] md:h-[420px]">
-                                        <Image src={space.image} alt={space.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 hover:scale-105" />
+                                    <div className="relative h-52 w-full bg-stone-100 md:h-60 md:w-2/5">
+                                        <Image src={space.image} alt={space.title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-contain" />
                                     </div>
-                                    <div className="w-full md:w-1/2 bg-white flex flex-col justify-center px-8 py-10">
+                                    <div className="w-full md:w-3/5 bg-white flex flex-col justify-center px-8 py-10">
                                         <h3 className="text-slate-800 font-bold text-2xl mb-3">{space.title}</h3>
                                         <p className="text-slate-500 text-base leading-relaxed">{space.description}</p>
                                     </div>
@@ -229,7 +229,7 @@ export default function PurposeDrivenSpacePage() {
                                     </motion.div>
                                 ))}
                             </div>
-                            <div className="relative w-full lg:w-[420px] h-[500px] lg:h-auto lg:self-stretch rounded-2xl overflow-hidden shrink-0">
+                            <div className="relative w-full lg:w-[360px] h-[360px] lg:h-auto lg:self-stretch rounded-2xl overflow-hidden shrink-0">
                                 <Image
                                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/635ae96e-9a39-4d71-af14-c2b1940789d7-img-20260909-192037.jpg"
                                     alt="Ways to Support"

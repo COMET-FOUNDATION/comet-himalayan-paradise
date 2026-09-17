@@ -51,7 +51,7 @@ export default function TreksPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+            className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm"
           >
             Explore the Himalayas
           </motion.p>

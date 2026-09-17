@@ -135,12 +135,12 @@ export default function CampsPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-          <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          <p className="rounded-full bg-black/25 px-4 py-2 text-orange-300 text-sm font-bold uppercase tracking-[0.24em] shadow-sm backdrop-blur-sm mb-4">
             CHP All season Holiday Camp
           </p>
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
@@ -304,13 +304,13 @@ export default function CampsPage() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
       {/* Image */}
-      <div className="relative h-[420px] rounded-2xl overflow-hidden lg:order-1">
+      <div className="relative h-[420px] rounded-2xl overflow-hidden bg-stone-100 lg:order-1">
   <Image
     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5ac86d4d-7771-4cca-b4db-ecedda76f1c3-scaled-adventure-activities.webp"
     alt="Camp activities in the Himalayas"
     fill
     sizes="(max-width: 1024px) 100vw, 50vw"
-    className="object-cover"
+    className="object-contain"
   />
 </div>
 

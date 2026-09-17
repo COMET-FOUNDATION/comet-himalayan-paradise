@@ -190,10 +190,11 @@ export default function GatewaysPage() {
                             className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-700/80 aspect-[4/3] group"
                         >
                             <Image
-                                src="/images/chp-gateways.png"
+                                src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/6755c577-d5ba-49c5-974c-8adc54ef1619-chatgpt-image-sep-17-2026-11-52-51-am.webp"
                                 alt="CHP Gateways Ecosystem"
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                className="object-cover object-center"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10">

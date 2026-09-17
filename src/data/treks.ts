@@ -265,7 +265,7 @@ export const treks: Trek[] = [
     description:
       "A spiritual journey to the sacred Kapileshwar Mahadev cave temple, dedicated to Lord Shiva. Hidden within limestone cliffs, this ancient natural cave features subterranean formations and sacred stalactites, accessible via scenic mountain trails through pine forests.",
     image:
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/4fda68f8-5ef1-4450-adb7-aa1b3b29f7c1-kmt.webp",
     category: "major",
   },
 
@@ -290,7 +290,7 @@ export const treks: Trek[] = [
     description:
       "Walk along a picturesque forest trail to the sacred Kotvi Devi cave temple. Perched high on a ridge overlooking lush Kumaon valleys, this traditional shrine is deeply revered by local villagers and offers a quiet, spiritual nature walk.",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/9eed9cb8-1ac1-4677-8269-d503d4afb53c-kdc.webp",
     category: "cultural",
   },
 
