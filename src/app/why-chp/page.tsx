@@ -9,6 +9,17 @@ import {
     Heart,
     Clock,
     Star,
+    Mountain,
+    Globe2,
+    Trees,
+    Route,
+    HandHeart,
+    Home,
+    Laptop,
+    BookOpen,
+    Sparkles,
+    Smile,
+    RefreshCw,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -91,6 +102,96 @@ const features = [
         color: "bg-indigo-50 text-indigo-600",
         surface: "bg-indigo-50/70",
     },
+
+    // New Driving Factors
+    {
+        icon: Mountain,
+        title: "Deep Mountain Knowledge",
+        description:
+            "Our connection with the Himalayas is built on local understanding, lived experience, and a deep appreciation of mountain life.",
+        color: "bg-teal-50 text-teal-600",
+        surface: "bg-teal-50/70",
+    },
+    {
+        icon: Globe2,
+        title: "Global Standards. Himalayan Soul",
+        description:
+            "Experience thoughtful hospitality and professional standards while staying rooted in the culture, character, and spirit of the Himalayas.",
+        color: "bg-blue-50 text-blue-600",
+        surface: "bg-blue-50/70",
+    },
+    {
+        icon: Trees,
+        title: "Peace, Nature & Escape",
+        description:
+            "Step away from crowded cities and reconnect with quiet landscapes, fresh mountain air, forests, and expansive Himalayan views.",
+        color: "bg-lime-50 text-lime-600",
+        surface: "bg-lime-50/70",
+    },
+    {
+        icon: Route,
+        title: "Adventure & Exploration",
+        description:
+            "Discover trails, villages, forests, valleys, and hidden mountain experiences designed for curiosity, movement, and exploration.",
+        color: "bg-orange-50 text-orange-600",
+        surface: "bg-orange-50/70",
+    },
+    {
+        icon: HandHeart,
+        title: "Community Connection",
+        description:
+            "Connect with local communities, traditions, people, and everyday Himalayan life through meaningful and respectful experiences.",
+        color: "bg-pink-50 text-pink-600",
+        surface: "bg-pink-50/70",
+    },
+    {
+        icon: Home,
+        title: "A Place to Belong",
+        description:
+            "Create a lasting connection with a mountain environment where people can return, reconnect, slow down, and feel at home.",
+        color: "bg-violet-50 text-violet-600",
+        surface: "bg-violet-50/70",
+    },
+    {
+        icon: Laptop,
+        title: "Work + Mountain Lifestyle",
+        description:
+            "Combine productive work with mountain living through spaces and experiences that make it possible to work, recharge, and explore.",
+        color: "bg-cyan-50 text-cyan-600",
+        surface: "bg-cyan-50/70",
+    },
+    {
+        icon: BookOpen,
+        title: "Learning & Discovery",
+        description:
+            "Learn through nature, culture, local traditions, outdoor experiences, and new perspectives shaped by the Himalayan environment.",
+        color: "bg-yellow-50 text-yellow-600",
+        surface: "bg-yellow-50/70",
+    },
+    {
+        icon: Sparkles,
+        title: "Unique Dream Spaces",
+        description:
+            "Explore distinctive spaces created for reflection, creativity, wellness, community, and memorable experiences in the mountains.",
+        color: "bg-fuchsia-50 text-fuchsia-600",
+        surface: "bg-fuchsia-50/70",
+    },
+    {
+        icon: Smile,
+        title: "Emotional Connection",
+        description:
+            "Build memories and meaningful moments that connect you emotionally with the people, places, nature, and experiences of CHP.",
+        color: "bg-red-50 text-red-600",
+        surface: "bg-red-50/70",
+    },
+    {
+        icon: RefreshCw,
+        title: "Reasons to Return",
+        description:
+            "Every season brings a different side of the Himalayas, creating new experiences and meaningful reasons to come back again.",
+        color: "bg-slate-50 text-slate-600",
+        surface: "bg-slate-50/70",
+    },
 ];
 
 export default function WhyCHPPage() {
@@ -102,11 +203,14 @@ export default function WhyCHPPage() {
                     <p className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">
                         Why Choose Us
                     </p>
+
                     <h1 className="text-white text-4xl sm:text-5xl font-bold tracking-tight mb-5">
                         Why CHP Himalayan Paradise
                     </h1>
+
                     <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                        Join CHP and unlock opportunities in hospitality, tourism, events, remote work, and sustainable living.
+                        Join CHP and unlock opportunities in hospitality, tourism,
+                        events, remote work, and sustainable living.
                     </p>
                 </div>
             </section>
@@ -117,12 +221,13 @@ export default function WhyCHPPage() {
                     <SectionHeader
                         eyebrow="All Reasons"
                         title="Everything that makes CHP different"
-                        subtitle="From cool mountain summers to hassle-free planning — here is why thousands choose CHP for their Himalayan journey."
+                        subtitle="From cool mountain summers to meaningful connections and unique mountain living — here is why people choose CHP for their Himalayan journey."
                     />
 
                     <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {features.map((f) => {
                             const Icon = f.icon;
+
                             return (
                                 <div
                                     key={f.title}
@@ -133,9 +238,11 @@ export default function WhyCHPPage() {
                                     >
                                         <Icon className="w-6 h-6" />
                                     </div>
+
                                     <h2 className="font-bold text-slate-800 text-lg mb-2">
                                         {f.title}
                                     </h2>
+
                                     <p className="text-slate-500 text-sm leading-relaxed">
                                         {f.description}
                                     </p>
