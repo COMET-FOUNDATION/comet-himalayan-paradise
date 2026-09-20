@@ -50,6 +50,11 @@ const socialLinks = [
     label: "YouTube",
     brand: "youtube" as const,
   },
+  {
+    href: "https://www.facebook.com/groups/1844944899612110",
+    label: "Facebook",
+    brand: "facebook" as const,
+  },
 ];
 
 export function Navbar() {
@@ -238,21 +243,7 @@ export function Navbar() {
                 </a>
               ))}
 
-              <span
-                aria-label="Facebook (URL not verified)"
-                title="Facebook URL not verified"
-                className={cn(
-                  "navbar-social inline-flex h-7 w-7 items-center justify-center rounded-full",
-                  scrolled || !isHome
-                    ? "text-slate-400"
-                    : "text-white/50"
-                )}
-              >
-                <SocialBrandIcon
-                  name="facebook"
-                  className="h-3.5 w-3.5"
-                />
-              </span>
+            
             </div>
 
             <Link
