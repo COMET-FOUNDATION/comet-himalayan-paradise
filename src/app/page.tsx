@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Marquee } from "@/components/home/Marquee";
 import { Hero } from "@/components/home/Hero";
 import { WhyCHP } from "@/components/home/WhyCHP";
+import { CHPJourneySection } from "@/components/home/CHPJourneySection";
 import { ExperiencesSection } from "@/components/home/ExperiencesSection";
 import { PopularTreks } from "@/components/home/PopularTreks";
 import { StatsSection } from "@/components/home/StatsSection";
@@ -25,6 +26,7 @@ export default function HomePage() {
       <Marquee />
       <Hero />
       <WhyCHP />
+      <CHPJourneySection/>
       <ExperiencesSection />
       <PopularTreks />
       <CHPFacilities />
