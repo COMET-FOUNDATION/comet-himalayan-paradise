@@ -59,33 +59,33 @@ export function ExperiencesSection() {
   return (
     <section className="py-14 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+
+        {/* Section Header */}
+        <div className="mb-14">
           <SectionHeader
             title="CHP Experiences"
             subtitle="Go Beyond Destinations. See the Himalayas. Feel the Himalayas. Discover the Himalayan Experience."
             align="left"
           />
-          <Link
-            href="/experiences"
-            className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
-          >
-            All Experiences
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
 
+        {/* Experience Cards */}
         <StaggerContainer
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           staggerDelay={0.08}
         >
           {experiences.slice(0, 3).map((exp) => (
             <StaggerItem key={exp.title}>
-              <Link href={exp.href} className="group block">
+              <Link
+                href={exp.href}
+                className="group block"
+              >
                 <motion.article
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
                 >
+                  {/* Image */}
                   <div>
                     <Image
                       src={exp.image}
@@ -97,16 +97,20 @@ export function ExperiencesSection() {
                     />
                   </div>
 
+                  {/* Content */}
                   <div className="p-5">
                     <span className="inline-flex rounded-full bg-green-900/5 px-3 py-1.5 text-xs font-semibold text-green-900">
                       {exp.badge}
                     </span>
+
                     <h3 className="mt-4 text-xl font-bold text-slate-800 mb-1.5">
                       {exp.title}
                     </h3>
+
                     <p className="text-slate-600 text-sm leading-relaxed line-clamp-2 mb-4">
                       {exp.description}
                     </p>
+
                     <span className="inline-flex items-center gap-1.5 text-orange-600 text-sm font-semibold group-hover:gap-2.5 transition-all duration-200">
                       Explore
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -118,6 +122,7 @@ export function ExperiencesSection() {
           ))}
         </StaggerContainer>
 
+        {/* Bottom All Experiences Button */}
         <div className="mt-12 text-center">
           <Link
             href="/experiences"

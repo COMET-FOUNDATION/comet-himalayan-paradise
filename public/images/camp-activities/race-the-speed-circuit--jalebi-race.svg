@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Jalebi Race</title>
+  <desc id="desc">Camp activity placeholder for Jalebi Race</desc>
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f5132"/><stop offset=".55" stop-color="#1d7a4b"/><stop offset="1" stop-color="#f28c28"/></linearGradient></defs>
+  <rect width="1200" height="675" rx="36" fill="url(#sky)"/><circle cx="1010" cy="115" r="170" fill="#fff" fill-opacity=".1"/><circle cx="180" cy="600" r="220" fill="#fff" fill-opacity=".08"/>
+  <path d="M0 540 190 405l135 100 170-165 160 175 185-125 180 150 190-110v245H0Z" fill="#083b28" fill-opacity=".5"/>
+  <rect x="96" y="142" width="250" height="42" rx="21" fill="#fff" fill-opacity=".18"/><text x="221" y="171" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">CAMP ACTIVITY</text>
+  <text x="96" y="300" fill="#fff" font-family="Arial, sans-serif" font-size="54" font-weight="700">Jalebi Race</text><text x="96" y="365" fill="#fef3c7" font-family="Arial, sans-serif" font-size="24" font-weight="500">Image placeholder</text>
+</svg>

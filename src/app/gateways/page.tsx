@@ -273,7 +273,7 @@ export default function GatewaysPage() {
                     <span className="text-emerald-400 text-xs font-semibold uppercase tracking-wider">
                         Get Started
                     </span>
-                    <h2 className="text-3xl font-bold text-white mt-2">Tell Us How You'd Like to Join</h2>
+                    <h2 className="text-3xl font-bold text-white mt-2">Tell Us How You&apos;d Like to Join</h2>
                     <p className="text-slate-400 text-sm mt-2">
                         Share a few details and our CHP team will reach out to guide you through your chosen gateway.
                     </p>
@@ -329,7 +329,7 @@ export default function GatewaysPage() {
                             </div>
 
                             <div>
-                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">I'm Interested In</label>
+                                <label className="block text-xs uppercase text-slate-400 font-semibold mb-1">I&apos;m Interested In</label>
                                 <select
                                     value={formData.interest}
                                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}

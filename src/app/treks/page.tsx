@@ -53,7 +53,7 @@ export default function TreksPage() {
             transition={{ duration: 0.5 }}
             className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm"
           >
-            Explore the Himalayas
+            Himalayan Treks and Trails
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}

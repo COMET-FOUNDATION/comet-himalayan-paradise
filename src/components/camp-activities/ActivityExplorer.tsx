@@ -39,7 +39,7 @@ function ActivityHoverPreview({ active, onDismiss }: { active: ActivePreview; on
   if (!active || !position) return null;
   return createPortal(
     <aside role="status" aria-live="polite" className="pointer-events-none fixed z-[100] overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-2xl shadow-slate-950/20 motion-safe:animate-[activity-preview-in_180ms_cubic-bezier(.16,1,.3,1)]" style={{ width: position.width, left: position.left, top: position.top }}>
-      <div className="relative aspect-[16/9] bg-stone-100"><Image src={active.activity.image} alt="" fill sizes="336px" className="object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" /></div>
+      <div className="relative aspect-[16/9] bg-stone-100"><Image src={active.activity.image} alt="" fill sizes="336px" unoptimized className="object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" /></div>
       <div className="p-5"><p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-orange-600">Camp activity</p><h3 className="mt-1 text-lg font-bold leading-snug text-slate-900">{active.activity.title}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{active.activity.description}</p></div>
     </aside>, document.body
   );
