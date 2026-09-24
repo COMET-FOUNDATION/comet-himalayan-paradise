@@ -64,7 +64,7 @@ const businessOpportunities = [
             "Himalayan Housing Society Guest House",
         ],
         proposalUrl:
-            "https://drive.google.com/file/d/1XJ_E724jn1DnkU8RGt2QZ4GNLQdSXAH/view?usp=sharing",
+            "https://drive.google.com/file/d/1XJ_E724jn1DnkU8RGt-2QZ4GNLQdSXAH/view?usp=sharing",
     },
     {
         icon: BookOpen,
@@ -105,7 +105,7 @@ const businessOpportunities = [
         title: "Himalayan Residential School",
         subItems: [],
         proposalUrl:
-            "https://drive.google.com/file/d/13oTJFKWUudEPIDmkxTxemmZDpcirEhIy/view?usp=sharing",
+            "https://drive.google.com/file/d/1ESMLcz61HhJVOVCZK6PruBh21LwXFZ6I/view?usp=sharing",
     },
     {
         icon: Film,
@@ -119,7 +119,7 @@ const businessOpportunities = [
         title: "CHP Himalayan Eco-Agri Business Community",
         subItems: [],
         proposalUrl:
-            "https://drive.google.com/file/d/10yBGosR2eluhw9Sz5QrYw1YS6MMnmvt/view?usp=sharing",
+            "https://drive.google.com/file/d/1ESMLcz61HhJVOVCZK6PruBh21LwXFZ6I/view?usp=sharing",
     },
     {
         icon: HeartHandshake,

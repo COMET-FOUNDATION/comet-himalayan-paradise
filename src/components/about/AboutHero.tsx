@@ -1,26 +1,215 @@
 "use client";
 
-import { useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+
+const HEADER_IMAGE =
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/fee397f0-2808-4399-94b8-e2b7cf0f8362-chp-header-12-yoga-holiday-camp-under-500kb.webp";
 
 export function AboutHero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["-4%", "8%"]);
-  const contentY = useTransform(scrollYProgress, [0, 0.75], ["0%", "-18%"]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
   return (
-    <section ref={sectionRef} className="relative h-[48svh] min-h-[340px] overflow-hidden bg-black lg:h-auto lg:min-h-0 lg:aspect-[16/8.5]">
-      <motion.div className="absolute -inset-y-[16%] inset-x-0" style={{ y: imageY }}>
-        <Image src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/eb8047c4-9825-4fa1-83b4-84beb674b812-abt.webp" alt="CHP Himalayan Paradise" fill priority sizes="100vw" className="object-cover object-center" />
-      </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/15 to-black/55" />
-      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center sm:px-6">
-        <div className="mb-5 flex items-center gap-3"><span className="h-px w-8 bg-orange-400/70" /><p className="rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm">Our Story</p><span className="h-px w-8 bg-orange-400/70" /></div>
-        <h1 className="mb-5 text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-7xl">About CHP</h1>
-        <p className="max-w-xl text-lg leading-relaxed text-white/75 sm:text-xl">Born in the Himalayas, built on authenticity — a decade of sharing the world&apos;s greatest mountains with travelers who truly seek.</p>
+    <section className="relative w-full overflow-hidden bg-black">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+        className="relative w-full aspect-[3/1] overflow-hidden"
+      >
+        {/* Main Header Image */}
+        <Image
+          src={HEADER_IMAGE}
+          alt="CHP Himalayan Paradise"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+
+        {/* Very subtle overall overlay */}
+        <div className="absolute inset-0 bg-black/[0.04]" />
+
+        {/* =====================================================
+            CENTER CONTENT
+        ===================================================== */}
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div
+            className="
+              relative
+              w-full
+              flex
+              justify-center
+              mt-[8%]
+              sm:mt-[6%]
+              md:mt-[4%]
+            "
+          >
+            {/* =================================================
+                TEXT CONTENT
+                No blur background.
+                No dark oval.
+                No glass effect.
+            ================================================= */}
+            <div
+              className="
+                relative
+                z-10
+                w-full
+                max-w-[1000px]
+                text-center
+                px-4
+                sm:px-6
+                py-8
+                sm:py-10
+              "
+            >
+              {/* ABOUT CHP */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.2,
+                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-3
+                  sm:gap-4
+                  mb-3
+                  sm:mb-4
+                "
+              >
+                <span
+                  className="
+                    h-px
+                    w-7
+                    sm:w-10
+                    md:w-14
+                    bg-orange-400
+                    shrink-0
+                  "
+                />
+
+                <span
+                  className="
+                    text-white
+                    text-[10px]
+                    sm:text-xs
+                    md:text-sm
+                    font-semibold
+                    uppercase
+                    tracking-[0.28em]
+                    whitespace-nowrap
+                    drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]
+                  "
+                >
+                  About CHP
+                </span>
+
+                <span
+                  className="
+                    h-px
+                    w-7
+                    sm:w-10
+                    md:w-14
+                    bg-orange-400
+                    shrink-0
+                  "
+                />
+              </motion.div>
+
+              {/* MAIN TITLE */}
+              <motion.h1
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.35,
+                }}
+                className="
+                  mx-auto
+                  text-white
+                  font-serif
+                  font-semibold
+                  leading-[1.05]
+                  tracking-tight
+                  text-[clamp(2rem,4.2vw,4.5rem)]
+                  whitespace-nowrap
+                  drop-shadow-[0_4px_10px_rgba(0,0,0,0.95)]
+                "
+              >
+                Comet Himalayan Paradise
+              </motion.h1>
+
+              {/* GREEN DECORATIVE LINE */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  scaleX: 0.6,
+                }}
+                animate={{
+                  opacity: 1,
+                  scaleX: 1,
+                }}
+                transition={{
+                  duration: 0.7,
+                  delay: 0.5,
+                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+                  sm:gap-3
+                  mt-4
+                  sm:mt-5
+                "
+              >
+                <span className="h-px w-10 sm:w-16 md:w-24 bg-green-400" />
+
+                <span className="text-green-400 text-lg sm:text-xl leading-none">
+                  ❧
+                </span>
+
+                <span className="h-px w-10 sm:w-16 md:w-24 bg-green-400" />
+              </motion.div>
+
+              {/* TAGLINE */}
+              <motion.p
+                initial={{
+                  opacity: 0,
+                  y: 10,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.65,
+                }}
+                className="
+                  mt-3
+                  sm:mt-4
+                  text-white
+                  text-[10px]
+                  sm:text-xs
+                  md:text-sm
+                  lg:text-base
+                  font-medium
+                  tracking-wide
+                  drop-shadow-[0_3px_7px_rgba(0,0,0,0.95)]
+                "
+              >
+                Rooted in Nature. Driven by Purpose. Built by Generations.
+              </motion.p>
+            </div>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

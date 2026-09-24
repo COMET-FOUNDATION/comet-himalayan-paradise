@@ -3,7 +3,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
+import {
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/ScrollReveal";
 import { TrekCard } from "@/components/TrekCard";
 import { popularTreks } from "@/data/treks";
 
@@ -11,21 +14,17 @@ export function PopularTreks() {
   return (
     <section className="py-14 lg:py-20 bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-14">
+
+        {/* Section Header */}
+        <div className="mb-14">
           <SectionHeader
             title="Treks and Trails"
             subtitle="Discover the Himalayas Beyond the Tourist Trail — Explore Its Villages, Nature, Culture, Forests, Lifestyle & Majestic Peaks."
             align="left"
           />
-          <Link
-            href="/treks"
-            className="hidden md:inline-flex items-center gap-2 text-green-900 font-semibold text-sm hover:text-green-700 transition-colors shrink-0"
-          >
-            All Treks and Trails
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
 
+        {/* Trek Cards */}
         <StaggerContainer
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           staggerDelay={0.07}
@@ -37,6 +36,7 @@ export function PopularTreks() {
           ))}
         </StaggerContainer>
 
+        {/* Bottom All Treks and Trails Button */}
         <div className="mt-12 text-center">
           <Link
             href="/treks"
