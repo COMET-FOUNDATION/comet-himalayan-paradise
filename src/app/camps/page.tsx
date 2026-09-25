@@ -146,31 +146,15 @@ export default function CampsPage() {
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
             Live the Himalayan Life
           </h1>
+          <p className="text-orange-200 text-sm sm:text-base font-semibold tracking-wide mb-4">
+            DISCOVER → VISIT → EXPERIENCE → RETURN → CONNECT → JOIN → BELONG
+          </p>
           <p className="text-white/65 text-lg max-w-xl">
             Immersive camp programs combining adventure, wellness, culture, and
             nature. From a weekend to 45 days — at your pace.
           </p>
           </div>
       </section>
-          <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <Link
-            href="/camp-activities"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
-          >
-            Show All Camp activities
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
-          >
-            Book Your Holiday Camp
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-        
 
       {/* Overview */}
       <section className="py-20 bg-white">
@@ -335,9 +319,12 @@ export default function CampsPage() {
 
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/camp-activities" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
               Show All Camp activities <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30">
+              Book Your Holiday Camp <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

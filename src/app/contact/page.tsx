@@ -629,10 +629,10 @@ export default function ContactPage() {
                   <div>
                     <p className="text-slate-800 font-semibold text-sm mb-0.5">Email</p>
                     <a
-                      href="mailto:chphimalayanparadise@gmail.com"
+                      href="mailto:himalayan.pradise@gmail.com"
                       className="block text-slate-600 text-sm hover:text-sky-600 transition-colors"
                     >
-                      chphimalayanparadise@gmail.com
+                      himalayan.pradise@gmail.com
                     </a>
                     <a
                       href="mailto:himalayancamp.chp@gmail.com"
