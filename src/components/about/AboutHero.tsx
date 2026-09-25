@@ -122,29 +122,7 @@ export function AboutHero() {
                 />
               </motion.div>
 
-              {/* MAIN TITLE */}
-              <motion.h1
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.7,
-                  delay: 0.35,
-                }}
-                className="
-                  mx-auto
-                  text-white
-                  font-serif
-                  font-semibold
-                  leading-[1.05]
-                  tracking-tight
-                  text-[clamp(2rem,4.2vw,4.5rem)]
-                  whitespace-nowrap
-                  drop-shadow-[0_4px_10px_rgba(0,0,0,0.95)]
-                "
-              >
-                Comet Himalayan Paradise
-              </motion.h1>
-
+              
               {/* GREEN DECORATIVE LINE */}
               <motion.div
                 initial={{
