@@ -104,7 +104,7 @@ export function Hero() {
             delay: 0.5,
             ease: [0.25, 0.4, 0.25, 1],
           }}
-          className="text-white text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold leading-[1.08] tracking-tight mb-6 max-w-5xl"
+          className="text-white text-[32px] sm:text-[44px] md:text-[56px] xl:text-[68px] font-bold leading-[1.08] tracking-tight mb-6 max-w-5xl"
         >
           Gateway to Himalayan Living
           <br />
@@ -124,7 +124,7 @@ export function Hero() {
           }}
           className="text-white/70 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-10"
         >
-          A Himalayan second home in the Himalayas, surrounded by nature,
+          A Himalayan second home, surrounded by nature,
           adventure, treks, holiday & wellness camps, culture, and
           experiences — created for living, not just visiting.
         </motion.p>
