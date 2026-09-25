@@ -21,7 +21,7 @@ const features = [
   {
     icon: Sun,
     title: "Cool summers",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/d0fa1c4d-82f8-4c3d-a711-12abc60260b4-scaled-cool-summers.webp",
+    image: "/images/driving-factors/cool summers.png",
     description:
       "Escape the sweltering plains to pleasant mountain climates with refreshing alpine breeze all summer long.",
     color: "bg-amber-50 text-amber-600",
@@ -30,7 +30,7 @@ const features = [
   {
     icon: Shield,
     title: "Safety First",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/79292e7e-121f-46e0-9117-065ef8eab090-scaled-safety-first.webp",
+    image: "/images/driving-factors/safety first.png",
     description:
       "Certified guides, comprehensive safety protocols, and emergency response systems across all treks and camps.",
     color: "bg-sky-50 text-sky-600",
@@ -39,7 +39,7 @@ const features = [
   {
     icon: Map,
     title: "Expert-Guided Experiences",
-    image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/230a4765-83e4-44e4-93a4-7e21238f95b5-scaled-expert-guided-experience.webp",
+    image: "/images/driving-factors/Expert guided experience.png",
     description:
       "Our naturalists, trekking guides, and cultural experts bring decades of local knowledge to every experience.",
     color: "bg-green-50 text-green-600",
