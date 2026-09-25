@@ -61,7 +61,7 @@ export default function TreksPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5"
           >
-            Himalayan Trek Programs
+            Himalayan Treks and Trails
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

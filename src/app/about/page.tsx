@@ -107,9 +107,7 @@ export default function AboutPage() {
 
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Welcome to CHP
-                <span className="block text-green-800">
-                  Comet Himalayan Paradise
-                </span>
+
               </h2>
 
               <div className="space-y-4 text-slate-600 leading-relaxed text-base">
@@ -142,7 +140,7 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="relative mx-auto mt-6 w-full max-w-md lg:mt-0">
-                <div className="group rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
+                <div className="overflow-hidden">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ff715ce-30a4-4356-baa6-3055fdf0caa8-scaled-chp-intro-2.webp"
                     alt="CHP Himalayan Paradise experience"
@@ -179,12 +177,12 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
             <ScrollReveal direction="left">
               <div className="group flex w-full justify-center shrink-0">
-                <div className="w-full max-w-md rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-orange-300/40">
+                <div className="overflow-hidden">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a83d7a70-f05c-4a6f-8e09-6c3e1dc090ac-scaled-corp-footprints.webp"
                     alt="Organizations who have chosen CHP"
-                    width={480}
-                    height={320}
+                    width={550}
+                    height={390}
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="h-56 w-full object-contain"
                   />
@@ -250,7 +248,7 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="group relative mx-auto mt-6 w-full max-w-md lg:mt-0">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
+                <div className=" overflow-hidden ">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a87aeb9b-4231-4bf0-a7aa-2987fc4df906-scaled-thingstodo.webp"
                     alt="Things to do at CHP Himalayan Paradise"
@@ -289,7 +287,7 @@ export default function AboutPage() {
       ===================================================== */}
       <section
         id="mission"
-        className="py-20 bg-green-950 relative overflow-hidden"
+        className="overflow-hidden"
       >
         <div className="absolute inset-0 opacity-10">
           <Image
@@ -302,6 +300,18 @@ export default function AboutPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-orange-400" />
+
+            <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em]">
+              Our Purpose
+            </p>
+          </div>
+
+          <h2 className="text-black text-3xl sm:text-4xl font-bold mb-10 leading-tight">
+            Our Purpose
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
               <div className="space-y-6">
@@ -310,7 +320,7 @@ export default function AboutPage() {
                     Vision
                   </p>
 
-                  <p className="text-white text-lg font-semibold leading-relaxed">
+                  <p className="text-black text-lg font-semibold leading-relaxed">
                     One Stop Destination for all Travel Experiences
                   </p>
                 </div>
@@ -320,7 +330,7 @@ export default function AboutPage() {
                     Mission
                   </p>
 
-                  <p className="text-white text-lg font-semibold leading-relaxed">
+                  <p className="text-black text-lg font-semibold leading-relaxed">
                     Invest - Build - Grow - Prosper Together — Creating a
                     Meaningful Ecosystem with Purpose
                   </p>
@@ -331,7 +341,7 @@ export default function AboutPage() {
                     Values
                   </p>
 
-                  <p className="text-white text-lg font-semibold leading-relaxed">
+                  <p className="text-black text-lg font-semibold leading-relaxed">
                     Rooted in Nature. Deep Mountain Knowledge. Authentic
                     Hospitality. Driven by Trust and Commitment.
                   </p>
