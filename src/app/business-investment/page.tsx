@@ -186,16 +186,13 @@ export default function BusinessInvestmentPage() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="lg:col-span-5 relative w-full h-80 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden border border-stone-200 shadow-xl group"
             >
-              <img
+              <Image
                 src="/investment.png"
                 alt="Investment Opportunities in CHP"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => {
-                  (e.target as HTMLElement).setAttribute(
-                    "src",
-                    "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80&auto=format&fit=crop"
-                  );
-                }}
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-stone-200 shadow-lg">
