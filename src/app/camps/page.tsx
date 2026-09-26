@@ -216,45 +216,32 @@ export default function CampsPage() {
             className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4 lg:mx-auto"
             staggerDelay={0.07}
           >
-            {campFeatures.filter((f) => campFeaturePreviewTitles.includes(f.title)).map((f) => {
-  const iconMap = { Mountain, Tent, Flame, Leaf, Heart, Star, Users, Clock };
-  const Icon = iconMap[f.icon];
-
-  const colorStyles = {
-    blue: "bg-blue-100 text-blue-700",
-    orange: "bg-orange-100 text-orange-700",
-    red: "bg-red-100 text-red-700",
-    green: "bg-green-100 text-green-700",
-    pink: "bg-pink-100 text-pink-700",
-    purple: "bg-purple-100 text-purple-700",
-    teal: "bg-teal-100 text-teal-700",
-    indigo: "bg-indigo-100 text-indigo-700",
-  };
-
-  return (
-    <StaggerItem key={f.title}>
-      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow h-full">
-        
-        <div
-          className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${
-            colorStyles[f.color as keyof typeof colorStyles]
-          }`}
-        >
-          <Icon className="w-5 h-5" />
-        </div>
-
-        <h3 className="font-semibold text-slate-800 text-sm mb-2">
-          {f.title}
-        </h3>
-
-        <p className="text-slate-500 text-xs leading-relaxed">
-          {f.description}
-        </p>
-
-      </div>
-    </StaggerItem>
-  );
-})}
+            {campFeatures
+              .filter((feature) => campFeaturePreviewTitles.includes(feature.title))
+              .map((feature) => (
+                <StaggerItem key={feature.title}>
+                  <article className="h-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+                    <div className="relative aspect-video overflow-hidden bg-stone-100">
+                      {feature.image.startsWith("PASTE_IMAGE_URL_") ? (
+                        <div className="flex h-full items-center justify-center text-sm font-medium text-stone-500">
+                          Image coming soon
+                        </div>
+                      ) : (
+                        <Image
+                          src={feature.image}
+                          alt={feature.title}
+                          fill
+                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                          className="object-contain"
+                        />
+                      )}
+                    </div>
+                    <h3 className="px-5 py-4 font-semibold text-slate-800">
+                      {feature.title}
+                    </h3>
+                  </article>
+                </StaggerItem>
+              ))}
           </StaggerContainer>
           <div className="mt-10 text-center">
             <Link href="/features" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
