@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
       "Immerse yourself in pristine forests, alpine meadows, and untouched Himalayan wilderness through guided nature encounters.",
     icon: "Leaf",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2f042686-f530-4008-abba-f1f06a67a846-wellness.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d7bba640-d857-4f11-b5e0-3a1aa1b47fc4-chp-ecosystem-header-under-500kb.webp",
     duration: "Half–Full Day",
     category: "nature",
     highlights: [
@@ -51,7 +51,7 @@ export const experiences: Experience[] = [
       "From high-altitude treks to river crossings and rock scrambles, chase adrenaline across the Kumaon Himalayas.",
     icon: "Mountain",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/21ce77df-8ab2-4920-a9eb-f7ca749c5cee-chp-enclave.png",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/3895ddcc-39ff-4d10-9cc0-c55ec7ad4a69-tresure-hunt-jpg.jpeg",
     duration: "1–7 Days",
     category: "adventure",
     highlights: [
@@ -68,7 +68,7 @@ export const experiences: Experience[] = [
       "Reconnect with yourself through sunrise yoga, guided meditation, and pranayama in the stillness of the mountains.",
     icon: "Heart",
     image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2f042686-f530-4008-abba-f1f06a67a846-wellness.webp",
     duration: "3–14 Days",
     category: "wellness",
     highlights: [
@@ -85,7 +85,7 @@ export const experiences: Experience[] = [
       "Group games, bonfire nights, and playful outdoor activities designed to bring people together in nature.",
     icon: "PartyPopper",
     image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/6b1f1669-87a6-4fa4-b4c6-67b7141244c9-guess-the-song-jpg.jpeg",
     duration: "Half–Full Day",
     category: "adventure",
     highlights: [
@@ -102,7 +102,7 @@ export const experiences: Experience[] = [
       "Cook and savour traditional Kumaoni dishes with local families, using organic, farm-fresh mountain ingredients.",
     icon: "UtensilsCrossed",
     image:
-      "https://images.unsplash.com/photo-1471440671318-55bdbb772f93?w=800&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80&auto=format&fit=crop",
     duration: "3–4 Hours",
     category: "culture",
     highlights: [
@@ -119,7 +119,7 @@ export const experiences: Experience[] = [
       "Discover centuries of Kumaoni heritage — ancient temples, folk art, festivals, and mountain traditions.",
     icon: "Landmark",
     image:
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80&auto=format&fit=crop",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/9eed9cb8-1ac1-4677-8269-d503d4afb53c-kdc.webp",
     duration: "Full Day",
     category: "culture",
     highlights: [
@@ -152,7 +152,8 @@ export const experiences: Experience[] = [
     description:
       "Connect with fellow travellers and local communities through shared meals, storytelling, and collaborative projects.",
     icon: "Users",
-    image: "/Adventure Activities.png",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp",
     duration: "Half–Full Day",
     category: "culture",
     highlights: [
@@ -168,7 +169,8 @@ export const experiences: Experience[] = [
     description:
       "Work remotely with reliable connectivity, mountain views, and a slower pace — built for extended Himalayan stays.",
     icon: "Laptop",
-    image: "/experiences/workation-long-stay.jpg",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d24cfc6e-0194-484b-b5ad-ddff2560a032-wrt.webp",
     duration: "7–45 Days",
     category: "culture",
     highlights: [
@@ -184,7 +186,8 @@ export const experiences: Experience[] = [
     description:
       "Capture golden-hour peaks, village portraits, and star-filled skies with guidance to the best Himalayan vantage points.",
     icon: "Camera",
-    image: "/experiences/photography-creative.jpg",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/72beed31-cb35-4f55-a733-2757f389c0c3-wld.webp",
     duration: "1–7 Days",
     category: "nature",
     highlights: [
@@ -200,7 +203,8 @@ export const experiences: Experience[] = [
     description:
       "Witness clear Himalayan night skies through stargazing sessions and guided night safaris away from city lights.",
     icon: "Moon",
-    image: "/experiences/sky-stars-night.jpg",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
     duration: "Evening–Night",
     category: "nature",
     highlights: [
@@ -216,7 +220,8 @@ export const experiences: Experience[] = [
     description:
       "Visit sacred Himalayan temples and pilgrimage sites steeped in centuries of spiritual tradition and mountain devotion.",
     icon: "Landmark",
-    image: "/experiences/spiritual-pilgrimage.jpg",
+    image:
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/4fda68f8-5ef1-4450-adb7-aa1b3b29f7c1-kmt.webp",
     duration: "Half–Full Day",
     category: "culture",
     highlights: [
