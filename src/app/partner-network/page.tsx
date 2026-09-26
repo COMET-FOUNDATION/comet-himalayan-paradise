@@ -249,7 +249,7 @@ export default function PartnerNetworkPage() {
             <section className="relative flex min-h-[720px] items-end overflow-hidden bg-slate-950">
 
                 <img
-                    src="/images/chp/network/network-hero.jpg"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9be3c020-8034-410f-8625-5b3d8f0b41bc-chp-partner-network.webp"
                     alt="Himalayan landscape"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
