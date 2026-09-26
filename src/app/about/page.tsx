@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mountain, Heart, Leaf, Globe, Compass } from "lucide-react";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
+import { Compass } from "lucide-react";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
 import { AboutHero } from "@/components/about/AboutHero";
 
@@ -10,41 +9,24 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "The story behind CHP Himalayan Paradise — a decade of authentic Himalayan travel experiences, responsible tourism, and deep mountain expertise in Kumaon.",
-  alternates: { canonical: "https://comet-himalayan-paradise.vercel.app/about" },
+  alternates: {
+    canonical: "https://comet-himalayan-paradise.vercel.app/about",
+  },
   openGraph: {
     title: "About CHP Himalayan Paradise",
-    description: "A decade of authentic Himalayan travel — our story, mission, and commitment to responsible mountain tourism.",
+    description:
+      "A decade of authentic Himalayan travel — our story, mission, and commitment to responsible mountain tourism.",
     url: "https://comet-himalayan-paradise.vercel.app/about",
-    images: [{ url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80&auto=format&fit=crop", width: 1200, height: 630, alt: "CHP Himalayan Paradise Story" }],
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80&auto=format&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "CHP Himalayan Paradise Story",
+      },
+    ],
   },
 };
-
-const values = [
-  {
-    icon: Mountain,
-    title: "Deep Mountain Knowledge",
-    description:
-      "Our team has lived, trekked, and explored the Kumaon Himalayas for decades. Every trail, village, and hidden valley is known to us — not as tourists, but as mountain people.",
-  },
-  {
-    icon: Heart,
-    title: "Authentic Hospitality",
-    description:
-      "We believe the warmth of Kumaoni culture is one of the Himalayas' greatest treasures. We build genuine connections between travelers and local communities.",
-  },
-  {
-    icon: Leaf,
-    title: "Responsible Travel",
-    description:
-      "We operate with zero-compromise environmental ethics — minimal impact camping, community revenue sharing, plastic-free programs, and conservation education.",
-  },
-  {
-    icon: Globe,
-    title: "World-Class Standards",
-    description:
-      "While we are rooted in mountain culture, our safety protocols, logistics, and service standards meet international expectations for responsible adventure travel.",
-  },
-];
 
 const timeline = [
   {
@@ -100,23 +82,34 @@ const timeline = [
 export default function AboutPage() {
   return (
     <>
+      {/* =====================================================
+          HERO
+
+          About CHP + Comet Himalayan Paradise are now INSIDE
+          the hero image.
+      ===================================================== */}
       <AboutHero />
 
-      {/* Story */}
+      {/* =====================================================
+          OUR STORY
+      ===================================================== */}
       <section id="story" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-orange-500" />
+
                 <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
                   Our Story
                 </p>
               </div>
+
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Welcome to CHP
-                <span className="block text-green-800">Comet Himalayan Paradise</span>
+
               </h2>
+
               <div className="space-y-4 text-slate-600 leading-relaxed text-base">
                 <p>
                   Comet Himalayan Paradise (CHP) is a unique Himalayan
@@ -128,6 +121,7 @@ export default function AboutPage() {
                   wellness retreats, organic farming, cultural immersion, and
                   outdoor learning.
                 </p>
+
                 <p>
                   Whether you&apos;re seeking a second home in the Himalayas, a
                   peaceful escape, an adventurous holiday, a remote work
@@ -136,6 +130,7 @@ export default function AboutPage() {
                   students, nature lovers, corporate groups, and explorers of
                   all ages.
                 </p>
+
                 <p className="font-semibold text-slate-800 border-l-2 border-orange-400 pl-4 py-1">
                   Experience the Himalayas. Live the Culture. Create Lifelong
                   Memories.
@@ -144,20 +139,26 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="relative mt-6 mx-3 lg:mt-0">
-                <div className="group rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
+              <div className="relative mx-auto mt-6 w-full max-w-md lg:mt-0">
+                <div className="overflow-hidden">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7ff715ce-30a4-4356-baa6-3055fdf0caa8-scaled-chp-intro-2.webp"
                     alt="CHP Himalayan Paradise experience"
                     width={640}
                     height={480}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="h-56 w-full object-contain"
                   />
                 </div>
+
                 <div className="absolute -top-5 -right-5 bg-white rounded-2xl px-5 py-4 shadow-xl">
-                  <p className="text-green-900 text-3xl font-bold leading-none">10+</p>
-                  <p className="text-slate-500 text-xs mt-1.5">Years of Himalayan Excellence</p>
+                  <p className="text-green-900 text-3xl font-bold leading-none">
+                    10+
+                  </p>
+
+                  <p className="text-slate-500 text-xs mt-1.5">
+                    Years of Himalayan Excellence
+                  </p>
                 </div>
               </div>
             </ScrollReveal>
@@ -165,20 +166,25 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CHP Corp Footprints */}
-      <section id="corp-footprints" className="py-20 bg-stone-50 overflow-hidden">
+      {/* =====================================================
+          CHP CORP FOOTPRINTS
+      ===================================================== */}
+      <section
+        id="corp-footprints"
+        className="py-20 bg-stone-50 overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-14">
             <ScrollReveal direction="left">
-              <div className="group flex justify-center shrink-0">
-                <div className="inline-block rounded-2xl bg-white shadow-sm ring-1 ring-black/5 p-0 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:ring-orange-300/40">
+              <div className="group flex w-full justify-center shrink-0">
+                <div className="overflow-hidden">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a83d7a70-f05c-4a6f-8e09-6c3e1dc090ac-scaled-corp-footprints.webp"
                     alt="Organizations who have chosen CHP"
-                    width={480}
-                    height={320}
+                    width={550}
+                    height={390}
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="w-full h-auto max-h-64 object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="h-56 w-full object-contain"
                   />
                 </div>
               </div>
@@ -186,16 +192,9 @@ export default function AboutPage() {
 
             <ScrollReveal direction="right">
               <div className="flex-1">
-                
                 <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                   CHP Corp Footprints
                 </h2>
-                <a 
-                  href="/contact" 
-                  className="inline-block text-blue-600 hover:text-blue-800 font-medium mb-4 underline transition-colors"
-                >
-                  Click here to join the CHP Group
-                </a>
 
                 <p className="text-slate-600 leading-relaxed text-lg">
                   Working on our mission to connect visionary leaders with the
@@ -203,26 +202,41 @@ export default function AboutPage() {
                   following organizations have already chosen CHP as their
                   second home.
                 </p>
+
+                <a
+                  href="/contact"
+                  className="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium underline transition-colors"
+                >
+                  Click here to join the CHP Group
+                </a>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Things to Do */}
-      <section id="things-to-do" className="py-20 bg-white overflow-hidden">
+      {/* =====================================================
+          THINGS TO DO
+      ===================================================== */}
+      <section
+        id="things-to-do"
+        className="py-20 bg-white overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <ScrollReveal direction="left">
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-orange-500" />
+
                 <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
                   Experiences
                 </p>
               </div>
+
               <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
                 Things to Do
               </h2>
+
               <p className="text-slate-600 leading-relaxed text-lg">
                 CHP offers a complete Himalayan experience with nature,
                 adventure, wellness, spirituality, and community living. From
@@ -233,25 +247,33 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div className="group relative mt-6 mx-3 lg:mt-0">
-                <div className="relative rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-white">
+              <div className="group relative mx-auto mt-6 w-full max-w-md lg:mt-0">
+                <div className=" overflow-hidden ">
                   <Image
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a87aeb9b-4231-4bf0-a7aa-2987fc4df906-scaled-thingstodo.webp"
                     alt="Things to do at CHP Himalayan Paradise"
                     width={640}
                     height={480}
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="h-56 w-full object-contain"
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
+
                 <div className="absolute -top-5 -right-5 bg-white rounded-2xl p-3.5 shadow-xl flex items-center gap-2.5">
                   <div className="w-9 h-9 rounded-xl bg-green-50 flex items-center justify-center shrink-0">
                     <Compass className="w-5 h-5 text-green-700" />
                   </div>
+
                   <div>
-                    <p className="text-green-900 text-sm font-bold leading-none">Explore</p>
-                    <p className="text-slate-500 text-[11px] mt-1">Every trail & tradition</p>
+                    <p className="text-green-900 text-sm font-bold leading-none">
+                      Explore
+                    </p>
+
+                    <p className="text-slate-500 text-[11px] mt-1">
+                      Every trail & tradition
+                    </p>
                   </div>
                 </div>
               </div>
@@ -260,8 +282,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section id="mission" className="py-20 bg-green-950 relative overflow-hidden">
+      {/* =====================================================
+          MISSION & VISION
+      ===================================================== */}
+      <section
+        id="mission"
+        className="overflow-hidden"
+      >
         <div className="absolute inset-0 opacity-10">
           <Image
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=50"
@@ -271,106 +298,108 @@ export default function AboutPage() {
             className="object-cover"
           />
         </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-8 bg-orange-400" />
+
+            <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em]">
+              Our Purpose
+            </p>
+          </div>
+
+          <h2 className="text-black text-3xl sm:text-4xl font-bold mb-10 leading-tight">
+            Our Purpose
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="lg:col-span-1">
-  <div className="space-y-6">
+            <div>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sky-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
+                    Vision
+                  </p>
 
-    {/* Vision */}
-    <div>
-      <p className="text-sky-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
-        Vision
-      </p>
-      <p className="text-white text-lg font-semibold leading-relaxed">
-        One Stop Destination for all Travel Experiences
-      </p>
-    </div>
+                  <p className="text-black text-lg font-semibold leading-relaxed">
+                    One Stop Destination for all Travel Experiences
+                  </p>
+                </div>
 
-    {/* Mission */}
-    <div>
-      <p className="text-orange-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
-        Mission
-      </p>
-      <p className="text-white text-lg font-semibold leading-relaxed">
-        Invest - Build - Grow - Prosper Together — Creating a Meaningful
-        Ecosystem with Purpose
-      </p>
-    </div>
+                <div>
+                  <p className="text-orange-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
+                    Mission
+                  </p>
 
-    {/* Values */}
-    <div>
-      <p className="text-emerald-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
-        Values
-      </p>
-      <p className="text-white text-lg font-semibold leading-relaxed">
-        Rooted in Nature. Deep Mountain Knowledge. Authentic Hospitality.
-        Driven by Trust and Commitment.
-      </p>
-    </div>
+                  <p className="text-black text-lg font-semibold leading-relaxed">
+                    Invest - Build - Grow - Prosper Together — Creating a
+                    Meaningful Ecosystem with Purpose
+                  </p>
+                </div>
 
-  </div>
-</div>
-          <img src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/57c52a5a-8cff-4f4a-aba1-f59591d5a443-scaled-vision-mission-values.webp"/>
-          </div>
-        </div>
-      </section>
+                <div>
+                  <p className="text-emerald-400 text-lg font-bold uppercase tracking-[0.2em] mb-2">
+                    Values
+                  </p>
 
-      {/* Values */}
-      <section className="py-20 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <StaggerContainer
-            className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
-            staggerDelay={0.1}
-          >
-            {values.map((v) => {
-              const Icon = v.icon;
-              return (
-                <StaggerItem key={v.title}>
-                  <div className="bg-white rounded-2xl p-6 shadow-sm h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mb-4">
-                      <Icon className="w-5 h-5 text-green-700" />
-                    </div>
-                    <h3 className="font-semibold text-slate-800 text-sm mb-2">
-                      {v.title}
-                    </h3>
-                    <p className="text-slate-500 text-xs leading-relaxed">
-                      {v.description}
-                    </p>
-                  </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <span className="h-px w-8 bg-orange-400" />
-              <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
-                Our Journey
-              </p>
-              <span className="h-px w-8 bg-orange-400" />
+                  <p className="text-black text-lg font-semibold leading-relaxed">
+                    Rooted in Nature. Deep Mountain Knowledge. Authentic
+                    Hospitality. Driven by Trust and Commitment.
+                  </p>
+                </div>
+              </div>
             </div>
-            <img src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d7e812f0-e184-43e0-b6b4-a6cc4aefe58b-scaled-makingofchp.webp"></img>
-          </div>
 
-          <div className="mt-14 relative pl-8 border-l-2 border-green-900/15 space-y-10">
+            <img
+              src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/57c52a5a-8cff-4f4a-aba1-f59591d5a443-scaled-vision-mission-values.webp"
+              alt="CHP Vision Mission Values"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          TIMELINE
+      ===================================================== */}
+      <section className="py-20 bg-white overflow-hidden">
+        <div className="text-center px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <span className="h-px w-8 bg-orange-400" />
+
+            <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
+              Our Journey
+            </p>
+
+            <span className="h-px w-8 bg-orange-400" />
+          </div>
+        </div>
+
+        {/* Full-width timeline image */}
+        <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden">
+          <img
+            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/73f1c326-34be-421b-bbce-a927c76250bf-chp-making-of-chp-12-year-wide.webp"
+            alt="The making of CHP - 12 year journey"
+            className="block w-full h-auto object-cover"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+          <div className="relative pl-8 border-l-2 border-green-900/15 space-y-10">
             {timeline.map((item, i) => (
               <ScrollReveal key={item.year} delay={i * 0.08}>
                 <div className="relative">
                   <div className="absolute -left-[33px] w-6 h-6 rounded-full bg-green-900 border-4 border-white shadow flex items-center justify-center">
                     <div className="w-2 h-2 rounded-full bg-white" />
                   </div>
+
                   <span className="text-green-700 font-bold text-xs uppercase tracking-wider">
                     {item.year}
                   </span>
+
                   <h3 className="text-slate-800 font-bold text-lg mt-1 mb-2">
                     {item.title}
                   </h3>
+
                   <p className="text-slate-600 text-sm leading-relaxed">
                     {item.description}
                   </p>
@@ -381,6 +410,9 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* =====================================================
+          CTA
+      ===================================================== */}
       <CTABanner />
     </>
   );

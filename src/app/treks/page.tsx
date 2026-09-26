@@ -51,9 +51,9 @@ export default function TreksPage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+            className="mb-4 inline-block rounded-full bg-black/25 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-orange-300 shadow-sm backdrop-blur-sm"
           >
-            Explore the Himalayas
+            Himalayan Treks and Trails
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -61,7 +61,7 @@ export default function TreksPage() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-5"
           >
-            Himalayan Trek Programs
+            Himalayan Treks and Trails
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

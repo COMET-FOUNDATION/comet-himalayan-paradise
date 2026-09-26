@@ -3,26 +3,32 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Compass, Layers } from "lucide-react";
+import { Layers } from "lucide-react";
 
 export function CHPGatewaysSection() {
     return (
-        <section id="gateways-section" className="py-14 lg:py-20 bg-stone-50 overflow-hidden scroll-mt-20">
+        <section
+            id="gateways-section"
+            className="py-14 lg:py-20 bg-stone-50 overflow-hidden scroll-mt-20"
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
                     {/* Image */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="relative order-2 lg:order-1"
+                        className="relative order-2 lg:order-1 flex justify-center"
                     >
-                        <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
-                            <img
+                        <div className="relative w-full max-w-[550px] aspect-square rounded-3xl overflow-hidden shadow-xl border border-stone-200 group">
+                            <Image
                                 src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4a56d566-736b-4b08-9377-4d61304207ab-scaled-chp-gateways.webp"
                                 alt="CHP Gateways"
-                                className="w-full h-auto block rounded-3xl transition-transform duration-700 group-hover:scale-[1.02]"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 550px"
+                                className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                             />
                         </div>
                     </motion.div>
@@ -55,6 +61,7 @@ export function CHPGatewaysSection() {
                             <span>View details -&gt;</span>
                         </Link>
                     </motion.div>
+
                 </div>
             </div>
         </section>

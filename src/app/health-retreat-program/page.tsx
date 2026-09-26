@@ -111,7 +111,7 @@ export default function HealthRetreatProgramPage() {
             {/* ── Hero ── */}
             <section className="relative h-[80vh] min-h-[560px] overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80&auto=format&fit=crop"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d24cfc6e-0194-484b-b5ad-ddff2560a032-wrt.webp"
                     alt="Health Retreat Program at CHP"
                     fill priority className="object-cover"
                 />
@@ -162,6 +162,7 @@ export default function HealthRetreatProgramPage() {
                 <div className="max-w-4xl mx-auto px-4 text-center">
                     <p className="text-amber-300 text-xs font-semibold uppercase tracking-widest mb-4">Our Philosophy</p>
                     <blockquote className="text-2xl sm:text-3xl font-light leading-relaxed text-white/90 italic">
+                        {/* eslint-disable-next-line react/no-unescaped-entities */}
                         "The Himalayas do not merely house peaks — they house silence, wisdom, and the ancient breath of the earth. CHP is designed to help you listen."
                     </blockquote>
                     <p className="mt-5 text-amber-400 font-semibold text-sm">— CHP Himalayan Paradise</p>

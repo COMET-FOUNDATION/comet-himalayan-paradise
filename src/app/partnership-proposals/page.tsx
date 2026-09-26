@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
-    ImageIcon,
     ExternalLink,
     Home,
     Sparkles,
@@ -19,26 +19,6 @@ import {
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
-
-function ImagePlaceholder({
-    label,
-    recommended,
-    className = "",
-}: {
-    label: string;
-    recommended: string;
-    className?: string;
-}) {
-    return (
-        <div
-            className={`flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-slate-200 bg-stone-50 text-slate-400 ${className}`}
-        >
-            <ImageIcon className="w-8 h-8" />
-            <span className="text-sm font-medium text-slate-500">{label}</span>
-            <span className="text-xs text-slate-400">Recommended: {recommended}</span>
-        </div>
-    );
-}
 
 const businessOpportunities = [
     {
@@ -84,7 +64,7 @@ const businessOpportunities = [
             "Himalayan Housing Society Guest House",
         ],
         proposalUrl:
-            "https://drive.google.com/file/d/1XJ_E724jn1DnkU8RGt2QZ4GNLQdSXAH/view?usp=sharing",
+            "https://drive.google.com/file/d/1XJ_E724jn1DnkU8RGt-2QZ4GNLQdSXAH/view?usp=sharing",
     },
     {
         icon: BookOpen,
@@ -125,7 +105,7 @@ const businessOpportunities = [
         title: "Himalayan Residential School",
         subItems: [],
         proposalUrl:
-            "https://drive.google.com/file/d/13oTJFKWUudEPIDmkxTxemmZDpcirEhIy/view?usp=sharing",
+            "https://drive.google.com/file/d/1ESMLcz61HhJVOVCZK6PruBh21LwXFZ6I/view?usp=sharing",
     },
     {
         icon: Film,
@@ -139,7 +119,7 @@ const businessOpportunities = [
         title: "CHP Himalayan Eco-Agri Business Community",
         subItems: [],
         proposalUrl:
-            "https://drive.google.com/file/d/10yBGosR2eluhw9Sz5QrYw1YS6MMnmvt/view?usp=sharing",
+            "https://drive.google.com/file/d/1ESMLcz61HhJVOVCZK6PruBh21LwXFZ6I/view?usp=sharing",
     },
     {
         icon: HeartHandshake,
@@ -153,13 +133,13 @@ export default function PartnershipProposalsPage() {
     return (
         <main className="min-h-screen bg-white pt-16">
             {/* ── Hero ── */}
-            <section className="py-16 lg:py-20 bg-stone-50">
+            <section className="border-b border-stone-200 py-16 lg:py-24 bg-stone-50">
                 <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-800"
+                        className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900"
                     >
                         Partnership Proposals
                     </motion.h1>
@@ -180,11 +160,14 @@ export default function PartnershipProposalsPage() {
                         most inspiring Himalayan destinations.
                     </p>
 
-                    <div className="mt-10">
-                        <ImagePlaceholder
-                            label="Hero banner image"
-                            recommended="1600 × 700px (full-width banner)"
-                            className="h-56 sm:h-72 lg:h-80 w-full"
+                    <div className="mt-10 overflow-hidden rounded-2xl shadow-sm">
+                        <Image
+                            src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b2869511-6cdc-45c1-a203-9fb69daca2ba-pp.webp"
+                            alt="CHP Himalayan Paradise partnership proposals"
+                            width={1600}
+                            height={700}
+                            sizes="(max-width: 1024px) 100vw, 1024px"
+                            className="h-56 w-full object-cover sm:h-72 lg:h-80"
                         />
                     </div>
                 </div>
@@ -199,12 +182,12 @@ export default function PartnershipProposalsPage() {
                     align="left"
                 />
 
-                <StaggerContainer className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <StaggerContainer className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
                     {businessOpportunities.map((opp, i) => {
                         const Icon = opp.icon;
                         return (
                             <StaggerItem key={opp.title}>
-                                <div className="p-7 rounded-2xl bg-white border border-slate-100 hover:border-green-900/20 hover:shadow-lg hover:shadow-black/5 transition-all duration-300 h-full flex flex-col">
+                                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-green-900/20 hover:shadow-lg hover:shadow-black/5 transition-all duration-300 h-full flex flex-col">
                                     <div className="flex items-center gap-3 mb-1">
                                         <div className="w-10 h-10 shrink-0 rounded-xl bg-green-900/5 border border-green-900/10 flex items-center justify-center text-green-900">
                                             <Icon className="w-5 h-5" />
@@ -214,14 +197,7 @@ export default function PartnershipProposalsPage() {
                                         </span>
                                     </div>
 
-                                    <h3 className="text-lg font-bold text-slate-800 mt-3 mb-2">{opp.title}</h3>
-
-                                    {/* Facility image slot */}
-                                    <ImagePlaceholder
-                                        label="Facility image"
-                                        recommended="800 × 500px (4:5)"
-                                        className="h-36 w-full mb-4"
-                                    />
+                                    <h3 className="text-lg font-bold leading-snug text-slate-800 mt-3 mb-3">{opp.title}</h3>
 
                                     {opp.subItems.length > 0 && (
                                         <ul className="space-y-1.5 mb-4">

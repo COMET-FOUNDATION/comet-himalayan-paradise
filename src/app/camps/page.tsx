@@ -135,42 +135,26 @@ export default function CampsPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-          <p className="text-orange-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          <p className="rounded-full bg-black/25 px-4 py-2 text-orange-300 text-sm font-bold uppercase tracking-[0.24em] shadow-sm backdrop-blur-sm mb-4">
             CHP All season Holiday Camp
           </p>
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
             Live the Himalayan Life
           </h1>
+          <p className="text-orange-200 text-sm sm:text-base font-semibold tracking-wide mb-4">
+            DISCOVER → VISIT → EXPERIENCE → RETURN → CONNECT → JOIN → BELONG
+          </p>
           <p className="text-white/65 text-lg max-w-xl">
             Immersive camp programs combining adventure, wellness, culture, and
             nature. From a weekend to 45 days — at your pace.
           </p>
           </div>
       </section>
-          <div className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <Link
-            href="/camp-activities"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
-          >
-            Show All Camp activities
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30"
-          >
-            Book Your Holiday Camp
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-        
 
       {/* Overview */}
       <section className="py-20 bg-white">
@@ -281,81 +265,70 @@ export default function CampsPage() {
       </section>
 
       {/* Camp Activities */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    {/* Section Heading */}
-    <div className="text-center mb-12">
-      <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] mb-3">
-        Camp Activities
-      </p>
+          {/* Section Heading */}
+          <div className="text-center mb-12">
+            <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em] mb-3">
+              Camp Activities
+            </p>
 
-      <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-4">
-        A World of Full Experiences Awaits
-      </h2>
+            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-4">
+              A World of Full Experiences Awaits
+            </h2>
 
-      <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
-        From mountain adventures to peaceful moments in nature, every day
-        brings something new to experience.
-      </p>
-    </div>
+            <p className="text-slate-500 max-w-2xl mx-auto leading-relaxed">
+              From mountain adventures to peaceful moments in nature, every day
+              brings something new to experience.
+            </p>
+          </div>
 
-    {/* Image + Activities */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Activities — three boxes, left to right */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-      {/* Image */}
-      <div className="relative h-[420px] rounded-2xl overflow-hidden lg:order-1">
-  <Image
-    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5ac86d4d-7771-4cca-b4db-ecedda76f1c3-scaled-adventure-activities.webp"
-    alt="Camp activities in the Himalayas"
-    fill
-    sizes="(max-width: 1024px) 100vw, 50vw"
-    className="object-cover"
-  />
-</div>
+            <div className="p-5 rounded-2xl bg-green-50">
+              <h3 className="font-semibold text-green-900 mb-2">
+                🥾 Trekking & Hiking
+              </h3>
+              <p className="text-sm text-slate-600">
+                Explore scenic Himalayan trails, forests, villages and mountain
+                viewpoints.
+              </p>
+            </div>
 
-      {/* Activities */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-5 rounded-2xl bg-orange-50">
+              <h3 className="font-semibold text-orange-900 mb-2">
+                🔥 Campfire Evenings
+              </h3>
+              <p className="text-sm text-slate-600">
+                Enjoy music, stories, conversations and unforgettable evenings
+                around the fire.
+              </p>
+            </div>
 
-        <div className="p-5 rounded-2xl bg-green-50">
-          <h3 className="font-semibold text-green-900 mb-2">
-            🥾 Trekking & Hiking
-          </h3>
-          <p className="text-sm text-slate-600">
-            Explore scenic Himalayan trails, forests, villages and mountain
-            viewpoints.
-          </p>
+            <div className="p-5 rounded-2xl bg-blue-50">
+              <h3 className="font-semibold text-blue-900 mb-2">
+                🐦 Nature & Wildlife
+              </h3>
+              <p className="text-sm text-slate-600">
+                Discover Himalayan birds, wildlife and the beauty of untouched
+                mountain landscapes.
+              </p>
+            </div>
+
+          </div>
+
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/camp-activities" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
+              Show All Camp activities <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-green-900 hover:bg-green-800 text-white font-semibold px-8 py-4 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-green-900/30">
+              Book Your Holiday Camp <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
-
-        <div className="p-5 rounded-2xl bg-orange-50">
-          <h3 className="font-semibold text-orange-900 mb-2">
-            🔥 Campfire Evenings
-          </h3>
-          <p className="text-sm text-slate-600">
-            Enjoy music, stories, conversations and unforgettable evenings
-            around the fire.
-          </p>
-        </div>
-
-        <div className="p-5 rounded-2xl bg-blue-50">
-          <h3 className="font-semibold text-blue-900 mb-2">
-            🐦 Nature & Wildlife
-          </h3>
-          <p className="text-sm text-slate-600">
-            Discover Himalayan birds, wildlife and the beauty of untouched
-            mountain landscapes.
-          </p>
-        </div>
-
-      </div>
-    </div>
-    <div className="mt-12 text-center">
-      <Link href="/camp-activities" className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30">
-        Show All Camp activities <ArrowRight className="w-4 h-4" />
-      </Link>
-    </div>
-  </div>
-</section>
+      </section>
 
 
 {/* Daily Schedule */}
