@@ -264,25 +264,32 @@ export default function PartnerBenefitsPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-amber-100 shadow-sm text-sm font-semibold text-amber-700 mb-6">
-                <Sparkles className="w-4 h-4" />
-                CHP Partner Benefits Program
-              </div>
+              
+              <img
+  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/3d1774f4-adc0-44b4-99ce-fc5beccf5d01-chp-pertners-benefits.webp"
+  alt="CHP Partner Benefits"
+  className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-2xl mb-8"
+/>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-slate-900">
-                Grow with CHP.
-                <br />
-                <span className="text-amber-600">
-                  Benefit from every connection.
-                </span>
-              </h1>
+<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-amber-100 shadow-sm text-sm font-semibold text-amber-700 mb-6">
+  <Sparkles className="w-4 h-4" />
+  CHP Partner Benefits Program
+</div>
 
-              <p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-                CHP has created a structured Referral & Business
-                Development Partner Benefits Program designed to
-                reward meaningful partnerships and help partners grow
-                alongside CHP.
-              </p>
+<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05] text-slate-900">
+  Grow with CHP.
+  <br />
+  <span className="text-amber-600">
+    Benefit from every connection.
+  </span>
+</h1>
+
+<p className="mt-6 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+  CHP has created a structured Referral & Business
+  Development Partner Benefits Program designed to
+  reward meaningful partnerships and help partners grow
+  alongside CHP.
+</p>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
