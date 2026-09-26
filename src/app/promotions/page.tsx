@@ -230,24 +230,30 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function PromotionsPage() {
     return (
-        <main className="min-h-screen bg-[#f8f7f2] text-slate-900 overflow-hidden">
+        <main className="min-h-screen overflow-hidden bg-[#f8f7f2] text-slate-900">
 
             {/* ================================================================= */}
             {/* HERO                                                              */}
             {/* ================================================================= */}
 
-            <section className="relative min-h-[760px] flex items-end overflow-hidden bg-slate-950">
+            <section className="relative flex min-h-[620px] items-end overflow-hidden bg-slate-950 sm:min-h-[680px] lg:min-h-[760px]">
 
+                {/* HERO IMAGE
+                    Responsive sizing keeps the image filling the header
+                    without stretching. object-position controls the crop.
+                */}
                 <img
-                    src="/images/chp/partner-hero.jpg"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9be3c020-8034-410f-8625-5b3d8f0b41bc-chp-partner-network.webp"
                     alt="Himalayan landscape"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="absolute inset-0 h-full w-full object-cover object-[center_45%] sm:object-[center_42%] lg:object-center"
                 />
 
+                {/* DARK OVERLAYS */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/10" />
                 <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-transparent to-transparent" />
 
-                <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-20 pt-40 sm:px-8 lg:px-12">
+                {/* HERO CONTENT */}
+                <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40 lg:px-12">
 
                     <FadeIn>
                         <div className="max-w-4xl">
@@ -270,6 +276,7 @@ export default function PromotionsPage() {
                             </p>
 
                             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+
                                 <Link
                                     href="/partner-network"
                                     className="group inline-flex items-center justify-center gap-3 rounded-full bg-amber-500 px-7 py-4 text-sm font-bold text-slate-950 transition-all hover:bg-amber-400"
@@ -284,12 +291,15 @@ export default function PromotionsPage() {
                                 >
                                     View Partner Benefits
                                 </Link>
+
                             </div>
+
                         </div>
                     </FadeIn>
+
                 </div>
 
-                {/* Floating stat */}
+                {/* FLOATING STAT */}
                 <motion.div
                     initial={{ opacity: 0, x: 30 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -299,10 +309,12 @@ export default function PromotionsPage() {
                     <p className="text-xs uppercase tracking-widest text-white/50">
                         CHP Ecosystem
                     </p>
+
                     <p className="mt-2 text-2xl font-semibold text-white">
                         Connect · Grow · Experience
                     </p>
                 </motion.div>
+
             </section>
 
             {/* ================================================================= */}
@@ -329,6 +341,7 @@ export default function PromotionsPage() {
 
                         <FadeIn delay={0.1}>
                             <div className="space-y-5 text-[16px] leading-8 text-slate-600">
+
                                 <p>
                                     CHP is building a strong Referral &
                                     Business Development Network of trusted
@@ -348,6 +361,7 @@ export default function PromotionsPage() {
                                     explore referral opportunities and access
                                     applicable partner benefits.
                                 </p>
+
                             </div>
                         </FadeIn>
 
@@ -361,12 +375,120 @@ export default function PromotionsPage() {
 
             <section className="bg-white py-24 lg:py-32">
                 <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-                    <FadeIn><div className="mx-auto max-w-4xl text-center"><SectionLabel>CHP Growth Strategy</SectionLabel><h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">Marketing and Promotion Strategy</h2><p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg">CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:</p></div></FadeIn>
+
+                    <FadeIn>
+                        <div className="mx-auto max-w-4xl text-center">
+
+                            <SectionLabel>
+                                CHP Growth Strategy
+                            </SectionLabel>
+
+                            <h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                                Marketing and Promotion Strategy
+                            </h2>
+
+                            <p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg">
+                                CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:
+                            </p>
+
+                        </div>
+                    </FadeIn>
+
                     <div className="mx-auto mt-14 max-w-5xl space-y-5">
-                        {marketingStrategies.map((strategy, index) => (<FadeIn key={strategy} delay={index * 0.05}><article className="flex gap-5 rounded-[26px] border border-slate-200 bg-[#f1f0e9] p-6 shadow-sm sm:items-center sm:p-8"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green-900 text-sm font-bold text-amber-400">0{index + 1}</span><h3 className="text-lg font-semibold leading-snug text-slate-800 sm:text-xl">{strategy}</h3></article></FadeIn>))}
-                        <FadeIn delay={0.15}><article className="rounded-[26px] border border-green-900/10 bg-green-950 p-6 text-white shadow-sm sm:p-8"><div className="flex gap-5"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-bold text-amber-400">04</span><h3 className="pt-1 text-lg font-semibold leading-snug sm:text-xl">CHP plans to build a nationwide network of dedicated marketing executives across major Indian cities, with clearly defined business development targets focused on:</h3></div><ul className="mt-7 grid gap-4 sm:grid-cols-2">{marketingNetworkPriorities.map((priority) => (<li key={priority} className="flex gap-3 text-sm leading-6 text-white/75"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />{priority}</li>))}</ul></article></FadeIn>
-                        <FadeIn delay={0.2}><article className="rounded-[26px] border border-amber-500/15 bg-amber-50 p-6 shadow-sm sm:p-8"><div className="flex gap-5"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-sm font-bold text-slate-950">05</span><h3 className="pt-1 text-lg font-semibold leading-snug text-slate-800 sm:text-xl">Strong Repeat Customer Program: CHP aims to build a loyal customer base through an attractive guest retention program that includes:</h3></div><ul className="mt-7 grid gap-4 sm:grid-cols-2">{repeatCustomerPriorities.map((priority) => (<li key={priority} className="flex gap-3 text-sm leading-6 text-slate-600"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-800" />{priority}</li>))}</ul></article></FadeIn>
-                        <FadeIn delay={0.25}><div className="rounded-[26px] border border-slate-200 bg-[#f1f0e9] p-7 text-center shadow-sm sm:p-10"><p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">Together, these initiatives are designed to create sustainable guest occupancy, repeat business, and long-term revenue growth for every business operating within the CHP Ecosystem.</p></div></FadeIn>
+
+                        {marketingStrategies.map((strategy, index) => (
+                            <FadeIn
+                                key={strategy}
+                                delay={index * 0.05}
+                            >
+                                <article className="flex gap-5 rounded-[26px] border border-slate-200 bg-[#f1f0e9] p-6 shadow-sm sm:items-center sm:p-8">
+
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green-900 text-sm font-bold text-amber-400">
+                                        0{index + 1}
+                                    </span>
+
+                                    <h3 className="text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
+                                        {strategy}
+                                    </h3>
+
+                                </article>
+                            </FadeIn>
+                        ))}
+
+                        <FadeIn delay={0.15}>
+                            <article className="rounded-[26px] border border-green-900/10 bg-green-950 p-6 text-white shadow-sm sm:p-8">
+
+                                <div className="flex gap-5">
+
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-bold text-amber-400">
+                                        04
+                                    </span>
+
+                                    <h3 className="pt-1 text-lg font-semibold leading-snug sm:text-xl">
+                                        CHP plans to build a nationwide network of dedicated marketing executives across major Indian cities, with clearly defined business development targets focused on:
+                                    </h3>
+
+                                </div>
+
+                                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
+
+                                    {marketingNetworkPriorities.map((priority) => (
+                                        <li
+                                            key={priority}
+                                            className="flex gap-3 text-sm leading-6 text-white/75"
+                                        >
+                                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+                                            {priority}
+                                        </li>
+                                    ))}
+
+                                </ul>
+
+                            </article>
+                        </FadeIn>
+
+                        <FadeIn delay={0.2}>
+                            <article className="rounded-[26px] border border-amber-500/15 bg-amber-50 p-6 shadow-sm sm:p-8">
+
+                                <div className="flex gap-5">
+
+                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-sm font-bold text-slate-950">
+                                        05
+                                    </span>
+
+                                    <h3 className="pt-1 text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
+                                        Strong Repeat Customer Program: CHP aims to build a loyal customer base through an attractive guest retention program that includes:
+                                    </h3>
+
+                                </div>
+
+                                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
+
+                                    {repeatCustomerPriorities.map((priority) => (
+                                        <li
+                                            key={priority}
+                                            className="flex gap-3 text-sm leading-6 text-slate-600"
+                                        >
+                                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-800" />
+                                            {priority}
+                                        </li>
+                                    ))}
+
+                                </ul>
+
+                            </article>
+                        </FadeIn>
+
+                        <FadeIn delay={0.25}>
+                            <div className="rounded-[26px] border border-slate-200 bg-[#f1f0e9] p-7 text-center shadow-sm sm:p-10">
+
+                                <p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+                                    Together, these initiatives are designed to create sustainable guest occupancy, repeat business, and long-term revenue growth for every business operating within the CHP Ecosystem.
+                                </p>
+
+                            </div>
+                        </FadeIn>
+
                     </div>
                 </div>
             </section>
@@ -379,14 +501,18 @@ export default function PromotionsPage() {
                 <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
 
                     <FadeIn>
+
                         <div className="max-w-3xl">
+
                             <SectionLabel>
                                 5 Major Categories
                             </SectionLabel>
 
                             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
                                 Where do you fit
-                                <span className="text-green-900"> in?</span>
+                                <span className="text-green-900">
+                                    {" "}in?
+                                </span>
                             </h2>
 
                             <p className="mt-6 text-base leading-7 text-slate-600">
@@ -395,19 +521,28 @@ export default function PromotionsPage() {
                                 designed around people who already have trusted
                                 access to potential customers and opportunities.
                             </p>
+
                         </div>
+
                     </FadeIn>
 
                     <div className="mt-16 space-y-7">
+
                         {partnerCategories.map((category, index) => {
+
                             const Icon = category.icon;
 
                             return (
-                                <FadeIn key={category.title} delay={index * 0.04}>
+                                <FadeIn
+                                    key={category.title}
+                                    delay={index * 0.04}
+                                >
+
                                     <Link
                                         href="/partner-network"
                                         className="group relative block overflow-hidden rounded-[28px] bg-slate-900"
                                     >
+
                                         <div className="relative min-h-[340px] sm:min-h-[390px]">
 
                                             <img
@@ -421,6 +556,7 @@ export default function PromotionsPage() {
                                             <div className="relative z-10 flex min-h-[340px] flex-col justify-between p-7 sm:min-h-[390px] sm:p-10 lg:p-12">
 
                                                 <div className="flex items-start justify-between">
+
                                                     <span className="text-sm font-semibold tracking-widest text-white/40">
                                                         {category.number}
                                                     </span>
@@ -428,6 +564,7 @@ export default function PromotionsPage() {
                                                     <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition group-hover:bg-amber-500 group-hover:text-slate-950">
                                                         <ArrowUpRight className="h-5 w-5" />
                                                     </span>
+
                                                 </div>
 
                                                 <div className="max-w-3xl">
@@ -445,6 +582,7 @@ export default function PromotionsPage() {
                                                     </p>
 
                                                     <div className="mt-6 flex max-w-3xl flex-wrap gap-2">
+
                                                         {category.roles.map((role) => (
                                                             <span
                                                                 key={role}
@@ -453,19 +591,27 @@ export default function PromotionsPage() {
                                                                 {role}
                                                             </span>
                                                         ))}
+
                                                     </div>
 
                                                 </div>
+
                                             </div>
+
                                         </div>
+
                                     </Link>
+
                                 </FadeIn>
                             );
                         })}
+
                     </div>
 
                     <FadeIn>
+
                         <div className="mt-12 flex justify-center">
+
                             <Link
                                 href="/partner-network"
                                 className="group inline-flex items-center gap-3 rounded-full bg-green-950 px-7 py-4 text-sm font-bold text-white transition hover:bg-green-900"
@@ -473,7 +619,9 @@ export default function PromotionsPage() {
                                 See Complete Partner Network
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Link>
+
                         </div>
+
                     </FadeIn>
 
                 </div>
@@ -484,6 +632,7 @@ export default function PromotionsPage() {
             {/* ================================================================= */}
 
             <section className="relative h-[500px] overflow-hidden">
+
                 <img
                     src="/images/chp/partner-network.jpg"
                     alt="Himalayan CHP experience"
@@ -493,7 +642,9 @@ export default function PromotionsPage() {
                 <div className="absolute inset-0 bg-slate-950/45" />
 
                 <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-5 sm:px-8 lg:px-12">
+
                     <div className="max-w-2xl">
+
                         <Sparkles className="h-9 w-9 text-amber-400" />
 
                         <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
@@ -502,8 +653,11 @@ export default function PromotionsPage() {
                                 A long-term relationship.
                             </span>
                         </h2>
+
                     </div>
+
                 </div>
+
             </section>
 
             {/* ================================================================= */}
@@ -511,11 +665,13 @@ export default function PromotionsPage() {
             {/* ================================================================= */}
 
             <section className="bg-white py-24 lg:py-32">
+
                 <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
 
                     <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
 
                         <FadeIn>
+
                             <SectionLabel>
                                 Partner Benefits
                             </SectionLabel>
@@ -543,10 +699,13 @@ export default function PromotionsPage() {
                                 Explore all partner benefits
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Link>
+
                         </FadeIn>
 
                         <div className="grid gap-4 sm:grid-cols-2">
+
                             {benefits.map((benefit, index) => {
+
                                 const Icon = benefit.icon;
 
                                 return (
@@ -559,9 +718,11 @@ export default function PromotionsPage() {
                                                 : ""
                                         }
                                     >
+
                                         <div className="group h-full rounded-[26px] border border-slate-200 bg-[#fafaf7] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-green-900/20 hover:bg-green-950 hover:text-white hover:shadow-2xl hover:shadow-green-950/10">
 
                                             <div className="flex items-start justify-between">
+
                                                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-900/10 text-green-950 transition group-hover:bg-white/10 group-hover:text-amber-400">
                                                     <Icon className="h-5 w-5" />
                                                 </div>
@@ -569,6 +730,7 @@ export default function PromotionsPage() {
                                                 <span className="text-xs font-bold tracking-widest text-slate-300 group-hover:text-white/30">
                                                     {benefit.number}
                                                 </span>
+
                                             </div>
 
                                             <h3 className="mt-7 text-2xl font-semibold">
@@ -580,6 +742,7 @@ export default function PromotionsPage() {
                                             </p>
 
                                             <ul className="mt-6 space-y-3">
+
                                                 {benefit.items.map((item) => (
                                                     <li
                                                         key={item}
@@ -589,105 +752,55 @@ export default function PromotionsPage() {
                                                         {item}
                                                     </li>
                                                 ))}
+
                                             </ul>
 
                                         </div>
+
                                     </FadeIn>
                                 );
                             })}
+
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
 
             {/* ================================================================= */}
-            {/* MARKETING & PROMOTION STRATEGY                                    */}
+            {/* HIDDEN MARKETING SECTION                                         */}
             {/* ================================================================= */}
 
             {false && (
-            <section className="bg-[#f1f0e9] py-24 lg:py-32">
-                <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-                    <FadeIn>
-                        <div className="mx-auto max-w-4xl text-center">
-                            <SectionLabel>
-                                CHP Growth Strategy
-                            </SectionLabel>
-                            <h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                                Marketing and Promotion Strategy
-                            </h2>
-                            <p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg">
-                                CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:
-                            </p>
-                        </div>
-                    </FadeIn>
+                <section className="bg-[#f1f0e9] py-24 lg:py-32">
 
-                    <div className="mx-auto mt-14 max-w-5xl space-y-5">
-                        {marketingStrategies.map((strategy, index) => (
-                            <FadeIn key={strategy} delay={index * 0.05}>
-                                <article className="flex gap-5 rounded-[26px] border border-slate-200 bg-white p-6 shadow-sm sm:items-center sm:p-8">
-                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-green-900 text-sm font-bold text-amber-400">
-                                        0{index + 1}
-                                    </span>
-                                    <h3 className="text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
-                                        {strategy}
-                                    </h3>
-                                </article>
-                            </FadeIn>
-                        ))}
+                    <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
 
-                        <FadeIn delay={0.15}>
-                            <article className="rounded-[26px] border border-green-900/10 bg-green-950 p-6 text-white shadow-sm sm:p-8">
-                                <div className="flex gap-5">
-                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-sm font-bold text-amber-400">
-                                        04
-                                    </span>
-                                    <h3 className="pt-1 text-lg font-semibold leading-snug sm:text-xl">
-                                        CHP plans to build a nationwide network of dedicated marketing executives across major Indian cities, with clearly defined business development targets focused on:
-                                    </h3>
-                                </div>
-                                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
-                                    {marketingNetworkPriorities.map((priority) => (
-                                        <li key={priority} className="flex gap-3 text-sm leading-6 text-white/75">
-                                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
-                                            {priority}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </article>
-                        </FadeIn>
+                        <FadeIn>
 
-                        <FadeIn delay={0.2}>
-                            <article className="rounded-[26px] border border-amber-500/15 bg-amber-50 p-6 shadow-sm sm:p-8">
-                                <div className="flex gap-5">
-                                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-sm font-bold text-slate-950">
-                                        05
-                                    </span>
-                                    <h3 className="pt-1 text-lg font-semibold leading-snug text-slate-800 sm:text-xl">
-                                        Strong Repeat Customer Program: CHP aims to build a loyal customer base through an attractive guest retention program that includes:
-                                    </h3>
-                                </div>
-                                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
-                                    {repeatCustomerPriorities.map((priority) => (
-                                        <li key={priority} className="flex gap-3 text-sm leading-6 text-slate-600">
-                                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-green-800" />
-                                            {priority}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </article>
-                        </FadeIn>
+                            <div className="mx-auto max-w-4xl text-center">
 
-                        <FadeIn delay={0.25}>
-                            <div className="rounded-[26px] border border-slate-200 bg-white p-7 text-center shadow-sm sm:p-10">
-                                <p className="mx-auto max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-                                    Together, these initiatives are designed to create sustainable guest occupancy, repeat business, and long-term revenue growth for every business operating within the CHP Ecosystem.
+                                <SectionLabel>
+                                    CHP Growth Strategy
+                                </SectionLabel>
+
+                                <h2 className="mt-5 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                                    Marketing and Promotion Strategy
+                                </h2>
+
+                                <p className="mt-7 text-base leading-8 text-slate-600 sm:text-lg">
+                                    CHP is building a robust marketing ecosystem to attract a steady flow of guests to the CHP Community, strengthen demand, and unlock greater business opportunities for every partner establishment. With this CHP aims to significantly increase tourist footfall, guest occupancy, and long-term business opportunities for all partner establishments. Our strategic action plan includes:
                                 </p>
+
                             </div>
+
                         </FadeIn>
+
                     </div>
-                </div>
-            </section>
+
+                </section>
             )}
 
             {/* ================================================================= */}
@@ -695,9 +808,11 @@ export default function PromotionsPage() {
             {/* ================================================================= */}
 
             <section className="px-5 pb-8 sm:px-8 lg:px-12">
+
                 <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-green-950">
 
                     <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amber-500/10 blur-3xl" />
+
                     <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
 
                     <div className="relative z-10 px-7 py-16 text-center sm:px-12 lg:py-20">
@@ -721,6 +836,7 @@ export default function PromotionsPage() {
                         </p>
 
                         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+
                             <Link
                                 href="/partner-network"
                                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-amber-500 px-7 py-4 text-sm font-bold text-slate-950 hover:bg-amber-400"
@@ -735,10 +851,13 @@ export default function PromotionsPage() {
                             >
                                 View Benefits
                             </Link>
+
                         </div>
 
                     </div>
+
                 </div>
+
             </section>
 
             {/* ================================================================= */}
@@ -750,4 +869,3 @@ export default function PromotionsPage() {
         </main>
     );
 }
-

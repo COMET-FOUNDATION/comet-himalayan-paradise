@@ -112,7 +112,7 @@ const benefitSections = [
     id: "exclusive",
     icon: Sparkles,
     number: "06",
-    title: "Exclusive Offers for Your Customers",
+    title: "Benefits Our Growth Partners Can Extend to their Customers",
     shortTitle: "Customer Perks",
     description:
       "Give your own customers additional value through exclusive CHP offers.",
@@ -166,7 +166,7 @@ const benefitSections = [
     id: "facility",
     icon: Building2,
     number: "09",
-    title: "Facility Owner Acquisition",
+    title: "Facility Owner Acquisition Incentives",
     shortTitle: "Property Network",
     description:
       "Partners who introduce qualified property and facility owners can unlock additional incentives.",
