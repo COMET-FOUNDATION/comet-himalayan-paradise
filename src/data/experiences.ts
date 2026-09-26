@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
       "Live like a local in stone-and-wood mountain homes, cosy homestays, and heritage cottages set against sweeping Himalayan views.",
     icon: "Home",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/bc55a313-cbaf-42f6-89fc-92a46e61d145-adventure-camp.jpg",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/21ce77df-8ab2-4920-a9eb-f7ca749c5cee-chp-enclave.png",
     duration: "1–5 Days",
     category: "culture",
     highlights: [
