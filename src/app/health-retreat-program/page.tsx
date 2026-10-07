@@ -203,7 +203,7 @@ export default function HealthRetreatProgramPage() {
 
                 <div className="absolute inset-0 flex flex-col items-center px-4 sm:px-6">
 
-                    {/* Hero Badge */}
+                    {/* Hero Badge — POSITION UNCHANGED */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -214,8 +214,8 @@ export default function HealthRetreatProgramPage() {
                         Spiritual & Wellness Sanctuary
                     </motion.div>
 
-                    {/* Hero Content */}
-                    <div className="absolute top-[18%] sm:top-[17%] md:top-[16%] left-1/2 -translate-x-1/2 z-10 w-full px-4 flex flex-col items-center justify-center text-center">
+                    {/* Hero Content — MOVED UP */}
+                    <div className="absolute left-1/2 top-[14%] z-10 flex w-full -translate-x-1/2 flex-col items-center justify-center px-4 text-center sm:top-[14%] md:top-[13%]">
 
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
@@ -250,19 +250,19 @@ export default function HealthRetreatProgramPage() {
                                 duration: 0.6,
                                 delay: 0.3,
                             }}
-                            className="mt-6 flex flex-wrap gap-4 justify-center"
+                            className="mt-6 flex flex-wrap justify-center gap-4"
                         >
                             <a
                                 href="#retreats"
-                                className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full flex items-center gap-2 shadow-lg transition-all"
+                                className="flex items-center gap-2 rounded-full bg-amber-600 px-7 py-3.5 font-bold text-white shadow-lg transition-all hover:bg-amber-500"
                             >
                                 View Retreat Programs
-                                <ArrowRight className="w-4 h-4" />
+                                <ArrowRight className="h-4 w-4" />
                             </a>
 
                             <a
                                 href="#enquire"
-                                className="bg-white/10 hover:bg-white/20 text-white font-medium px-7 py-3.5 rounded-full border border-white/30 backdrop-blur-sm transition-all"
+                                className="rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20"
                             >
                                 Enquire Now
                             </a>
@@ -273,15 +273,15 @@ export default function HealthRetreatProgramPage() {
             </section>
 
             {/* ── Philosophy ── */}
-            <section className="py-16 bg-white">
+            <section className="bg-white py-16">
 
-                <div className="max-w-4xl mx-auto px-4 text-center">
+                <div className="mx-auto max-w-4xl px-4 text-center">
 
-                    <p className="text-green-800 text-sm sm:text-base font-semibold uppercase tracking-widest mb-4">
+                    <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-green-800 sm:text-base">
                         Our Philosophy
                     </p>
 
-                    <blockquote className="mx-auto max-w-4xl text-lg sm:text-xl font-light leading-relaxed text-slate-700 italic text-justify">
+                    <blockquote className="mx-auto max-w-4xl text-lg font-light italic leading-relaxed text-slate-700 text-justify sm:text-xl">
                         "The Himalayas do not merely house peaks — they house
                         silence, wisdom, and the ancient breath of the earth.
                         CHP is designed to help you listen."
@@ -291,9 +291,9 @@ export default function HealthRetreatProgramPage() {
             </section>
 
             {/* ── Wellness Pillars ── */}
-            <section className="py-20 lg:py-28 bg-white">
+            <section className="bg-stone-50 py-20 lg:py-28">
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                     <SectionHeader
                         eyebrow="Core Practices"
@@ -302,7 +302,7 @@ export default function HealthRetreatProgramPage() {
                     />
 
                     <StaggerContainer
-                        className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                        className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
                         staggerDelay={0.08}
                     >
                         {pillars.map((p) => {
@@ -311,20 +311,20 @@ export default function HealthRetreatProgramPage() {
                             return (
                                 <StaggerItem key={p.title}>
 
-                                    <div
-                                        className="p-7 rounded-2xl bg-white border border-slate-100 hover:shadow-lg hover:shadow-black/5 transition-all h-full"
-                                    >
-                                        <div className="w-11 h-11 rounded-xl bg-green-100 border border-green-200 flex items-center justify-center text-green-700 mb-4">
-                                            <Icon className="w-5 h-5" />
+                                    <div className="h-full rounded-2xl border border-slate-100 bg-white p-7 transition-all hover:shadow-lg hover:shadow-black/5">
+
+                                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-green-200 bg-green-100 text-green-700">
+                                            <Icon className="h-5 w-5" />
                                         </div>
 
-                                        <h3 className="text-lg font-bold text-slate-800 mb-2">
+                                        <h3 className="mb-2 text-lg font-bold text-slate-800">
                                             {p.title}
                                         </h3>
 
-                                        <p className="text-slate-500 text-sm leading-relaxed text-justify">
+                                        <p className="text-sm leading-relaxed text-slate-500 text-justify">
                                             {p.description}
                                         </p>
+
                                     </div>
 
                                 </StaggerItem>
@@ -336,28 +336,30 @@ export default function HealthRetreatProgramPage() {
             </section>
 
             {/* ── Sacred Traditions ── */}
-            <section className="py-16 bg-white border-y border-slate-100">
+            <section className="border-y border-slate-100 bg-white py-16">
 
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
 
                         {traditions.map((t) => (
                             <div
                                 key={t.label}
-                                className="text-center p-5 rounded-2xl bg-green-50 border border-green-100"
+                                className="rounded-2xl border border-green-100 bg-green-50 p-5 text-center"
                             >
-                                <div className="w-10 h-10 rounded-full bg-green-100 mx-auto flex items-center justify-center text-green-700 mb-3">
-                                    <Flame className="w-5 h-5" />
+
+                                <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-700">
+                                    <Flame className="h-5 w-5" />
                                 </div>
 
-                                <h4 className="font-bold text-slate-800 text-sm mb-1">
+                                <h4 className="mb-1 text-sm font-bold text-slate-800">
                                     {t.label}
                                 </h4>
 
-                                <p className="text-slate-500 text-xs leading-snug">
+                                <p className="text-xs leading-snug text-slate-500">
                                     {t.desc}
                                 </p>
+
                             </div>
                         ))}
 
@@ -369,10 +371,10 @@ export default function HealthRetreatProgramPage() {
             {/* ── Retreat Programs ── */}
             <section
                 id="retreats"
-                className="py-20 lg:py-28 bg-white scroll-mt-20"
+                className="scroll-mt-20 bg-stone-50 py-20 lg:py-28"
             >
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
                     <SectionHeader
                         eyebrow="Retreat Programs"
@@ -381,14 +383,14 @@ export default function HealthRetreatProgramPage() {
                     />
 
                     <StaggerContainer
-                        className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8"
+                        className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3"
                         staggerDelay={0.08}
                     >
                         {retreatPrograms.map((r) => (
                             <StaggerItem key={r.title}>
 
                                 <div
-                                    className={`relative flex flex-col h-full rounded-2xl overflow-hidden border transition-all hover:shadow-xl hover:-translate-y-1 ${
+                                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl ${
                                         r.featured
                                             ? "border-amber-500 shadow-lg shadow-amber-900/10"
                                             : "border-slate-200"
@@ -396,7 +398,7 @@ export default function HealthRetreatProgramPage() {
                                 >
 
                                     {r.featured && (
-                                        <div className="absolute top-4 right-4 z-10 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                                        <div className="absolute right-4 top-4 z-10 rounded-full bg-amber-600 px-3 py-1 text-xs font-bold text-white">
                                             Most Popular
                                         </div>
                                     )}
@@ -413,44 +415,46 @@ export default function HealthRetreatProgramPage() {
 
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
 
-                                        <div className="absolute bottom-4 left-4 text-amber-300 font-semibold text-xs">
+                                        <div className="absolute bottom-4 left-4 text-xs font-semibold text-amber-300">
                                             {r.duration}
                                         </div>
 
                                     </div>
 
-                                    <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+                                    <div className="flex flex-1 flex-col justify-between bg-white p-6">
 
                                         <div>
 
-                                            <h3 className="text-xl font-bold text-slate-800 mb-2">
+                                            <h3 className="mb-2 text-xl font-bold text-slate-800">
                                                 {r.title}
                                             </h3>
 
-                                            <p className="text-slate-500 text-sm leading-relaxed mb-4 text-justify">
+                                            <p className="mb-4 text-sm leading-relaxed text-slate-500 text-justify">
                                                 {r.desc}
                                             </p>
 
-                                            <ul className="space-y-2 mb-5">
+                                            <ul className="mb-5 space-y-2">
+
                                                 {r.includes.map((inc) => (
                                                     <li
                                                         key={inc}
                                                         className="flex items-center gap-2 text-xs text-slate-600"
                                                     >
-                                                        <CheckCircle2 className="w-3.5 h-3.5 text-green-700 shrink-0" />
+                                                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-green-700" />
                                                         {inc}
                                                     </li>
                                                 ))}
+
                                             </ul>
 
                                         </div>
 
                                         <a
                                             href="#enquire"
-                                            className={`w-full text-center py-3 rounded-xl font-semibold text-sm transition-colors ${
+                                            className={`w-full rounded-xl py-3 text-center text-sm font-semibold transition-colors ${
                                                 r.featured
-                                                    ? "bg-amber-600 hover:bg-amber-700 text-white"
-                                                    : "bg-stone-100 hover:bg-stone-200 text-slate-800"
+                                                    ? "bg-amber-600 text-white hover:bg-amber-700"
+                                                    : "bg-stone-100 text-slate-800 hover:bg-stone-200"
                                             }`}
                                         >
                                             Enquire for {r.title}
@@ -470,22 +474,22 @@ export default function HealthRetreatProgramPage() {
             {/* ── Enquiry Form ── */}
             <section
                 id="enquire"
-                className="py-20 bg-white scroll-mt-20"
+                className="scroll-mt-20 bg-white py-20"
             >
 
-                <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
 
-                    <div className="text-center mb-10">
+                    <div className="mb-10 text-center">
 
-                        <span className="text-amber-700 text-xs font-semibold uppercase tracking-wider">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-amber-700">
                             Begin Your Journey
                         </span>
 
-                        <h2 className="text-3xl font-bold text-slate-800 mt-2">
+                        <h2 className="mt-2 text-3xl font-bold text-slate-800">
                             Enquire About a Retreat
                         </h2>
 
-                        <p className="text-slate-500 text-sm mt-2 text-justify">
+                        <p className="mt-2 text-sm text-slate-500 text-justify">
                             Our wellness team will reach out within 24 hours
                             with availability and programme details.
                         </p>
@@ -494,15 +498,15 @@ export default function HealthRetreatProgramPage() {
 
                     {formSubmitted ? (
 
-                        <div className="p-10 rounded-2xl bg-amber-50 border border-amber-200 text-center">
+                        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-10 text-center">
 
-                            <CheckCircle2 className="w-12 h-12 text-amber-600 mx-auto mb-3" />
+                            <CheckCircle2 className="mx-auto mb-3 h-12 w-12 text-amber-600" />
 
                             <h3 className="text-xl font-bold text-slate-800">
                                 Enquiry Received!
                             </h3>
 
-                            <p className="text-slate-500 text-sm mt-2 text-justify">
+                            <p className="mt-2 text-sm text-slate-500 text-justify">
                                 Our team will get in touch to guide you toward
                                 the right program.
                             </p>
@@ -513,14 +517,14 @@ export default function HealthRetreatProgramPage() {
 
                         <form
                             onSubmit={handleSubmit}
-                            className="bg-white border border-amber-100 rounded-2xl p-8 shadow-sm space-y-5"
+                            className="space-y-5 rounded-2xl border border-amber-100 bg-white p-8 shadow-sm"
                         >
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 
                                 <div>
 
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
+                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
                                         Your Name *
                                     </label>
 
@@ -535,14 +539,14 @@ export default function HealthRetreatProgramPage() {
                                                 name: e.target.value,
                                             })
                                         }
-                                        className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
                                     />
 
                                 </div>
 
                                 <div>
 
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
+                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
                                         Email *
                                     </label>
 
@@ -557,18 +561,18 @@ export default function HealthRetreatProgramPage() {
                                                 email: e.target.value,
                                             })
                                         }
-                                        className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
                                     />
 
                                 </div>
 
                             </div>
 
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 
                                 <div>
 
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
+                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
                                         Phone *
                                     </label>
 
@@ -583,14 +587,14 @@ export default function HealthRetreatProgramPage() {
                                                 phone: e.target.value,
                                             })
                                         }
-                                        className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
                                     />
 
                                 </div>
 
                                 <div>
 
-                                    <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
+                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
                                         Retreat Program
                                     </label>
 
@@ -602,17 +606,20 @@ export default function HealthRetreatProgramPage() {
                                                 program: e.target.value,
                                             })
                                         }
-                                        className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
+                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
                                     >
                                         <option>
                                             Weekend Detox & Reset
                                         </option>
+
                                         <option>
                                             7-Day Inner Renewal
                                         </option>
+
                                         <option>
                                             Purpose & Clarity Retreat
                                         </option>
+
                                         <option>
                                             Custom Program
                                         </option>
@@ -624,7 +631,7 @@ export default function HealthRetreatProgramPage() {
 
                             <div>
 
-                                <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
+                                <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
                                     Preferred Start Date
                                 </label>
 
@@ -637,14 +644,14 @@ export default function HealthRetreatProgramPage() {
                                             date: e.target.value,
                                         })
                                     }
-                                    className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
+                                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
                                 />
 
                             </div>
 
                             <div>
 
-                                <label className="block text-xs font-semibold uppercase text-slate-400 mb-1.5">
+                                <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
                                     Your Intention or Questions
                                 </label>
 
@@ -658,16 +665,16 @@ export default function HealthRetreatProgramPage() {
                                             message: e.target.value,
                                         })
                                     }
-                                    className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-amber-500"
+                                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
                                 />
 
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 rounded-xl transition-colors flex items-center justify-center gap-2"
+                                className="flex w-full items-center justify-center gap-2 rounded-xl bg-amber-600 py-3.5 font-bold text-white transition-colors hover:bg-amber-700"
                             >
-                                <Send className="w-4 h-4" />
+                                <Send className="h-4 w-4" />
                                 Submit Retreat Enquiry
                             </button>
 
@@ -678,8 +685,10 @@ export default function HealthRetreatProgramPage() {
                 </div>
             </section>
 
-            <section className="bg-white py-10">
+            <section className="bg-stone-50 py-10">
+
                 <div className="mx-auto flex max-w-7xl justify-center px-4 sm:px-6 lg:px-8">
+
                     <Link
                         href="/"
                         className="inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-800"
@@ -687,6 +696,7 @@ export default function HealthRetreatProgramPage() {
                         <ArrowLeft className="h-4 w-4" />
                         Back to Home
                     </Link>
+
                 </div>
             </section>
 

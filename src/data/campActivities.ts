@@ -255,15 +255,15 @@ const campActivityPageImages: Record<string, string> = {
   "STEM Discovery Zone": "/images/camp-activities/stem-discovery-zone.webp",
   "Team Building": "/images/camp-activities/team-building.webp",
   "Cultural & Social": "/images/camp-activities/cultural-social.webp",
-  "Race - The Speed Circuit": "/images/camp-activities/race-the-speed-circuit.webp",
+  "Race – The Speed Circuit": "/images/camp-activities/race-the-speed-circuit.webp",
   "Blindfold Courses": "/images/camp-activities/blindfold-courses.webp",
   "Balloon Olympic": "/images/camp-activities/balloon-olympic.webp",
   "Water Games": "/images/camp-activities/water-games.webp",
   "Rope Riders": "/images/camp-activities/rope-riders.webp",
   "Tyre Games": "/images/camp-activities/tyre-games.webp",
   "Creepy Crawly Race": "/images/camp-activities/creepy-crawly-race.webp",
-  "Toss and Shot": "/images/camp-activities/toss-and-shot.webp",
-  "Himalayan Adventure Sports": "/images/camp-activities/himalayan-adventure-sports.webp",
+  "Toss & Shot": "/images/camp-activities/toss-and-shot.webp",
+  "Himalayan Adventure Games": "/images/camp-activities/himalayan-adventure-sports.webp",
   "Musical Arena": "/images/camp-activities/musical-arena.webp",
   "Flour Coin Fun Game": "/images/camp-activities/flour-coin-fun-game.webp",
   "Desi Khel": "/images/camp-activities/desi-khel.webp",
@@ -271,11 +271,20 @@ const campActivityPageImages: Record<string, string> = {
   "Closing Ceremony": "/images/camp-activities/closing-ceremony.webp",
 };
 
-export const campCategories: CampCategory[] = sourceCategories.map((category) => {
-  const image = campActivityPageImages[category.title];
-  if (!image) throw new Error(`Missing PDF image for camp activity category: ${category.title}`);
+const normalizedCategoryTitleMap: Record<string, string> = {
+  "Race - The Speed Circuit": "Race – The Speed Circuit",
+  "Toss and Shot": "Toss & Shot",
+  "Himalayan Adventure Sports": "Himalayan Adventure Games",
+};
 
-  const categoryWithPdfImage = { ...category, image };
+const normalizeCategoryTitle = (title: string) => normalizedCategoryTitleMap[title] ?? title;
+
+export const campCategories: CampCategory[] = sourceCategories.map((category) => {
+  const title = normalizeCategoryTitle(category.title);
+  const image = campActivityPageImages[title];
+  if (!image) throw new Error(`Missing PDF image for camp activity category: ${title}`);
+
+  const categoryWithPdfImage = { ...category, title, image };
   return {
     ...categoryWithPdfImage,
     activities: category.activities.map((activity) => ({
@@ -284,3 +293,85 @@ export const campCategories: CampCategory[] = sourceCategories.map((category) =>
     })),
   };
 });
+
+const requiredCampActivityGroups = [
+  {
+    title: "Connect & Communicate",
+    activities: [
+      "Ice Breakers",
+      "Communication",
+      "Cultural & Social",
+    ],
+  },
+  {
+    title: "Mind & Creativity",
+    activities: [
+      "Smart Memory",
+      "Problem Solving",
+      "Creativity",
+      "Mindfulness",
+    ],
+  },
+  {
+    title: "Team & Challenge",
+    activities: [
+      "Team Building",
+      "Blindfold Courses",
+      "Rope Riders",
+      "Tyre Games",
+    ],
+  },
+  {
+    title: "Fun & Games Arena",
+    activities: [
+      "Race – The Speed Circuit",
+      "Balloon Olympic",
+      "Water Games",
+      "Creepy Crawly Race",
+      "Toss & Shot",
+      "Flour Coin Fun Game",
+      "Desi Khel",
+    ],
+  },
+  {
+    title: "Music & Celebration",
+    activities: [
+      "Musical Arena",
+      "Evening Campfire",
+      "Closing Ceremony",
+    ],
+  },
+  {
+    title: "STEM & Himalayan Outdoor Adventure",
+    activities: [
+      "STEM Discovery Zone",
+      "Himalayan Adventure Games",
+    ],
+  },
+] as const;
+
+export const campActivityGroups = requiredCampActivityGroups.map((group) => ({
+  ...group,
+  items: group.activities
+    .map((title) => {
+      const activity = campCategories.find((item) => item.title === title);
+      if (!activity) {
+        throw new Error(`Missing camp activity data for: ${title}`);
+      }
+      return {
+        ...activity,
+        slug: categorySlug(activity.title),
+      };
+    }),
+}));
+
+export const campActivityCatalog = campActivityGroups.flatMap((group) => group.items.map((activity) => ({
+  ...activity,
+  group: group.title,
+})));
+
+export const getCampActivityBySlug = (slug: string) =>
+  campActivityCatalog.find((activity) => activity.slug === slug);
+
+export const getCampActivityByTitle = (title: string) =>
+  campActivityCatalog.find((activity) => activity.title === title);

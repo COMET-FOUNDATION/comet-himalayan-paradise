@@ -22,29 +22,31 @@ import {
    ──────────────────────────────────────────────────────────────── */
 
 // Menu name shown on the header image.
-const MENU_NAME = "CHP OPPORTUNITIES";
+const MENU_NAME = "";
 
 // Destination of the button at the bottom of the page.
 const HOME_HREF = "/";
 
 // Position of the menu-name pill on the header image (distance from the top edge).
 // Increase the values to move it down, decrease to move it up.
-const PILL_POSITION_CLASS = "top-4 sm:top-6 lg:top-8";
+const PILL_POSITION_CLASS = "top-4 sm:top-6 lg:top-3";
 
-// Each section uses one restrained colour for all of its feature boxes.
-const SECTION_TILE_STYLES = {
-  strategic: { box: "bg-emerald-50 border-emerald-100 text-slate-800", icon: "text-emerald-700" },
-  market: { box: "bg-sky-50 border-sky-100 text-slate-800", icon: "text-sky-700" },
-  revenue: { box: "bg-teal-50 border-teal-100 text-slate-800", icon: "text-teal-700" },
-  hospitality: { box: "bg-amber-50 border-amber-100 text-slate-800", icon: "text-amber-700" },
-};
+// Colour combos for the small feature boxes (each box in a group gets a different one).
+const TILE_COLORS = [
+  { box: "bg-white border-stone-200 text-slate-800", icon: "text-green-700" },
+  { box: "bg-white border-stone-200 text-slate-800", icon: "text-green-700" },
+  { box: "bg-white border-stone-200 text-slate-800", icon: "text-green-700" },
+  { box: "bg-white border-stone-200 text-slate-800", icon: "text-green-700" },
+  { box: "bg-white border-stone-200 text-slate-800", icon: "text-green-700" },
+  { box: "bg-white border-stone-200 text-slate-800", icon: "text-green-700" },
+];
 
 // Shared page-title style (single line, reduced size).
-const HEADER_TITLE_BASE = "font-sans text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight";
+const HEADER_TITLE_BASE = "font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight";
 
 // Shared section-heading style (single line, reduced size).
 const SECTION_TITLE_BASE =
-  "font-sans text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-4";
+  "font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-4";
 
 /**
  * Key-word highlighter (bold + contrasting colour).
@@ -56,7 +58,7 @@ function Key({ children }: { children: ReactNode }) {
   const isShort = typeof children === "string" && children.length <= 30;
   return (
     <strong
-      className={`font-bold text-slate-900 ${
+      className={`font-bold text-black ${
         isShort ? "inline-block whitespace-nowrap text-left" : ""
       }`}
     >
@@ -129,7 +131,7 @@ export default function BusinessInvestmentPage() {
     // lang + hyphens keep justified paragraphs evenly spaced (no wide word gaps)
     <main
       lang="en"
-      className="min-h-screen bg-stone-50 text-slate-800 pt-20 [hyphens:auto]"
+      className="min-h-screen bg-stone-50 text-slate-800 pt-14 [hyphens:auto]"
     >
       {/* ── FULL-WIDTH HEADER IMAGE (with menu-name pill) ── */}
       <div className="relative w-full h-[340px] sm:h-[400px] lg:h-[600px] overflow-hidden">
@@ -151,7 +153,7 @@ export default function BusinessInvestmentPage() {
       </div>
 
       {/* ── 1. Hero & Business and Investment Section ── */}
-      <section className="relative py-10 lg:py-12 overflow-hidden bg-gradient-to-b from-amber-50 via-stone-50 to-stone-50 border-b border-stone-200">
+      <section className="relative py-10 lg:py-12 overflow-hidden bg-white border-b border-stone-200">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Content */}
@@ -162,14 +164,17 @@ export default function BusinessInvestmentPage() {
                 transition={{ duration: 0.5 }}
                 className={`${HEADER_TITLE_BASE} text-slate-900 mb-3`}
               >
-                Business and <span>Investment</span>
+                Business and{" "}
+                <span className="text-green-800">
+                  Investment
+                </span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-sm sm:text-base font-semibold text-slate-700 tracking-wide mb-4"
+                className="text-sm sm:text-base font-semibold text-emerald-700 tracking-wide mb-4"
               >
                 Build • Invest • Grow • Prosper
               </motion.p>
@@ -194,14 +199,14 @@ export default function BusinessInvestmentPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.3 + i * 0.1 }}
-                    className="p-5 rounded-2xl bg-emerald-50 border border-emerald-100 hover:border-emerald-200 hover:shadow-md transition-all duration-300"
+                    className="p-5 rounded-2xl bg-white border border-stone-200 hover:border-green-700/30 hover:shadow-md transition-all duration-300"
                   >
                     <div className="flex items-center justify-between gap-3 mb-2">
                       <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-emerald-600" />
+                        <span className="w-2 h-2 rounded-full bg-green-700" />
                         {mode.title}
                       </h3>
-                      <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[11px] font-semibold text-green-800 bg-stone-100 border border-stone-200 px-2.5 py-0.5 rounded-full">
                         {mode.highlight}
                       </span>
                     </div>
@@ -215,7 +220,7 @@ export default function BusinessInvestmentPage() {
                             key={idx}
                             className="flex items-start gap-2 text-slate-600 text-sm leading-relaxed"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-700 mt-1.5 shrink-0" />
                             <span className="text-justify">{b}</span>
                           </li>
                         ))}
@@ -265,7 +270,7 @@ export default function BusinessInvestmentPage() {
       </section>
 
       {/* ── 2. Strategic Advantages Section (light amber shade) ── */}
-      <section className="py-10 lg:py-12 bg-amber-50/60 border-b border-stone-200">
+      <section className="py-10 lg:py-12 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -274,13 +279,16 @@ export default function BusinessInvestmentPage() {
             transition={{ duration: 0.6 }}
           >
             {/* Badge – violet combo */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-100 border border-stone-200 text-green-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <Award className="w-3.5 h-3.5" />
               <span>Competitive Edge</span>
             </div>
 
             <h2 className={SECTION_TITLE_BASE}>
-              Strategic Advantages
+              Strategic{" "}
+              <span className="text-green-800">
+                Advantages
+              </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
@@ -302,9 +310,9 @@ export default function BusinessInvestmentPage() {
               ].map((item, i) => (
                 <div
                   key={item}
-                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${SECTION_TILE_STYLES.strategic.box}`}
+                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
-                  <CheckCircle2 className={`w-4 h-4 shrink-0 ${SECTION_TILE_STYLES.strategic.icon}`} />
+                  <CheckCircle2 className={`w-4 h-4 shrink-0 ${TILE_COLORS[i % TILE_COLORS.length].icon}`} />
                   <span>{item}</span>
                 </div>
               ))}
@@ -314,7 +322,7 @@ export default function BusinessInvestmentPage() {
       </section>
 
       {/* ── 3. Target Market Opportunities Section (light emerald shade) ── */}
-      <section className="py-10 lg:py-12 bg-emerald-50/60 border-b border-stone-200">
+      <section className="py-10 lg:py-12 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -323,13 +331,16 @@ export default function BusinessInvestmentPage() {
             transition={{ duration: 0.6 }}
           >
             {/* Badge – rose combo */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 border border-sky-100 text-sky-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-100 border border-stone-200 text-green-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <Target className="w-3.5 h-3.5" />
               <span>Market Growth</span>
             </div>
 
             <h2 className={SECTION_TITLE_BASE}>
-              Target Market Opportunities
+              Target Market{" "}
+              <span className="text-green-800">
+                Opportunities
+              </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
@@ -350,7 +361,7 @@ export default function BusinessInvestmentPage() {
               ].map((segment, i) => (
                 <div
                   key={segment}
-                  className={`p-3.5 rounded-xl border text-center text-xs font-semibold ${SECTION_TILE_STYLES.market.box}`}
+                  className={`p-3.5 rounded-xl border text-center text-xs font-semibold ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
                   {segment}
                 </div>
@@ -361,7 +372,7 @@ export default function BusinessInvestmentPage() {
       </section>
 
       {/* ── 4. Revenue Streams Section (light teal shade) ── */}
-      <section className="py-10 lg:py-12 bg-teal-50/60 border-b border-stone-200">
+      <section className="py-10 lg:py-12 bg-stone-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -370,13 +381,16 @@ export default function BusinessInvestmentPage() {
             transition={{ duration: 0.6 }}
           >
             {/* Badge – indigo combo */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-100 border border-stone-200 text-green-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <PieChart className="w-3.5 h-3.5" />
               <span>Financial Sustainability</span>
             </div>
 
             <h2 className={SECTION_TITLE_BASE}>
-              Revenue Streams
+              Revenue{" "}
+              <span className="text-green-800">
+                Streams
+              </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
@@ -398,9 +412,9 @@ export default function BusinessInvestmentPage() {
               ].map((stream, i) => (
                 <div
                   key={stream}
-                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${SECTION_TILE_STYLES.revenue.box}`}
+                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
-                  <TrendingUp className={`w-4 h-4 shrink-0 ${SECTION_TILE_STYLES.revenue.icon}`} />
+                  <TrendingUp className={`w-4 h-4 shrink-0 ${TILE_COLORS[i % TILE_COLORS.length].icon}`} />
                   <span>{stream}</span>
                 </div>
               ))}
@@ -410,7 +424,7 @@ export default function BusinessInvestmentPage() {
       </section>
 
       {/* ── 5. CHP Advantage for Hospitality Entrepreneurs (light blue shade) ── */}
-      <section className="py-10 lg:py-12 bg-sky-50/60 border-b border-stone-200">
+      <section className="py-10 lg:py-12 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -419,13 +433,16 @@ export default function BusinessInvestmentPage() {
             transition={{ duration: 0.6 }}
           >
             {/* Badge – orange combo */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-100 text-amber-800 text-xs font-semibold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-100 border border-stone-200 text-green-800 text-xs font-semibold uppercase tracking-wider mb-4">
               <Building2 className="w-3.5 h-3.5" />
               <span>Entrepreneur Benefits</span>
             </div>
 
             <h2 className={SECTION_TITLE_BASE}>
-              CHP Advantage for Hospitality Entrepreneurs
+              CHP Advantage for{" "}
+              <span className="text-green-800">
+                Hospitality Entrepreneurs
+              </span>
             </h2>
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-light mb-6 text-justify">
@@ -445,9 +462,9 @@ export default function BusinessInvestmentPage() {
               ].map((benefit, i) => (
                 <div
                   key={benefit}
-                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${SECTION_TILE_STYLES.hospitality.box}`}
+                  className={`flex items-center gap-2.5 text-sm font-medium p-3 rounded-xl border ${TILE_COLORS[i % TILE_COLORS.length].box}`}
                 >
-                  <CheckCircle2 className={`w-4 h-4 shrink-0 ${SECTION_TILE_STYLES.hospitality.icon}`} />
+                  <CheckCircle2 className={`w-4 h-4 shrink-0 ${TILE_COLORS[i % TILE_COLORS.length].icon}`} />
                   <span>{benefit}</span>
                 </div>
               ))}
@@ -459,10 +476,10 @@ export default function BusinessInvestmentPage() {
       {/* ── 6. Inquiry / Application Form Section ── */}
       <section
         id="inquiry"
-        className="py-10 lg:py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20 bg-stone-50"
+        className="py-10 lg:py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20 bg-white"
       >
         <div className="text-center mb-8">
-          <span className="text-slate-500 text-xs font-semibold uppercase tracking-wider">
+          <span className="text-amber-600 text-xs font-semibold uppercase tracking-wider">
             Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">
@@ -488,7 +505,7 @@ export default function BusinessInvestmentPage() {
             </p>
             <button
               onClick={() => setFormSubmitted(false)}
-              className="mt-6 text-xs text-emerald-800 hover:underline font-semibold"
+              className="mt-6 text-xs text-amber-700 hover:underline font-semibold"
             >
               Submit another inquiry
             </button>
@@ -509,7 +526,7 @@ export default function BusinessInvestmentPage() {
                   placeholder="Enter full name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-colors"
+                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-colors"
                 />
               </div>
 
@@ -523,7 +540,7 @@ export default function BusinessInvestmentPage() {
                   placeholder="Enter email address"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-colors"
+                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-colors"
                 />
               </div>
             </div>
@@ -539,7 +556,7 @@ export default function BusinessInvestmentPage() {
                   placeholder="+91 99499 94989"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-colors"
+                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-colors"
                 />
               </div>
 
@@ -550,7 +567,7 @@ export default function BusinessInvestmentPage() {
                 <select
                   value={formData.investmentType}
                   onChange={(e) => setFormData({ ...formData, investmentType: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-colors"
+                  className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 text-sm focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-colors"
                 >
                   <option value="Plot-Based Investment">Plot-Based Investment</option>
                   <option value="Facility-Based Investment">Facility-Based Investment</option>
@@ -569,13 +586,13 @@ export default function BusinessInvestmentPage() {
                 placeholder="Tell us about your investment scope, land preferences, or specific questions..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-colors"
+                className="w-full bg-stone-50 border border-stone-300 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-100 transition-colors"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-green-900 hover:bg-green-800 text-white font-bold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-green-900/20 flex items-center justify-center gap-2 text-base"
+              className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white font-bold py-4 rounded-xl transition-all duration-200 shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 text-base"
             >
               <Send className="w-5 h-5" />
               <span>Submit Investment Inquiry</span>

@@ -137,7 +137,7 @@ function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-3 font-serif text-4xl leading-[1.04] tracking-[-0.03em] sm:text-6xl lg:text-3xl">
+      <h2 className="mt-3 font-sans text-4xl leading-[1.04] tracking-[-0.03em] sm:text-6xl lg:text-3xl">
         {title}
       </h2>
       {description && (
@@ -213,7 +213,7 @@ export default function CometGausevaPage() {
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f7f3e9] text-[#17352d]">
+    <main className="min-h-screen overflow-hidden bg-stone-50 text-[#17352d]">
       {/* HERO */}
       <section className="relative w-full overflow-hidden bg-[#10241e] pt-16">
         <div className="relative aspect-[1000/333] w-full overflow-hidden">
@@ -235,23 +235,23 @@ export default function CometGausevaPage() {
           <SectionHeading title="Vision & Mission" />
 
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            <article className="rounded-[2rem] border border-emerald-200/80 bg-emerald-50/70 p-8 sm:p-10 text-slate-800 shadow-sm">
+            <article className="rounded-[2rem] border border-slate-200 bg-white p-8 sm:p-10 text-slate-800 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100 text-emerald-800">
                 <Heart className="h-6 w-6" />
               </div>
-              <h3 className="mt-7 font-serif text-2xl text-emerald-950">Vision</h3>
+              <h3 className="mt-7 font-sans text-2xl text-emerald-950">Vision</h3>
               <p className="mt-5 text-lg leading-8 text-slate-700 text-justify">
-                To create a <strong className="font-bold text-emerald-900">compassionate and sustainable ecosystem</strong> where every cow is respected, protected and nurtured, while contributing to <strong className="font-bold text-emerald-900">rural livelihoods, organic farming and spiritual harmony</strong>.
+                To create a <strong className="font-bold text-slate-900">compassionate and sustainable ecosystem</strong> where every cow is respected, protected and nurtured, while contributing to <strong className="font-bold text-slate-900">rural livelihoods, organic farming and spiritual harmony</strong>.
               </p>
             </article>
 
-            <article className="rounded-[2rem] border border-amber-200/80 bg-amber-50/80 p-8 sm:p-10 shadow-sm">
+            <article className="rounded-[2rem] border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-100 text-amber-800">
                 <Shield className="h-6 w-6" />
               </div>
-              <h3 className="mt-7 font-serif text-2xl text-amber-950">Mission</h3>
+              <h3 className="mt-7 font-sans text-2xl text-amber-950">Mission</h3>
               <p className="mt-5 text-lg leading-8 text-slate-700 text-justify">
-                To <strong className="font-bold text-green-900">rescue, shelter and care</strong> for abandoned, injured and aging cows in a safe and loving environment.
+                To <strong className="font-bold text-slate-900">rescue, shelter and care</strong> for abandoned, injured and aging cows in a safe and loving environment.
               </p>
             </article>
           </div>
@@ -259,28 +259,28 @@ export default function CometGausevaPage() {
       </section>
 
       {/* INTRODUCTION + SELF-SUSTAINING MODEL */}
-      <section className="bg-[#f7f3e9] px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
+      <section className="bg-stone-50 px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-stretch">
-            <div className="rounded-[2rem] border border-stone-200/90 bg-emerald-50/50 p-8 sm:p-10 shadow-sm">
+            <div className="rounded-[2rem] border border-stone-200/90 bg-white p-8 sm:p-10 shadow-sm">
               <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#96752f]">
                 CHP Gauseva Kendra
               </p>
               <p className="mt-6 text-xl font-medium leading-9 text-[#17352d] sm:text-2xl text-justify">
-                Everyone can contribute. Give your time, skills, resources or support and become part of the journey from <strong className="font-bold text-green-900">neglect to nurture</strong>.
+                Everyone can contribute. Give your time, skills, resources or support and become part of the journey from <strong className="font-bold text-slate-900">neglect to nurture</strong>.
               </p>
               <p className="mt-6 text-base leading-8 text-[#5f6c66] text-justify">
-                CHP Gauseva Kendra is an initiative focused on providing <strong className="font-bold text-green-900">shelter, protection and compassionate care</strong> to abandoned, injured and aging cows. It is located in <strong className="font-bold text-[#17352d]">Pithoragarh, Uttarakhand</strong>, at Sinakhola village, Paleta.
+                CHP Gauseva Kendra is an initiative focused on providing <strong className="font-bold text-slate-900">shelter, protection and compassionate care</strong> to abandoned, injured and aging cows. It is located in <strong className="font-bold text-slate-900">Pithoragarh, Uttarakhand</strong>, at Sinakhola village, Paleta.
               </p>
               <p className="mt-5 text-base leading-8 text-[#5f6c66] text-justify">
-                The initiative is built around the idea that caring for cows can also contribute to <strong className="font-bold text-green-900">rural livelihoods, organic farming, environmental sustainability</strong> and community participation.
+                The initiative is built around the idea that caring for cows can also contribute to <strong className="font-bold text-slate-900">rural livelihoods, organic farming, environmental sustainability</strong> and community participation.
               </p>
-              <div className="mt-8 rounded-2xl border border-emerald-200/70 bg-emerald-100/60 p-6 text-emerald-950">
-                <p className="font-serif text-2xl">Let’s join hands to provide food, shelter and protection to abandoned cows.</p>
+              <div className="mt-8 rounded-2xl border border-slate-200 bg-stone-50 p-6 text-emerald-950">
+                <p className="font-sans text-2xl">Let’s join hands to provide food, shelter and protection to abandoned cows.</p>
               </div>
             </div>
 
-            <div id="sustainability" className="rounded-[2rem] border border-emerald-200/70 bg-emerald-50/70 p-8 text-slate-800 sm:p-10 shadow-sm">
+            <div id="sustainability" className="rounded-[2rem] border border-slate-200 bg-white p-8 text-slate-800 sm:p-10 shadow-sm">
               <SectionHeading
                 title="Building a Self-Sustaining Gauseva Model"
                 description="A major focus of the initiative is to move beyond dependence on donations and develop a self-sustaining model."
@@ -294,9 +294,9 @@ export default function CometGausevaPage() {
                   return (
                     <div
                       key={number}
-                      className="flex gap-4 rounded-2xl border border-emerald-200/60 bg-white/80 p-4 shadow-xs"
+                      className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-xs"
                     >
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-serif text-sm text-emerald-800">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 font-sans text-sm text-emerald-800">
                         {number}
                       </span>
                       <div className="flex gap-3">
@@ -320,7 +320,7 @@ export default function CometGausevaPage() {
             description="Care for cows. Cultivate the land. Create livelihoods. Build a sustainable community."
           />
 
-          <div className="mt-8 rounded-[2rem] border border-emerald-200/70 bg-emerald-50/60 p-7 text-slate-800 sm:p-10 shadow-sm">
+          <div className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-7 text-slate-800 sm:p-10 shadow-sm">
             <div className="grid gap-3 md:grid-cols-5">
               {[
                 ["Care for cows", Heart],
@@ -331,9 +331,9 @@ export default function CometGausevaPage() {
               ].map(([title, Icon], index) => {
                 const C = Icon as typeof Heart;
                 return (
-                  <div key={String(title)} className="relative rounded-2xl border border-emerald-200/60 bg-white/80 p-5">
+                  <div key={String(title)} className="relative rounded-2xl border border-slate-200 bg-white p-5">
                     <C className="h-5 w-5 text-emerald-700" />
-                    <p className="mt-5 font-serif text-xl text-slate-800">{String(title)}</p>
+                    <p className="mt-5 font-sans text-xl text-slate-800">{String(title)}</p>
                     {index < 4 && (
                       <ArrowRight className="absolute -right-3 top-1/2 hidden h-5 w-5 -translate-y-1/2 text-emerald-600 md:block" />
                     )}
@@ -346,7 +346,7 @@ export default function CometGausevaPage() {
       </section>
 
       {/* HOW YOU CAN SUPPORT */}
-      <section className="bg-[#f7f3e9] px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
+      <section className="bg-stone-50 px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             title="How You Can Support"
@@ -357,14 +357,14 @@ export default function CometGausevaPage() {
             {supportAreas.map(({ title, icon: Icon, items }) => (
               <article
                 key={title}
-                className="rounded-[2rem] border border-emerald-200/80 bg-emerald-50/50 p-7 shadow-sm sm:p-9"
+                className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm sm:p-9"
               >
                 <div className="flex items-start gap-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-800">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-serif text-2xl leading-tight text-[#17352d] sm:text-1xl">
+                    <h3 className="font-sans text-2xl leading-tight text-[#17352d] sm:text-1xl">
                       {title}
                     </h3>
                     <div className="mt-6">
@@ -376,17 +376,17 @@ export default function CometGausevaPage() {
             ))}
           </div>
 
-          <div className="mt-5 rounded-[2rem] border border-amber-200/80 bg-amber-50/80 p-7 sm:p-9 shadow-sm">
+          <div className="mt-5 rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-9 shadow-sm">
             <div className="flex items-center gap-4">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-amber-100 text-[#96752f]">
                 <Users className="h-5 w-5" />
               </div>
-              <h3 className="font-serif text-2xl text-[#17352d] sm:text-3xl">
+              <h3 className="font-sans text-2xl text-[#17352d] sm:text-3xl">
                 Community Participation
               </h3>
             </div>
             <p className="mt-6 max-w-4xl text-base leading-8 text-[#5f6c66] text-justify">
-              The initiative also invites people to contribute their <strong className="font-bold text-[#17352d]">time, skills, networks and outreach</strong>, not only money.
+              The initiative also invites people to contribute their <strong className="font-bold text-slate-900">time, skills, networks and outreach</strong>, not only money.
             </p>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-[#96752f]">
               Possible participation includes:
@@ -404,7 +404,7 @@ export default function CometGausevaPage() {
       </section>
 
       {/* ORGANIC FARMING & RURAL DEVELOPMENT */}
-      <section className="border-y border-emerald-200/50 bg-emerald-50/40 px-5 py-10 text-slate-800 sm:px-8 sm:py-12 lg:px-10">
+      <section className="border-y border-slate-200 bg-stone-50 px-5 py-10 text-slate-800 sm:px-8 sm:py-12 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             title="Organic Farming & Rural Development"
@@ -412,7 +412,7 @@ export default function CometGausevaPage() {
           />
 
           <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="rounded-[2rem] border border-emerald-200/70 bg-white/80 p-7 sm:p-9 shadow-sm">
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-9 shadow-sm">
               <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-800">
                 Our ecosystem include:
               </p>
@@ -439,14 +439,14 @@ export default function CometGausevaPage() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between rounded-[2rem] border border-amber-200/80 bg-amber-50/80 p-7 sm:p-9 shadow-sm">
+            <div className="flex flex-col justify-between rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-9 shadow-sm">
               <div>
-                <p className="font-serif text-3xl leading-tight text-amber-950 sm:text-4xl text-justify">
+                <p className="font-sans text-3xl leading-tight text-amber-950 sm:text-4xl text-justify">
                   Gauseva → Organic Farming → Cow By-products → Sustainable Agriculture → Rural Livelihoods → Self-Sustaining Cow Care
                 </p>
               </div>
-              <p className="mt-10 border-t border-amber-200/60 pt-6 text-base leading-8 text-slate-600 text-justify">
-                This can become one of the <strong className="font-bold text-emerald-900">important differentiators</strong> of the CHP initiative.
+              <p className="mt-10 border-t border-slate-200 pt-6 text-base leading-8 text-slate-600 text-justify">
+                This can become one of the <strong className="font-bold text-slate-900">important differentiators</strong> of the CHP initiative.
               </p>
             </div>
           </div>
@@ -462,11 +462,11 @@ export default function CometGausevaPage() {
           />
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <article className="rounded-[2rem] border border-amber-200/70 bg-amber-50/60 p-7 sm:p-10 shadow-sm">
+            <article className="rounded-[2rem] border border-slate-200 bg-white p-7 sm:p-10 shadow-sm">
               <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#96752f]">
                 Engagement opportunity
               </p>
-              <h3 className="mt-3 font-serif text-3xl text-[#17352d]">
+              <h3 className="mt-3 font-sans text-3xl text-[#17352d]">
                 For Individual Contributors
               </h3>
               <div className="mt-8">
@@ -474,11 +474,11 @@ export default function CometGausevaPage() {
               </div>
             </article>
 
-            <article className="rounded-[2rem] border border-emerald-200/70 bg-emerald-50/70 p-7 text-slate-800 sm:p-10 shadow-sm">
+            <article className="rounded-[2rem] border border-slate-200 bg-white p-7 text-slate-800 sm:p-10 shadow-sm">
               <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-800">
                 Engagement opportunity
               </p>
-              <h3 className="mt-3 font-serif text-3xl text-[#17352d]">
+              <h3 className="mt-3 font-sans text-3xl text-[#17352d]">
                 For Organisations
               </h3>
               <div className="mt-8">
@@ -496,17 +496,17 @@ export default function CometGausevaPage() {
       </section>
 
       {/* MEMBERSHIP / JOIN US */}
-      <section id="membership" className="bg-[#f7f3e9] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <section id="membership" className="bg-stone-50 px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeading title="Membership / Join Us" />
 
-          <div className="mt-12 overflow-hidden rounded-[2rem] border border-emerald-200/80 bg-emerald-50/70 text-slate-800 shadow-md">
+          <div className="mt-12 overflow-hidden rounded-[2rem] border border-slate-200 bg-white text-slate-800 shadow-md">
             <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
               <div className="p-8 sm:p-10 lg:p-12">
                 <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-emerald-800">
                   Join the CHP Gauseva Initiative
                 </p>
-                <h2 className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] text-[#17352d] sm:text-5xl">
+                <h2 className="mt-4 font-sans text-4xl leading-tight tracking-[-0.03em] text-[#17352d] sm:text-5xl">
                   Join the CHP Gauseva Initiative
                 </h2>
                 <p className="mt-6 text-base leading-8 text-slate-600">
@@ -520,7 +520,7 @@ export default function CometGausevaPage() {
                       <a
                         href="#membership-form"
                         key={String(label)}
-                        className="group flex items-center justify-between rounded-2xl border border-emerald-200/60 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:bg-white"
+                        className="group flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:bg-white"
                       >
                         <span className="text-sm font-semibold text-slate-700">
                           {String(label)}
@@ -532,11 +532,11 @@ export default function CometGausevaPage() {
                 </div>
               </div>
 
-              <div id="membership-form" className="border-t border-emerald-200/60 bg-white/60 p-6 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+              <div id="membership-form" className="border-t border-slate-200 bg-stone-50 p-6 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
                 <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-emerald-800">
                   Contact CHP
                 </p>
-                <h3 className="mt-3 font-serif text-3xl text-[#17352d]">
+                <h3 className="mt-3 font-sans text-3xl text-[#17352d]">
                   Tell us how you would like to participate.
                 </h3>
 
@@ -550,7 +550,7 @@ export default function CometGausevaPage() {
                         name="name"
                         required
                         placeholder="Your name"
-                        className="w-full rounded-2xl border border-emerald-200/80 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+                        className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
                       />
                     </label>
 
@@ -563,7 +563,7 @@ export default function CometGausevaPage() {
                         type="email"
                         required
                         placeholder="you@example.com"
-                        className="w-full rounded-2xl border border-emerald-200/80 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+                        className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
                       />
                     </label>
                   </div>
@@ -578,7 +578,7 @@ export default function CometGausevaPage() {
                         type="tel"
                         required
                         placeholder="+91 XXXXX XXXXX"
-                        className="w-full rounded-2xl border border-emerald-200/80 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+                        className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
                       />
                     </label>
 
@@ -590,7 +590,7 @@ export default function CometGausevaPage() {
                         name="interest"
                         required
                         defaultValue=""
-                        className="w-full rounded-2xl border border-emerald-200/80 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none focus:border-emerald-600"
+                        className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-800 outline-none focus:border-emerald-600"
                       >
                         <option value="" disabled className="text-black">
                           Select an option
@@ -612,7 +612,7 @@ export default function CometGausevaPage() {
                       name="message"
                       rows={5}
                       placeholder="Tell us how you would like to contribute..."
-                      className="w-full resize-y rounded-2xl border border-emerald-200/80 bg-white px-4 py-3.5 text-sm leading-6 text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
+                      className="w-full resize-y rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm leading-6 text-slate-800 outline-none placeholder:text-slate-400 focus:border-emerald-600"
                     />
                   </label>
 

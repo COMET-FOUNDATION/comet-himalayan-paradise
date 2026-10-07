@@ -82,7 +82,7 @@ export default function TreksPage() {
       {/* =====================================================
           HERO
       ===================================================== */}
-      <section className="relative mt-[72px] flex min-h-[500px] items-center justify-center overflow-hidden bg-black">
+      <section className="relative mt-[64px] flex min-h-[500px] items-center justify-center overflow-hidden bg-black">
         {/* Hero image */}
         <div className="absolute inset-0">
           <div
@@ -98,7 +98,7 @@ export default function TreksPage() {
         <div className="absolute inset-0 bg-black/45" />
 
         {/* Entire hero text block */}
-        <div className="relative z-10 mx-auto -translate-y-[3cm] max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="relative z-10 mx-auto -translate-y-[2.3cm] max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           {/* Badge */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}

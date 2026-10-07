@@ -28,8 +28,8 @@ import {
 const HEADER_IMAGE =
   "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ef39ec48-1b22-4b32-9fb6-83caf51fa84e-chp-growth-partnership-header-under-500kb.webp";
 
-const CARD_BG = "bg-[#f5f8f6]";
-const CARD_BORDER = "border-[#dfe9e3]";
+const CARD_BG = "bg-white";
+const CARD_BORDER = "border-slate-200/80";
 
 const ecosystem = [
   {
@@ -296,12 +296,12 @@ export default function GrowthPartnerPage() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-white text-[#14231f]">
+    <main className="min-h-screen overflow-hidden bg-white font-sans text-slate-900">
 
       {/* HERO */}
       <section
         id="growth-partner-hero"
-        className="relative isolate mt-[70px] min-h-[78vh] overflow-hidden bg-slate-950 sm:mt-[72px]"
+        className="relative isolate mt-[70px] min-h-[72vh] overflow-hidden bg-slate-950 sm:mt-[72px]"
       >
         <Image
           src={HEADER_IMAGE}
@@ -315,7 +315,7 @@ export default function GrowthPartnerPage() {
 
         <div className="absolute inset-0 bg-black/10" />
 
-        <div className="relative z-10 mx-auto flex min-h-[78vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-[84px] text-center sm:px-8 sm:pb-40 sm:pt-[100px] lg:px-10 lg:pb-40 lg:pt-[116px]">
+        <div className="relative z-10 mx-auto flex min-h-[72vh] w-full max-w-7xl flex-col items-center px-5 pb-36 pt-[84px] text-center sm:px-8 sm:pb-40 sm:pt-[100px] lg:px-10 lg:pb-40 lg:pt-[116px]">
           <div
             className="flex w-full flex-col items-center"
             style={{ transform: "translateY(-2cm)" }}
@@ -327,7 +327,7 @@ export default function GrowthPartnerPage() {
             </div>
 
             <div className="mt-5 w-full max-w-6xl text-white sm:mt-6">
-              <h1 className="mx-auto w-full font-serif text-[2rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.35rem] md:text-[2.7rem] lg:text-[3rem] xl:text-[3.2rem]">
+              <h1 className="mx-auto w-full font-serif text-[2.1rem] font-bold leading-[1.08] tracking-[-0.03em] drop-shadow-[0_3px_12px_rgba(0,0,0,0.5)] sm:text-[2.45rem] md:text-[2.8rem] lg:text-[3.1rem] xl:text-[3.3rem]">
                 <span className="block">
                   Grow with CHP.
                   <br />
@@ -336,10 +336,10 @@ export default function GrowthPartnerPage() {
               </h1>
             </div>
 
-            <div className="mt-9 flex w-full flex-wrap justify-center gap-2.5 sm:mt-9 sm:gap-3">
+            <div className="mt-8 flex w-full flex-wrap justify-center gap-2.5 sm:mt-9 sm:gap-3">
               <a
                 href="#apply-partner"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 text-xs font-semibold text-[#14231f] shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
+                className="inline-flex items-center gap-1.5 rounded-full bg-[#f3c96b] px-5 py-2.5 font-sans text-xs font-semibold text-slate-900 shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-0.5 hover:bg-[#ffe09a] sm:px-5.5 sm:py-2.5 sm:text-sm"
               >
                 Become a Growth Partner
                 <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -347,7 +347,7 @@ export default function GrowthPartnerPage() {
 
               <a
                 href="#program"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/10 px-5 py-2.5 text-xs font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-black/15 sm:px-5.5 sm:py-2.5 sm:text-sm"
+                className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/10 px-5 py-2.5 font-sans text-xs font-semibold text-white shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:bg-black/15 sm:px-5.5 sm:py-2.5 sm:text-sm"
               >
                 Explore the partnership
                 <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -374,11 +374,11 @@ export default function GrowthPartnerPage() {
               CHP Growth Partnership
             </p>
 
-            <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl">
               What is CHP Growth Partnership?
             </h2>
 
-            <p className="mt-6 text-justify text-base leading-8 text-[#50605a]">
+            <p className="mt-6 text-justify text-base leading-8 text-slate-600">
               CHP Growth Partnership is a collaborative business-development
               model where partners help expand the CHP ecosystem through:
             </p>
@@ -406,7 +406,7 @@ export default function GrowthPartnerPage() {
             </div>
 
             <div
-              className={`mt-7 rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm leading-7 text-[#5e6c65]`}
+              className={`mt-7 rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm leading-7 text-slate-600`}
             >
               The partnership is designed around a mutually agreed,
               target-based framework, with benefits linked to the contribution
@@ -461,7 +461,7 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* WHO CAN BECOME A GROWTH PARTNER? */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
+      <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
           <div className="max-w-3xl">
@@ -469,11 +469,11 @@ export default function GrowthPartnerPage() {
               Growth Partner Network
             </p>
 
-            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
               Who Can Become a Growth Partner?
             </h2>
 
-            <p className="mt-5 text-base leading-8 text-[#596760]">
+            <p className="mt-5 text-base leading-8 text-slate-600">
               The program is open to people and organizations who can
               contribute to the growth of CHP through their networks,
               expertise, business relationships or market reach.
@@ -502,11 +502,11 @@ export default function GrowthPartnerPage() {
                       <Icon className="h-5 w-5" />
                     </div>
 
-                    <h3 className="mt-5 font-serif text-xl">
+                    <h3 className="mt-5 font-serif text-xl font-bold text-slate-950">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-sm leading-7 text-[#596760]">
+                    <p className="mt-3 text-sm leading-7 text-slate-600">
                       {item.text}
                     </p>
                   </motion.article>
@@ -526,7 +526,7 @@ export default function GrowthPartnerPage() {
               Contribution
             </p>
 
-            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
               How Growth Partners Contribute
             </h2>
           </div>
@@ -550,11 +550,11 @@ export default function GrowthPartnerPage() {
                     </div>
                   </div>
 
-                  <h3 className="mt-6 font-serif text-2xl">
+                  <h3 className="mt-6 font-serif text-2xl font-bold leading-tight tracking-[-0.02em] text-slate-950">
                     {step.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-7 text-[#596760]">
+                  <p className="mt-4 text-sm leading-7 text-slate-600">
                     {step.intro}
                   </p>
 
@@ -563,7 +563,7 @@ export default function GrowthPartnerPage() {
                       {step.items.map((item) => (
                         <div
                           key={item}
-                          className={`flex items-start gap-2 rounded-xl border ${CARD_BORDER} bg-white px-3 py-2.5 text-sm leading-5 text-[#43504b]`}
+                          className={`flex items-start gap-2 rounded-xl border ${CARD_BORDER} bg-white px-3 py-2.5 text-sm leading-5 text-slate-700`}
                         >
                           <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#7d9a67]" />
                           {item}
@@ -579,29 +579,29 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* A PERFORMANCE-BASED PARTNERSHIP */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
+      <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
           <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
             Current partnership framework
           </p>
 
-          <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
             A Performance-Based Partnership
           </h2>
 
-          <p className="mt-5 max-w-3xl text-base leading-8 text-[#596760]">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
             CHP Growth Partnership follows a target-based approach.
           </p>
 
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#66736d]">
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
             Under the current partnership framework, the indicative
             performance targets include:
           </p>
 
           {/* The two performance target boxes have been removed as requested. */}
 
-          <p className="mt-7 max-w-3xl text-sm leading-7 text-[#66736d]">
+          <p className="mt-7 max-w-3xl text-sm leading-7 text-slate-600">
             Specific targets, terms and applicable conditions may be mutually
             agreed between CHP and the individual Growth Partner.
           </p>
@@ -617,16 +617,16 @@ export default function GrowthPartnerPage() {
               Value for both sides
             </p>
 
-            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
               Growth Partner Benefits
             </h2>
 
-            <p className="mt-5 text-base leading-8 text-[#66736d]">
+            <p className="mt-5 text-base leading-8 text-slate-600">
               CHP believes that successful partnerships should create value
               for both sides.
             </p>
 
-            <p className="mt-2 text-sm leading-7 text-[#66736d]">
+            <p className="mt-2 text-sm leading-7 text-slate-600">
               Depending on the applicable partnership agreement, Growth
               Partners may receive benefits such as:
             </p>
@@ -646,11 +646,11 @@ export default function GrowthPartnerPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="mt-5 font-serif text-xl">
+                  <h3 className="mt-5 font-serif text-xl font-bold text-slate-950">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-[#69746f]">
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
                     {item.text}
                   </p>
                 </motion.article>
@@ -661,7 +661,7 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* WHAT CHP PROVIDES */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
+      <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
           <div
@@ -671,11 +671,11 @@ export default function GrowthPartnerPage() {
               CHP support
             </p>
 
-            <h2 className="mt-4 font-serif text-4xl sm:text-5xl">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
               What CHP Provides
             </h2>
 
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[#596760]">
+            <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
               CHP works with Growth Partners by providing:
             </p>
 
@@ -683,7 +683,7 @@ export default function GrowthPartnerPage() {
               {whatChpProvides.map((item) => (
                 <div
                   key={item}
-                  className="flex gap-3 border-b border-[#dfe9e3] py-3 text-sm leading-6 text-[#43504b]"
+                  className="flex gap-3 border-b border-slate-200 py-3 text-sm leading-6 text-slate-700"
                 >
                   <Check className="mt-0.5 h-4 w-4 shrink-0 text-[#7d9a67]" />
                   <span>{item}</span>
@@ -691,7 +691,7 @@ export default function GrowthPartnerPage() {
               ))}
             </div>
 
-            <p className="mt-8 text-sm leading-7 text-[#66736d]">
+            <p className="mt-8 text-sm leading-7 text-slate-600">
               The MoU specifically provides for coordination between the
               Growth Partner and CHP regarding marketing materials and
               outreach plans.
@@ -711,16 +711,16 @@ export default function GrowthPartnerPage() {
                 Active participation
               </p>
 
-              <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
                 What We Expect From Our Growth Partners
               </h2>
 
-              <p className="mt-5 text-base leading-8 text-[#66736d]">
+              <p className="mt-5 text-base leading-8 text-slate-600">
                 A successful Growth Partner relationship depends on active
                 participation.
               </p>
 
-              <p className="mt-4 text-sm leading-7 text-[#66736d]">
+              <p className="mt-4 text-sm leading-7 text-slate-600">
                 Growth Partners are expected to:
               </p>
             </div>
@@ -729,7 +729,7 @@ export default function GrowthPartnerPage() {
               {expectations.map((item) => (
                 <div
                   key={item}
-                  className={`rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm font-medium leading-6 text-[#40504a]`}
+                  className={`rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm font-medium leading-6 text-slate-700`}
                 >
                   <CheckCircle2 className="mb-3 h-5 w-5 text-[#7d9a67]" />
                   {item}
@@ -742,7 +742,7 @@ export default function GrowthPartnerPage() {
       </section>
 
       {/* YOUR NETWORK */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
+      <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
           <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
@@ -752,15 +752,15 @@ export default function GrowthPartnerPage() {
                 Network opportunity
               </p>
 
-              <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
                 Your Network Can Become a Himalayan Opportunity
               </h2>
 
-              <p className="mt-6 text-base leading-8 text-[#66736d]">
+              <p className="mt-6 text-base leading-8 text-slate-600">
                 You may already know people who are looking for:
               </p>
 
-              <p className="mt-5 text-base font-semibold leading-8 text-[#14231f]">
+              <p className="mt-5 text-base font-semibold leading-8 text-slate-900">
                 Your introduction could become the beginning of a new CHP
                 partnership.
               </p>
@@ -794,7 +794,7 @@ export default function GrowthPartnerPage() {
               Growth Partner Network
             </p>
 
-            <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
               Why Join CHP Growth Partner Network?
             </h2>
           </div>
@@ -816,11 +816,11 @@ export default function GrowthPartnerPage() {
                     <Icon className="h-5 w-5" />
                   </div>
 
-                  <h3 className="mt-5 font-serif text-xl">
+                  <h3 className="mt-5 font-serif text-xl font-bold text-slate-950">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-7 text-[#596760]">
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
                     {item.text}
                   </p>
                 </motion.article>
@@ -833,7 +833,7 @@ export default function GrowthPartnerPage() {
       {/* APPLICATION */}
       <section
         id="apply-partner"
-        className="scroll-mt-20 bg-white py-20 sm:py-24 lg:py-28"
+        className="scroll-mt-20 bg-[#f7f7f5] py-20 sm:py-24 lg:py-28"
       >
         <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
 
@@ -844,11 +844,11 @@ export default function GrowthPartnerPage() {
                 Become a CHP Growth Partner
               </p>
 
-              <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
+              <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
                 Become a CHP Growth Partner
               </h2>
 
-              <p className="mt-5 text-sm leading-7 text-[#66736d]">
+              <p className="mt-5 text-sm leading-7 text-slate-600">
                 The CHP Growth Partnership Program is designed for
                 individuals, entrepreneurs, business professionals,
                 organizations, referral partners and community leaders who
@@ -864,9 +864,9 @@ export default function GrowthPartnerPage() {
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-3 text-sm text-[#596760]"
+                    className="flex items-center gap-3 text-sm text-slate-600"
                   >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f5f8f6] text-[#7d9a67]">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#7d9a67]">
                       <Check className="h-4 w-4" />
                     </span>
 
@@ -887,11 +887,11 @@ export default function GrowthPartnerPage() {
                     <CheckCircle2 className="h-9 w-9" />
                   </div>
 
-                  <h3 className="mt-6 font-serif text-3xl">
+                  <h3 className="mt-6 font-serif text-3xl font-bold text-slate-950">
                     Application received.
                   </h3>
 
-                  <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-[#66736d]">
+                  <p className="mx-auto mt-3 max-w-md text-sm leading-6 text-slate-600">
                     Thank you for your interest in joining CHP as a Growth
                     Partner. Our team can review your inquiry and connect with
                     you regarding the applicable partnership framework.
@@ -910,11 +910,11 @@ export default function GrowthPartnerPage() {
                   className={`rounded-[2rem] border ${CARD_BORDER} ${CARD_BG} p-6 shadow-sm sm:p-9`}
                 >
                   <div className="mb-8">
-                    <h3 className="font-serif text-3xl">
+                    <h3 className="font-serif text-2xl font-bold tracking-[-0.02em] sm:text-3xl">
                       Partner with CHP
                     </h3>
 
-                    <p className="mt-2 text-sm text-[#66736d]">
+                    <p className="mt-2 text-sm text-slate-600">
                       Share your network, expertise, business relationships or
                       market reach.
                     </p>
@@ -934,7 +934,7 @@ export default function GrowthPartnerPage() {
                             name: e.target.value,
                           })
                         }
-                        className="form-input"
+                        className="form-input font-sans"
                       />
                     </Field>
 
@@ -950,7 +950,7 @@ export default function GrowthPartnerPage() {
                             email: e.target.value,
                           })
                         }
-                        className="form-input"
+                        className="form-input font-sans"
                       />
                     </Field>
 
@@ -966,7 +966,7 @@ export default function GrowthPartnerPage() {
                             phone: e.target.value,
                           })
                         }
-                        className="form-input"
+                        className="form-input font-sans"
                       />
                     </Field>
 
@@ -982,7 +982,7 @@ export default function GrowthPartnerPage() {
                             city: e.target.value,
                           })
                         }
-                        className="form-input"
+                        className="form-input font-sans"
                       />
                     </Field>
 
@@ -995,7 +995,7 @@ export default function GrowthPartnerPage() {
                             interest: e.target.value,
                           })
                         }
-                        className="form-input"
+                        className="form-input font-sans"
                       >
                         <option>
                           Business & Professional Network
@@ -1034,13 +1034,13 @@ export default function GrowthPartnerPage() {
                           message: e.target.value,
                         })
                       }
-                      className="form-input resize-none"
+                      className="form-input font-sans resize-none"
                     />
                   </Field>
 
                   <button
                     type="submit"
-                    className="group mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#f3c96b] px-6 py-4 text-sm font-bold text-[#14231f] transition hover:bg-[#ffe09a]"
+                    className="group mt-6 flex w-full items-center justify-center gap-3 rounded-2xl bg-[#f3c96b] px-6 py-4 text-sm font-bold text-slate-900 transition hover:bg-[#ffe09a]"
                   >
                     <Send className="h-4 w-4" />
                     Submit Growth Partner Inquiry
@@ -1061,14 +1061,14 @@ export default function GrowthPartnerPage() {
             People. Partnerships. Possibilities.
           </p>
 
-          <h2 className="mt-5 font-serif text-4xl leading-tight sm:text-6xl">
+          <h2 className="mt-5 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] sm:text-4xl lg:text-5xl">
             Together, we can create businesses, experiences and opportunities
             in the Himalayas.
           </h2>
 
           <a
             href="#apply-partner"
-            className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#f3c96b] px-7 py-4 text-sm font-bold text-[#14231f] transition hover:bg-[#ffe09a]"
+            className="mt-9 inline-flex items-center gap-3 rounded-full bg-[#f3c96b] px-7 py-4 text-sm font-bold text-slate-900 transition hover:bg-[#ffe09a]"
           >
             Become a CHP Growth Partner
             <ArrowRight className="h-4 w-4" />
@@ -1077,7 +1077,7 @@ export default function GrowthPartnerPage() {
           <div className="mt-10 flex justify-center">
             <a
               href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-[#dfe9e3] bg-[#f5f8f6] px-5 py-2.5 text-xs font-semibold text-[#14231f] transition duration-200 hover:-translate-y-0.5 hover:bg-[#edf4f0] sm:text-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs font-semibold text-slate-900 transition duration-200 hover:-translate-y-0.5 hover:bg-[#edf4f0] sm:text-sm"
             >
               <ArrowRight className="h-4 w-4 rotate-180" />
               Home
@@ -1132,7 +1132,7 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-[#66736d]">
+      <label className="mb-2 block text-[11px] font-bold uppercase tracking-[0.16em] text-slate-600">
         {label}
       </label>
 
