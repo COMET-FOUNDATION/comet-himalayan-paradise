@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, FileText, CalendarCheck } from "lucide-react";
 import { CHPEnclaveHero } from "./CHPEnclaveHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
@@ -9,6 +10,10 @@ import { CTABanner } from "@/components/home/CTABanner";
 // Same frame for every content image on this page (4:3, same max width, no border).
 // Matches the frame used on the About page.
 const IMAGE_FRAME_CLASS = "aspect-[4/3] w-full max-w-md object-contain";
+
+// One button style for all action buttons on this page: small, green, rounded, clearly visible.
+const BUTTON_CLASS =
+  "inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-900 focus-visible:ring-offset-2";
 
 // Key words/phrases: bold + contrasting colour. Change the colour here in one place.
 function Highlight({ children }: { children: ReactNode }) {
@@ -103,6 +108,21 @@ export default function CHPEnclavePage() {
               <p className="text-slate-600 leading-relaxed text-lg text-justify">
                 CHP&apos;s Group Ownership Model enables friends, families, or like-minded investors to co-own premium Himalayan assets through shared investment. This collaborative approach reduces individual investment costs while creating opportunities for <Highlight>shared returns, lower financial risk, and long-term wealth creation</Highlight>.
               </p>
+
+              {/* Two green buttons side by side, just below the Group Ownership text */}
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/group-ownership-model" className={BUTTON_CLASS}>
+                  Explore Group Ownership <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href="https://drive.google.com/file/d/1mXsGLcjSbzOMMpYKMF6oebXCP81H3YAN/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={BUTTON_CLASS}
+                >
+                  <FileText className="h-4 w-4" /> Show Business Proposal
+                </a>
+              </div>
             </ScrollReveal>
           </div>
         </div>
@@ -236,6 +256,13 @@ export default function CHPEnclavePage() {
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Book a cottage: centered below the spirituality section */}
+          <div className="mt-8 flex justify-center">
+            <Link href="/contact?tab=cottage" className={BUTTON_CLASS}>
+              <CalendarCheck className="h-4 w-4" /> Book a Cottage
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -244,10 +271,10 @@ export default function CHPEnclavePage() {
       {/* Go back to source page */}
       <div className="py-6 text-center">
         <Link
-          href="/business-proposals"
+          href="/"
           className="inline-flex items-center rounded-full bg-green-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-2xl hover:shadow-green-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-900"
         >
-          Go back to Business Proposals
+          Go to Home page
         </Link>
       </div>
     </>
