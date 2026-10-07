@@ -53,63 +53,63 @@ const spiritualSpaces = [
         description:
             "A dedicated representation of Badrinath, Dwarka, Puri and Rameshwaram, introducing visitors to the four major pilgrimage traditions of India's Char Dham through pictures, paintings, sculptures and descriptions.",
         icon: "🗺️",
-        color: "bg-amber-50 border-amber-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "Chaar Dhaam Bhavan — Uttarakhand",
         description:
             "A dedicated space representing Yamunotri, Gangotri, Kedarnath and Badrinath, allowing visitors to explore the four Char Dham pilgrimage sites of Uttarakhand in one place.",
         icon: "⛰️",
-        color: "bg-yellow-50 border-yellow-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "12 Jyotirlingas Premise",
         description:
             "A dedicated space presenting the 12 Jyotirlingas, with names and brief descriptions displayed through stone inscriptions or visual representations.",
         icon: "🔱",
-        color: "bg-teal-50 border-teal-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "51 Shakti Peeth Premise",
         description:
             "A space dedicated to the 51 Shakti Peethas, presenting their names and brief descriptions through inscriptions or visual displays to help visitors learn about these sacred traditions.",
         icon: "🌸",
-        color: "bg-rose-50 border-rose-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "Nav Durga Bhavan",
         description:
             "A dedicated space celebrating the nine forms of Goddess Durga, represented through images, idols and descriptions.",
         icon: "✨",
-        color: "bg-violet-50 border-violet-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "Krishna Leela Bhavan",
         description:
             "A thematic space depicting important events from Lord Krishna's life through pictures, sculptures and proposed light-and-sound presentations.",
         icon: "🪈",
-        color: "bg-blue-50 border-blue-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "Ram Leela Bhavan",
         description:
             "A space dedicated to the life and ideals of Lord Shri Ram, presenting important events through pictures, sculptures and light-and-sound effects, with an emphasis on inspiration from his life and values.",
         icon: "🏹",
-        color: "bg-green-50 border-green-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "Shiv Mahima Premise",
         description:
             "A dedicated complex exploring the glory and different manifestations of Lord Shiva, using paintings, sculptures and descriptions to introduce their spiritual, cultural and philosophical significance.",
         icon: "🌙",
-        color: "bg-sky-50 border-sky-100",
+        color: "bg-orange-50 border-orange-100",
     },
     {
         title: "Lord Vishnu Leela Bhavan",
         description:
             "A dedicated space presenting the Dashavatara and divine manifestations of Lord Vishnu through paintings, sculptures, audio-visual presentations and descriptions.",
         icon: "🌀",
-        color: "bg-indigo-50 border-indigo-100",
+        color: "bg-orange-50 border-orange-100",
     },
 ];
 
@@ -331,7 +331,7 @@ export default function SanaatanIshtDevSthalPage() {
             {/* ── A Journey Through India's Spiritual Heritage ── */}
             <section
                 id="spiritual-spaces"
-                className="bg-white py-10 sm:py-12"
+                className="bg-stone-50 py-10 sm:py-12"
             >
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -372,7 +372,7 @@ export default function SanaatanIshtDevSthalPage() {
             {/* ── More Than a Place of Worship ── */}
             <section
                 id="more-than-worship"
-                className="border-y border-amber-200/50 bg-amber-50/40 py-12 text-slate-800"
+                className="border-y border-stone-200 bg-stone-50 py-12 text-slate-800"
             >
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 

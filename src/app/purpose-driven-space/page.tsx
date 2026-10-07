@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 const HEADER_IMAGE =
-  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ecacd3e4-3238-4e26-b118-a485bbedb914-scaled-chp-gauseva.webp";
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/01569ff4-8efa-48c1-9c0b-d50061386f3a-chp-cow-care-under-500kb.webp";
 
 const GAUSEVA_WHATSAPP = "919949994989";
 
@@ -215,16 +215,15 @@ export default function CometGausevaPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-stone-50 text-[#17352d]">
       {/* HERO */}
-      <section className="relative w-full overflow-hidden bg-[#10241e] pt-16">
-        <div className="relative aspect-[1000/333] w-full overflow-hidden">
+      <section className="relative z-0 w-full overflow-hidden bg-white">
+        <div className="relative w-full overflow-hidden">
           <img
             src={HEADER_IMAGE}
             alt="Comet Gauseva Kendra in the Himalayas"
-            className="h-full w-full object-cover object-[center_20%]"
+            className="block h-auto w-full object-contain object-center"
             fetchPriority="high"
             decoding="async"
           />
-
         </div>
       </section>
 

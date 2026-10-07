@@ -332,7 +332,7 @@ export default function OrganicFarmingPage() {
       </section>
 
       {/* Ecosystem */}
-      <section className="border-y border-emerald-200/50 bg-emerald-50/40 py-10 text-slate-800 sm:py-12">
+      <section className="border-y border-stone-200 bg-stone-50 py-10 text-slate-800 sm:py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -379,7 +379,7 @@ export default function OrganicFarmingPage() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-emerald-200/80 bg-emerald-50/80 p-6 sm:p-8 shadow-sm">
+            <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm">
               <p className="mb-6 flex items-center justify-center gap-2 text-center font-semibold text-emerald-900">
                 <Droplets className="h-5 w-5 text-emerald-700" />
                 The initiative aims to create a cycle in which:
@@ -471,7 +471,7 @@ export default function OrganicFarmingPage() {
           </div>
 
           <div
-            className={`mt-10 rounded-2xl border border-amber-200/60 bg-amber-50/80 p-6 sm:p-8 ${tilt}`}
+            className={`mt-10 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 ${tilt}`}
           >
             <h3 className="mb-2 flex items-center gap-2 text-xl font-bold text-slate-800">
               <Wheat className="h-5 w-5 text-orange-600" />
@@ -525,12 +525,12 @@ export default function OrganicFarmingPage() {
                 <div
                   className={`${card} flex h-full gap-5 border border-emerald-100/80 bg-emerald-50/40`}
                 >
-                  <span className="text-4xl font-bold leading-none text-orange-500">
+                  <span className="text-4xl font-bold leading-none text-green-800">
                     {i + 1}
                   </span>
 
                   <div>
-                    <h3 className="mb-2 font-semibold text-green-900">
+                    <h3 className="mb-2 font-bold text-slate-900">
                       {o.title}
                     </h3>
 
@@ -588,7 +588,7 @@ export default function OrganicFarmingPage() {
               <div
                 className={`${card} h-full border border-amber-100 bg-amber-50/40`}
               >
-                <h3 className="mb-1 text-xl font-bold text-orange-700">
+                <h3 className="mb-1 text-xl font-bold text-green-800">
                   Farm Owner&apos;s Responsibilities
                 </h3>
 
@@ -675,7 +675,7 @@ export default function OrganicFarmingPage() {
       <section className="bg-white py-10 sm:py-12">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="rounded-2xl border border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-100/80 p-8 text-center text-slate-800 shadow-sm sm:p-10">
+            <div className="rounded-2xl border border-stone-200 bg-stone-50 p-8 text-center text-slate-800 shadow-sm sm:p-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800">
                 Our Larger Purpose
               </p>

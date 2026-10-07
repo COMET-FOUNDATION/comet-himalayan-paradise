@@ -14,7 +14,7 @@ const directLinks = [
   { href: "/about", label: "About" },
 ];
 
-const operationsLink = { href: "/chp-operations", label: "CHP Operations" };
+const operationsLink = { href: "/chp-operations", label: "CHP Operations and Common Services" };
 const faqLink = { href: "/faq", label: "FAQ" };
 
 const navGroups = [
@@ -37,7 +37,7 @@ const navGroups = [
       { href: "/growth-partner", label: "CHP Growth Partnership" },
       { href: "/group-ownership-model", label: "Group Ownership Model" },
       { href: "/business-investment", label: "Investment Options" },
-      { href: "/chp-enclave", label: "Second Home" },
+      { href: "/chp-enclave", label: "CHP Enclave" },
       { href: "/dream-spaces", label: "16 Dream Spaces" },
       { href: "/biz-facilities", label: "12 Biz Facilities" },
       { href: "/gateways", label: "5 Gateways" },

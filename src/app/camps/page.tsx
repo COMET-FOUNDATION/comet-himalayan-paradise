@@ -52,10 +52,10 @@ const HERO_TAG_CLASS =
   "inline-flex items-center rounded-full bg-green-900/90 px-4 py-1.5 text-white text-xs font-semibold uppercase tracking-[0.18em] mb-4";
 
 const HERO_SUBTITLE_CLASS =
-  "text-white/90 text-base sm:text-lg font-medium tracking-wide mb-4";
+  "text-white text-base sm:text-lg font-bold tracking-wide mb-4";
 
 const HERO_DESCRIPTION_CLASS =
-  "text-white/85 text-base sm:text-lg leading-relaxed max-w-xl";
+  "text-white text-base sm:text-lg font-bold leading-relaxed whitespace-nowrap";
 
 const IMAGE_BOX =
   "relative aspect-video w-full overflow-hidden";
@@ -111,7 +111,7 @@ export default function CampsPage() {
           </p>
 
           <p className={HERO_DESCRIPTION_CLASS}>
-            Adventure, wellness, culture &amp; nature — all at your pace.
+          Adventure. Wellness. Culture. Nature. Your Himalayan Escape, Your Way.
           </p>
         </div>
       </section>
@@ -123,7 +123,7 @@ export default function CampsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <ScrollReveal direction="left">
-              <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+              <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
                 Camp Overview
               </p>
 
@@ -240,7 +240,7 @@ export default function CampsPage() {
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+            <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
               Camp Activities
             </p>
 
@@ -392,7 +392,7 @@ export default function CampsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Heading */}
           <div className="text-center mb-8">
-            <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+            <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
               A Typical Day
             </p>
 
@@ -416,7 +416,7 @@ export default function CampsPage() {
                 NO COLOURED BACKGROUND
                 ===================================================== */}
             <div className="p-0">
-              <p className="text-slate-700 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+              <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
                 Your Day in the Himalayas
               </p>
 
