@@ -245,15 +245,28 @@ export default function AccommodationPage() {
         </div>
       </section>
 
-      {/* Back to Home */}
-      <section className="border-t border-stone-200 bg-white py-10">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
-          >
-            Home
-          </a>
+      <section className="border-t border-stone-200 bg-stone-50 py-10">
+        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-slate-800 sm:text-2xl">
+            Interested in homestay ownership?
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-slate-600">
+            Contact us to explore the shared-profit opportunities available with CHP.
+          </p>
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
+            >
+              Contact
+            </a>
+            <a
+              href="/"
+              className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
+            >
+              Home
+            </a>
+          </div>
         </div>
       </section>
     </>

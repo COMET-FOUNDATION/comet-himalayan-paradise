@@ -35,7 +35,7 @@ const navGroups = [
     items: [
       { href: "/chp-biz-partnership", label: "CHP Business Partnership" },
       { href: "/growth-partner", label: "CHP Growth Partnership" },
-      { href: "/chp-enclave#group-ownership", label: "Co-Ownership Model" },
+      { href: "/group-ownership-model", label: "Group Ownership Model" },
       { href: "/business-investment", label: "Investment Options" },
       { href: "/chp-enclave", label: "Second Home" },
       { href: "/dream-spaces", label: "16 Dream Spaces" },
