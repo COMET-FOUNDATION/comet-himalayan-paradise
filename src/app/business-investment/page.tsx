@@ -42,11 +42,11 @@ const TILE_COLORS = [
 ];
 
 // Shared page-title style (single line, reduced size).
-const HEADER_TITLE_BASE = "font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight";
+const HEADER_TITLE_BASE = "text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight";
 
 // Shared section-heading style (single line, reduced size).
 const SECTION_TITLE_BASE =
-  "font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-4";
+  "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight mb-4";
 
 /**
  * Key-word highlighter (bold + contrasting colour).
@@ -143,13 +143,6 @@ export default function BusinessInvestmentPage() {
           priority
           className="w-full h-full object-cover object-center border-0 outline-none"
         />
-        {/* Overlay: centred horizontally at the top of the image. Takes no layout space.
-            Fine-tune with PILL_POSITION_CLASS. */}
-        <div className={`absolute left-1/2 -translate-x-1/2 ${PILL_POSITION_CLASS}`}>
-          <span className="inline-block whitespace-nowrap rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md">
-            {MENU_NAME}
-          </span>
-        </div>
       </div>
 
       {/* ── 1. Hero & Business and Investment Section ── */}

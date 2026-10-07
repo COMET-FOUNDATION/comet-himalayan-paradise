@@ -54,10 +54,10 @@ const HOME_HREF = "/";
  * very-light green treatment.
  */
 const CONTAINER_CLASS =
-    "bg-green-50 border border-green-100";
+    "bg-white border border-slate-200";
 
 const CHIP_CLASS =
-    "bg-green-50 border border-green-100 text-green-800";
+    "bg-stone-50 border border-slate-200 text-green-800";
 
 /**
  * Key-word highlighter.
@@ -461,7 +461,7 @@ const leaders: {
  * visual treatment.
  */
 const colorMap: Record<string, string> = {
-    green: "bg-green-50 border-green-100 text-green-800",
+    green: "bg-white border-slate-200 text-green-800",
 };
 
 const iconBgMap: Record<string, string> = {
@@ -624,8 +624,8 @@ export default function CometEducationalServicesPage() {
                                         <div
                                             className={`${CONTAINER_CLASS} rounded-2xl p-6 flex gap-4 hover:shadow-md transition-shadow duration-300 h-full`}
                                         >
-                                            <div className="w-10 h-10 rounded-xl bg-green-900 flex items-center justify-center shrink-0">
-                                                <Icon className="w-5 h-5 text-white" />
+                                            <div className="w-10 h-10 rounded-xl bg-green-100 border border-green-200 flex items-center justify-center shrink-0">
+                                                <Icon className="w-5 h-5 text-green-800" />
                                             </div>
 
                                             <div>
