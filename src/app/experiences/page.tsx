@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
 import { experiences } from "@/data/experiences";
 
 const categories = [
@@ -241,9 +241,9 @@ export default function ExperiencesPage() {
         <div className="flex justify-center px-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-green-900 hover:bg-green-900 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
           >
-            <ArrowRight className="h-4 w-4 rotate-180" />
+            <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Link>
         </div>

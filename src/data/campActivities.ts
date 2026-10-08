@@ -26,16 +26,16 @@ const activityPhotos: Record<string, string> = {
 const sourceCategories: SourceCategory[] = [
   { title: "Ice Breakers", description: "Warm up, meet new friends, and start the camp with easy, laughter-filled challenges.", image: activityPhotos.default, activities: [
     { title: "Pass the Ball (Say Name + Hobby)", image: "/images/camp-activities/ice-breakers--pass-the-ball-say-name-hobby.svg" },
-    { title: "Name Chain Game", image: "/images/camp-activities/ice-breakers--name-chain-game.svg" },
-    { title: "Silent Line-Up", image: "/images/camp-activities/ice-breakers--silent-line-up.svg" },
+    { title: "Name Chain Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/172f6633-03a0-45be-bca7-dd01f606b3b8-scaled-name-chain-challenge.webp" },
+    { title: "Silent Line-Up", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/41cfc071-9bdb-4719-ab63-004b34834623-scaled-silent-line-up.webp" },
     { title: "Emoji Introduction", image: "/images/camp-activities/ice-breakers--emoji-introduction.svg" },
     { title: "Rapid Fire Introduction", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/08482130-fdc1-47a0-a86b-d9dc92ac5ad1-scaled-rapid-fire-introduction.webp" },
   ] },
   { title: "Communication", description: "Build listening, expression, and connection through playful group communication games.", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80", activities: [
-    { title: "Pahadi Word Exchange", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6f656bca-ed1c-456e-a1b4-e88c8f52eebf-scaled-pahadi-shabd-khel.webp" },
-    { title: "Dumb Charades", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e6e3bda3-52a7-4671-aa0f-33bd8eef7a7f-scaled-dumb-charades.webp" },
+    { title: "Pahadi Word Exchange", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/609b6fd6-d33b-4bf8-a52b-76066ab30cb5-scaled-pahadi-shabd-khel.webp" },
+    { title: "Dumb Charades", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f7b205d1-1c8e-4c6e-af47-a690ba16a342-scaled-dumb-charades.webp" },
     { title: "Memory Relay", image: "/images/camp-activities/communication--memory-relay.svg" },
-    { title: "Listen and Draw", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a456115-8b51-468c-b5ad-d7ec88f43b88-scaled-listen-and-draw.webp" },
+    { title: "Listen and Draw", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/88cbcc3a-312b-451c-9148-012efb911f76-scaled-listen-and-draw.webp" },
     { title: "Introduce Your Friend", image: "/images/camp-activities/communication--introduce-your-friend.svg" },
   ] },
   { title: "Smart Memory", description: "Sharpen observation and recall with engaging games that make every detail count.", image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80", activities: [

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {
-  ArrowRight,
+  ArrowLeft,
   Building2,
   CheckCircle2,
   ChevronRight,
@@ -150,9 +150,9 @@ export default function CHPOperationsPage() {
               CHP Operations
             </p>
 
-            <h1 className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-5xl">
-              Operations, Maintenance & Common Services
-            </h1>
+            <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-5xl">
+  Operations, Maintenance & Common Services
+</h1>
 
             <p className="mx-auto mt-5 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg">
               One Integrated Management Framework for the Entire CHP Ecosystem
@@ -609,13 +609,15 @@ export default function CHPOperationsPage() {
             across the ecosystem.
           </p>
 
-          <Link
-            href="/"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-green-900 px-7 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-md"
-          >
-            Back to CHP Home
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          <div className="mt-8">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Link>
+          </div>
         </div>
       </section>
     </main>

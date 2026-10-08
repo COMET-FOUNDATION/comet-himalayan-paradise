@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
   ScrollReveal,
@@ -97,7 +97,7 @@ export default function CampsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70" />
 
         {/* Hero content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-start pt-12 sm:pt-16 md:pt-20 lg:pt-24 text-center px-4 sm:px-6">
+        <div className="absolute inset-0 flex flex-col items-center justify-start px-4 pt-12 text-center sm:px-6 sm:pt-16 md:pt-20 lg:pt-24">
           <p className={HERO_TAG_CLASS}>
             Holiday Camps
           </p>
@@ -111,7 +111,7 @@ export default function CampsPage() {
           </p>
 
           <p className={HERO_DESCRIPTION_CLASS}>
-          Adventure. Wellness. Culture. Nature. Your Himalayan Escape, Your Way.
+            Adventure. Wellness. Culture. Nature. Your Himalayan Escape, Your Way.
           </p>
         </div>
       </section>
@@ -119,19 +119,19 @@ export default function CampsPage() {
       {/* =========================================================
           OVERVIEW
           ========================================================= */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             <ScrollReveal direction="left">
-              <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
                 Camp Overview
               </p>
 
-              <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold tracking-tight mb-4 leading-tight">
+              <h2 className="mb-4 text-3xl font-bold leading-tight tracking-tight text-slate-800 sm:text-4xl">
                 Your Complete Himalayan Vacation — All in One Place
               </h2>
 
-              <p className="text-slate-600 leading-relaxed mb-4 text-justify">
+              <p className="mb-4 text-justify leading-relaxed text-slate-600">
                 CHP Holiday Camps are designed to give you the full{" "}
                 <strong className={KEY}>
                   Himalayan experience
@@ -141,7 +141,7 @@ export default function CampsPage() {
                 can simply arrive, breathe, and explore.
               </p>
 
-              <p className="text-slate-600 leading-relaxed text-justify">
+              <p className="text-justify leading-relaxed text-slate-600">
                 Whether you&apos;re a{" "}
                 <strong className={KEY}>
                   family
@@ -154,9 +154,7 @@ export default function CampsPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="right">
-              <div
-                className={`${IMAGE_BOX} rounded-2xl overflow-hidden`}
-              >
+              <div className={`${IMAGE_BOX} overflow-hidden rounded-2xl`}>
                 <Image
                   src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp"
                   alt="Himalayan camp aerial view"
@@ -173,8 +171,8 @@ export default function CampsPage() {
       {/* =========================================================
           CAMP FEATURES
           ========================================================= */}
-      <section className="py-12 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-stone-50 py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Camp Features"
             title="Everything You Could Want"
@@ -182,7 +180,7 @@ export default function CampsPage() {
           />
 
           <StaggerContainer
-            className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-3/4 lg:mx-auto"
+            className="mx-auto mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:w-3/4 lg:grid-cols-3"
             staggerDelay={0.07}
           >
             {campFeatures
@@ -212,7 +210,7 @@ export default function CampsPage() {
                     </div>
 
                     {/* Plain white text area */}
-                    <div className="p-5 bg-white">
+                    <div className="bg-white p-5">
                       <h3 className="font-semibold text-slate-900">
                         {feature.title}
                       </h3>
@@ -228,7 +226,7 @@ export default function CampsPage() {
               className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
             >
               Show All Features
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -237,18 +235,18 @@ export default function CampsPage() {
       {/* =========================================================
           CAMP ACTIVITIES
           ========================================================= */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
               Camp Activities
             </p>
 
-            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold tracking-tight mb-3">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
               A World of Full Experiences Awaits
             </h2>
 
-            <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-justify">
+            <p className="mx-auto max-w-2xl text-justify leading-relaxed text-slate-600">
               From{" "}
               <strong className={KEY}>
                 mountain adventures
@@ -258,11 +256,11 @@ export default function CampsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {/* =====================================================
                 TREKKING
                 ===================================================== */}
-            <article className="rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article className="overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className={`${IMAGE_BOX} bg-white`}>
                 {trekkingImage ? (
                   <Image
@@ -279,12 +277,12 @@ export default function CampsPage() {
                 )}
               </div>
 
-              <div className="p-5 bg-white">
-                <h3 className="font-semibold text-slate-900 mb-2">
+              <div className="bg-white p-5">
+                <h3 className="mb-2 font-semibold text-slate-900">
                   Trekking &amp; Hiking
                 </h3>
 
-                <p className="text-sm text-slate-600 text-justify">
+                <p className="text-justify text-sm text-slate-600">
                   Explore{" "}
                   <strong className={KEY}>
                     scenic Himalayan trails
@@ -297,7 +295,7 @@ export default function CampsPage() {
             {/* =====================================================
                 CAMPFIRE
                 ===================================================== */}
-            <article className="rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article className="overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className={`${IMAGE_BOX} bg-white`}>
                 {campfireImage ? (
                   <Image
@@ -314,12 +312,12 @@ export default function CampsPage() {
                 )}
               </div>
 
-              <div className="p-5 bg-white">
-                <h3 className="font-semibold text-slate-900 mb-2">
+              <div className="bg-white p-5">
+                <h3 className="mb-2 font-semibold text-slate-900">
                   Campfire Evenings
                 </h3>
 
-                <p className="text-sm text-slate-600 text-justify">
+                <p className="text-justify text-sm text-slate-600">
                   Enjoy{" "}
                   <strong className={KEY}>
                     music, stories, conversations
@@ -332,7 +330,7 @@ export default function CampsPage() {
             {/* =====================================================
                 WILDLIFE
                 ===================================================== */}
-            <article className="rounded-2xl bg-white overflow-hidden shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article className="overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className={`${IMAGE_BOX} bg-white`}>
                 {wildlifeImage ? (
                   <Image
@@ -349,12 +347,12 @@ export default function CampsPage() {
                 )}
               </div>
 
-              <div className="p-5 bg-white">
-                <h3 className="font-semibold text-slate-900 mb-2">
+              <div className="bg-white p-5">
+                <h3 className="mb-2 font-semibold text-slate-900">
                   Nature &amp; Wildlife
                 </h3>
 
-                <p className="text-sm text-slate-600 text-justify">
+                <p className="text-justify text-sm text-slate-600">
                   Discover{" "}
                   <strong className={KEY}>
                     Himalayan birds, wildlife
@@ -365,13 +363,13 @@ export default function CampsPage() {
             </article>
           </div>
 
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/camp-activities"
               className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
             >
               Show All Camp Activities
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
 
             <Link
@@ -379,7 +377,7 @@ export default function CampsPage() {
               className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
             >
               Book Your Holiday Camp
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -388,19 +386,19 @@ export default function CampsPage() {
       {/* =========================================================
           DAILY SCHEDULE
           ========================================================= */}
-      <section className="pt-4 pb-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white pb-12 pt-4">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Heading */}
-          <div className="text-center mb-8">
-            <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+          <div className="mb-8 text-center">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
               A Typical Day
             </p>
 
-            <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold tracking-tight mb-3">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-800 sm:text-4xl">
               Camp Schedule | Duration
             </h2>
 
-            <p className="text-slate-600 max-w-2xl mx-auto leading-relaxed text-justify">
+            <p className="mx-auto max-w-2xl text-justify leading-relaxed text-slate-600">
               Each day is thoughtfully structured —{" "}
               <strong className={KEY}>
                 busy enough to be enriching
@@ -410,21 +408,21 @@ export default function CampsPage() {
           </div>
 
           {/* Description LEFT + Image RIGHT */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
             {/* =====================================================
                 PLAIN TEXT CONTENT
                 NO COLOURED BACKGROUND
                 ===================================================== */}
             <div className="p-0">
-              <p className="text-orange-600 text-xs font-semibold uppercase tracking-[0.2em] mb-2">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
                 Your Day in the Himalayas
               </p>
 
-              <h3 className="text-slate-800 text-2xl sm:text-3xl font-bold tracking-tight mb-4">
+              <h3 className="mb-4 text-2xl font-bold tracking-tight text-slate-800 sm:text-3xl">
                 A Day Full of Experiences
               </h3>
 
-              <p className="text-slate-600 leading-relaxed mb-4 text-justify">
+              <p className="mb-4 text-justify leading-relaxed text-slate-600">
                 Start your morning with{" "}
                 <strong className={KEY}>
                   sunrise yoga and meditation
@@ -434,7 +432,7 @@ export default function CampsPage() {
                 adventures.
               </p>
 
-              <p className="text-slate-600 leading-relaxed mb-4 text-justify">
+              <p className="mb-4 text-justify leading-relaxed text-slate-600">
                 After lunch, enjoy{" "}
                 <strong className={KEY}>
                   organic farming
@@ -443,7 +441,7 @@ export default function CampsPage() {
                 and wildlife experiences in the afternoon.
               </p>
 
-              <p className="text-slate-600 leading-relaxed text-justify">
+              <p className="text-justify leading-relaxed text-slate-600">
                 As evening arrives, gather around the{" "}
                 <strong className={KEY}>
                   campfire
@@ -455,9 +453,7 @@ export default function CampsPage() {
             </div>
 
             {/* Image */}
-            <div
-              className={`${IMAGE_BOX} rounded-2xl overflow-hidden`}
-            >
+            <div className={`${IMAGE_BOX} overflow-hidden rounded-2xl`}>
               <Image
                 src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/976486cc-548b-42f2-ae8d-b2d827dc3448-scaled-schedule.webp"
                 alt="Himalayan camp schedule"
@@ -467,7 +463,6 @@ export default function CampsPage() {
               />
             </div>
           </div>
-          
         </div>
       </section>
 
@@ -477,21 +472,9 @@ export default function CampsPage() {
           IMPORTANT:
           Holiday Camp is the ONE page where the
           "The Himalayas Are Calling Your Name" section stays.
+          The Home button is displayed INSIDE the CTA banner.
       ========================================================= */}
-      <CTABanner />
-
-      {/* =========================================================
-          BACK TO HOME
-          ========================================================= */}
-      <div className="bg-white py-8 text-center">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 rounded-full bg-green-900 px-8 py-3 font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-xl hover:shadow-green-900/30"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Go back to Home
-        </Link>
-      </div>
+      <CTABanner showHomeButton />
     </>
   );
 }

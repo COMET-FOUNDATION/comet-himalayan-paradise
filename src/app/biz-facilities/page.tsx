@@ -95,10 +95,10 @@ export default function BizFacilitiesPage() {
 
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
             >
               <ArrowLeft className="h-4 w-4" />
-               Home
+              Back to Home
             </Link>
           </div>
         </div>

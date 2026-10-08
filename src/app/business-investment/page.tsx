@@ -24,9 +24,6 @@ import {
 // Menu name shown on the header image.
 const MENU_NAME = "";
 
-// Destination of the button at the bottom of the page.
-const HOME_HREF = "/";
-
 // Position of the menu-name pill on the header image (distance from the top edge).
 // Increase the values to move it down, decrease to move it up.
 const PILL_POSITION_CLASS = "top-4 sm:top-6 lg:top-3";
@@ -594,15 +591,15 @@ export default function BusinessInvestmentPage() {
         )}
       </section>
 
-      {/* ── Go Back to Home ── */}
+      {/* ── Back to Home ── */}
       <section className="pb-10 pt-2 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
           <Link
-            href={HOME_HREF}
-            className="inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white hover:bg-green-800 transition-colors"
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Home
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
           </Link>
         </div>
       </section>

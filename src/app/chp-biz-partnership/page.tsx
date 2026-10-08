@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
+  ArrowLeft,
   ArrowRight,
   Building2,
   Check,
@@ -1184,10 +1185,10 @@ export default function CHPBizPartnershipPage() {
           <div className="mt-10 flex justify-center sm:mt-12">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950"
+              className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
             >
-              <ArrowRight className="h-4 w-4 rotate-180" />
-              Home
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
             </Link>
           </div>
         </div>

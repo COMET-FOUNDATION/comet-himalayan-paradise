@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, FileText, CalendarCheck } from "lucide-react";
+import { ArrowRight, ArrowLeft, FileText, CalendarCheck } from "lucide-react";
 import { CHPEnclaveHero } from "./CHPEnclaveHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
@@ -272,9 +272,10 @@ export default function CHPEnclavePage() {
       <div className="py-6 text-center">
         <Link
           href="/"
-          className="inline-flex items-center rounded-full bg-green-900 px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-2xl hover:shadow-green-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-900"
+          className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
         >
-          Go to Home page
+          <ArrowLeft className="h-4 w-4" />
+          Back to Home
         </Link>
       </div>
     </>

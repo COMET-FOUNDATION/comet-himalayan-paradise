@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 /* Highlight helpers: bold + contrasting colour for key words/phrases */
 const Hl = ({ children }: { children: ReactNode }) => (
@@ -559,9 +560,10 @@ export function FacilitiesPage() {
         <div className="mt-8 flex justify-center">
           <Link
             href="/"
-            className="inline-flex items-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-green-800"
+            className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
           >
-            Home
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
           </Link>
         </div>
 

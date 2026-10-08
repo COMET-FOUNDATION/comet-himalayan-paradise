@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Compass } from "lucide-react";
+import { ArrowLeft, Compass } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { AboutHero } from "@/components/about/AboutHero";
 import type { ReactNode } from "react";
@@ -454,9 +454,10 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
+            className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
           >
-            Home
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
           </Link>
         </div>
       </section>
