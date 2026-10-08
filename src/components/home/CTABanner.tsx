@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mountain, ArrowRight, Home } from "lucide-react";
+import { Mountain, ArrowRight, ArrowLeft } from "lucide-react";
 
 type CTABannerProps = {
   showHomeButton?: boolean;
@@ -85,9 +85,9 @@ export function CTABanner({ showHomeButton = false }: CTABannerProps) {
             <div className="mt-8 flex justify-center">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-3.5 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20"
+                className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
               >
-                <Home className="h-4 w-4" />
+                <ArrowLeft className="h-4 w-4" />
                 Back to Home
               </Link>
             </div>

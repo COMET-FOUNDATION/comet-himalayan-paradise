@@ -21,6 +21,7 @@ import {
     Sparkles,
     Smile,
     RefreshCw,
+    ArrowLeft,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -357,19 +358,16 @@ export default function WhyCHPPage() {
             </section>
 
             {/* Back to Home */}
-            <section className="border-t border-stone-200 bg-white py-10">
-                <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+              <div className="flex justify-center pt-10">
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Home
+                </Link>
+              </div>
+            </main>
+          )}
 
-                    <Link
-                        href="/"
-                        className="inline-flex items-center justify-center rounded-full bg-green-900 px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800 hover:shadow-lg"
-                    >
-                        Back to Home
-                    </Link>
-
-                </div>
-            </section>
-
-        </main>
-    );
-}
+       

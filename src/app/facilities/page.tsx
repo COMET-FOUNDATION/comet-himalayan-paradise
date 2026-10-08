@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Laptop,
@@ -10,6 +11,7 @@ import {
   Heart,
   Leaf,
   BriefcaseBusiness,
+  ArrowLeft,
 } from "lucide-react";
 
 const suitableFor = [
@@ -169,7 +171,9 @@ function Card({
 export default function FacilitiesPage() {
   return (
     <main className="min-h-screen bg-white text-slate-800">
-      {/* HERO */}
+      {/* =========================================================
+          HERO
+          ========================================================= */}
       <section className="relative mt-[72px] h-[430px] overflow-hidden sm:h-[470px] lg:h-[510px]">
         <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/baa1b671-abe3-4bc1-b818-6cc9500327e8-chp-remote-work-himalayas-header.webp"
@@ -208,7 +212,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 01 — WHITE */}
+      {/* =========================================================
+          01 — WHITE
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
@@ -232,9 +238,9 @@ export default function FacilitiesPage() {
               combine work and the Himalayan experience through a dedicated
               Remote Work from Himalaya program. Whether you are an employee
               looking for a refreshing place to work for a few days, or an
-              employer looking to offer your team a meaningful
-              work-from-anywhere benefit, CHP provides a practical environment
-              where work and{" "}
+              employer looking to offer your team a meaningful work-from-
+              anywhere benefit, CHP provides a practical environment where work
+              and{" "}
               <strong className="text-green-800">Himalayan living</strong> can
               come together.
             </p>
@@ -260,7 +266,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 02 — LIGHT GREY */}
+      {/* =========================================================
+          02 — LIGHT GREY
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-slate-50 py-12 lg:py-16">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
@@ -291,7 +299,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 03 — WHITE */}
+      {/* =========================================================
+          03 — WHITE
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
@@ -325,7 +335,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 04 — LIGHT GREY */}
+      {/* =========================================================
+          04 — LIGHT GREY
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-slate-50 py-12 lg:py-16">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <Card className="mx-auto max-w-5xl p-6 sm:p-8 lg:p-9">
@@ -339,10 +351,10 @@ export default function FacilitiesPage() {
 
             <div className="mt-4 max-w-4xl space-y-3 text-sm leading-7 text-slate-600 sm:text-base">
               <p>
-                Remote work doesn't always have to mean working from your home.
-                Take your laptop to the mountains and experience a different
-                rhythm of working—quiet mornings, focused work hours, nature
-                around you and the opportunity to explore the{" "}
+                Remote work doesn&apos;t always have to mean working from your
+                home. Take your laptop to the mountains and experience a
+                different rhythm of working—quiet mornings, focused work hours,
+                nature around you and the opportunity to explore the{" "}
                 <strong className="text-green-800">
                   Himalaya after work
                 </strong>
@@ -362,7 +374,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 05 — WHITE */}
+      {/* =========================================================
+          05 — WHITE
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
@@ -391,7 +405,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 06 — LIGHT GREY */}
+      {/* =========================================================
+          06 — LIGHT GREY
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-slate-50 py-12 lg:py-16">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
@@ -420,7 +436,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 07 — WHITE */}
+      {/* =========================================================
+          07 — WHITE
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading
@@ -441,7 +459,7 @@ export default function FacilitiesPage() {
 
           <Card className="mx-auto mt-6 max-w-5xl p-6 text-center sm:p-7">
             <p className="text-sm leading-7 text-slate-600 sm:text-base">
-              The program can be structured around the organization's
+              The program can be structured around the organization&apos;s
               requirements, including{" "}
               <strong className="text-green-800">
                 accommodation, workspace, meals, connectivity
@@ -452,7 +470,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 08 — LIGHT GREY */}
+      {/* =========================================================
+          08 — LIGHT GREY
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-slate-50 py-12 lg:py-16">
         <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
           <SectionHeading title="From Workation to Team Experience" />
@@ -476,7 +496,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 09 — WHITE */}
+      {/* =========================================================
+          09 — WHITE
+          ========================================================= */}
       <section className="border-b border-slate-200 bg-white py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading title="Possible Team Activities" />
@@ -495,7 +517,9 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* 10 — LIGHT GREY */}
+      {/* =========================================================
+          10 — LIGHT GREY
+          ========================================================= */}
       <section className="bg-slate-50 py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
           <SectionHeading title="Why Work from CHP?" />
@@ -517,6 +541,21 @@ export default function FacilitiesPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          BACK TO HOME
+          ========================================================= */}
+      <section className="bg-slate-50 px-5 py-10">
+        <div className="flex justify-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
         </div>
       </section>
     </main>

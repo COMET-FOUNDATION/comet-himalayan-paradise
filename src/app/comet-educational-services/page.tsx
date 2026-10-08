@@ -44,9 +44,6 @@ const MENU_NAME = "EDUCATIONAL SERVICES";
 // Position of the pill on the header image.
 const PILL_POSITION_CLASS = "top-0 sm:top-1 lg:top-2";
 
-// Destination of the button at the bottom of the page.
-const HOME_HREF = "/";
-
 /*
  * SINGLE CONTAINER COLOR
  *
@@ -1151,16 +1148,16 @@ export default function CometEducationalServicesPage() {
                 </div>
             </section>
 
-            {/* ── Go Back to Home ── */}
+            {/* ── Back to Home ── */}
 
             <section className="py-8 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
                     <Link
-                        href={HOME_HREF}
-                        className="inline-flex items-center gap-2 rounded-full bg-green-50 border border-green-200 px-6 py-3 text-sm font-semibold text-green-900 hover:bg-green-100 transition-colors"
+                        href="/"
+                        className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
                     >
-                        <ArrowLeft className="w-4 h-4" />
-                        Go Back to Home
+                        <ArrowLeft className="h-4 w-4" />
+                        Back to Home
                     </Link>
                 </div>
             </section>

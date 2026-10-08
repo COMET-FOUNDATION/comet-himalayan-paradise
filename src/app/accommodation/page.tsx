@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
-import { CheckCircle2, Star } from "lucide-react";
+import Link from "next/link";
+import { ArrowLeft, CheckCircle2, Star } from "lucide-react";
 import { StaggerContainer, StaggerItem } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -136,9 +137,9 @@ export default function AccommodationPage() {
               Homestay
             </p>
 
-            <p className="mt-4 max-w-xl text-justify text-lg text-white/80 sm:mt-6 sm:text-xl md:text-1xl">
-              Don't just visit the Himalayas — live like you belong here.
-            </p>
+            <p className="mt-4 max-w-xl text-justify text-lg font-bold text-white/80 sm:mt-6 sm:text-xl md:text-1xl">
+  Don't just visit the Himalayas — live like you belong here.
+</p>
           </div>
         </div>
       </section>
@@ -260,12 +261,13 @@ export default function AccommodationPage() {
             >
               Contact
             </a>
-            <a
+            <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-full bg-green-900 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-800"
+              className="inline-flex items-center gap-2 rounded-full border border-green-900 bg-white px-5 py-2.5 text-sm font-semibold text-green-900 shadow-sm transition-all duration-200 hover:bg-green-900 hover:text-white"
             >
-              Home
-            </a>
+              <ArrowLeft className="h-4 w-4" />
+              Back to Home
+            </Link>
           </div>
         </div>
       </section>
