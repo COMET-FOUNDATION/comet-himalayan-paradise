@@ -23,6 +23,7 @@ import {
     StaggerContainer,
     StaggerItem,
 } from "@/components/ui/ScrollReveal";
+import { DonationQRCode } from "@/components/social-impact/DonationQRCode";
 
 export const metadata: Metadata = {
     title: "Comet Educational Services",
@@ -1147,6 +1148,8 @@ export default function CometEducationalServicesPage() {
                     </StaggerContainer>
                 </div>
             </section>
+
+            <DonationQRCode />
 
             {/* ── Back to Home ── */}
 

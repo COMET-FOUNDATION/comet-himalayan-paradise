@@ -23,6 +23,7 @@ import {
   StaggerItem,
 } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
+import { DonationQRCode } from "@/components/social-impact/DonationQRCode";
 
 export const metadata: Metadata = {
   title: "Himalayan Organic & Medicinal Farming",
@@ -817,6 +818,8 @@ export default function OrganicFarmingPage() {
           </div>
         </div>
       </section>
+      <DonationQRCode />
+
       {/* BOTTOM NAV CAPTION */}
       <section className="py-8 bg-white border-t border-stone-200">
         <div className="max-w-7xl mx-auto px-4 text-center">

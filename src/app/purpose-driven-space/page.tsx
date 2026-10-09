@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { DonationQRCode } from "@/components/social-impact/DonationQRCode";
 import {
   ArrowRight,
   Building2,
@@ -638,6 +639,8 @@ export default function CometGausevaPage() {
           </div>
         </div>
       </section>
+
+      <DonationQRCode />
 
       {/* BOTTOM NAV CAPTION */}
       <section className="py-8 bg-white border-t border-stone-200">
