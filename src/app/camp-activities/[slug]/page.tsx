@@ -84,7 +84,7 @@ export default async function CampActivityDetailPage({ params }: Props) {
                     alt={item.title}
                     fill
                     sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
-                    className="object-cover"
+                    className="object-contain object-center"
                   />
                 </div>
                 <div className="space-y-2 p-5">

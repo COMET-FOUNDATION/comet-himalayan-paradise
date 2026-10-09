@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 import { campActivityGroups } from "@/data/campActivities";
 
 export default function CampActivitiesPage() {
@@ -66,6 +66,18 @@ export default function CampActivitiesPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-t border-stone-200 bg-white py-8">
+        <div className="flex justify-center px-4">
+          <Link
+            href="/camps"
+            className="inline-flex items-center gap-2 rounded-full bg-green-900 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-800"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Holiday Camp
+          </Link>
         </div>
       </section>
     </main>
