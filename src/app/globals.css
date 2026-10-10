@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #fafaf9;
-  --color-foreground: #1e293b;
+  --color-background: #f8f7f3;
+  --color-foreground: #26352f;
+  --color-chp-forest: #173f32;
+  --color-chp-sage: #e8eee8;
+  --color-chp-cream: #f8f7f3;
+  --color-chp-orange: #c9753e;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,8 +20,20 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --chp-forest: #173f32;
+  --chp-forest-deep: #112f27;
+  --chp-sage: #e8eee8;
+  --chp-cream: #f8f7f3;
+  --chp-orange: #c9753e;
+  --chp-ink: #26352f;
+  --chp-muted: #68756f;
+  --chp-line: rgba(39, 62, 51, 0.12);
 }
 
 /* ── Custom scrollbar ── */
@@ -66,7 +82,7 @@ body {
 
 /* ── Gradient text utility ── */
 .gradient-text {
-  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  background: linear-gradient(135deg, #173f32, #c9753e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,9 +142,68 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #14532d, #0ea5e9);
+  background: linear-gradient(90deg, #173f32, #c9753e);
   z-index: 9999;
   transform-origin: left;
+}
+
+/* Shared CHP presentation layer. Route components keep their own layouts while
+   drawing on the same quiet palette, readable type rhythm, and control styling. */
+.site-main {
+  min-width: 0;
+  overflow-x: clip;
+  background: var(--chp-cream);
+}
+
+.site-main :where(h1, h2, h3, h4) {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.site-main :where(p, li) {
+  text-wrap: pretty;
+}
+
+.site-main :where(img, video, canvas, svg) {
+  max-width: 100%;
+}
+
+.site-main :where(button, input, select, textarea) {
+  font-family: inherit;
+}
+
+.site-main :where(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  border-color: var(--chp-line);
+  border-radius: 0.8rem;
+}
+
+.site-main :where(input, select, textarea):focus-visible {
+  outline: 2px solid var(--chp-forest);
+  outline-offset: 2px;
+}
+
+.site-main [class~="bg-white"][class*="rounded-"]:not(:hover) {
+  border-color: var(--chp-line);
+  box-shadow: 0 12px 32px -24px rgba(24, 54, 42, 0.3);
+}
+
+.site-main :where(a, button) {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Desktop navigation has many intentionally visible destinations.  Browser zoom

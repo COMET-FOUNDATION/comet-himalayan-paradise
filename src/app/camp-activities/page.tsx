@@ -6,15 +6,28 @@ import { campActivityGroups } from "@/data/campActivities";
 export default function CampActivitiesPage() {
   return (
     <main className="min-h-screen bg-stone-50 text-slate-800">
-      <section className="bg-green-950 py-20 text-white sm:py-24">
-        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-orange-300">
+      <section className="relative isolate flex min-h-[360px] w-full items-center justify-center overflow-hidden bg-slate-900 px-4 py-14 text-white sm:min-h-[420px] sm:px-6 sm:py-16 lg:aspect-[2.81/1] lg:min-h-[430px] lg:px-8 lg:py-20">
+        <Image
+          src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2d1cc31a-a93d-4e1e-85c0-aaefc5c2b49d-chp-camp-activities-header-q85.jpg"
+          alt="Himalayan holiday camp at golden hour"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_52%]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-slate-950/10 via-slate-950/25 to-slate-950/45"
+        />
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-orange-300 sm:mb-5 sm:text-sm">
             CHP Holiday Camp
           </p>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-full text-[clamp(2.25rem,4.3vw,4.75rem)] font-bold leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.22)]">
             Holiday Camp Activities
           </h1>
-          <div className="mt-6 flex items-center justify-center gap-3 text-orange-200">
+          <div aria-hidden="true" className="mt-7 h-[3px] w-[88px] rounded-full bg-orange-400 sm:mt-8 sm:w-[100px]" />
+          <div className="mt-4 flex items-center justify-center gap-3 text-orange-100/90">
             <ArrowDown className="h-4 w-4" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em]">Explore</span>
           </div>

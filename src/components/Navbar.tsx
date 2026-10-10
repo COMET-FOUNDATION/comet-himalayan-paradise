@@ -108,10 +108,10 @@ export function Navbar() {
   }, [menuOpen]);
 
   const navBg = scrolled
-    ? "bg-white/95 backdrop-blur-md shadow-md shadow-black/5"
+    ? "bg-white/95 backdrop-blur-xl shadow-sm shadow-green-950/10"
     : isHome
       ? "bg-transparent"
-      : "bg-white/95 backdrop-blur-md shadow-sm";
+      : "bg-white/95 backdrop-blur-xl shadow-sm shadow-green-950/10";
 
   const desktopText = isLight
     ? "text-slate-600 hover:text-slate-900"
@@ -124,7 +124,8 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-400",
+          "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-400",
+          isLight ? "border-slate-200/70" : "border-white/10",
           navBg
         )}
       >
@@ -420,7 +421,7 @@ export function Navbar() {
             transition={{
               duration: 0.2,
             }}
-            className="fixed inset-0 z-40 bg-white pt-16 px-6 overflow-y-auto"
+            className="fixed inset-0 z-40 overflow-y-auto bg-[#f8f7f3] px-6 pt-16"
           >
             <ul className="flex flex-col gap-1 py-6">
               {/* Home + About */}
