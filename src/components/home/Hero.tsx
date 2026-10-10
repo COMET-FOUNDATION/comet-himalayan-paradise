@@ -70,7 +70,7 @@ export function Hero() {
           opacity: contentOpacity,
           y: contentY,
         }}
-        className="relative z-10 -top-[1.5cm] flex h-full flex-col items-center justify-start px-4 pt-16 text-center sm:px-6 sm:pt-20 md:pt-24 lg:pt-28"
+        className="relative z-10 -top-6 flex h-full flex-col items-center justify-start px-4 pt-20 text-center sm:-top-8 sm:px-6 sm:pt-24 md:pt-28 lg:pt-32"
       >
         {/* =====================================================
             EYEBROW
@@ -111,7 +111,7 @@ export function Hero() {
           Gateway to Himalayan Living
           <br />
           and{" "}
-          <span className="bg-gradient-to-r from-sky-400 via-emerald-300 to-sky-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-200 via-white to-orange-100 bg-clip-text text-transparent">
             Entrepreneurship
           </span>
         </motion.h1>

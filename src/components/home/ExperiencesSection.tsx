@@ -66,7 +66,7 @@ export function ExperiencesSection() {
           </h2>
 
           {/* Subtitle - One Line */}
-          <p className="mt-3 text-sm lg:text-base text-slate-600 whitespace-nowrap">
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 lg:text-base">
             Go Beyond Destinations. See the Himalayas. Feel the Himalayas.
             Discover the Himalayan Experience.
           </p>
