@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { campActivityCatalog, getCampActivityBySlug } from "@/data/campActivities";
 
 interface Props {
@@ -36,33 +36,28 @@ export default async function CampActivityDetailPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-stone-50 text-slate-800">
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-          <Link
-            href="/camp-activities"
-            className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-green-900 transition-colors hover:text-green-700"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to all activities
-          </Link>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-orange-600">
-            {activity.group}
-          </p>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+      <section className="relative mt-[72px] h-[52vh] min-h-[380px] max-h-[640px] w-full overflow-hidden bg-black sm:h-[56vh] sm:min-h-[420px]">
+        <Image
+          src={activity.headerImage}
+          alt={activity.title}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/35 to-black/10" />
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+          <h1 className="max-w-5xl break-words text-[34px] font-bold leading-[1.08] tracking-tight text-white sm:text-[44px] md:text-[54px] xl:text-[64px]">
             {activity.title}
           </h1>
+          <p className="mx-auto mt-4 max-w-3xl text-[17px] font-medium leading-relaxed text-white/90 sm:text-xl">
+            {activity.description}
+          </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_10px_30px_rgba(15,23,42,0.04)] sm:p-8">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">Experience</p>
-          <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            {activity.description}
-          </p>
-        </div>
-
-        <div className="mt-10">
+        <div>
           <div className="mb-6 flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
               <ArrowRight className="h-4 w-4" />

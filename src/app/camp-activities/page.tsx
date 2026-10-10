@@ -40,7 +40,7 @@ export default function CampActivitiesPage() {
                   >
                     <div className="relative aspect-[16/9] overflow-hidden bg-stone-100">
                       <Image
-                        src={activity.image}
+                        src={activity.thumbnailImage}
                         alt={activity.title}
                         fill
                         sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"

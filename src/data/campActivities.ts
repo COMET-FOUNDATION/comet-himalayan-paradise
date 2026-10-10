@@ -1,8 +1,8 @@
 export type CampActivity = { title: string; description: string; image: string };
-export type CampCategory = { title: string; description: string; image: string; activities: CampActivity[] };
+export type CampCategory = { title: string; description: string; thumbnailImage: string; headerImage: string; image: string; activities: CampActivity[] };
 
 type SourceActivity = Pick<CampActivity, "title" | "image">;
-type SourceCategory = Omit<CampCategory, "activities"> & { activities: SourceActivity[] };
+type SourceCategory = Omit<CampCategory, "activities" | "thumbnailImage" | "headerImage"> & { activities: SourceActivity[] };
 
 export const categorySlug = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
@@ -102,65 +102,85 @@ const sourceCategories: SourceCategory[] = [
     { title: "Jalebi Chase", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/8675c9b3-a7b6-4e31-a9f0-44848d9b27a9-scaled-jalebi-chase.webp" },
     { title: "Lemon spoon race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/81a43ce8-4133-4023-ae9f-bc478238b356-scaled-lemon-spoon-race.webp" },
   ] },
-  { title: "Blindfold Courses", description: "Practice trust, awareness, and teamwork while navigating sensory challenges.", image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80", activities: [
-    { title: "Blindfold Catch Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b64150a1-157b-4de0-9524-9259a0c23f3f-scaled-blindfold-catch-game-trial.webp" },
-    { title: "Blindfold Trust Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b5f3873b-b36b-420c-a93d-8a7d89167ca9-scaled-blindfold-trust-walk-trial.webp" },
-    { title: "Trust Crawl", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/78c5f320-b44a-461a-a60c-c79d345d6e3f-scaled-trust-crawl.webp" },
-    { title: "Blindfold Drawing", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a59dd5bf-09a4-40ca-a3b1-8a59e5a6726e-scaled-blindfold-drawing.webp" },
-    { title: "Find Your Team", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/52e5f0a5-ea9c-43b4-8ca7-9db4a465353a-scaled-find-your-team.webp" },
-    { title: "Minefield Crossing", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a27ad813-4fe2-476d-ae83-5589ab9d1d00-scaled-mindfield-crossing.webp" },
-    { title: "Blind Search Adventure", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4ef7d4be-f09c-4212-975f-10f5793ab2b0-scaled-blindfold-seacrh-adventure.webp" },
+  { title: "Blindfold Challenges", description: "Practice trust, awareness, and teamwork while navigating sensory challenges.", image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80", activities: [
+    { title: "Guess the Object", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5e2f46b5-cd6f-427d-8285-b7aee7261331-scaled-guess-the-object.webp" },
+    { title: "Blindfold Trust Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b68aae28-57af-461a-a446-77e12af2a567-scaled-team-trust-walk.webp" },
+    { title: "Trust Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5b4b9518-42c8-4e75-a2bb-b56620c447e7-scaled-trust-walk.webp" },
+    { title: "Blind Catch Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/23cdda25-3e55-4d91-a152-c74c8b826659-scaled-blind-catch-challenge.webp" },
+    { title: "Blindfold Ball Transfer Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/a92dc199-5929-47a5-90d9-2a3261eb0688-scaled-blindfold-ball-transfer-challenge.webp" },
+    { title: "Blindfold obstacle walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/cf998d17-cc74-4689-a652-7d62f540de7f-scaled-blindfold-obstacle-walk.webp" },
+    { title: "Blindfold sorting", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/665b3d6d-b418-45de-b003-39a3c5f5c321-scaled-blindfold-sorting.webp" },
+    { title: "Blindfold Treasure Hunt", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/693fa0a7-0414-4767-821d-c9f61de65476-scaled-blindfold-treasure-hunt.webp" },
+    { title: "Blindfolded Team Hunt", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/30e16db2-fe01-47c1-95ad-129d19a1727a-scaled-blindfolded-team-hunt.webp" },
+    { title: "Blindfold Cup Stack", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/253ce275-eb66-4223-b7d8-46fbcebcfb98-scaled-blindfold-cup-stack.webp" },
+
   ] },
-  { title: "Balloon Olympic", description: "Take on bright, bouncy, and delightfully competitive balloon challenges.", image: activityPhotos.balloon, activities: [
-    { title: "Balloon Stomp Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b2c75741-b9a1-41f0-b3f9-1b31f629422a-scaled-balloon-stomp-race.webp" },
-    { title: "Balloon Volley Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b6af026-4c50-4067-a424-09b6a704de77-scaled-balloon-volley-game.webp" },
-    { title: "Balloon Balance Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/3cbdd33a-26bf-4d6f-ada8-406cfe4cb06a-scaled-balloon-stack.webp" },
-    { title: "Balloon Relay Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/91f9ff33-fe7c-4585-8056-66cc5845d3ad-scaled-balloon-relay-race.webp" },
-    { title: "Balloon Kick and Pack Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ddcf0a69-8070-442c-a844-13522caa69e5-scaled-kick-balloon-race.webp" },
-    { title: "Full Body Balloon Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e2fde7e7-ff0a-4c57-90c7-3a815410d287-scaled-full-body-balloon-race.webp" },
-    { title: "Balloon Pin and Pop", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f58b75c5-6c30-4d3d-bbd5-67f0b55e959a-scaled-balloon-pin-and-pop.webp" },
-    { title: "Balloon Football", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/367cd45d-2ad3-41af-8d95-423a129b12d2-scaled-balloon-football.webp" },
-    { title: "Balloon Crush Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e36f6863-c77e-4116-82a2-4015885a3674-scaled-balloon-crush-game.webp" },
+  { title: "Balloon Olympics", description: "Take on bright, bouncy, and delightfully competitive balloon challenges.", image: activityPhotos.balloon, activities: [
+    { title: "Balloon Stomp Battle", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4e8e074c-9797-435b-96bc-8140b6bc7cfa-scaled-balloon-stomp-battle.webp" },
+    { title: "Balloon Volleyball", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7418c79d-7901-4c60-8fe1-eab1ab2ac27a-scaled-balloon-volleyball.webp" },
+    { title: "Forehead Balloon Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/82acf5b9-e10a-40a3-94ea-d8cd7b160e45-scaled-forehead-balloon-walk.webp" },
+    { title: "Keep It Flying", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/9d4b8186-79f5-42d8-a895-8fe635b64003-scaled-keep-it-flying.webp" },
+    { title: "Sit & Pop Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/d066685f-67e6-45aa-b64b-bc9105e7d995-scaled-sit-pop-challenge.webp" },
+    { title: "Water Balloon Transfer", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4f1a2247-e1fc-4646-a886-4d7fb4cb1dda-scaled-water-balloon-transfer.webp" },
+    { title: "Balloon Balance Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/d3a548b4-29e0-4f94-a33a-193166216089-scaled-balloon-balance-challenge.webp" },
+    { title: "Balloon Pass Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/6081d756-e1ed-40db-b4b5-e21d44412934-scaled-balloon-pass-relay.webp" },
+    { title: "Balloon Shuttle Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/75457f33-4cb4-471d-8578-af8a7c1cc6e7-scaled-balloon-shuttle-relay.webp" },
+    { title: "Balloon Survival Squad", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/61f3e23d-8a94-441a-b753-0985eeb42916-scaled-balloon-survival-squad.webp" },
+    { title: "Balloon Target Blast", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5d2b1b7f-1e8f-462e-b913-12d93f713563-scaled-balloon-target-blast.webp" },
+    { title: "Balloon tower challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/34ba3830-2bc8-4704-8afa-37dea6b3ce54-scaled-balloon-tower-challenge.webp" },
+    { title: "Elbow to elbow relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7233aeae-14fd-4e75-ae5e-09d1d4b057e4-scaled-elbow-to-elbow-relay.webp" },
+    { title: "Musical Balloon Pass", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/33d96a7c-1bbd-4755-ba33-df1b97b1dae7-scaled-musical-balloon-pass.webp" },
+    { title: "Back-to-Back Balloon Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b47fcfbe-a431-493d-a3cf-27a977888445-scaled-back-to-back-balloon-race.webp" },
+
   ] },
-  { title: "Water Games", description: "Cool off with splashy relays and water-filled challenges under the open sky.", image: activityPhotos.water, activities: [
-    { title: "Sponge Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/a5c0df4c-28b9-4927-aebc-542fc5380c7f-screenshot-2026-09-24-075050.png" },
-    { title: "Two-Person Water Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/1d8da5bd-692f-4931-b4d5-2212302ebe42-screenshot-2026-09-24-075243.png" },
-    { title: "Water Basket", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/b321d6e5-0ea3-493b-a46f-e4f300642163-screenshot-2026-09-24-075124.png" },
-    { title: "Balloon Crush Race Style", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/9394b798-76b4-4b90-9203-95f9fff7a991-screenshot-2026-09-24-074756.png" },
-    { title: "Water Bucket Relay Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/39a19c7b-d01f-4bd2-9be0-7ac461277fc4-screenshot-2026-09-24-075419.png" },
-    { title: "Back Pass Water Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d9d147e3-8289-4ca1-9860-fa421908c671-screenshot-2026-09-24-074931.png" },
-    { title: "Hanging Balloon Pop", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/b999a8d2-726e-44b9-a3f3-eae8431731ec-screenshot-2026-09-24-075510.png" },
-    { title: "Sip and Spill", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/7e2d813a-dc83-49cd-8eb2-b7d17e1c013f-screenshot-2026-09-24-075339.png" },
+  { title: "Aqua Olympics", description: "Cool off with splashy relays and water-filled challenges under the open sky.", image: activityPhotos.water, activities: [
+    { title: "Water Transfer Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/c4151c1e-c5af-48c8-ac38-d57b79ce95ed-scaled-water-transfer-challenge.webp" },
+    { title: "Sponge Water Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7094e91b-0ec2-4752-bf20-3e134d35fc63-scaled-sponge-water-race.webp" },
+    { title: "Water Balance Challenge Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/841a150d-0e15-4460-8469-70d33d6a51d1-scaled-water-balance-challenge-relay.webp" },
+    { title: "Water Balloon Spoon Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/90772e04-3ba9-4c3b-9bff-387f3ab58edb-scaled-water-balloon-spoon-race.webp" },
+    { title: "Water Cup Pyramid Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/1d586f7a-f657-47c6-b0ab-28baa8589c20-scaled-water-cup-pyramid-challenge.webp" },
+    { title: "Water Relay Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4b7a5206-ebe4-48d4-b70c-3e7f47ba4a7d-scaled-water-relay-challenge.webp" },
+    { title: "Water Tower Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/12fbe717-610f-465b-aa88-3a9214c59ef7-scaled-water-tower-challenge.webp" },
+    { title: "Bucket Relay Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/fed7f74b-85fb-4617-875e-6b060b67867d-scaled-bucket-relay-challenge.webp" },
+    { title: "Overhead Water Pass Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/fe6b6cf4-22dd-4729-a76e-b45e9dcd6823-scaled-overhead-water-pass-challenge.webp" },
+    { title: "Splash Dance Freeze", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/a2197787-94b6-4901-a491-03a54c27de4b-scaled-splash-dance-freeze.webp" },
+    { title: "Splash Target Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2146042c-089b-4abc-91d5-ed7338852f9c-scaled-splash-target-challenge.webp" },
+    { title: "Water Balloon Bowling", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4db382f1-1b1d-4d4e-a66e-b86953cbfdba-scaled-water-balloon-bowling.webp" },
+    { title: "Water Balloon Toss", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/6caa822f-eae0-489b-b5d2-a71871004586-scaled-water-balloon-toss.webp" },
   ] },
-  { title: "Rope Riders", description: "Test agility, courage, and coordination through active rope-course adventures.", image: activityPhotos.rope, activities: [
-    { title: "Rope Limbo Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/c09f9d77-ded5-42be-ac88-654a70c3d0ba-screenshot-2026-09-24-075927.png" },
-    { title: "Monkey Traverse Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/f00c18cb-a8f6-459f-83b6-84f4e1fbd1ee-screenshot-2026-09-24-080011.png" },
-    { title: "Rope Ladder Climb", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/4a4bdbb1-ebcb-49c1-bd04-586e847d4acc-screenshot-2026-09-24-080043.png" },
-    { title: "Tug of War", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/7827215f-308a-4163-8a0e-5f05163f3a9c-screenshot-2026-09-24-080111.png" },
-    { title: "Rope Maze", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/960e2808-480f-4b32-b9d4-aaf1c466feae-screenshot-2026-09-24-080135.png" },
-    { title: "Circle Rope Pull Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/55b93e7f-3456-45f1-b17a-41ca0dcd98d7-screenshot-2026-09-24-080201.png" },
-    { title: "Skipping Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/fc002e42-df51-4bf0-8db5-70e0b6cff357-screenshot-2026-09-24-080226.png" },
-    { title: "Net Crawl Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/8f089662-bbd2-451e-ac8a-18a26053124e-screenshot-2026-09-24-080257.png" },
-    { title: "Rope Crossing Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/6cf2ac77-3c2c-4605-8f92-2ac572c6255f-screenshot-2026-09-24-080324.png" },
+  { title: "Rope Olympics", description: "Test agility, courage, and coordination through active rope-course adventures.", image: activityPhotos.rope, activities: [
+    { title: "Rope Limbo Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/8c23e531-44bb-4543-958a-a8d550f9b692-scaled-rope-limbo-challenge.webp" },
+    { title: "Rope Ladder Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/e67313b2-c33b-4732-b0b3-ce41319a862f-scaled-rope-ladder-challenge.webp" },
+    { title: "Rope-Skipping Relay Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/38804f10-b14b-454d-bdcd-47c45ee7daee-scaled-rope-skipping-relay-challenge.webp" },
+    { title: "Four-Way Tug Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/90313b69-c96b-4edc-a4ea-fbc4af1256f3-scaled-four-way-tug-challenge.webp" },
+    { title: "Perfect Square Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/e6baf415-dbbc-40c3-a895-8d98bdf9b2c0-scaled-perfect-square-challenge.webp" },
+    { title: "Rope Climbing Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/158bb4c5-8015-4f3b-8640-d9230c57fb5d-scaled-rope-climbing-challenge.webp" },
+    { title: "Spider Web Crawl Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/777a294f-c9bc-412e-85bc-110b25c0fdd8-scaled-spider-web-crawl-challenge.webp" },
+    { title: "Spider Web Team Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/90766e19-a4c1-49c4-bf4b-f02ba556592f-scaled-spider-web-team-challenge.webp" },
+    { title: "Tug-of-War Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/98567f6a-c00f-49cf-8421-9796d1ae46d0-scaled-tug-of-war-challenge.webp" },
+    { title: "Double Trouble Jump", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7d01095d-35b1-4787-82de-360abcd43169-scaled-double-trouble-jump.webp" },
+    { title: "Monkey Traverse", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/f674a1e0-9c3f-4dcc-95e7-6a5c7060ab2f-scaled-monkey-traverse.webp" },
   ] },
-  { title: "Tyre Games", description: "Roll, stack, crawl, and race through high-energy challenges with a twist.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/55e42a3d-9832-42c3-abf2-c07dba6d7c07-scaled-chatgpt-image-sep-21-2026-09-01-19-am-compresso.webp", activities: [
-    { title: "Tyre Power Run", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c1a92905-60f0-440d-8725-4f1e543db577-scaled-chatgpt-image-sep-21-2026-08-59-48-am-compresso.webp" },
-    { title: "Tyre Clash Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e3fb949d-598f-49c5-977d-6c7c060f3ddf-scaled-chatgpt-image-sep-21-2026-08-58-34-am-compresso.webp" },
-    { title: "Tyre Grid Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/17cd823f-2f1c-4600-93f4-f0a06c9d5e75-scaled-chatgpt-image-sep-21-2026-08-53-12-am-compresso.webp" },
-    { title: "Tyre Crawl Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/76d61610-dde5-4e4a-94b7-937e7a7d2e03-scaled-chatgpt-image-sep-21-2026-08-54-27-am-compresso.webp" },
-    { title: "Tyre Rolling Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/983cc511-620c-4321-9b15-7f8095c2a3fa-scaled-chatgpt-image-sep-21-2026-08-56-31-am-compresso.webp" },
-    { title: "Tyre Stack Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f303bfac-ebe7-4eba-9a9d-152ed626ce6d-scaled-chatgpt-image-sep-21-2026-08-57-31-am-compresso.webp" },
+  { title: "Wheel Olympics", description: "Roll, stack, crawl, and race through high-energy challenges with a twist.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/55e42a3d-9832-42c3-abf2-c07dba6d7c07-scaled-chatgpt-image-sep-21-2026-09-01-19-am-compresso.webp", activities: [
+    { title: "Tyre Clash", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7be765db-9041-4b53-8fca-dded25752341-scaled-tyre-clash.webp" },
+    { title: "Wheel Goal Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/84da61fa-c1cd-4bc6-a501-186321aa8daf-scaled-wheel-goal-challenge.webp" },
+    { title: "Wheel Hurdle Dash", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/de3ebb2a-da25-41f3-ad09-4ee5165702ae-scaled-wheel-hurdle-dash.webp" },
+    { title: "Wheel Relay Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/3314e51a-0492-473d-986f-76c4388bbadf-scaled-wheel-relay-challenge.webp" },
+    { title: "Zigzag Wheel Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/22af598f-3606-4f0e-975b-d8bd8bba8b70-scaled-zigzag-wheel-race.webp" },
+    { title: "Commando Crawl Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2f565f89-1365-4c5e-8874-25db8942ff1d-scaled-commando-crawl-challenge.webp" },
+    { title: "Target Wheel Toss", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/51ef52d1-0dd4-4951-8873-91588c588924-scaled-target-wheel-toss.webp" },
+    { title: "Tyre Flip Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/241be0bb-fbc2-4156-89e7-36c1f2da8963-scaled-tyre-flip-challenge.webp" },
+    { title: "Tyre Rolling Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/e9e80031-d2d8-4b77-89e5-5caf4f94b6df-scaled-tyre-rolling-race.webp" },
+    { title: "Tyre Stack Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/44156d93-9b51-4d8f-abdc-d43e1a7171c3-scaled-tyre-stack-challenge.webp" },
   ] },
-  { title: "Creepy Crawly Race", description: "Get moving close to the ground with funny, fast, and inventive animal-inspired races.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/eddbbf06-ad7f-44f1-8498-7d1a48d24842-scaled-chatgpt-image-sep-21-2026-09-03-42-am-compresso.webp", activities: [
-    { title: "Chain Circle Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c4ff6069-bf79-4201-b5be-279ae80dbf1d-scaled-chatgpt-image-sep-21-2026-09-04-32-am-compresso.webp" },
-    { title: "Crab Walk Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7160f75e-a2a3-41ee-b664-7ef55f0a1612-scaled-chatgpt-image-sep-21-2026-09-05-34-am-compresso.webp" },
-    { title: "Linked Leg Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f5ff83ab-5ea8-42ed-b037-ef68e6dc033f-scaled-chatgpt-image-sep-21-2026-09-06-20-am-compresso.webp" },
-    { title: "Balloon Chain Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/9c277eb3-6c71-454a-907a-eeaea6555c04-scaled-chatgpt-image-sep-21-2026-09-07-29-am-compresso.webp" },
-    { title: "Backward Crawl Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/bbac1c5f-7505-4ce1-9344-370acf6141a9-scaled-chatgpt-image-sep-21-2026-09-08-17-am-compresso.webp" },
-    { title: "Caterpillar Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/94c09b46-21d2-435b-8776-1bd948a1c1b6-scaled-chatgpt-image-sep-21-2026-09-11-01-am-compresso.webp" },
-    { title: "Frog Jump Crawl", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/dec4600c-38e7-4819-bf54-ac068cc323ff-scaled-chatgpt-image-sep-21-2026-09-12-51-am-compresso.webp" },
+  { title: "Crawl Olympics", description: "Get moving close to the ground with funny, fast, and inventive animal-inspired races.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/eddbbf06-ad7f-44f1-8498-7d1a48d24842-scaled-chatgpt-image-sep-21-2026-09-03-42-am-compresso.webp", activities: [
+    { title: "Backward Crawl Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/6f0a3849-11ea-4ded-9e51-838fdd127be0-scaled-backward-crawl-challenge.webp" },
+    { title: "Caterpillar Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/ce1c3b4e-2316-431f-9f6f-a8b20b4b5632-scaled-caterpillar-race.webp" },
+    { title: "Crab Walk Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/615b01ed-e607-485b-abfb-83857dbbfc2c-scaled-crab-walk-challenge.webp" },
+    { title: "Crazy Circle Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/dfd02f0c-28fb-47ff-a9e6-14e9279d56fd-scaled-crazy-circle-walk.webp" },
+    { title: "Crazy Croakers Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4d12469b-63b8-409d-bb03-3c4d7257e3a7-scaled-crazy-croakers-race.webp" },
   ] },
-  { title: "Toss and Shot", description: "Focus, aim, and play your way through skill-based target challenges.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/37aaf07c-da1f-49fe-8434-ee4e1875448b-scaled-chatgpt-image-sep-21-2026-09-14-21-am-compresso.webp" , activities: [
+  { title: "Target Warriors", description: "Focus, aim, and play your way through skill-based target challenges.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/37aaf07c-da1f-49fe-8434-ee4e1875448b-scaled-chatgpt-image-sep-21-2026-09-14-21-am-compresso.webp" , activities: [
     { title: "Aim & Blast", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c53ecd29-9398-401b-9e46-2b4cb7a7b9dd-scaled-chatgpt-image-sep-21-2026-09-15-11-am-compresso.webp" },
     { title: "Toss the Ring", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c2003df5-6ae5-4613-8376-a620e05b66a8-scaled-chatgpt-image-sep-21-2026-09-16-27-am-compresso.webp" },
     { title: "Basket Battle", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f7205faf-6c67-4d65-848c-a556e5d381fe-scaled-chatgpt-image-sep-21-2026-09-17-44-am-compresso.webp" },
@@ -241,7 +261,33 @@ function activityDescription(title: string, category: SourceCategory) {
   return `${title} is a guided ${category.title.toLowerCase()} activity designed for participation, connection, and a memorable camp moment.`;
 }
 
-const campActivityPageImages: Record<string, string> = {
+const campActivityHeaderImages: Record<string, string> = {
+  "Ice Breakers": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a7bde7d-120f-4df4-b34d-5ddfaac8dcbd-ice-breakers-header.jpg",
+  Communication: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5a3e8793-be50-44df-997c-7d919f37fc64-communication-header.jpg",
+  "Cultural & Social": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f5fc3403-8124-4bf1-acbe-0521ba1dbc0c-cultural-social-header.jpg",
+  "Smart Memory": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/df49141e-d926-4e0d-986a-88b2b84d2bc9-smart-memory-header.jpg",
+  "Problem Solving": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2c8bf66e-3ffd-4469-af49-a780c071c086-problem-solving-header.jpg",
+  Creativity: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fd25f500-2b42-48f8-9183-bdbb45d8e6a1-creativity-header.jpg",
+  Mindfulness: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/28be01fa-3e52-405c-9ac4-6f3c5ec767da-mindfulness-header.jpg",
+  "Team Building": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/14eefa7f-c26b-4634-9341-25d2d15816b6-team-building-header.jpg",
+  "Blindfold Challenges": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fb4badad-bab8-4905-85b4-621c103f8eb5-blindfold-challenges-header.jpg",
+  "Rope Olympics": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7005f5e5-4bfa-4adb-9471-0ff309931a7f-rope-olympics-header.jpg",
+  "Wheel Olympics": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fc7b020b-9114-4b97-ae9c-08d1d3539e6a-wheel-olympics-header.jpg",
+  "Race – The Speed Circuit": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fe05ecf7-8fa0-4d8d-91ef-4dfb48669cc7-race-speed-circuit-header.jpg",
+  "Balloon Olympics": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ad6cbd05-24a8-4b38-b48f-3e751ade04c5-balloon-olympics-header.jpg",
+  "Aqua Olympics": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/fddb5d0e-130b-4c6e-93e2-43754eb81c1d-aqua-olympics-header.jpg",
+  "Crawl Olympics": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b2c5eb5b-70f4-4893-ad06-16b38a6c0131-crawl-olympics-header.jpg",
+  "Target Warriors": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ccd5fefc-5d79-419d-a2ce-a39779ee0aa8-target-warriors-header.jpg",
+  "Flour Coin Fun Game": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/7cc5d66b-e5df-406a-9abb-28d0adc32e9e-flour-coin-fun-game-header.jpg",
+  "Desi Khel": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c530e58a-756d-4175-a486-f0818cc5654d-desi-khel-header.jpg",
+  "Musical Arena": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6b46afdb-2a43-4b62-90a3-ee48c784f2b5-musical-arena-header.jpg",
+  "Evening Campfire": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4d2c5f5f-f5d6-4fb4-872f-676382eb34ff-evening-campfire-header.jpg",
+  "Closing Ceremony": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ee64a27e-19f6-4cd0-ac07-85fe3d380e8d-closing-ceremony-header.jpg",
+  "STEM Discovery Zone": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/86303525-5fe7-4c0d-9bd2-a48e98b55c43-stem-discovery-zone-header.jpg",
+  "Himalayan Adventure Games": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8cf02867-c636-40c3-aa6a-7221bd499301-himalayan-adventure-games-header.jpg",
+};
+
+const campActivityThumbnailImages: Record<string, string> = {
   "Ice Breakers": "/images/camp-activities/ice-breakers.webp",
   Communication: "/images/camp-activities/communication.webp",
   "Smart Memory": "/images/camp-activities/smart-memory.webp",
@@ -252,13 +298,13 @@ const campActivityPageImages: Record<string, string> = {
   "Team Building": "/images/camp-activities/team-building.webp",
   "Cultural & Social": "/images/camp-activities/cultural-social.webp",
   "Race – The Speed Circuit": "/images/camp-activities/race-the-speed-circuit.webp",
-  "Blindfold Courses": "/images/camp-activities/blindfold-courses.webp",
-  "Balloon Olympic": "/images/camp-activities/balloon-olympic.webp",
-  "Water Games": "/images/camp-activities/water-games.webp",
-  "Rope Riders": "/images/camp-activities/rope-riders.webp",
-  "Tyre Games": "/images/camp-activities/tyre-games.webp",
-  "Creepy Crawly Race": "/images/camp-activities/creepy-crawly-race.webp",
-  "Toss & Shot": "/images/camp-activities/toss-and-shot.webp",
+  "Blindfold Challenges": "/images/camp-activities/blindfold-courses.webp",
+  "Balloon Olympics": "/images/camp-activities/balloon-olympic.webp",
+  "Aqua Olympics": "/images/camp-activities/water-games.webp",
+  "Rope Olympics": "/images/camp-activities/rope-riders.webp",
+  "Wheel Olympics": "/images/camp-activities/tyre-games.webp",
+  "Crawl Olympics": "/images/camp-activities/creepy-crawly-race.webp",
+  "Target Warriors": "/images/camp-activities/toss-and-shot.webp",
   "Himalayan Adventure Games": "/images/camp-activities/himalayan-adventure-sports.webp",
   "Musical Arena": "/images/camp-activities/musical-arena.webp",
   "Flour Coin Fun Game": "/images/camp-activities/flour-coin-fun-game.webp",
@@ -269,7 +315,14 @@ const campActivityPageImages: Record<string, string> = {
 
 const normalizedCategoryTitleMap: Record<string, string> = {
   "Race - The Speed Circuit": "Race – The Speed Circuit",
-  "Toss and Shot": "Toss & Shot",
+  "Blindfold Courses": "Blindfold Challenges",
+  "Balloon Olympic": "Balloon Olympics",
+  "Water Games": "Aqua Olympics",
+  "Creepy Crawly Race": "Crawl Olympics",
+  "Rope Riders": "Rope Olympics",
+  "Tyre Games": "Wheel Olympics",
+  "Toss and Shot": "Target Warriors",
+  "Toss & Shot": "Target Warriors",
   "Himalayan Adventure Sports": "Himalayan Adventure Games",
 };
 
@@ -277,12 +330,14 @@ const normalizeCategoryTitle = (title: string) => normalizedCategoryTitleMap[tit
 
 export const campCategories: CampCategory[] = sourceCategories.map((category) => {
   const title = normalizeCategoryTitle(category.title);
-  const image = campActivityPageImages[title];
-  if (!image) throw new Error(`Missing PDF image for camp activity category: ${title}`);
+  const headerImage = campActivityHeaderImages[title];
+  if (!headerImage) throw new Error(`Missing header image for camp activity category: ${title}`);
+  const thumbnailImage = campActivityThumbnailImages[title];
+  if (!thumbnailImage) throw new Error(`Missing thumbnail image for camp activity category: ${title}`);
 
-  const categoryWithPdfImage = { ...category, title, image };
+  const categoryWithImages = { ...category, title, thumbnailImage, headerImage };
   return {
-    ...categoryWithPdfImage,
+    ...categoryWithImages,
     activities: category.activities.map((activity) => ({
       ...activity,
       description: activityDescription(activity.title, category),
@@ -312,19 +367,19 @@ const requiredCampActivityGroups = [
     title: "Team & Challenge",
     activities: [
       "Team Building",
-      "Blindfold Courses",
-      "Rope Riders",
-      "Tyre Games",
+      "Blindfold Challenges",
+      "Rope Olympics",
+      "Wheel Olympics",
     ],
   },
   {
     title: "Fun & Games Arena",
     activities: [
       "Race – The Speed Circuit",
-      "Balloon Olympic",
-      "Water Games",
-      "Creepy Crawly Race",
-      "Toss & Shot",
+      "Balloon Olympics",
+      "Aqua Olympics",
+      "Crawl Olympics",
+      "Target Warriors",
       "Flour Coin Fun Game",
       "Desi Khel",
     ],
