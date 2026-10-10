@@ -2,6 +2,7 @@
 
 import { useState, Suspense } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 import {
@@ -21,10 +22,10 @@ import {
 } from "lucide-react";
 
 /* ─── Tab definitions ────────────────────────────────────────────── */
-type TabId = "query" | "journey" | "cottage" | "dreamspace" | "camp";
+type TabId = "query" | "journey" | "cottage" | "dreamspace";
 
 interface Tab {
-  id: TabId;
+  id: TabId | "camp";
   label: string;
   icon: React.ReactNode;
   shortLabel: string;
@@ -520,133 +521,6 @@ function DreamSpaceTab() {
   );
 }
 
-/* ─── Tab: Book for Holiday Camp ────────────────────────────────── */
-const campDurations = [
-  "1 Day", "2 Days", "3 Days", "Weekend (2N/3D)",
-  "5 Days", "7 Days", "10 Days", "15 Days", "30+ Days",
-];
-
-const campAgeGroups = ["Children (5–12)", "Teenagers (13–17)", "Adults", "Family", "Senior Citizens"];
-
-function CampTab() {
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", groupSize: "",
-    duration: "", ageGroup: "", dates: "", requirements: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setSubmitted(true);
-    setLoading(false);
-  };
-
-  if (submitted) return <SuccessState onReset={() => setSubmitted(false)} />;
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div>
-        <h2 className="text-slate-800 text-xl font-bold mb-1">Book Your Holiday Camp</h2>
-        <p className="text-slate-400 text-sm">
-          Tell us about your group and we&apos;ll plan the perfect Himalayan camp experience.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label className={labelCls}>Full Name *</label>
-          <input required type="text" value={form.name}
-            onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-            placeholder="Your name" className={inputCls} />
-        </div>
-        <div>
-          <label className={labelCls}>Email Address *</label>
-          <input required type="email" value={form.email}
-            onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-            placeholder="your@email.com" className={inputCls} />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label className={labelCls}>Phone Number *</label>
-          <input required type="tel" value={form.phone}
-            onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-            placeholder="+91 XXXXX XXXXX" className={inputCls} />
-        </div>
-        <div>
-          <label className={labelCls}>Group Size</label>
-          <select value={form.groupSize}
-            onChange={(e) => setForm((f) => ({ ...f, groupSize: e.target.value }))}
-            className={inputCls}>
-            <option value="">Select size</option>
-            <option>Solo</option>
-            <option>2–4 People</option>
-            <option>5–10 People</option>
-            <option>11–20 People</option>
-            <option>20+ People</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label className={labelCls}>Age Group</label>
-        <div className="flex flex-wrap gap-2">
-          {campAgeGroups.map((ag) => (
-            <button key={ag} type="button"
-              onClick={() => setForm((f) => ({ ...f, ageGroup: f.ageGroup === ag ? "" : ag }))}
-              className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${
-                form.ageGroup === ag
-                  ? "bg-green-900 text-white border-green-900"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
-              }`}>
-              {ag}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <label className={labelCls}>Camp Duration</label>
-        <div className="flex flex-wrap gap-2">
-          {campDurations.map((d) => (
-            <button key={d} type="button"
-              onClick={() => setForm((f) => ({ ...f, duration: f.duration === d ? "" : d }))}
-              className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${
-                form.duration === d
-                  ? "bg-green-900 text-white border-green-900"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
-              }`}>
-              {d}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <label className={labelCls}>Preferred Dates</label>
-        <input type="text" value={form.dates}
-          onChange={(e) => setForm((f) => ({ ...f, dates: e.target.value }))}
-          placeholder="e.g. Dec 20–25 or flexible" className={inputCls} />
-      </div>
-
-      <div>
-        <label className={labelCls}>Special Requirements</label>
-        <textarea rows={3} value={form.requirements}
-          onChange={(e) => setForm((f) => ({ ...f, requirements: e.target.value }))}
-          placeholder="Dietary needs, accessibility, specific activities, etc."
-          className={`${inputCls} resize-none`} />
-      </div>
-
-      <SubmitButton loading={loading} label="Book My Holiday Camp" />
-      <FooterNote />
-    </form>
-  );
-}
-
 /* ─── Shared sub-components ──────────────────────────────────────── */
 function SubmitButton({ loading, label }: { loading: boolean; label: string }) {
   return (
@@ -679,7 +553,7 @@ function FooterNote() {
 function ContactPageInner() {
   const searchParams = useSearchParams();
   const initialTab = (searchParams.get("tab") as TabId) ?? "query";
-  const validTabs: TabId[] = ["query", "journey", "cottage", "dreamspace", "camp"];
+  const validTabs: TabId[] = ["query", "journey", "cottage", "dreamspace"];
   const [activeTab, setActiveTab] = useState<TabId>(
     validTabs.includes(initialTab) ? initialTab : "query"
   );
@@ -689,7 +563,6 @@ function ContactPageInner() {
     journey: <JourneyTab />,
     cottage: <CottageTab />,
     dreamspace: <DreamSpaceTab />,
-    camp: <CampTab />,
   };
 
   return (
@@ -867,18 +740,30 @@ function ContactPageInner() {
                 {/* Tab bar */}
                 <div className="flex border-b border-slate-100 overflow-x-auto">
                   {tabs.map((tab) => (
-                    <button
-                      key={tab.id}
-                      onClick={() => setActiveTab(tab.id)}
-                      className={`flex items-center gap-1.5 px-4 py-4 text-xs font-semibold whitespace-nowrap transition-colors border-b-2 -mb-px ${activeTab === tab.id
-                          ? "border-green-800 text-green-800"
-                          : "border-transparent text-slate-400 hover:text-slate-700"
-                        }`}
-                    >
-                      {tab.icon}
-                      <span className="hidden sm:inline">{tab.label}</span>
-                      <span className="sm:hidden">{tab.shortLabel}</span>
-                    </button>
+                    tab.id === "camp" ? (
+                      <Link
+                        key={tab.id}
+                        href="/camp-activities/book?type=stay"
+                        className="flex items-center gap-1.5 border-b-2 border-transparent px-4 py-4 text-xs font-semibold whitespace-nowrap text-slate-400 transition-colors hover:text-slate-700"
+                      >
+                        {tab.icon}
+                        <span className="hidden sm:inline">{tab.label}</span>
+                        <span className="sm:hidden">{tab.shortLabel}</span>
+                      </Link>
+                    ) : (
+                      <button
+                        key={tab.id}
+                        onClick={() => { if (tab.id !== "camp") setActiveTab(tab.id); }}
+                        className={`flex items-center gap-1.5 border-b-2 -mb-px px-4 py-4 text-xs font-semibold whitespace-nowrap transition-colors ${activeTab === tab.id
+                            ? "border-green-800 text-green-800"
+                            : "border-transparent text-slate-400 hover:text-slate-700"
+                          }`}
+                      >
+                        {tab.icon}
+                        <span className="hidden sm:inline">{tab.label}</span>
+                        <span className="sm:hidden">{tab.shortLabel}</span>
+                      </button>
+                    )
                   ))}
                 </div>
 

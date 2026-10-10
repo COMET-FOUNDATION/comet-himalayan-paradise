@@ -102,7 +102,7 @@ export default async function CampActivityDetailPage({ params }: Props) {
               Camp activities
             </Link>
             <Link
-              href="/contact"
+              href={`/camp-activities/book?activity=${activity.slug}`}
               className="inline-flex min-h-12 items-center justify-center rounded-full border border-green-900 bg-white px-6 py-3 text-sm font-semibold text-green-900 transition-colors hover:bg-green-50"
             >
               Book a Camp Activity
