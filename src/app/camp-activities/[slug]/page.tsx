@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 import { campActivityCatalog, getCampActivityBySlug } from "@/data/campActivities";
+import ClosingCeremonyPage from "@/components/camp-activities/ClosingCeremonyPage";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,6 +33,10 @@ export default async function CampActivityDetailPage({ params }: Props) {
 
   if (!activity) {
     notFound();
+  }
+
+  if (slug === "closing-ceremony") {
+    return <ClosingCeremonyPage />;
   }
 
   return (
