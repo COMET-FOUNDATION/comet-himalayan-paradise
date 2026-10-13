@@ -26,17 +26,20 @@ const activityPhotos: Record<string, string> = {
 const sourceCategories: SourceCategory[] = [
   { title: "Ice Breakers", description: "Warm up, meet new friends, and start the camp with easy, laughter-filled challenges.", image: activityPhotos.default, activities: [
     { title: "Know Me Better", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/949a7b6a-5f6a-4549-9034-f9214d0c7a66-scaled-know-me-better-icebreaker-poster.webp" },
-    { title: "Name Chain Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/172f6633-03a0-45be-bca7-dd01f606b3b8-scaled-name-chain-challenge.webp" },
+    { title: "Name Chain challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/172f6633-03a0-45be-bca7-dd01f606b3b8-scaled-name-chain-challenge.webp" },
     { title: "Silent Line-Up", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/41cfc071-9bdb-4719-ab63-004b34834623-scaled-silent-line-up.webp" },
     { title: "Human Bingo", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/87ee1cea-4c7f-4a0f-adac-c06f8fc6d2b5-scaled-human-bingo.webp" },
     { title: "Rapid Fire Introduction", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/08482130-fdc1-47a0-a86b-d9dc92ac5ad1-scaled-rapid-fire-introduction.webp" },
+    { title: "Two truth and a lie", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b805f5d8-43a4-42a7-807d-6e78a3f8adc7-two-truth-and-a-lie.png" },
   ] },
   { title: "Communication", description: "Build listening, expression, and connection through playful group communication games.", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80", activities: [
     { title: "Pahadi shabd khel", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/609b6fd6-d33b-4bf8-a52b-76066ab30cb5-scaled-pahadi-shabd-khel.webp" },
     { title: "Dumb Charades", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f7b205d1-1c8e-4c6e-af47-a690ba16a342-scaled-dumb-charades.webp" },
     { title: "whisper challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/1d19d8f2-fd11-4163-b10b-826e62c68d01-scaled-whisper-challenge.webp" },
     { title: "Listen and Draw", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/88cbcc3a-312b-451c-9148-012efb911f76-scaled-listen-and-draw.webp" },
-    { title: "Introduce Your Friend", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/75d52fb6-1c46-443c-a82d-cbf1b37f43a0-scaled-meet-my-buddy.webp" },
+    { title: "Meet my buddy", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/75d52fb6-1c46-443c-a82d-cbf1b37f43a0-scaled-meet-my-buddy.webp" },
+    { title: "Draw by description", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/c036beeb-3078-43e9-8552-1ed246d72fcd-scaled-draw-by-description.webp" },
+    
   ] },
   { title: "Smart Memory", description: "Sharpen observation and recall with engaging games that make every detail count.", image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80", activities: [
     { title: "Guess What Changed", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d3c64ff4-4daa-41a2-9c41-9739f3a03b6d-scaled-guess-what-changed.webp" },
@@ -50,26 +53,32 @@ const sourceCategories: SourceCategory[] = [
   { title: "Problem Solving", description: "Put curious minds to work with clues, patterns, puzzles, and collaborative challenges.", image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80", activities: [
     { title: "Eagle Eyes", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/34f7e5bb-051f-4c03-8068-3ba5b87ac3fe-scaled-eagle-eyes.webp" },
     { title: "Impossible race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/8bbd85fc-7ced-4540-bd92-9ff8ef94f055-scaled-impossible-race.webp" },
-    { title: "Decision Making Scenarios", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/cf578bf2-5ee9-4796-8391-d05f9e61f90a-scaled-smart-decisions-challenge.webp" },
-    { title: "Find Shortest Path", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6f07b08e-97b0-43d1-b1ea-61f93d44ab06-scaled-the-lost-tracker.webp" },
-    { title: "Treasure Hunt with Clues", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/06890fd8-f2d2-4bb7-818d-05979f67bc1a-scaled-the-great-clue-treasure-hunt.webp" },
-    { title: "Riddle Solving Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b7a1690f-8618-4b8d-88ff-79829c3a6e1f-scaled-the-riddle-challenge.webp" },
+    { title: "Smart decision challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/cf578bf2-5ee9-4796-8391-d05f9e61f90a-scaled-smart-decisions-challenge.webp" },
+    { title: "Shortest Path Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/6070c1f7-dd76-43b8-963c-08665aff10ff-scaled-shortest-path-challenge.webp" },
+    { title: "The great clue treasure hunt", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/06890fd8-f2d2-4bb7-818d-05979f67bc1a-scaled-the-great-clue-treasure-hunt.webp" },
+    { title: "The riddle challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b7a1690f-8618-4b8d-88ff-79829c3a6e1f-scaled-the-riddle-challenge.webp" },
   ] },
   { title: "Creativity", description: "Turn natural inspiration into art, stories, photographs, and imaginative creations.", image: activityPhotos.creative, activities: [
     { title: "Photography Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c2eafbfa-ed82-4b4e-a6ad-d53f93bc2cb7-scaled-photography-challenge.webp" },
     { title: "Nature Art", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8e7b3edf-5d86-417e-be17-43bbc47e82b6-scaled-creative-nature-art.webp" },
-    { title: "Picture Story Creation", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c4d6109a-89d4-4575-9c54-f56c313f00cb-scaled-pass-the-picture.webp" },
+    { title: "Pass the picture", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c4d6109a-89d4-4575-9c54-f56c313f00cb-scaled-pass-the-picture.webp" },
     { title: "Creative Paper Art", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f741b9b6-246b-4b81-a1f1-dba0a96ae1b1-scaled-creative-paper-art.webp" },
     { title: "Clay Modeling", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/11a2fb24-9dc7-4c52-8922-f0997986a549-scaled-creative-clay-modeling.webp" },
+    { title: "Design CHP Camp Location", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/0f243ac7-a12b-4112-a43f-88bc72b01c6a-scaled-design-chp-camp-location.webp" },
     { title: "Build your dream camp", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/72bda5f7-7ac4-421d-8a5f-ece4cff9fcbb-scaled-build-your-dream-camp.webp" },
   ] },
   { title: "Mindfulness", description: "Slow down and reconnect through calm movement, balance, and nature-led focus.", image: activityPhotos.mindfulness, activities: [
-    { title: "Team meditation challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/cef803cd-3130-41ef-a221-af8efb802ebb-scaled-team-meditation-challenge.webp" },
-    { title: "Mindful balance challange", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2128905a-f548-4123-88ca-ba168e51d223-scaled-mindful-balance-challange.webp" },
-    { title: "Mindful Nature Art", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/1bad3598-0d91-4d46-9b7e-33ac3a23e40f-scaled-mindful-nature-art.webp" },
-    { title: "Mystry Object", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/f957ed7b-db4f-4416-b6a0-f868d5e6b35c-scaled-mystry-object-touch-and-feel.webp" },
-    { title: "Nature Observation Challange", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/2607d1c8-77b7-42e1-8a33-8457d9221f1c-scaled-nature-observation-challange.webp" },
-    { title: "Balance Masters", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/71629d2b-32c9-45f4-853c-e9783ac29f81-scaled-balance-masters.webp" },
+    { title: "Mystery Object - touch and feel", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/ec24f55d-40fb-43cc-b775-b7d07cbeab25-scaled-mystery-object-touch-and-feel.webp" },
+    { title: "Nature Observation Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/413ef8c7-bcc8-4f9f-8d46-f378c88f3fd3-scaled-nature-observation-challange.webp" },
+    { title: "Team meditation challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/dde8b188-8594-48c2-a507-22a66c0a0197-scaled-team-meditation-challenge.webp" },
+    { title: "Balance masters", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/3fe9ab33-fe42-43cb-ae49-349f89bb61b4-scaled-balance-masters.webp" },
+    { title: "Balanced Stone Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/333d2589-012f-4011-ac60-99dc6df856af-scaled-balanced-stone-challenge.webp" },
+    { title: "Five sense challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/6045022d-c9d9-4fc5-85d6-e411ccdf58a4-scaled-five-sense-challenge.webp" },
+    { title: "Memory of the mountain", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/f0e4d5f8-706d-4613-8fc2-63ee8ed52d0a-scaled-memory-of-the-mountain.webp" },
+    { title: "Mindful balance challange", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/0f73eb4b-f9b0-4e9f-a4a7-a98deeb77279-scaled-mindful-balance-challange.webp" },
+    { title: "Mindful Nature Art", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/2460fcfb-c778-4208-ad0a-274c48637afa-scaled-mindful-nature-art.webp" },
+    { title: "Mindful nature walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/35ec95ea-1b38-4c0c-b6e2-e2425c4d2dd6-scaled-mindful-nature-walk.webp" },
+    { title: "Balance and focus trail", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/a833d27b-909f-4cc3-8d32-be3e64b2a7c0-scaled-balance-and-focus-trail.webp" },
   ] },
   { title: "STEM Discovery Zone", description: "Experiment, design, and explore big ideas through hands-on science challenges.", image: activityPhotos.science, activities: [
     { title: "Paper Airplane Design Contest", image: "/images/camp-activities/stem-discovery-zone--paper-airplane-design-contest.svg" },
@@ -104,7 +113,7 @@ const sourceCategories: SourceCategory[] = [
   ] },
   { title: "Blindfold Challenges", description: "Practice trust, awareness, and teamwork while navigating sensory challenges.", image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=900&q=80", activities: [
     { title: "Guess the Object", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5e2f46b5-cd6f-427d-8285-b7aee7261331-scaled-guess-the-object.webp" },
-    { title: "Blindfold Trust Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b68aae28-57af-461a-a446-77e12af2a567-scaled-team-trust-walk.webp" },
+    { title: "Team Trust Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b68aae28-57af-461a-a446-77e12af2a567-scaled-team-trust-walk.webp" },
     { title: "Trust Walk", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5b4b9518-42c8-4e75-a2bb-b56620c447e7-scaled-trust-walk.webp" },
     { title: "Blind Catch Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/23cdda25-3e55-4d91-a152-c74c8b826659-scaled-blind-catch-challenge.webp" },
     { title: "Blindfold Ball Transfer Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/a92dc199-5929-47a5-90d9-2a3261eb0688-scaled-blindfold-ball-transfer-challenge.webp" },
@@ -113,6 +122,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Blindfold Treasure Hunt", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/693fa0a7-0414-4767-821d-c9f61de65476-scaled-blindfold-treasure-hunt.webp" },
     { title: "Blindfolded Team Hunt", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/30e16db2-fe01-47c1-95ad-129d19a1727a-scaled-blindfolded-team-hunt.webp" },
     { title: "Blindfold Cup Stack", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/253ce275-eb66-4223-b7d8-46fbcebcfb98-scaled-blindfold-cup-stack.webp" },
+    { title: "Sound Tracker", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5543a417-9487-4b29-999f-cace92ff6702-scaled-sound-tracker.webp" },
 
   ] },
   { title: "Balloon Olympics", description: "Take on bright, bouncy, and delightfully competitive balloon challenges.", image: activityPhotos.balloon, activities: [
@@ -122,6 +132,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Keep It Flying", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/9d4b8186-79f5-42d8-a895-8fe635b64003-scaled-keep-it-flying.webp" },
     { title: "Sit & Pop Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/d066685f-67e6-45aa-b64b-bc9105e7d995-scaled-sit-pop-challenge.webp" },
     { title: "Water Balloon Transfer", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4f1a2247-e1fc-4646-a886-4d7fb4cb1dda-scaled-water-balloon-transfer.webp" },
+    { title: "Balloon Passing", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/8eca29f3-6cf8-466b-96b2-96a73e499248-scaled-balloon-passing.webp" },
     { title: "Balloon Balance Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/d3a548b4-29e0-4f94-a33a-193166216089-scaled-balloon-balance-challenge.webp" },
     { title: "Balloon Pass Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/6081d756-e1ed-40db-b4b5-e21d44412934-scaled-balloon-pass-relay.webp" },
     { title: "Balloon Shuttle Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/75457f33-4cb4-471d-8578-af8a7c1cc6e7-scaled-balloon-shuttle-relay.webp" },
@@ -160,6 +171,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Tug-of-War Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/98567f6a-c00f-49cf-8421-9796d1ae46d0-scaled-tug-of-war-challenge.webp" },
     { title: "Double Trouble Jump", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7d01095d-35b1-4787-82de-360abcd43169-scaled-double-trouble-jump.webp" },
     { title: "Monkey Traverse", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/f674a1e0-9c3f-4dcc-95e7-6a5c7060ab2f-scaled-monkey-traverse.webp" },
+    { title: "Rope Crossing Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7c6acbbc-d849-4f96-bd3e-0b24f0035f7f-scaled-rope-crossing-challenge.webp" },
   ] },
   { title: "Wheel Olympics", description: "Roll, stack, crawl, and race through high-energy challenges with a twist.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/55e42a3d-9832-42c3-abf2-c07dba6d7c07-scaled-chatgpt-image-sep-21-2026-09-01-19-am-compresso.webp", activities: [
     { title: "Tyre Clash", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/7be765db-9041-4b53-8fca-dded25752341-scaled-tyre-clash.webp" },
@@ -183,6 +195,7 @@ const sourceCategories: SourceCategory[] = [
   { title: "Target Warriors", description: "Focus, aim, and play your way through skill-based target challenges.", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/37aaf07c-da1f-49fe-8434-ee4e1875448b-scaled-chatgpt-image-sep-21-2026-09-14-21-am-compresso.webp" , activities: [
     { title: "Cone Capture Mountain Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/7dce32d9-58b4-4e1b-a177-d8b4afafbd6d-scaled-cone-capture-mountain-challenge.webp" },
     { title: "Crazy Golf Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/b1e1646d-4852-4a8b-a6f1-860cfb3077dc-scaled-crazy-golf-challenge-at-alpine-camp.webp" },
+    { title: "Bucket Ball Toss Mountain Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/0cf8a9a2-9242-44d9-bc5b-f1399806c1a9-scaled-bucket-ball-toss-mountain-game.webp" },
     { title: "Himalayan Archery Bullseye Camp", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/2df73f49-b9f5-4a81-94e1-ff5778f350a7-scaled-himalayan-archery-bullseye-camp.webp" },
     { title: "Hit the Accuracy Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/892c30a1-99f8-49d4-af30-d21f0780a857-scaled-hit-the-accuracy-challenge.webp" },
     { title: "Lucky Number Toss Mountain Field Day", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/cc0b932e-62df-433f-a873-d84067373f56-scaled-lucky-number-toss-mountain-field-day.webp" },
@@ -198,6 +211,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Himalayan Swing & Jump", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/6527c560-984a-4750-8eec-0a0f7357f0ff-scaled-himalayan-swing-jump.webp" },
     { title: "Mountain Run", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/9faa758f-0a6e-45e9-bbed-6e91a071cd3e-scaled-mountain-run.webp" },
     { title: "Treasure Hunt", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/13670bbc-ec83-4939-8221-8fccc8ad31e4-scaled-treasure-hunt.webp" },
+    { title: "Mountain Cycling", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/64c9a777-1bb8-4fb8-b102-f26304f13143-scaled-mountain-cycling.webp" },
     { title: "Fishing", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/aed93852-d4af-4e02-a3ff-9bf497e6ba4c-scaled-fishing.webp" },
   ] },
   { title: "Musical Masti", description: "Let rhythm and friendly competition take centre stage with music-filled games.", image: activityPhotos.music, activities: [
@@ -223,7 +237,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Kite Flying Festival in the Mountains", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/6b987607-8f28-4e07-82f6-4d8e427e482f-scaled-kite-flying-festival-in-the-mountains.webp" },
     { title: "Langdi Taang Mountain Camp Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/c4f67ae2-2f13-4fd6-8d7f-4086bd097bab-scaled-langdi-taang-mountain-camp-challenge.webp" },
     { title: "Marble Flip Challenge Poster", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/ebab2390-09f6-4cf6-ba36-7cf2dc88fbda-scaled-marble-flip-challenge-poster.webp" },
-    { title: "marble hole in one village challenge", image: "/images/camp-activities/desi-khel--kancha-ka-khel-2.svg" },
+    { title: "marble hole in one village challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/da2ffa7f-b570-4f0c-bcd4-271067bd5309-scaled-marble-hole-in-one-village-challenge.webp" },
     { title: "Marble Strike Mountain Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/461c8d13-7b00-4dd4-bf96-35f6631557a3-scaled-marble-strike-mountain-challenge.webp" },
     { title: "Mountain Kabaddi Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/679a8f08-0cbe-4824-a65f-74a16bee75e4-scaled-mountain-kabaddi-challenge.webp" },
     { title: "Pithoo Seven Stones Mountain Camp", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/960cbf07-434a-443c-afb4-b0b59411e134-scaled-pithoo-seven-stones-mountain-camp.webp" },
@@ -307,7 +321,7 @@ const campActivityThumbnailImages: Record<string, string> = {
   "Target Warriors": "/images/camp-activities/toss-and-shot.webp",
   "Himalayan Adventure and Fun": "/images/camp-activities/himalayan-adventure-sports.webp",
   "Musical Masti": "/images/camp-activities/musical-arena.webp",
-  "Desi Khel and Masti": "/images/camp-activities/desi-khel.webp",
+  "Desi Khel and Masti": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/7b28722f-6684-4850-8fd9-2ba650471e4a-scaled-desi-khel-2.webp",
   "Closing Ceremony": "/images/camp-activities/closing-ceremony.webp",
 };
 
@@ -379,13 +393,7 @@ const requiredCampActivityGroups = [
       "Crawl Olympics",
       "Target Warriors",
       "Desi Khel and Masti",
-    ],
-  },
-  {
-    title: "Music & Celebration",
-    activities: [
       "Musical Masti",
-      "Closing Ceremony",
     ],
   },
   {
@@ -394,6 +402,10 @@ const requiredCampActivityGroups = [
       "STEM Discovery Zone",
       "Himalayan Adventure and Fun",
     ],
+  },
+  {
+    title: "Closing Ceremony",
+    activities: ["Closing Ceremony"],
   },
 ] as const;
 
