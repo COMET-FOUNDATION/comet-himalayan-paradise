@@ -100,3 +100,20 @@ model CampBooking {
   @@index([status, createdAt])
   @@map("camp_bookings")
 }
+
+model Lead {
+  id              String   @id @default(uuid())
+  reference       String   @unique
+  idempotencyKey  String   @unique
+  name            String
+  email           String?
+  phone           String?
+  areaOfInterest  String
+  message         String?  @db.Text
+  consent         Boolean
+  consentedAt     DateTime @default(now())
+  createdAt       DateTime @default(now())
+
+  @@index([areaOfInterest, createdAt])
+  @@map("leads")
+}

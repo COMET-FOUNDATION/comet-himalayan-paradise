@@ -26,3 +26,5 @@ services:
         value: "10"
       - key: CORS_ORIGIN
         sync: false
+      - key: CHP_LEADS_API_KEY
+        sync: false

@@ -44,12 +44,12 @@ export default function CampActivitiesPage() {
                 </h2>
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-5">
                 {group.items.map((activity) => (
                   <Link
                     key={activity.title}
                     href={`/camp-activities/${activity.slug}`}
-                    className="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-[0_8px_20px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-black/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900"
+                    className="group flex min-w-0 w-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-[0_8px_20px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-xl hover:shadow-black/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900 sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]"
                   >
                     <div className="relative aspect-[16/9] overflow-hidden bg-stone-100">
                       <Image
