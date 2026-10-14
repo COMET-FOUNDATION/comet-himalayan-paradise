@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 
@@ -14,13 +14,15 @@ const directLinks = [
   { href: "/about", label: "About" },
 ];
 
-const operationsLink = { href: "/chp-operations", label: "CHP Operations and Common Services" };
+const liveFromGroundLink = { href: "/chp-live-from-the-ground", label: "CHP Live from the Ground" };
 const faqLink = { href: "/faq", label: "FAQ" };
 
 const navGroups = [
   {
     label: "Explore CHP",
     items: [
+      { href: "/chp-enclave", label: "CHP Enclave" },
+      { href: "/chp-operations", label: "CHP Shared Services" },
       { href: "/accommodation", label: "Homestay" },
       { href: "/camps", label: "Holiday Camp" },
       { href: "/treks", label: "Treks & Trails" },
@@ -36,8 +38,8 @@ const navGroups = [
       { href: "/chp-biz-partnership", label: "CHP Business Partnership" },
       { href: "/growth-partner", label: "CHP Growth Partnership" },
       { href: "/group-ownership-model", label: "Group Ownership Model" },
+      { href: "/chp-operations", label: "CHP Operations" },
       { href: "/business-investment", label: "Investment Options" },
-      { href: "/chp-enclave", label: "CHP Enclave" },
       { href: "/dream-spaces", label: "16 Dream Spaces" },
       { href: "/biz-facilities", label: "12 Biz Facilities" },
       { href: "/gateways", label: "5 Gateways" },
@@ -277,22 +279,6 @@ export function Navbar() {
                 );
               })}
 
-              {/* CHP Operations */}
-              <li>
-                <Link
-                  href={operationsLink.href}
-                  className={cn(
-                    desktopLink,
-                    pathname === operationsLink.href
-                      ? isLight
-                        ? "bg-green-900/10 text-green-900 font-semibold"
-                        : "bg-white/20 text-white font-semibold"
-                      : desktopText
-                  )}
-                >
-                  {operationsLink.label}
-                </Link>
-              </li>
               <li>
                 <Link
                   href={faqLink.href}
@@ -313,19 +299,6 @@ export function Navbar() {
 
           {/* Desktop Actions */}
           <div className="navbar-actions hidden min-[1100px]:flex items-center gap-2.5 shrink-0 ml-3">
-            <a
-              href="tel:+919949994989"
-              className={cn(
-                "navbar-phone flex items-center gap-1.5 text-xs font-medium transition-colors mr-1",
-                isLight
-                  ? "text-slate-700 hover:text-green-900"
-                  : "text-white/90 hover:text-white"
-              )}
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>+91 99499 94989</span>
-            </a>
-
             {/* Social Links */}
             <div
               className="navbar-socials flex items-center gap-1"
@@ -356,9 +329,9 @@ export function Navbar() {
               )}
             </div>
 
-            {/* Group Ownership */}
+            {/* CHP Live from the Ground */}
             <Link
-              href="/chp-enclave"
+              href={liveFromGroundLink.href}
               className={cn(
                 "navbar-ownership text-[12px] font-semibold px-3 py-2 rounded-full border whitespace-nowrap transition-all duration-200 hover:shadow-md hover:-translate-y-0.5",
                 isLight
@@ -366,7 +339,7 @@ export function Navbar() {
                   : "bg-amber-500/90 hover:bg-amber-500 text-white border-amber-300/30 backdrop-blur-sm"
               )}
             >
-              Group Ownership
+              {liveFromGroundLink.label}
             </Link>
 
             {/* Contact */}
@@ -507,39 +480,6 @@ export function Navbar() {
                 )
               )}
 
-              {/* CHP Operations */}
-              <motion.li
-                initial={{
-                  opacity: 0,
-                  x: -16,
-                }}
-                animate={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  delay:
-                    (navGroups.length +
-                      directLinks.length) *
-                    0.045,
-                }}
-                className="pt-3"
-              >
-                <Link
-                  href={operationsLink.href}
-                  onClick={() =>
-                    setMenuOpen(false)
-                  }
-                  className={cn(
-                    "flex items-center py-3 px-4 rounded-xl text-lg font-medium transition-colors",
-                    pathname === operationsLink.href
-                      ? "bg-green-900/10 text-green-900"
-                      : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
-                  )}
-                >
-                  {operationsLink.label}
-                </Link>
-              </motion.li>
               <motion.li
                 initial={{
                   opacity: 0,
@@ -576,22 +516,14 @@ export function Navbar() {
 
             {/* Mobile Actions */}
             <div className="border-t border-slate-100 pt-6 pb-12 flex flex-col gap-3">
-              <a
-                href="tel:+919949994989"
-                className="flex items-center gap-2 text-slate-600 py-1 text-sm font-medium"
-              >
-                <Phone className="w-4 h-4 text-green-900" />
-                +91 99499 94989
-              </a>
-
               <Link
-                href="/chp-enclave"
+                href={liveFromGroundLink.href}
                 onClick={() =>
                   setMenuOpen(false)
                 }
                 className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3.5 rounded-xl text-center transition-colors"
               >
-                Group Ownership
+                {liveFromGroundLink.label}
               </Link>
 
               <Link

@@ -30,7 +30,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Silent Line-Up", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/41cfc071-9bdb-4719-ab63-004b34834623-scaled-silent-line-up.webp" },
     { title: "Human Bingo", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/87ee1cea-4c7f-4a0f-adac-c06f8fc6d2b5-scaled-human-bingo.webp" },
     { title: "Rapid Fire Introduction", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/08482130-fdc1-47a0-a86b-d9dc92ac5ad1-scaled-rapid-fire-introduction.webp" },
-    { title: "Two truth and a lie", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b805f5d8-43a4-42a7-807d-6e78a3f8adc7-two-truth-and-a-lie.png" },
+    { title: "Emoji Introduction", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c3eb0f1f-3154-47f5-8f04-7fb814f9aa7d-scaled-file-000000000a9c82119623b1d0613436b9.webp" },
   ] },
   { title: "Communication", description: "Build listening, expression, and connection through playful group communication games.", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80", activities: [
     { title: "Pahadi shabd khel", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/609b6fd6-d33b-4bf8-a52b-76066ab30cb5-scaled-pahadi-shabd-khel.webp" },
@@ -39,7 +39,6 @@ const sourceCategories: SourceCategory[] = [
     { title: "Listen and Draw", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/88cbcc3a-312b-451c-9148-012efb911f76-scaled-listen-and-draw.webp" },
     { title: "Meet my buddy", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/75d52fb6-1c46-443c-a82d-cbf1b37f43a0-scaled-meet-my-buddy.webp" },
     { title: "Draw by description", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/c036beeb-3078-43e9-8552-1ed246d72fcd-scaled-draw-by-description.webp" },
-    
   ] },
   { title: "Smart Memory", description: "Sharpen observation and recall with engaging games that make every detail count.", image: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=900&q=80", activities: [
     { title: "Guess What Changed", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/d3c64ff4-4daa-41a2-9c41-9739f3a03b6d-scaled-guess-what-changed.webp" },
@@ -68,7 +67,8 @@ const sourceCategories: SourceCategory[] = [
     { title: "Build your dream camp", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/72bda5f7-7ac4-421d-8a5f-ece4cff9fcbb-scaled-build-your-dream-camp.webp" },
   ] },
   { title: "Mindfulness", description: "Slow down and reconnect through calm movement, balance, and nature-led focus.", image: activityPhotos.mindfulness, activities: [
-    { title: "Mystery Object - touch and feel", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/ec24f55d-40fb-43cc-b775-b7d07cbeab25-scaled-mystery-object-touch-and-feel.webp" },
+    { title: "Coin Balance Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/b840639e-49f1-4b9e-8bb2-17c1677d43a8-coin-balance.webp" },
+    { title: "Mystery Object - touch and feel", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/5cd53c56-131a-49e0-b63e-1d84b6f1728b-scaled-mystry-object-touch-and-feel-1.webp" },
     { title: "Nature Observation Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/413ef8c7-bcc8-4f9f-8d46-f378c88f3fd3-scaled-nature-observation-challange.webp" },
     { title: "Team meditation challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/dde8b188-8594-48c2-a507-22a66c0a0197-scaled-team-meditation-challenge.webp" },
     { title: "Balance masters", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/3fe9ab33-fe42-43cb-ae49-349f89bb61b4-scaled-balance-masters.webp" },
@@ -104,6 +104,7 @@ const sourceCategories: SourceCategory[] = [
     { title: "Pahadi Pehchaan", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/1c45861e-a2d0-4b83-b28a-7de83dbedb2a-scaled-pahadi-pehchaan.webp" },
   ] },
   { title: "Race - The Speed Circuit", description: "Pick up the pace with joyful relays and classic races for every kind of runner.", image: activityPhotos.active, activities: [
+    { title: "Flour Mountain Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/0dc65354-ee57-4570-9864-ec6f130d31f5-flour-mountain-relay.webp" },
     { title: "Obstacle Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/54b2902f-00df-4332-82cf-ff67b37f5384-scaled-obstacle-relay.webp" },
     { title: "Team Train Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/ed9e2be3-b629-4c10-8f92-071aa1b8be11-scaled-team-train-race.webp" },
     { title: "Three Legged Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/a6b68c33-71c6-4470-b450-c30f287450bf-scaled-three-legged-rush.webp" },
@@ -220,20 +221,16 @@ const sourceCategories: SourceCategory[] = [
     { title: "Musical Handkerchief Game", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/1a3d8381-2a6f-42af-a228-56505e7825a2-musical-jpg.jpeg" },
     { title: "Antakshiri", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/bee54682-6b60-42fa-b1f5-4d05b5cc5f52-antakshari-jpg.jpeg" },
     { title: "Musical Flour Coin", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/a7455f70-3c85-469b-9e97-caf975451c9b-flour-coin-fun-game.webp" },
-    { title: "Lucky Coin Dig", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/98ca6b32-3dba-481e-b873-471f97daf4ef-lucky-coin-dig.webp" },
-    { title: "Flour Mountain Relay", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/0dc65354-ee57-4570-9864-ec6f130d31f5-flour-mountain-relay.webp" },
-    { title: "Coin Balance Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/b840639e-49f1-4b9e-8bb2-17c1677d43a8-coin-balance.webp" },
-    { title: "Coin Blow Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/b4d36261-0f0a-4204-a40b-edacccce62f3-coin-blow-race.webp" },
-    { title: "Guess the Coin", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d8c0f2d2-5023-4310-b8a4-12cfa9a75392-guess-coin-count.webp" },
-    { title: "Blindfold Coin Search", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/06706591-7a20-4707-a68d-160d3365f9fa-blindfold-coin-search.webp" },
+    
     { title: "Musical Evening Campfire", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/3468a1b4-7cc0-446c-8553-c3e56c2dec2c-scaled-file-00000000b9e082079ae9c1236f0ae6be.webp" },
-    { title: "Emoji Introduction", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c3eb0f1f-3154-47f5-8f04-7fb814f9aa7d-scaled-file-000000000a9c82119623b1d0613436b9.webp" },
-    { title: "Two Truths and One Lie", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/b550c89d-0aa3-4351-9dc6-54d75b292a96-scaled-file-00000000216c8207a85d8da8df7c0e47.webp" },
     { title: "Riddle Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/e2a95b2a-d8d2-42e0-b851-5fa108ed9c34-scaled-file-000000003494821199f822147060fd3d.webp" },
     { title: "Campfire Karaoke", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/30d5b8f4-2bb0-440b-8df8-a4b11693f710-scaled-file-00000000e81c8211a30e41970c2c83ce.webp" },
-    { title: "Who Am I?", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/96277ab4-3363-4961-8adf-d5e43ff6bf1e-scaled-file-000000002acc81f5840052376fdf773a.webp" },
   ] },
   { title: "Desi Khel and Masti", description: "Rediscover beloved traditional games in a spirited camp setting.", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80", activities: [
+    { title: "Blindfold Coin Search", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/06706591-7a20-4707-a68d-160d3365f9fa-blindfold-coin-search.webp" },
+    { title: "Coin Blow Race", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/b4d36261-0f0a-4204-a40b-edacccce62f3-coin-blow-race.webp" },
+    { title: "Guess the Coin", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d8c0f2d2-5023-4310-b8a4-12cfa9a75392-guess-coin-count.webp" },
+    { title: "Lucky Coin Dig", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/98ca6b32-3dba-481e-b873-471f97daf4ef-lucky-coin-dig.webp" },
     { title: "Kite Flying Festival in the Mountains", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/6b987607-8f28-4e07-82f6-4d8e427e482f-scaled-kite-flying-festival-in-the-mountains.webp" },
     { title: "Langdi Taang Mountain Camp Challenge", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/c4f67ae2-2f13-4fd6-8d7f-4086bd097bab-scaled-langdi-taang-mountain-camp-challenge.webp" },
     { title: "Marble Flip Challenge Poster", image: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/sanatan/ebab2390-09f6-4cf6-ba36-7cf2dc88fbda-scaled-marble-flip-challenge-poster.webp" },
