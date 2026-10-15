@@ -12,8 +12,7 @@ const geist = Geist({
 });
 
 const BASE_URL = "https://www.thehimalayancamp.com";
-const OG_IMAGE =
-  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ddcc4252-ab86-4945-8a5f-8be2e830e121-hp.webp";
+const OG_IMAGE = `${BASE_URL}/chp-social.jpg`;
 const HOME_TITLE =
   "✨ CHP – Comet Himalayan Paradise! Ecosystem - One Destination. Endless Himalayan Experiences. ✨";
 const HOME_DESCRIPTION =
@@ -60,7 +59,8 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "The CHP Himalayan Paradise homepage hero in the Himalayas",
+        type: "image/jpeg",
+        alt: "Himalayan cottages beneath snow-capped peaks at sunset",
       },
     ],
   },
