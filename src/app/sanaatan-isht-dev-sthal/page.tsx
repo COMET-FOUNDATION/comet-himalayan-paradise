@@ -27,6 +27,12 @@ export const metadata: Metadata = {
     },
 };
 
+const donateHighlights = [
+    "Support the development of Isht-Devta shrines",
+    "Preserve Uttarakhand's spiritual and cultural heritage",
+    "Connect younger generations with Sanatan traditions",
+];
+
 const visionPoints = [
     "Creating a comprehensive list of deities worshipped across Uttarakhand",
     "Documenting the original/native sites associated with each Isht-Devta",
@@ -180,6 +186,70 @@ export default function SanaatanIshtDevSthalPage() {
                     {/* Very light dark theme overlay — keeps the image bright and clearly visible */}
                     <div className="absolute inset-0 bg-black/10" />
 
+                </div>
+            </section>
+
+            {/* ── Support (message left, compact QR code right) ── */}
+            <section
+                id="donate"
+                className="border-b border-stone-200 bg-stone-50 py-8"
+            >
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+
+                        {/* Left: message */}
+                        <ScrollReveal direction="left">
+                            <div className="mb-4 flex items-center gap-3">
+                                <span className="h-px w-8 bg-amber-500" />
+
+                                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-600">
+                                    Make a Difference
+                                </p>
+                            </div>
+
+                            <h2 className="mb-4 text-3xl font-bold leading-tight text-slate-800 sm:text-4xl">
+                                Help Build a Sacred Space for Every Isht-Devta
+                            </h2>
+
+                            <p className="mb-5 text-justify leading-relaxed text-slate-600">
+                                One Place. Divine Unity. A Temple for Every
+                                Heart.{" "}
+                                <strong className="font-bold text-amber-700">
+                                    Your contribution
+                                </strong>{" "}
+                                helps reconnect generations with their
+                                Isht-Devas and Uttarakhand&apos;s rich
+                                spiritual heritage.
+                            </p>
+
+                            <ul className="mb-5 space-y-3">
+                                {donateHighlights.map((item) => (
+                                    <li
+                                        key={item}
+                                        className="flex items-start gap-3"
+                                    >
+                                        <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+
+                                        <span className="text-sm font-medium text-slate-700">
+                                            {item}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <p className="text-sm leading-relaxed text-slate-500">
+                                Scan the QR code to contribute.
+                            </p>
+                        </ScrollReveal>
+
+                        {/* Right: compact QR code */}
+                        <ScrollReveal direction="right">
+                            <div className="mx-auto flex w-full max-w-[15rem] justify-center rounded-xl border border-stone-200 bg-white p-4 text-center shadow-sm lg:ml-auto lg:mr-0 [&>section]:m-0 [&>section]:w-full [&>section]:border-0 [&>section]:bg-transparent [&>section]:p-0 [&>section]:py-0 [&_h2]:!mb-1 [&_h2]:!text-base [&_h3]:!mb-1 [&_h3]:!text-base [&_img]:mx-auto [&_img]:!h-auto [&_img]:!w-full [&_img]:!max-w-[10rem] [&_p]:!mb-2 [&_p]:!text-xs">
+                                <DonationQRCode />
+                            </div>
+                        </ScrollReveal>
+
+                    </div>
                 </div>
             </section>
 
@@ -562,19 +632,19 @@ export default function SanaatanIshtDevSthalPage() {
                     </div>
                 </div>
             </section>
-<DonationQRCode />
-{/* BOTTOM NAV CAPTION */}
-      <section className="py-8 bg-white border-t border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <Link
-            href="/#social-impact"
-            className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
-          >
-            Home 
-          </Link>
-        </div>
-      </section>
-            
+
+            {/* BOTTOM NAV CAPTION */}
+            <section className="py-8 bg-white border-t border-stone-200">
+                <div className="max-w-7xl mx-auto px-4 text-center">
+                    <Link
+                        href="/#social-impact"
+                        className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                        Home
+                    </Link>
+                </div>
+            </section>
+
         </main>
     );
 }

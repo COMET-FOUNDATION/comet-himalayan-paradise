@@ -140,6 +140,12 @@ const stats = [
     },
 ];
 
+const donateHighlights = [
+    "Support computer access, training and certifications",
+    "Enable career workshops, mentoring and competitions",
+    "Help deserving students pursue higher education",
+];
+
 const trainings: {
     icon: typeof Laptop;
     title: string;
@@ -500,6 +506,74 @@ export default function CometEducationalServicesPage() {
                     <span className="inline-block whitespace-nowrap rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold tracking-wide text-white shadow-md">
                         {MENU_NAME}
                     </span>
+                </div>
+            </section>
+
+            {/* ── Support COMET (message left, QR code right) ── */}
+
+            <section
+                id="donate"
+                className="bg-white border-b border-slate-100 py-8"
+            >
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
+                        {/* Left: message */}
+                        <ScrollReveal direction="left">
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="h-px w-8 bg-orange-500" />
+
+                                <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
+                                    Make a Difference
+                                </p>
+                            </div>
+
+                            <h2 className="text-3xl sm:text-4xl font-bold mb-5 leading-tight text-slate-800">
+                                Help a Student Take the First Step
+                                Toward a Career
+                            </h2>
+
+                            <p className="text-slate-600 leading-relaxed mb-5 text-justify">
+                                COMET Educational Services works with
+                                students from remote and underserved
+                                communities, offering career guidance,
+                                IT training and mentoring.{" "}
+                                <Key>Your contribution</Key> helps us
+                                reach more students, schools and
+                                communities.
+                            </p>
+
+                            <ul className="space-y-3 mb-6">
+                                {donateHighlights.map((item) => (
+                                    <li
+                                        key={item}
+                                        className="flex items-start gap-3"
+                                    >
+                                        <CheckCircle className="w-5 h-5 text-green-700 shrink-0 mt-0.5" />
+
+                                        <span className="text-slate-700 text-sm font-medium">
+                                            {item}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <p className="text-slate-500 text-sm leading-relaxed text-justify">
+                                Donors are welcome to visit supported
+                                schools, meet students and receive
+                                updates, photographs and videos from
+                                sponsored programs.
+                            </p>
+                        </ScrollReveal>
+
+                        {/* Right: QR code */}
+                        <ScrollReveal direction="right">
+                            <div
+                                className={`${CONTAINER_CLASS} rounded-xl p-4 shadow-sm w-full max-w-[15rem] mx-auto lg:mx-0 lg:ml-auto flex justify-center text-center [&>section]:p-0 [&>section]:m-0 [&>section]:py-0 [&>section]:bg-transparent [&>section]:border-0 [&>section]:w-full [&_img]:!w-full [&_img]:!h-auto [&_img]:!max-w-[10rem] [&_img]:mx-auto [&_h2]:!text-base [&_h2]:!mb-1 [&_h3]:!text-base [&_h3]:!mb-1 [&_p]:!text-xs [&_p]:!mb-2`}
+                            >
+                                <DonationQRCode />
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
 
@@ -1148,8 +1222,6 @@ export default function CometEducationalServicesPage() {
                     </StaggerContainer>
                 </div>
             </section>
-
-            <DonationQRCode />
 
             {/* ── Back to Home ── */}
 
