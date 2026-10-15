@@ -66,6 +66,12 @@ const facts = [
   },
 ];
 
+const donateHighlights = [
+  "Help make the Gaushala more self-sustainable",
+  "Create farming-related work for local villagers",
+  "Support the larger Comet mission, including education and social programs",
+];
+
 const ecosystemTags = [
   "Nature",
   "Agriculture",
@@ -250,6 +256,59 @@ export default function OrganicFarmingPage() {
 
           {/* Subtle dark image treatment — keeps the hero image clearly visible */}
           <div className="pointer-events-none absolute inset-0 z-10 bg-black/10" aria-hidden="true" />
+        </div>
+      </section>
+
+      {/* Support (message left, compact QR code right) */}
+      <section
+        id="donate"
+        className="border-b border-stone-200 bg-stone-50 py-8"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+            {/* Left: message */}
+            <ScrollReveal direction="left">
+              <p className={eyebrow}>Make a Difference</p>
+
+              <h2 className={`${h2} mb-4`}>
+                Support the Gaushala and Himalayan Villagers
+              </h2>
+
+              <p className="mb-5 text-justify leading-relaxed text-slate-600">
+                Shelter for cows. Jobs for villagers. Organic food for you.{" "}
+                <strong className="font-bold text-green-900">
+                  Your contribution
+                </strong>{" "}
+                helps strengthen the Gaushala, create farming opportunities
+                in the Himalayan region and support the wider Comet mission.
+              </p>
+
+              <ul className="mb-5 space-y-3">
+                {donateHighlights.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm font-medium text-slate-700"
+                  >
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-900">
+                      <Check className="h-3 w-3" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <p className="text-sm leading-relaxed text-slate-500">
+                Scan the QR code to contribute.
+              </p>
+            </ScrollReveal>
+
+            {/* Right: compact QR code */}
+            <ScrollReveal direction="right">
+              <div className="mx-auto flex w-full max-w-[15rem] justify-center rounded-xl border border-stone-200 bg-white p-4 text-center shadow-sm lg:ml-auto lg:mr-0 [&>section]:m-0 [&>section]:w-full [&>section]:border-0 [&>section]:bg-transparent [&>section]:p-0 [&>section]:py-0 [&_h2]:!mb-1 [&_h2]:!text-base [&_h3]:!mb-1 [&_h3]:!text-base [&_img]:mx-auto [&_img]:!h-auto [&_img]:!w-full [&_img]:!max-w-[10rem] [&_p]:!mb-2 [&_p]:!text-xs">
+                <DonationQRCode />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -818,7 +877,6 @@ export default function OrganicFarmingPage() {
           </div>
         </div>
       </section>
-      <DonationQRCode />
 
       {/* BOTTOM NAV CAPTION */}
       <section className="py-8 bg-white border-t border-stone-200">
@@ -827,12 +885,10 @@ export default function OrganicFarmingPage() {
             href="/#social-impact"
             className="inline-block rounded-full bg-green-900 px-6 py-3 text-sm font-semibold tracking-wide text-white shadow-md hover:bg-green-800 transition-all duration-200 hover:-translate-y-0.5"
           >
-            Home 
+            Home
           </Link>
         </div>
       </section>
-
-
     </>
   );
 }
