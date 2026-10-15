@@ -11,14 +11,19 @@ const geist = Geist({
   display: "swap",
 });
 
-const BASE_URL = "https://comet-himalayan-paradise.vercel.app";
-const OG_IMAGE = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop";
+const BASE_URL = "https://www.thehimalayancamp.com";
+const OG_IMAGE =
+  "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ddcc4252-ab86-4945-8a5f-8be2e830e121-hp.webp";
+const HOME_TITLE =
+  "✨ CHP – Comet Himalayan Paradise! Ecosystem - One Destination. Endless Himalayan Experiences. ✨";
+const HOME_DESCRIPTION =
+  "Discover the CHP – Comet Himalayan Paradise ecosystem, bringing together Himalayan cottages, treks, holiday camps, adventure activities, wellness retreats, organic living, and cultural experiences. One destination. Endless Himalayan experiences.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "CHP Himalayan Paradise – Treks, Camps & Adventures",
-    template: "%s | CHP Himalayan Paradise",
+    default: HOME_TITLE,
+    template: "%s | CHP – Comet Himalayan Paradise",
   },
   description:
     "Experience the Himalayas through curated holiday camps, guided treks, adventure activities, wellness retreats, and cultural immersions. Book your Himalayan journey today.",
@@ -42,23 +47,20 @@ export const metadata: Metadata = {
   authors: [{ name: "CHP Himalayan Paradise", url: BASE_URL }],
   creator: "CHP Himalayan Paradise",
   publisher: "CHP Himalayan Paradise",
-  alternates: {
-    canonical: BASE_URL,
-  },
+  alternates: { canonical: `${BASE_URL}/` },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: BASE_URL,
-    siteName: "CHP Himalayan Paradise",
-    title: "CHP Himalayan Paradise – Treks, Camps & Adventures",
-    description:
-      "Experience the Himalayas through curated holiday camps, guided treks, adventure activities, wellness retreats, and cultural immersions. Book your Himalayan journey today.",
+    siteName: "CHP – Comet Himalayan Paradise",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [
       {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "CHP Himalayan Paradise – Snow-capped Himalayan peaks",
+        alt: "The CHP Himalayan Paradise homepage hero in the Himalayas",
       },
     ],
   },
@@ -66,9 +68,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@chphimalayan",
     creator: "@chphimalayan",
-    title: "CHP Himalayan Paradise – Treks, Camps & Adventures",
-    description:
-      "Immersive Himalayan holiday camps, guided treks, wellness retreats, and cultural adventures in the Indian Himalayas.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     images: [OG_IMAGE],
   },
   robots: {

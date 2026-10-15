@@ -14,9 +14,12 @@ import { FAQ } from "@/components/home/FAQ";
 import { CTABanner } from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
-  title: "CHP Himalayan Paradise – Treks, Camps & Adventures",
+  title: {
+    absolute:
+      "✨ CHP – Comet Himalayan Paradise! Ecosystem - One Destination. Endless Himalayan Experiences. ✨",
+  },
   description:
-    "Immersive Himalayan experiences: holiday camps, guided treks, wellness retreats, wildlife safaris, and cultural adventures in the Indian Himalayas.",
+    "Discover the CHP – Comet Himalayan Paradise ecosystem, bringing together Himalayan cottages, treks, holiday camps, adventure activities, wellness retreats, organic living, and cultural experiences. One destination. Endless Himalayan experiences.",
 };
 
 export default function HomePage() {
