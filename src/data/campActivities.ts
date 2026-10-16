@@ -293,7 +293,7 @@ const campActivityHeaderImages: Record<string, string> = {
   "Target Warriors": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ccd5fefc-5d79-419d-a2ce-a39779ee0aa8-target-warriors-header.jpg",
   "Desi Khel and Masti": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/c530e58a-756d-4175-a486-f0818cc5654d-desi-khel-header.jpg",
   "Musical Masti": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6b46afdb-2a43-4b62-90a3-ee48c784f2b5-musical-arena-header.jpg",
-  "Closing Ceremony": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ee64a27e-19f6-4cd0-ac07-85fe3d380e8d-closing-ceremony-header.jpg",
+  "Closing Ceremony": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d2e7810b-a082-49c2-b9f0-4eaccf9acb63-chp-closing-ceremony.webp",
   "STEM Discovery Zone": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/86303525-5fe7-4c0d-9bd2-a48e98b55c43-stem-discovery-zone-header.jpg",
   "Himalayan Adventure and Fun": "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8cf02867-c636-40c3-aa6a-7221bd499301-himalayan-adventure-games-header.jpg",
 };

@@ -16,13 +16,12 @@ export default function ClosingCeremonyPage() {
   return (
     <main className="bg-[#faf9f5] text-slate-800">
       <section className="relative isolate flex min-h-[610px] items-center overflow-hidden bg-green-950 pt-[72px] sm:min-h-[680px]">
-        <Image src="/images/camp-activities/closing-ceremony.webp" alt="Illustrated celebration of camp achievements and togetherness" fill priority sizes="100vw" className="object-cover object-center" />
+        <Image src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d2e7810b-a082-49c2-b9f0-4eaccf9acb63-chp-closing-ceremony.webp" alt="Closing ceremony celebration at CHP Holiday Camp" fill priority sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-green-950/90 via-green-950/70 to-green-950/25" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:px-12">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[.24em] text-amber-200">CHP Himalayan Paradise · Holiday Camp</p>
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-7xl">CHP Holiday Camp <span className="text-amber-200">–</span><br className="hidden sm:block" /> Closing Ceremony</h1>
-          <p className="mt-6 max-w-2xl text-xl font-medium leading-relaxed text-white/90 sm:text-2xl">Celebrating Memories, Achievements &amp; the Spirit of Togetherness</p>
-          <p className="mt-4 max-w-xl text-base leading-7 text-white/75 sm:text-lg">A celebration of friendships, teamwork, creativity, participation, and the countless moments that make the camp experience special.</p>
+          <h1 className="max-w-5xl text-[28px] font-bold leading-[1.08] tracking-tight text-white sm:text-[40px] md:text-[50px] xl:text-[62px]">CHP Holiday Camp <span className="text-amber-200">–</span><br className="hidden sm:block" /> Closing Ceremony</h1>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base md:text-lg">Celebrating Memories, Achievements &amp; the Spirit of Togetherness</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href="/camps" className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3.5 text-sm font-semibold text-green-950 transition hover:bg-amber-300">Explore Our Holiday Camp <ArrowRight className="h-4 w-4" /></Link>
             <a href="#ceremony-highlights" className="inline-flex items-center gap-2 rounded-full border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">Discover the moments <ArrowDown className="h-4 w-4" /></a>
@@ -58,8 +57,8 @@ export default function ClosingCeremonyPage() {
             <p className="max-w-sm pb-1 text-sm leading-6 text-slate-600 sm:text-base">A joyful gathering to honour achievements, appreciate effort, and share one last celebration together.</p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {highlights.map(({ title, description, image, icon: Icon }, index) => <article key={title} className={`group overflow-hidden rounded-3xl border border-green-950/[.07] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-green-950/10 ${index === 0 ? "lg:col-span-2 lg:grid lg:grid-cols-[.82fr_1.18fr]" : ""}`}>
-              <div className={`relative aspect-[16/10] overflow-hidden bg-[#f4f3ed] ${index === 0 ? "lg:aspect-auto lg:min-h-[275px]" : ""}`}><Image src={image} alt="" fill sizes={index === 0 ? "(max-width: 1024px) 100vw, 35vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"} className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" /></div>
+            {highlights.map(({ title, description, image, icon: Icon }, index) => <article key={title} className={`group overflow-hidden rounded-3xl border border-green-950/[.07] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-green-950/10 ${index === highlights.length - 1 ? "sm:col-span-2 sm:mx-auto sm:w-[calc(50%-0.625rem)] lg:col-span-3 lg:w-[calc(33.333%-0.833rem)]" : ""}`}>
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#f4f3ed]"><Image src={image} alt="" fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" /></div>
               <div className="p-6 sm:p-7"><div className="flex items-center gap-3"><span className="flex h-9 w-9 items-center justify-center rounded-full bg-green-50 text-green-900"><Icon className="h-4 w-4" /></span><span className="text-[10px] font-semibold uppercase tracking-[.2em] text-amber-700">Moment {String(index + 1).padStart(2, "0")}</span></div><h3 className="mt-4 text-xl font-semibold leading-snug text-green-950">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{description}</p></div>
             </article>)}
           </div>
