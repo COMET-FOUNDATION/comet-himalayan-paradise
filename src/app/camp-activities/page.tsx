@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { campActivityGroups } from "@/data/campActivities";
 
 export default function CampActivitiesPage() {
@@ -27,10 +27,6 @@ export default function CampActivitiesPage() {
             Holiday Camp Activities
           </h1>
           <div aria-hidden="true" className="mt-7 h-[3px] w-[88px] rounded-full bg-orange-400 sm:mt-8 sm:w-[100px]" />
-          <div className="mt-4 flex items-center justify-center gap-3 text-orange-100/90">
-            <ArrowDown className="h-4 w-4" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em]">Explore</span>
-          </div>
         </div>
       </section>
 
