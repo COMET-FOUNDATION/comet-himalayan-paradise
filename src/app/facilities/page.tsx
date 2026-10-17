@@ -199,9 +199,7 @@ export default function FacilitiesPage() {
             </p>
 
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Remote Work from
-              <br />
-              the Himalayas
+              Remote Work from Himalayas
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/90 sm:text-base lg:text-lg">

@@ -150,8 +150,8 @@ export default function CHPOperationsPage() {
               CHP Operations
             </p>
 
-            <h1 className="max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-[-0.02em] text-white sm:text-5xl lg:text-5xl">
-  Operations, Maintenance & Common Services
+            <h1 className="max-w-full text-[clamp(1.65rem,3.3vw,3rem)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white md:whitespace-nowrap">
+  Operations, Maintenance &amp; Shared Services
 </h1>
 
             <p className="mx-auto mt-5 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg">

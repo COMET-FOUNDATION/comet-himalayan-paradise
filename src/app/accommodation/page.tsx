@@ -137,7 +137,7 @@ export default function AccommodationPage() {
               Homestay
             </p>
 
-            <p className="mt-4 max-w-xl text-justify text-lg font-bold text-white/80 sm:mt-6 sm:text-xl md:text-1xl">
+            <p className="mt-4 max-w-xl text-center text-xl font-bold leading-relaxed text-white/90 sm:mt-6 sm:text-2xl md:text-[28px]">
   Don't just visit the Himalayas — live like you belong here.
 </p>
           </div>

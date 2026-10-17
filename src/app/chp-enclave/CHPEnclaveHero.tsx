@@ -44,10 +44,10 @@ export function CHPEnclaveHero() {
           </p>
           <span className="h-px w-8 bg-orange-400/70" />
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-white drop-shadow-sm sm:text-5xl md:text-4xl">
+        <h1 className="mb-5 max-w-5xl text-[28px] font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm sm:text-[40px] md:text-[50px] xl:text-[62px]">
           CHP Enclave
         </h1>
-        <p className="mt-5 text-base leading-relaxed text-white/90 drop-shadow-sm sm:text-lg">
+        <p className="max-w-3xl text-sm leading-relaxed text-white/90 drop-shadow-sm sm:text-base md:text-lg">
           <strong>HIMALAYAN PARADISE ENCLAVE-</strong>
           <br />
           <em>Second Home above Clouds.</em>

@@ -236,11 +236,9 @@ export default function HealthRetreatProgramPage() {
                                 duration: 0.6,
                                 delay: 0.2,
                             }}
-                            className="mx-auto mt-4 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg"
+                            className="mx-auto mt-4 max-w-full whitespace-normal text-xl font-medium leading-relaxed text-white/90 sm:text-2xl lg:whitespace-nowrap"
                         >
-                            A sacred Himalayan environment for yoga,
-                            meditation, Ayurveda, spiritual ceremony, and deep
-                            inner renewal — far from the noise of modern life.
+                            Reconnect with Yourself. Rejuvenate in the Himalayas.
                         </motion.p>
 
                         <motion.div
