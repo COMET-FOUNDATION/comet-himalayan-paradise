@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -12,10 +11,8 @@ import {
     Wind,
     Leaf,
     Flame,
-    CheckCircle2,
-    ArrowRight,
     ArrowLeft,
-    Send,
+    Mountain,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import {
@@ -88,57 +85,6 @@ const pillars = [
     },
 ];
 
-const retreatPrograms = [
-    {
-        title: "Weekend Detox & Reset",
-        duration: "2 Nights / 3 Days",
-        desc:
-            "Digital detox, daily yoga, guided meditation, Sattvic meals, and a Himalayan forest walk to reset your mind and body.",
-        includes: [
-            "Morning & evening yoga",
-            "2 meditation sessions/day",
-            "Sattvic organic meals",
-            "Forest therapy walk",
-            "Campfire satsang",
-        ],
-        image:
-            "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&auto=format&fit=crop",
-    },
-    {
-        title: "7-Day Inner Renewal",
-        duration: "7 Nights / 8 Days",
-        desc:
-            "An immersive week of Himalayan healing — yoga, pranayama, Ayurveda, Havan, silent forest walks, and personalised one-on-one guidance.",
-        includes: [
-            "Daily yoga & pranayama",
-            "Havan & Agni Puja ceremony",
-            "Ayurvedic consultation",
-            "Silent nature trail daily",
-            "Gaushala & farm immersion",
-            "Group satsang evenings",
-        ],
-        image:
-            "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/1366bf84-6e3a-47e6-98b5-c7a7ab0f8964-7-day-inner-renewal.webp",
-        featured: true,
-    },
-    {
-        title: "Purpose & Clarity Retreat",
-        duration: "14 Nights / 15 Days",
-        desc:
-            "A deep-dive program for individuals seeking direction, clarity, and a renewed sense of purpose — combining silence, reflection, and Himalayan wisdom.",
-        includes: [
-            "Personalised guidance sessions",
-            "Purpose journaling workshop",
-            "Sunrise peak treks",
-            "Full Ayurvedic wellness plan",
-            "Group & private meditation",
-            "Cultural immersion visits",
-        ],
-        image:
-            "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/a9e97603-2fcd-40db-b484-2dd36329a1c4-purpose-clarity-retreat-under-500kb.webp",
-    },
-];
-
 const traditions = [
     {
         label: "Isht Dev Sthal",
@@ -167,22 +113,6 @@ const traditions = [
 ];
 
 export default function HealthRetreatProgramPage() {
-    const [formSubmitted, setFormSubmitted] = useState(false);
-
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        program: "7-Day Inner Renewal",
-        date: "",
-        message: "",
-    });
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setFormSubmitted(true);
-    };
-
     return (
         <main className="min-h-screen bg-white text-slate-800 pt-0 text-justify">
 
@@ -241,30 +171,6 @@ export default function HealthRetreatProgramPage() {
                             Reconnect with Yourself. Rejuvenate in the Himalayas.
                         </motion.p>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{
-                                duration: 0.6,
-                                delay: 0.3,
-                            }}
-                            className="mt-6 flex flex-wrap justify-center gap-4"
-                        >
-                            <a
-                                href="#retreats"
-                                className="flex items-center gap-2 rounded-full bg-amber-600 px-7 py-3.5 font-bold text-white shadow-lg transition-all hover:bg-amber-500"
-                            >
-                                View Retreat Programs
-                                <ArrowRight className="h-4 w-4" />
-                            </a>
-
-                            <a
-                                href="#enquire"
-                                className="rounded-full border border-white/30 bg-white/10 px-7 py-3.5 font-medium text-white backdrop-blur-sm transition-all hover:bg-white/20"
-                            >
-                                Enquire Now
-                            </a>
-                        </motion.div>
 
                     </div>
                 </div>
@@ -280,9 +186,9 @@ export default function HealthRetreatProgramPage() {
                     </p>
 
                     <blockquote className="mx-auto max-w-4xl text-lg font-light italic leading-relaxed text-slate-700 text-justify sm:text-xl">
-                        "The Himalayas do not merely house peaks — they house
+                        &ldquo;The Himalayas do not merely house peaks — they house
                         silence, wisdom, and the ancient breath of the earth.
-                        CHP is designed to help you listen."
+                        CHP is designed to help you listen.&rdquo;
                     </blockquote>
 
                 </div>
@@ -371,315 +277,39 @@ export default function HealthRetreatProgramPage() {
                 id="retreats"
                 className="scroll-mt-20 bg-stone-50 py-20 lg:py-28"
             >
-
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-                    <SectionHeader
-                        eyebrow="Retreat Programs"
-                        title="Curated Himalayan Retreat Journeys"
-                        subtitle="Choose a program suited to your time, intention, and depth of practice."
-                    />
-
-                    <StaggerContainer
-                        className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3"
-                        staggerDelay={0.08}
-                    >
-                        {retreatPrograms.map((r) => (
-                            <StaggerItem key={r.title}>
-
-                                <div
-                                    className={`relative flex h-full flex-col overflow-hidden rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-xl ${
-                                        r.featured
-                                            ? "border-amber-500 shadow-lg shadow-amber-900/10"
-                                            : "border-slate-200"
-                                    }`}
-                                >
-
-                                    {r.featured && (
-                                        <div className="absolute right-4 top-4 z-10 rounded-full bg-amber-600 px-3 py-1 text-xs font-bold text-white">
-                                            Most Popular
-                                        </div>
-                                    )}
-
-                                    <div className="relative h-52 overflow-hidden">
-
-                                        <Image
-                                            src={r.image}
-                                            alt={r.title}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 33vw"
-                                            className="object-cover"
-                                        />
-
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-                                        <div className="absolute bottom-4 left-4 text-xs font-semibold text-amber-300">
-                                            {r.duration}
-                                        </div>
-
-                                    </div>
-
-                                    <div className="flex flex-1 flex-col justify-between bg-white p-6">
-
-                                        <div>
-
-                                            <h3 className="mb-2 text-xl font-bold text-slate-800">
-                                                {r.title}
-                                            </h3>
-
-                                            <p className="mb-4 text-sm leading-relaxed text-slate-500 text-justify">
-                                                {r.desc}
-                                            </p>
-
-                                            <ul className="mb-5 space-y-2">
-
-                                                {r.includes.map((inc) => (
-                                                    <li
-                                                        key={inc}
-                                                        className="flex items-center gap-2 text-xs text-slate-600"
-                                                    >
-                                                        <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-green-700" />
-                                                        {inc}
-                                                    </li>
-                                                ))}
-
-                                            </ul>
-
-                                        </div>
-
-                                        <a
-                                            href="#enquire"
-                                            className={`w-full rounded-xl py-3 text-center text-sm font-semibold transition-colors ${
-                                                r.featured
-                                                    ? "bg-amber-600 text-white hover:bg-amber-700"
-                                                    : "bg-stone-100 text-slate-800 hover:bg-stone-200"
-                                            }`}
-                                        >
-                                            Enquire for {r.title}
-                                        </a>
-
-                                    </div>
-
-                                </div>
-
-                            </StaggerItem>
-                        ))}
-                    </StaggerContainer>
-
-                </div>
-            </section>
-
-            {/* ── Enquiry Form ── */}
-            <section
-                id="enquire"
-                className="scroll-mt-20 bg-white py-20"
-            >
-
-                <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-
-                    <div className="mb-10 text-center">
-
-                        <span className="text-xs font-semibold uppercase tracking-wider text-amber-700">
-                            Begin Your Journey
-                        </span>
-
-                        <h2 className="mt-2 text-3xl font-bold text-slate-800">
-                            Enquire About a Retreat
-                        </h2>
-
-                        <p className="mt-2 text-sm text-slate-500 text-justify">
-                            Our wellness team will reach out within 24 hours
-                            with availability and programme details.
+                    <div className="mx-auto max-w-4xl rounded-3xl border border-green-900/10 bg-white px-6 py-12 text-center shadow-sm sm:px-10 sm:py-16 lg:px-16">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange-600">
+                            Retreat Programs
                         </p>
 
-                    </div>
-
-                    {formSubmitted ? (
-
-                        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-10 text-center">
-
-                            <CheckCircle2 className="mx-auto mb-3 h-12 w-12 text-amber-600" />
-
-                            <h3 className="text-xl font-bold text-slate-800">
-                                Enquiry Received!
-                            </h3>
-
-                            <p className="mt-2 text-sm text-slate-500 text-justify">
-                                Our team will get in touch to guide you toward
-                                the right program.
-                            </p>
-
+                        <div className="mx-auto mt-7 flex h-14 w-14 items-center justify-center rounded-full border border-green-900/10 bg-green-50 text-green-800">
+                            <Mountain aria-hidden="true" className="h-6 w-6" />
                         </div>
 
-                    ) : (
+                        <h2 className="mt-6 text-3xl font-bold leading-tight tracking-tight text-slate-800 sm:text-4xl">
+                            Your Himalayan Wellness Journey Awaits
+                        </h2>
 
-                        <form
-                            onSubmit={handleSubmit}
-                            className="space-y-5 rounded-2xl border border-amber-100 bg-white p-8 shadow-sm"
+                        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                            We&apos;re thoughtfully developing our wellness retreat experiences to bring you meaningful journeys of relaxation, healing, and self-discovery in the Himalayas.
+                        </p>
+
+                        <span className="mt-8 inline-flex rounded-full border border-green-800/15 bg-green-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-green-800">
+                            Coming Soon
+                        </span>
+
+                        <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-slate-500 sm:text-base">
+                            Our retreat programs are currently under development. We&apos;re working to create experiences that reflect the spirit of Comet Himalayan Paradise.
+                        </p>
+
+                        <Link
+                            href="/experiences"
+                            className="mt-9 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-green-900 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-green-800 sm:w-auto"
                         >
-
-                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-                                <div>
-
-                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
-                                        Your Name *
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        required
-                                        placeholder="Full name"
-                                        value={formData.name}
-                                        onChange={(e) =>
-                                            setFormData({
-                                                ...formData,
-                                                name: e.target.value,
-                                            })
-                                        }
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-                                    />
-
-                                </div>
-
-                                <div>
-
-                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
-                                        Email *
-                                    </label>
-
-                                    <input
-                                        type="email"
-                                        required
-                                        placeholder="your@email.com"
-                                        value={formData.email}
-                                        onChange={(e) =>
-                                            setFormData({
-                                                ...formData,
-                                                email: e.target.value,
-                                            })
-                                        }
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-
-                                <div>
-
-                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
-                                        Phone *
-                                    </label>
-
-                                    <input
-                                        type="tel"
-                                        required
-                                        placeholder="+91 99499 94989"
-                                        value={formData.phone}
-                                        onChange={(e) =>
-                                            setFormData({
-                                                ...formData,
-                                                phone: e.target.value,
-                                            })
-                                        }
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-                                    />
-
-                                </div>
-
-                                <div>
-
-                                    <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
-                                        Retreat Program
-                                    </label>
-
-                                    <select
-                                        value={formData.program}
-                                        onChange={(e) =>
-                                            setFormData({
-                                                ...formData,
-                                                program: e.target.value,
-                                            })
-                                        }
-                                        className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-                                    >
-                                        <option>
-                                            Weekend Detox & Reset
-                                        </option>
-
-                                        <option>
-                                            7-Day Inner Renewal
-                                        </option>
-
-                                        <option>
-                                            Purpose & Clarity Retreat
-                                        </option>
-
-                                        <option>
-                                            Custom Program
-                                        </option>
-                                    </select>
-
-                                </div>
-
-                            </div>
-
-                            <div>
-
-                                <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
-                                    Preferred Start Date
-                                </label>
-
-                                <input
-                                    type="date"
-                                    value={formData.date}
-                                    onChange={(e) =>
-                                        setFormData({
-                                            ...formData,
-                                            date: e.target.value,
-                                        })
-                                    }
-                                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-                                />
-
-                            </div>
-
-                            <div>
-
-                                <label className="mb-1.5 block text-xs font-semibold uppercase text-slate-400">
-                                    Your Intention or Questions
-                                </label>
-
-                                <textarea
-                                    rows={3}
-                                    placeholder="What brings you to this journey? Any specific wellness goals?"
-                                    value={formData.message}
-                                    onChange={(e) =>
-                                        setFormData({
-                                            ...formData,
-                                            message: e.target.value,
-                                        })
-                                    }
-                                    className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm text-slate-800 focus:border-amber-500 focus:outline-none"
-                                />
-
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="flex w-full items-center justify-center gap-2 rounded-xl bg-amber-600 py-3.5 font-bold text-white transition-colors hover:bg-amber-700"
-                            >
-                                <Send className="h-4 w-4" />
-                                Submit Retreat Enquiry
-                            </button>
-
-                        </form>
-
-                    )}
-
+                            Explore Other CHP Experiences
+                        </Link>
+                    </div>
                 </div>
             </section>
 

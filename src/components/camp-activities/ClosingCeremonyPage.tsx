@@ -15,9 +15,9 @@ const highlights = [
 export default function ClosingCeremonyPage() {
   return (
     <main className="bg-[#faf9f5] text-slate-800">
-      <section className="relative isolate flex min-h-[610px] items-center overflow-hidden bg-green-950 pt-[72px] sm:min-h-[680px]">
-        <Image src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/d2e7810b-a082-49c2-b9f0-4eaccf9acb63-chp-closing-ceremony.webp" alt="Closing ceremony celebration at CHP Holiday Camp" fill priority sizes="100vw" className="object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-green-950/90 via-green-950/70 to-green-950/25" />
+      <section className="relative isolate flex min-h-[610px] items-center overflow-hidden pt-[72px] sm:min-h-[680px]">
+        <Image src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/599131c1-9856-451b-ac16-bbd0603c55a9-chp-closing-ceremony-under-500kb.webp" alt="Closing ceremony celebration at CHP Holiday Camp" fill priority sizes="100vw" className="object-fill" />
+        <div className="absolute inset-0 bg-black/35" />
         <div className="relative mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:px-12">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[.24em] text-amber-200">CHP Himalayan Paradise · Holiday Camp</p>
           <h1 className="max-w-5xl text-[28px] font-bold leading-[1.08] tracking-tight text-white sm:text-[40px] md:text-[50px] xl:text-[62px]">CHP Holiday Camp <span className="text-amber-200">–</span><br className="hidden sm:block" /> Closing Ceremony</h1>

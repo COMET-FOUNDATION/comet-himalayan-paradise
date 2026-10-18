@@ -74,18 +74,6 @@ const supportAreas = [
   },
 ];
 
-const sustainabilityApproach = [
-  ["01", "Promoting organic farming.", Leaf],
-  ["02", "Developing useful applications for cow by-products.", Wheat],
-  ["03", "Establishing a nature-first, eco-friendly farming community.", Sprout],
-  [
-    "04",
-    "Encouraging individuals and organisations to support/adopt abandoned cows through applicable donation/CSR mechanisms.",
-    Users,
-  ],
-  ["05", "Accepting one-time contributions for general upkeep.", Heart],
-] as const;
-
 const communityParticipation = [
   "Promoting Gauseva stories through social media",
   "Organising fundraising campaigns",
@@ -235,6 +223,35 @@ export default function CometGausevaPage() {
         </div>
       </section>
 
+      {/* VISION & MISSION */}
+      <section className="bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading eyebrow="Why We Exist" title="Vision & Mission" />
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            <article className={`${cardClass} p-7 sm:p-9`}>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-900 text-white">
+                <Heart className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 text-2xl font-bold text-slate-800">Vision</h3>
+              <p className="mt-3 text-justify text-sm leading-7 text-slate-600 sm:text-base">
+                To create a <strong className="font-bold text-slate-900">compassionate and sustainable ecosystem</strong> where every cow is respected, protected and nurtured, while contributing to <strong className="font-bold text-slate-900">rural livelihoods, organic farming and spiritual harmony</strong>.
+              </p>
+            </article>
+
+            <article className={`${cardClass} p-7 sm:p-9`}>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-900 text-white">
+                <Shield className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 text-2xl font-bold text-slate-800">Mission</h3>
+              <p className="mt-3 text-justify text-sm leading-7 text-slate-600 sm:text-base">
+                To <strong className="font-bold text-slate-900">rescue, shelter and care</strong> for abandoned, injured and aging cows in a safe and loving environment.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* SUPPORT — message left, compact QR code right */}
       <section
         id="donate"
@@ -287,9 +304,8 @@ export default function CometGausevaPage() {
 
       {/* CHP GAUSEVA KENDRA + SELF-SUSTAINING MODEL */}
       <section className="bg-stone-50 px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-            <div className={`${cardClass} p-7 sm:p-9`}>
+        <div className="mx-auto max-w-5xl">
+          <div className={`${cardClass} p-7 sm:p-9`}>
               <div className="mb-3 flex items-center gap-3">
                 <span className="h-px w-8 bg-orange-500" />
                 <p className={eyebrowClass}>About the Initiative</p>
@@ -331,87 +347,6 @@ export default function CometGausevaPage() {
                 </p>
               </div>
             </div>
-
-            <div id="sustainability" className={`${cardClass} p-7 sm:p-9`}>
-              <SectionHeading
-                align="left"
-                eyebrow="Our Approach"
-                title="Building a Self-Sustaining Gauseva Model"
-                description="A major focus of the initiative is to move beyond dependence on donations and develop a self-sustaining model."
-              />
-              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-green-900">
-                The proposed sustainability approach includes:
-              </p>
-              <div className="mt-4 space-y-3">
-                {sustainabilityApproach.map(([number, text, Icon]) => {
-                  const C = Icon as typeof Heart;
-                  return (
-                    <div
-                      key={number}
-                      className="flex gap-4 rounded-xl border border-slate-200 bg-white p-4"
-                    >
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-green-100 text-sm font-bold text-green-800">
-                        {number}
-                      </span>
-                      <div className="flex gap-3">
-                        <C className="mt-0.5 h-4 w-4 shrink-0 text-green-700" />
-                        <p className="text-sm leading-6 text-slate-600">
-                          {text}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VISION & MISSION */}
-      <section className="bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Why We Exist" title="Vision & Mission" />
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <article className={`${cardClass} p-7 sm:p-9`}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-900 text-white">
-                <Heart className="h-5 w-5" />
-              </div>
-              <h3 className="mt-5 text-2xl font-bold text-slate-800">
-                Vision
-              </h3>
-              <p className="mt-3 text-justify text-sm leading-7 text-slate-600 sm:text-base">
-                To create a{" "}
-                <strong className="font-bold text-slate-900">
-                  compassionate and sustainable ecosystem
-                </strong>{" "}
-                where every cow is respected, protected and nurtured, while
-                contributing to{" "}
-                <strong className="font-bold text-slate-900">
-                  rural livelihoods, organic farming and spiritual harmony
-                </strong>
-                .
-              </p>
-            </article>
-
-            <article className={`${cardClass} p-7 sm:p-9`}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-900 text-white">
-                <Shield className="h-5 w-5" />
-              </div>
-              <h3 className="mt-5 text-2xl font-bold text-slate-800">
-                Mission
-              </h3>
-              <p className="mt-3 text-justify text-sm leading-7 text-slate-600 sm:text-base">
-                To{" "}
-                <strong className="font-bold text-slate-900">
-                  rescue, shelter and care
-                </strong>{" "}
-                for abandoned, injured and aging cows in a safe and loving
-                environment.
-              </p>
-            </article>
-          </div>
         </div>
       </section>
 

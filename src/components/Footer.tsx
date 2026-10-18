@@ -128,10 +128,10 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-green-400 shrink-0" />
 
                 <a
-                  href="mailto:hello@chphimalayanparadise.com"
+                  href="mailto:himalayan.pradise@gmail.com"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
-                  hello@chphimalayanparadise.com
+                  himalayan.pradise@gmail.com
                 </a>
               </li>
             </ul>
