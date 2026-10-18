@@ -156,7 +156,7 @@ export default function CampsPage() {
             <ScrollReveal direction="right">
               <div className={`${IMAGE_BOX} overflow-hidden rounded-2xl`}>
                 <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/a6144aa9-77bf-406b-8909-fccf2edf9929-scaled-holiday-camp-2.webp"
+                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/91989445-ea0f-458a-9793-71263e6e3cab-chp-holiday-camp-banner-under-500kb.webp"
                   alt="Himalayan camp aerial view"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

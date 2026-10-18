@@ -151,11 +151,11 @@ export default function CHPOperationsPage() {
             </p>
 
             <h1 className="max-w-full text-[clamp(1.65rem,3.3vw,3rem)] font-extrabold leading-[1.05] tracking-[-0.02em] text-white md:whitespace-nowrap">
-  Operations, Maintenance &amp; Shared Services
+  CHP Maintenance &amp; Shared Services
 </h1>
 
             <p className="mx-auto mt-5 max-w-3xl text-base font-medium leading-relaxed text-white/90 sm:text-lg">
-              One Integrated Management Framework for the Entire CHP Ecosystem
+             Seamless Operations. Exceptional Himalayan Living.
             </p>
           </div>
         </div>
@@ -300,52 +300,12 @@ export default function CHPOperationsPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          DREAM SPACES
-          ========================================================= */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10">
-            <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-800">
-                <Sparkles className="h-6 w-6" />
-              </div>
 
-              <div>
-                <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-orange-600">
-                  Dream Spaces
-                </p>
-                <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-                  Dream Spaces — Integrated Into the CHP Ecosystem
-                </h2>
-
-                <div className="mt-5 space-y-4 text-base leading-7 text-slate-600">
-                  <p>
-                    CHP is designed around multiple Dream Spaces, each offering
-                    a distinct experience, service or business opportunity.
-                  </p>
-                  <p>
-                    As these Dream Spaces are integrated into the ecosystem,
-                    CHP&apos;s operations framework will support their common
-                    operational requirements while allowing each facility to
-                    retain its own specialized management where required.
-                  </p>
-                  <p>
-                    This approach enables CHP to build a single connected
-                    destination rather than a collection of independent
-                    facilities.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* =========================================================
           OPERATIONS TEAM
           ========================================================= */}
-      <section className="bg-stone-50 py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-orange-600">
@@ -536,71 +496,11 @@ export default function CHPOperationsPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          REFERRAL & GROWTH INCENTIVES
-          ========================================================= */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-orange-600">
-              Growth & Participation
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              CHP Referral & Growth Incentives
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              The CHP ecosystem can also encourage owners, members and partners
-              to contribute to its growth through referral-based incentives.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <article className="rounded-2xl border border-slate-200 bg-stone-50 p-7 sm:p-8">
-              <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-900 text-white">
-                  <Building2 className="h-5 w-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">
-                  Cottage / Customer Referral
-                </h3>
-              </div>
-
-              <p className="mt-6 text-sm leading-6 text-slate-600">
-                An eligible existing owner/member who successfully refers a
-                qualifying new cottage/customer opportunity may be eligible for
-                a <strong className="font-bold text-slate-900">
-                  1-year maintenance waiver.
-                </strong>
-              </p>
-            </article>
-
-            <article className="rounded-2xl border border-slate-200 bg-stone-50 p-7 sm:p-8">
-              <div className="flex items-center gap-4">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-900 text-white">
-                  <Lightbulb className="h-5 w-5" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">
-                  Business Partner Referral
-                </h3>
-              </div>
-
-              <p className="mt-6 text-sm leading-6 text-slate-600">
-                An eligible owner/member who successfully refers a business
-                partner for one of the proposed CHP commercial facilities may
-                be eligible for a{" "}
-                <strong className="font-bold text-slate-900">
-                  2-year maintenance waiver.
-                </strong>
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
+      
       {/* =========================================================
           CLOSING
           ========================================================= */}
-      <section className="bg-stone-50 py-14">
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
           <p className="text-base font-medium leading-7 text-slate-600">
             A coordinated operations and common-services framework allows CHP

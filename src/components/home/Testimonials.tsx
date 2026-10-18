@@ -15,7 +15,7 @@ export function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Testimonials"
-          title="What Travelers Say"
+          title="What our guests say"
           subtitle="Stories from the mountains — straight from the hearts of those who've been there."
         />
 

@@ -543,112 +543,11 @@ export default function CHPBizPartnershipPage() {
       </section>
 
       {/* =========================================================
-          ECOSYSTEM
-      ========================================================== */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading
-            title="A Business Ecosystem — Not Just a Business Location"
-            description="At CHP, a business does not have to operate independently."
-          />
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {[
-              [
-                "Destination Weddings",
-                Sparkles,
-                <>
-                  A wedding business can connect with{" "}
-                  <strong className="font-semibold text-slate-950">
-                    accommodation, restaurants, photography, adventure and
-                    wellness
-                  </strong>
-                  .
-                </>,
-              ],
-              [
-                "Film Studio",
-                Video,
-                <>
-                  A film studio can connect with{" "}
-                  <strong className="font-semibold text-slate-950">
-                    accommodation, outdoor locations, local artists,
-                    transportation and events
-                  </strong>
-                  .
-                </>,
-              ],
-              [
-                "Education Venture",
-                GraduationCap,
-                <>
-                  An education venture can connect with{" "}
-                  <strong className="font-semibold text-slate-950">
-                    STEM, adventure, wellness, accommodation and experiential
-                    learning
-                  </strong>
-                  .
-                </>,
-              ],
-              [
-                "Eco-Agri Business",
-                Leaf,
-                <>
-                  An eco-agri business can connect with{" "}
-                  <strong className="font-semibold text-slate-950">
-                    Gaushala, tourism, food, wellness, hospitality and local
-                    community development
-                  </strong>
-                  .
-                </>,
-              ],
-            ].map(([title, Icon, text]) => {
-              const I = Icon as typeof Sparkles;
-
-              return (
-                <div
-                  key={String(title)}
-                  className="rounded-[1.5rem] border border-slate-200 bg-white p-7 shadow-sm sm:p-8"
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
-                    <I className="h-5 w-5" />
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-bold text-slate-950">
-                    {title as string}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-slate-600 sm:text-base">
-                    {text as ReactNode}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="mt-7 border-t border-slate-200 pt-6 text-sm leading-7 text-slate-600">
-            This interconnected structure creates opportunities for{" "}
-            <strong className="font-semibold text-slate-950">
-              collaboration, referrals, cross-selling and complementary
-              services
-            </strong>
-            . The Destination Wedding proposal, for example, describes how
-            accommodation, food, wellness, adventure, organic farming, village
-            tourism and river experiences can combine to create a{" "}
-            <strong className="font-semibold text-slate-950">
-              complete Himalayan experience
-            </strong>{" "}
-            rather than a standalone wedding venue.
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
           OPPORTUNITIES
       ========================================================== */}
       <section
         id="opportunities"
-        className="scroll-mt-24 bg-[#f4f5f2] py-20 sm:py-24 lg:py-28"
+        className="scroll-mt-24 bg-white py-20 sm:py-24 lg:py-28"
       >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <SectionHeading

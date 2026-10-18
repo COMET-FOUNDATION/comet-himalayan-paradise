@@ -354,6 +354,11 @@ const supportWays: {
             "Help establish and sustain computer labs by sponsoring computers, lab infrastructure or technical consultants.",
     },
     {
+        title: "Sponsor a Faculty for Online Coaching Classes",
+        description:
+            "Help fund qualified faculty to deliver online coaching classes and provide students with guided learning and academic support.",
+    },
+    {
         title: "Support Career Workshops & Career Fests",
         description:
             "Enable students to discover career opportunities through counselling sessions, workshops and career awareness events.",
@@ -1106,7 +1111,14 @@ export default function CometEducationalServicesPage() {
                         staggerDelay={0.06}
                     >
                         {supportWays.map((way, i) => (
-                            <StaggerItem key={i}>
+                            <StaggerItem
+                                key={i}
+                                className={
+                                    way.title === "Create Internship & Job Opportunities"
+                                        ? "lg:col-start-2"
+                                        : undefined
+                                }
+                            >
                                 <div
                                     className={`${CONTAINER_CLASS} rounded-2xl p-6 hover:shadow-md transition-all duration-300 h-full`}
                                 >

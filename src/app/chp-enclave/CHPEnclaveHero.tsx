@@ -48,11 +48,9 @@ export function CHPEnclaveHero() {
           CHP Enclave
         </h1>
         <p className="max-w-3xl text-sm leading-relaxed text-white/90 drop-shadow-sm sm:text-base md:text-lg">
-          <strong>HIMALAYAN PARADISE ENCLAVE-</strong>
+          <b>Second Home above Clouds.</b>
           <br />
-          <em>Second Home above Clouds.</em>
-          <br />
-          <em>Built for Professionals. Blessed by Himalayas</em>
+          <b>Built for Professionals. Blessed by Himalayas</b>
         </p>
       </motion.div>
     </section>

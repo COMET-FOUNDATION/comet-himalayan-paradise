@@ -118,15 +118,16 @@ export default function GatewaysPage() {
             {/* Hero Section */}
             <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
                 <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/60c714e9-e1a2-466f-93dd-e59079967b8f-gateways-header-1.png"
+                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/homepage/35824223-1985-4a96-9326-9a020092fcbe-chp-gateways-header-under-500kb.webp"
                     alt="CHP Gateways"
                     fill
                     priority
-                    className="object-cover"
+                    sizes="100vw"
+                    className="object-fill"
                 />
                 <div className="absolute inset-0 bg-black/45" />
 
-                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center text-center px-4 sm:px-6 pb-12">
+                <div className="absolute inset-x-0 bottom-[35%] z-10 flex flex-col items-center px-4 text-center sm:px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -141,7 +142,7 @@ export default function GatewaysPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-6"
+                        className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
                     >
                         Gateways to{" "}
                         <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">
@@ -149,26 +150,6 @@ export default function GatewaysPage() {
                         </span>
                     </motion.h1>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="flex flex-wrap justify-center gap-4"
-                    >
-                        <a
-                            href="#connect"
-                            className="bg-amber-600 hover:bg-amber-500 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-amber-900/30 flex items-center gap-2"
-                        >
-                            <span>Connect With Us</span>
-                            <ArrowRight className="w-4 h-4" />
-                        </a>
-                        <a
-                            href="#gateways"
-                            className="bg-neutral-700/80 hover:bg-neutral-600 text-white font-medium px-7 py-3.5 rounded-full border border-white/15 transition-all duration-200 backdrop-blur-sm"
-                        >
-                            Explore the Gateways
-                        </a>
-                    </motion.div>
                 </div>
             </section>
 
