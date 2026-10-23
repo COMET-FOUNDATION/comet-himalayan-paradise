@@ -1,3 +1,5 @@
+import { CategoryPdfLink } from "@/components/navigation/CategoryPdfLink";
+import { BackToPreviousPage } from "@/components/navigation/BackToPreviousPage";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -107,6 +109,11 @@ export default function DreamSpacesPage() {
           </div>
         </div>
       </section>
+      <div className="flex justify-center px-4 pb-12 pt-4 sm:pb-16">
+        <CategoryPdfLink href="https://drive.google.com/file/d/1UxsLb0v74GSFPDqIAo371n9e1dE_QeP9/view?usp=sharing" />
+                <BackToPreviousPage fallbackHref="/biz-facilities" />
+      </div>
+
     </main>
   );
 }

@@ -223,32 +223,45 @@ export default function CometGausevaPage() {
         </div>
       </section>
 
-      {/* VISION & MISSION */}
-      <section className="bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Why We Exist" title="Vision & Mission" />
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <article className={`${cardClass} p-7 sm:p-9`}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-900 text-white">
-                <Heart className="h-5 w-5" />
+      {/* CHP GAUSEVA KENDRA + SELF-SUSTAINING MODEL */}
+      <section className="bg-stone-50 px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
+        <div className="mx-auto max-w-5xl">
+          <div className={`${cardClass} p-7 sm:p-9`}>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-px w-8 bg-orange-500" />
+                <p className={eyebrowClass}>About the Initiative</p>
               </div>
-              <h3 className="mt-5 text-2xl font-bold text-slate-800">Vision</h3>
-              <p className="mt-3 text-justify text-sm leading-7 text-slate-600 sm:text-base">
-                To create a <strong className="font-bold text-slate-900">compassionate and sustainable ecosystem</strong> where every cow is respected, protected and nurtured, while contributing to <strong className="font-bold text-slate-900">rural livelihoods, organic farming and spiritual harmony</strong>.
-              </p>
-            </article>
 
-            <article className={`${cardClass} p-7 sm:p-9`}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-900 text-white">
-                <Shield className="h-5 w-5" />
-              </div>
-              <h3 className="mt-5 text-2xl font-bold text-slate-800">Mission</h3>
-              <p className="mt-3 text-justify text-sm leading-7 text-slate-600 sm:text-base">
-                To <strong className="font-bold text-slate-900">rescue, shelter and care</strong> for abandoned, injured and aging cows in a safe and loving environment.
+              <h2 className="text-3xl font-bold leading-tight text-slate-800 sm:text-4xl lg:text-[2.6rem]">
+                CHP Gauseva Kendra
+              </h2>
+<p className="mt-5 text-justify text-sm leading-7 text-slate-600 sm:text-base">
+                CHP Gauseva Kendra is an initiative focused on providing{" "}
+                <strong className="font-bold text-slate-900">
+                  shelter, protection and compassionate care
+                </strong>{" "}
+                to abandoned, injured and aging cows. It is located in{" "}
+                <strong className="font-bold text-slate-900">
+                  Pithoragarh, Uttarakhand
+                </strong>
+                , at Sinakhola village, Paleta.
               </p>
-            </article>
-          </div>
+              <p className="mt-4 text-justify text-sm leading-7 text-slate-600 sm:text-base">
+                The initiative is built around the idea that caring for cows
+                can also contribute to{" "}
+                <strong className="font-bold text-slate-900">
+                  rural livelihoods, organic farming, environmental
+                  sustainability
+                </strong>{" "}
+                and community participation.
+              </p>
+              <div className="mt-7 rounded-xl border border-green-100 bg-green-50/60 p-5">
+                <p className="text-lg font-semibold leading-7 text-green-900">
+                  Let’s join hands to provide food, shelter and protection to
+                  abandoned cows.
+                </p>
+              </div>
+            </div>
         </div>
       </section>
 
@@ -299,54 +312,6 @@ export default function CometGausevaPage() {
               <DonationQRCode />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CHP GAUSEVA KENDRA + SELF-SUSTAINING MODEL */}
-      <section className="bg-stone-50 px-5 py-10 sm:px-8 sm:py-12 lg:px-10">
-        <div className="mx-auto max-w-5xl">
-          <div className={`${cardClass} p-7 sm:p-9`}>
-              <div className="mb-3 flex items-center gap-3">
-                <span className="h-px w-8 bg-orange-500" />
-                <p className={eyebrowClass}>About the Initiative</p>
-              </div>
-
-              <h2 className="text-3xl font-bold leading-tight text-slate-800 sm:text-4xl lg:text-[2.6rem]">
-                CHP Gauseva Kendra
-              </h2>
-
-              <p className="mt-5 text-justify text-lg font-medium leading-8 text-green-900">
-                Everyone can contribute. Give your time, skills, resources or
-                support and become part of the journey from{" "}
-                <strong className="font-bold">neglect to nurture</strong>.
-              </p>
-              <p className="mt-5 text-justify text-sm leading-7 text-slate-600 sm:text-base">
-                CHP Gauseva Kendra is an initiative focused on providing{" "}
-                <strong className="font-bold text-slate-900">
-                  shelter, protection and compassionate care
-                </strong>{" "}
-                to abandoned, injured and aging cows. It is located in{" "}
-                <strong className="font-bold text-slate-900">
-                  Pithoragarh, Uttarakhand
-                </strong>
-                , at Sinakhola village, Paleta.
-              </p>
-              <p className="mt-4 text-justify text-sm leading-7 text-slate-600 sm:text-base">
-                The initiative is built around the idea that caring for cows
-                can also contribute to{" "}
-                <strong className="font-bold text-slate-900">
-                  rural livelihoods, organic farming, environmental
-                  sustainability
-                </strong>{" "}
-                and community participation.
-              </p>
-              <div className="mt-7 rounded-xl border border-green-100 bg-green-50/60 p-5">
-                <p className="text-lg font-semibold leading-7 text-green-900">
-                  Let’s join hands to provide food, shelter and protection to
-                  abandoned cows.
-                </p>
-              </div>
-            </div>
         </div>
       </section>
 

@@ -1,3 +1,5 @@
+import { CategoryPdfLink } from "@/components/navigation/CategoryPdfLink";
+import { BackToPreviousPage } from "@/components/navigation/BackToPreviousPage";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
@@ -278,6 +280,11 @@ export default function CHPEnclavePage() {
           Back to Home
         </Link>
       </div>
-    </>
+          <div className="flex justify-center px-4 pb-12 pt-4 sm:pb-16">
+        <CategoryPdfLink href="https://drive.google.com/file/d/1XJ_E724jn1DnkU8RGt-2QZ4GNLQdSXAH/view?usp=sharing" />
+                <BackToPreviousPage fallbackHref="/dream-spaces" />
+      </div>
+
+</>
   );
 }
