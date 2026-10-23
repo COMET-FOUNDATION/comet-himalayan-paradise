@@ -1,5 +1,6 @@
 "use client";
 
+import { BackToPreviousPage } from "@/components/navigation/BackToPreviousPage";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -328,6 +329,10 @@ export default function HealthRetreatProgramPage() {
                 </div>
             </section>
 
-        </main>
+              <div className="flex justify-center px-4 pb-12 pt-4 sm:pb-16">
+        <BackToPreviousPage fallbackHref="/dream-spaces" />
+      </div>
+
+</main>
     );
 }

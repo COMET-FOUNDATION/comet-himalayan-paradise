@@ -128,6 +128,20 @@ const dreamSpaces: EcosystemItem[] = [
     href = "/chp-enclave";
   }
 
+  if (
+    [
+      "Himalayan Vine Yard Commune",
+      "Himalayan Bonsai World",
+      "Himalayan Rare Gems",
+      "CHP Floral Paradise",
+      "CHP Fruit Orchard",
+      "CHP Friends Enclave",
+      "Uttarakhand Heritage Retreat",
+    ].includes(title)
+  ) {
+    href = "/personalized-dream-space";
+  }
+
   /*
    * CORPORATE / SOCIETIES
    */
@@ -138,7 +152,7 @@ const dreamSpaces: EcosystemItem[] = [
       "Housing Societies & Communities Guest House",
     ].includes(title)
   ) {
-    href = proposalLinks.corporate;
+      href = "/himalayan-enclaves-for-companies-societies";
   }
 
   /*
@@ -153,6 +167,17 @@ const dreamSpaces: EcosystemItem[] = [
     ].includes(title)
   ) {
     href = proposalLinks.retreat;
+  }
+
+  if (
+    [
+      "Cosmic Viewpoint",
+      "Pyramid Living Space",
+      "Floral Escape Maze",
+      "Sky Nest Retreat",
+    ].includes(title)
+  ) {
+    href = "/mystical-himalayan-retreat";
   }
 
   /*
@@ -243,7 +268,7 @@ const facilities: EcosystemItem[] = [
       "Cliff-edge Restaurant",
     ].includes(title)
   ) {
-    href = proposalLinks.food;
+    href = "/food-court-himalayan-cliff-edge-restaurant";
   }
 
   /*
@@ -272,7 +297,7 @@ const facilities: EcosystemItem[] = [
       "CHP Sports Arena",
     ].includes(title)
   ) {
-    href = proposalLinks.learning;
+    href = "/himalayan-creative-learning-discovery-campus";
   }
 
   /*
@@ -306,7 +331,7 @@ const facilities: EcosystemItem[] = [
       "CHP River Camping",
     ].includes(title)
   ) {
-    href = proposalLinks.adventure;
+    href = "/chp-himalayan-adventure-world";
   }
 
   return {

@@ -15,14 +15,14 @@ const highlights = [
 export default function ClosingCeremonyPage() {
   return (
     <main className="bg-[#faf9f5] text-slate-800">
-      <section className="relative isolate flex min-h-[610px] items-center overflow-hidden pt-[72px] sm:min-h-[680px]">
-        <Image src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/599131c1-9856-451b-ac16-bbd0603c55a9-chp-closing-ceremony-under-500kb.webp" alt="Closing ceremony celebration at CHP Holiday Camp" fill priority sizes="100vw" className="object-fill" />
+      <section className="relative isolate flex min-h-[610px] items-start justify-center overflow-hidden pt-28 sm:min-h-[680px] sm:pt-32">
+        <Image src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-gaushala/d7aa25df-d600-4fad-894c-5c5442e2c5cb-download-1.webp" alt="Closing ceremony celebration at CHP Holiday Camp" fill priority sizes="100vw" className="object-fill" />
         <div className="absolute inset-0 bg-black/35" />
-        <div className="relative mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:px-12">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[.24em] text-amber-200">CHP Himalayan Paradise · Holiday Camp</p>
-          <h1 className="max-w-5xl text-[28px] font-bold leading-[1.08] tracking-tight text-white sm:text-[40px] md:text-[50px] xl:text-[62px]">CHP Holiday Camp <span className="text-amber-200">–</span><br className="hidden sm:block" /> Closing Ceremony</h1>
-          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base md:text-lg">Celebrating Memories, Achievements &amp; the Spirit of Togetherness</p>
-          <div className="mt-9 flex flex-wrap gap-3">
+        <div className="relative mx-auto w-full max-w-7xl px-5 text-center sm:px-8 lg:px-12">
+          <p className="mx-auto mb-5 inline-flex rounded-full bg-green-900 px-4 py-1.5 text-xs font-semibold uppercase tracking-[.2em] text-white shadow-sm">CHP Himalayan Paradise · Holiday Camp</p>
+          <h1 className="mx-auto whitespace-nowrap text-[clamp(1.45rem,5.1vw,3.9rem)] font-bold leading-tight tracking-tight text-white">CHP Holiday Camp <span className="text-amber-200">–</span> Closing Ceremony</h1>
+          <p className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base md:text-lg">Celebrating Memories, Achievements &amp; the Spirit of Togetherness</p>
+          <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Link href="/camps" className="inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3.5 text-sm font-semibold text-green-950 transition hover:bg-amber-300">Explore Our Holiday Camp <ArrowRight className="h-4 w-4" /></Link>
             <a href="#ceremony-highlights" className="inline-flex items-center gap-2 rounded-full border border-white/35 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">Discover the moments <ArrowDown className="h-4 w-4" /></a>
           </div>
@@ -74,13 +74,13 @@ export default function ClosingCeremonyPage() {
 
       <section className="relative overflow-hidden bg-green-950 py-20 text-white sm:py-28">
         <div className="absolute -right-24 -top-28 h-96 w-96 rounded-full border border-white/[.08]" /><div className="absolute -right-12 -top-16 h-72 w-72 rounded-full border border-white/[.08]" />
-        <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8"><p className="text-xs font-semibold uppercase tracking-[.24em] text-amber-200">Beyond awards · Memories that stay…</p><p className="mx-auto mt-7 max-w-3xl text-xl font-light leading-relaxed text-white/85 sm:text-3xl">The ceremony celebrates more than awards: it celebrates friendships, participation, teamwork, shared experiences, and memories that remain after the camp ends.</p></div>
+        <div className="relative mx-auto max-w-4xl px-5 text-center sm:px-8"><p className="text-xs font-semibold uppercase tracking-[.24em] text-amber-200">Beyond awards Â· Memories that stayâ€¦</p><p className="mx-auto mt-7 max-w-3xl text-xl font-light leading-relaxed text-white/85 sm:text-3xl">The ceremony celebrates more than awards: it celebrates friendships, participation, teamwork, shared experiences, and memories that remain after the camp ends.</p></div>
       </section>
 
       <section className="relative isolate flex min-h-[520px] items-center justify-center overflow-hidden bg-[#203b2d] py-20 text-center text-white sm:min-h-[600px]">
         <Image src="/images/camp-activities/closing-ceremony.webp" alt="A celebration of the friendships and memories formed at camp" fill sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-green-950/80 via-green-950/70 to-green-950/90" />
-        <div className="relative mx-auto max-w-4xl px-5 sm:px-8"><p className="text-xs font-semibold uppercase tracking-[.24em] text-amber-200">Until we meet again</p><h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">Take Home the Memories.<br className="hidden sm:block" /> Carry Forward the Spirit…</h2><p className="mt-7 text-lg font-medium text-white/90 sm:text-2xl">One Camp. Every Age. Endless Himalayan Memories.</p><p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg">The camp may end, but the friendships, laughter, achievements, and memories stay with us.</p></div>
+        <div className="relative mx-auto max-w-4xl px-5 sm:px-8"><p className="text-xs font-semibold uppercase tracking-[.24em] text-amber-200">Until we meet again</p><h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl">Take Home the Memories.<br className="hidden sm:block" /> Carry Forward the Spiritâ€¦</h2><p className="mt-7 text-lg font-medium text-white/90 sm:text-2xl">One Camp. Every Age. Endless Himalayan Memories.</p><p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg">The camp may end, but the friendships, laughter, achievements, and memories stay with us.</p></div>
       </section>
 
       <section className="bg-[#f5f3eb] px-5 py-16 sm:px-8 sm:py-20">
