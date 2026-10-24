@@ -6,6 +6,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
     Home,
+    Building2,
+    Compass,
+    GraduationCap,
     HeartHandshake,
     Award,
     Heart,
@@ -23,8 +26,8 @@ const ecosystemGateways = [
     {
         icon: Home,
         key: "purchase",
-        title: "Purchase",
-        tagline: "Purchase a Cottage, Dream Space, or Any CHP Facility",
+        title: "Own at CHP",
+        tagline: "Own a Himalayan Second Home, Dream Space, or CHP Facility",
         description:
             "Own a piece of the Himalayas outright — a cottage, a custom Dream Space, or any CHP facility built to your vision and lifestyle.",
         points: [
@@ -33,12 +36,15 @@ const ecosystemGateways = [
             "Direct ownership of CHP facilities",
             "End-to-end transaction support",
         ],
-        cta: "Enquire About Purchase",
+        links: [
+            { label: "Explore CHP Enclave", href: "/chp-enclave" },
+            { label: "Explore Dream Spaces", href: "/dream-spaces" },
+        ],
     },
     {
         icon: Handshake,
         key: "partnership",
-        title: "Partnership",
+        title: "Partner with CHP",
         tagline: "Your Opportunity to Own, Partner & Belong.",
         description:
             "Co-own selected facilities within the CHP Ecosystem, become a CHP Partner, and gain privileged access to a diverse range of CHP facilities, experiences, services, and benefits.",
@@ -48,7 +54,7 @@ const ecosystemGateways = [
             "Privileged access across the ecosystem",
             "Shared experiences, services & benefits",
         ],
-        cta: "Discuss Partnership",
+        links: [{ label: "Explore", href: "/chp-biz-partnership" }],
     },
     {
         icon: Award,
@@ -96,6 +102,37 @@ const ecosystemGateways = [
         ],
         cta: "Start an Adoption",
     },
+    {
+        icon: Compass,
+        key: "experience",
+        title: "Experience CHP",
+        description: "Homestays, holiday camps, adventure, treks and trails, wellness, and community activities.",
+        points: [],
+        links: [
+            { label: "Explore Holiday Camp", href: "/camps" },
+            { label: "Explore Treks and Trails", href: "/treks" },
+        ],
+    },
+    {
+        icon: Building2,
+        key: "organization",
+        title: "Associate as an Organization",
+        description: "Corporate partnerships, housing societies, schools, and institutions.",
+        points: [],
+        links: [{ label: "Explore", href: "/himalayan-enclaves-for-companies-societies" }],
+    },
+    {
+        icon: GraduationCap,
+        key: "mission",
+        title: "Contribute to the Mission",
+        description: "Mentoring, education, Gaushala, and Isht Dev Sthal.",
+        points: [],
+        links: [
+            { label: "Explore Comet Educational Services", href: "/comet-educational-services" },
+            { label: "Explore Comet Gaushala", href: "/purpose-driven-space" },
+            { label: "Explore Comet Isht Dev Sthal", href: "/sanaatan-isht-dev-sthal" },
+        ],
+    },
 ];
 
 export default function GatewaysPage() {
@@ -104,7 +141,7 @@ export default function GatewaysPage() {
         name: "",
         email: "",
         phone: "",
-        interest: "Purchase",
+        interest: "Own at CHP",
         message: "",
     });
 
@@ -144,11 +181,14 @@ export default function GatewaysPage() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
                     >
-                        Gateways to{" "}
+                        Associate with{" "}
                         <span className="bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-300 bg-clip-text text-transparent">
-                            CHP Ecosystem
+                            CHP
                         </span>
                     </motion.h1>
+                    <p className="mt-5 max-w-3xl text-lg font-medium leading-relaxed text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] sm:text-xl lg:text-2xl">
+                        Your dream. Your interests. Your way to be part of the Himalayas.
+                    </p>
 
                 </div>
             </section>
@@ -156,9 +196,9 @@ export default function GatewaysPage() {
             {/* Ecosystem Gateways Grid */}
             <section id="gateways" className="py-14 lg:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
                 <SectionHeader
-                    eyebrow="Ways to Belong"
-                    title="Five Gateways Into the CHP Ecosystem"
-                    subtitle="Purchase, Donation, Sponsorship, Adoption, or Partnership — choose the gateway that fits your journey with CHP."
+                    eyebrow="Ways to Associate with CHP"
+                    title=""
+                    subtitle="Discover your own way to associate with CHP Himalayan Paradise — whether you dream of owning a Himalayan second home, building a business, exploring unique experiences, partnering with us or contributing to sustainable Himalayan development."
                 />
 
                 <StaggerContainer className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -188,7 +228,7 @@ export default function GatewaysPage() {
                                         {gateway.description}
                                     </p>
 
-                                    <div className="border-t border-emerald-100 pt-4 mb-2">
+                                    {gateway.points.length > 0 && <div className="border-t border-emerald-100 pt-4 mb-2">
                                         <ul className="space-y-2">
                                             {gateway.points.map((point) => (
                                                 <li key={point} className="flex items-start gap-1.5 text-xs text-slate-600">
@@ -197,15 +237,19 @@ export default function GatewaysPage() {
                                                 </li>
                                             ))}
                                         </ul>
-                                    </div>
+                                    </div>}
 
-                                    <a
-                                        href="#connect"
-                                        className="inline-flex items-center justify-between w-full pt-6 mt-4 border-t border-emerald-100 text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition-colors"
-                                    >
-                                        <span>{gateway.cta}</span>
-                                        <ArrowRight className="w-4 h-4" />
-                                    </a>
+                                    <div className="mt-auto border-t border-emerald-100 pt-4">
+                                        {gateway.links ? (
+                                            <div className="flex flex-col gap-2">
+                                                {gateway.links.map((link) => <Link key={link.href} href={link.href} className="inline-flex items-center justify-between gap-2 rounded-lg px-2 py-2 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-100 hover:text-emerald-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600">
+                                                    <span>{link.label}</span><ArrowRight className="h-4 w-4 shrink-0" />
+                                                </Link>)}
+                                            </div>
+                                        ) : <a href="#connect" className="inline-flex w-full items-center justify-between py-2 text-sm font-semibold text-emerald-700 transition-colors hover:text-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600">
+                                            <span>{gateway.cta}</span><ArrowRight className="w-4 h-4" />
+                                        </a>}
+                                    </div>
                                 </div>
                             </StaggerItem>
                         );
@@ -281,11 +325,14 @@ export default function GatewaysPage() {
                                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                                     className="w-full bg-white border border-sky-100 rounded-xl px-4 py-2.5 text-slate-800 text-sm focus:outline-none focus:border-emerald-500"
                                 >
-                                    <option value="Purchase">Purchase</option>
+                                    <option value="Own at CHP">Own at CHP</option>
                                     <option value="Donation">Donation (80G, CSR)</option>
                                     <option value="Sponsorship">Sponsorship</option>
                                     <option value="Adoption">Adoption</option>
-                                    <option value="Partnership">Partnership</option>
+                                    <option value="Partner with CHP">Partner with CHP</option>
+                                    <option value="Experience CHP">Experience CHP</option>
+                                    <option value="Associate as an Organization">Associate as an Organization</option>
+                                    <option value="Contribute to the Mission">Contribute to the Mission</option>
                                 </select>
                             </div>
                         </div>

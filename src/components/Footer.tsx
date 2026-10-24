@@ -6,7 +6,7 @@ import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
 const footerLinks = {
   Explore: [
     { href: "/enclave", label: "CHP Enclave" },
-    { href: "/gateways", label: "CHP Gateways" },
+    { href: "/gateways", label: "Associate with CHP" },
     { href: "/camps", label: "Holiday Camps" },
     { href: "/treks", label: "Himalayan Treks" },
     { href: "/accommodation", label: "Accommodation" },

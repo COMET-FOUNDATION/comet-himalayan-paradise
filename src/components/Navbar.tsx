@@ -41,7 +41,7 @@ const navGroups = [
       { href: "/business-investment", label: "Investment Options" },
       { href: "/dream-spaces", label: "16 Dream Spaces" },
       { href: "/biz-facilities", label: "12 Biz Facilities" },
-      { href: "/gateways", label: "5 Gateways" },
+      { href: "/gateways", label: "Associate with CHP" },
     ],
   },
   {
