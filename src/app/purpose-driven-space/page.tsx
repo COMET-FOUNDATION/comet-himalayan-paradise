@@ -9,9 +9,7 @@ import {
   Check,
   Heart,
   Leaf,
-  MapPin,
   PawPrint,
-  Shield,
   Sprout,
   Users,
   Wheat,
@@ -105,14 +103,14 @@ const organisationOpportunities = [
 ];
 
 const membershipOptions = [
-  ["Adopt a Cow", Heart],
-  ["Become a Member", Users],
-  ["Sponsor Cow Care", PawPrint],
-  ["Donate", Heart],
-  ["Volunteer", Users],
-  ["Support Infrastructure", Building2],
-  ["Partner With Us", Shield],
-  ["Visit CHP Gauseva Kendra", MapPin],
+  "Adopt a Cow",
+  "Become a Member",
+  "Sponsor Cow Care",
+  "Donate",
+  "Volunteer",
+  "Support Infrastructure",
+  "Partner With Us",
+  "Visit CHP Gauseva Kendra",
 ] as const;
 
 function SectionHeading({
@@ -220,6 +218,11 @@ export default function CometGausevaPage() {
             fetchPriority="high"
             decoding="async"
           />
+          <div className="absolute inset-0 flex items-center justify-center bg-slate-950/15 px-5 pt-[calc(5rem+1cm)] text-center sm:px-10 sm:pt-[calc(6rem+1cm)]">
+            <p className="max-w-3xl text-base font-semibold leading-snug text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] sm:text-lg md:text-xl lg:text-2xl">
+              Let&apos;s join hands to provide food, shelter and protection to abandoned cows.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -255,12 +258,6 @@ export default function CometGausevaPage() {
                 </strong>{" "}
                 and community participation.
               </p>
-              <div className="mt-7 rounded-xl border border-green-100 bg-green-50/60 p-5">
-                <p className="text-lg font-semibold leading-7 text-green-900">
-                  Let’s join hands to provide food, shelter and protection to
-                  abandoned cows.
-                </p>
-              </div>
             </div>
         </div>
       </section>
@@ -474,32 +471,10 @@ export default function CometGausevaPage() {
           />
 
           <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
-            <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
-              <div className="p-7 sm:p-9 lg:p-10">
-                <p className={eyebrowClass}>Choose how to participate</p>
-
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                  {membershipOptions.map(([label, Icon]) => {
-                    const C = Icon as typeof Heart;
-                    return (
-                      <a
-                        href="#membership-form"
-                        key={String(label)}
-                        className="group flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-green-300 hover:bg-green-50"
-                      >
-                        <span className="text-sm font-semibold text-slate-700">
-                          {String(label)}
-                        </span>
-                        <C className="h-4 w-4 text-green-700 transition group-hover:scale-110" />
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-
+            <div className="mx-auto w-full max-w-4xl">
               <div
                 id="membership-form"
-                className="border-t border-slate-200 bg-stone-50 p-6 sm:p-9 lg:border-l lg:border-t-0 lg:p-10"
+                className="bg-stone-50 p-6 sm:p-9 lg:p-10"
               >
                 <p className={eyebrowClass}>Contact CHP</p>
                 <h3 className="mt-2 text-2xl font-bold text-slate-800">
@@ -561,9 +536,9 @@ export default function CometGausevaPage() {
                         <option value="" disabled className="text-black">
                           Select an option
                         </option>
-                        {membershipOptions.map(([label]) => (
-                          <option key={String(label)} className="text-black">
-                            {String(label)}
+                        {membershipOptions.map((label) => (
+                          <option key={label} value={label} className="text-black">
+                            {label}
                           </option>
                         ))}
                       </select>

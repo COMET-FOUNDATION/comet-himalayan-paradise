@@ -42,14 +42,14 @@ export function SectionHeader({
           {eyebrow}
         </p>
       )}
-      <h2
+      {title && <h2
         className={cn(
           "text-3xl sm:text-4xl font-bold leading-tight tracking-tight",
           light ? "text-white" : "text-slate-800"
         )}
       >
         {title}
-      </h2>
+      </h2>}
       {subtitle && (
         <p
           className={cn(
