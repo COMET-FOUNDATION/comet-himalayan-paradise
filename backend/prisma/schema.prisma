@@ -12,6 +12,8 @@ enum Role {
   ADMIN
   EDITOR
   VIEWER
+  SALES_MANAGER
+  SALES_AGENT
 }
 
 enum CampBookingStatus {
@@ -19,6 +21,47 @@ enum CampBookingStatus {
   CONFIRMED
   REJECTED
   CANCELLED
+}
+
+enum ProjectStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum UnitAvailabilityStatus {
+  AVAILABLE
+  RESERVED
+  SOLD
+  COMING_SOON
+}
+
+enum LeadStatus {
+  NEW
+  UNDER_REVIEW
+  ASSIGNED
+  CONTACTED
+  SITE_VISIT_SCHEDULED
+  QUALIFIED
+  NEGOTIATION
+  RESERVED
+  CONVERTED
+  LOST
+  CLOSED
+}
+
+enum LeadActivityType {
+  NOTE
+  STATUS_CHANGE
+  ASSIGNMENT
+  SITE_VISIT_SCHEDULED
+}
+
+enum SiteVisitStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  RESCHEDULED
 }
 
 model User {
@@ -31,7 +74,10 @@ model User {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  assets Asset[] @relation("AssetCreatedBy")
+  assets         Asset[]        @relation("AssetCreatedBy")
+  assignedLeads  Lead[]         @relation("LeadAssignee")
+  leadActivities LeadActivity[]
+  siteVisits     SiteVisit[]    @relation("SiteVisitCreatedBy")
 
   @@map("users")
 }
@@ -102,18 +148,103 @@ model CampBooking {
 }
 
 model Lead {
-  id              String   @id @default(uuid())
-  reference       String   @unique
-  idempotencyKey  String   @unique
+  id              String     @id @default(uuid())
+  reference       String     @unique
+  idempotencyKey  String     @unique
   name            String
   email           String?
   phone           String?
   areaOfInterest  String
-  message         String?  @db.Text
+  message         String?    @db.Text
   consent         Boolean
-  consentedAt     DateTime @default(now())
-  createdAt       DateTime @default(now())
+  consentedAt     DateTime   @default(now())
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  status          LeadStatus @default(NEW)
+  projectId       String?
+  unitTypeId      String?
+  assignedToId    String?
+  nextFollowUpAt  DateTime?
+
+  project    Project?         @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  unitType   ProjectUnitType? @relation(fields: [unitTypeId], references: [id], onDelete: SetNull)
+  assignedTo User?            @relation("LeadAssignee", fields: [assignedToId], references: [id], onDelete: SetNull)
+  activities LeadActivity[]
+  siteVisits SiteVisit[]
 
   @@index([areaOfInterest, createdAt])
+  @@index([status, createdAt])
+  @@index([assignedToId])
+  @@index([projectId])
   @@map("leads")
+}
+
+model Project {
+  id          String        @id @default(uuid())
+  slug        String        @unique
+  name        String
+  location    String?
+  description String?       @db.Text
+  status      ProjectStatus @default(DRAFT)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  unitTypes ProjectUnitType[]
+  leads     Lead[]
+
+  @@map("projects")
+}
+
+model ProjectUnitType {
+  id                 String                 @id @default(uuid())
+  projectId          String
+  name               String
+  specs              Json?
+  indicativePriceMin Decimal?               @db.Decimal(14, 2)
+  indicativePriceMax Decimal?               @db.Decimal(14, 2)
+  currency           String                 @default("INR")
+  availabilityStatus UnitAvailabilityStatus @default(AVAILABLE)
+  createdAt          DateTime               @default(now())
+  updatedAt          DateTime               @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  leads   Lead[]
+
+  @@index([projectId])
+  @@map("project_unit_types")
+}
+
+model LeadActivity {
+  id         String            @id @default(uuid())
+  leadId     String
+  actorId    String?
+  type       LeadActivityType
+  note       String?           @db.Text
+  fromStatus LeadStatus?
+  toStatus   LeadStatus?
+  createdAt  DateTime          @default(now())
+
+  lead  Lead  @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([leadId, createdAt])
+  @@map("lead_activities")
+}
+
+model SiteVisit {
+  id          String          @id @default(uuid())
+  leadId      String
+  scheduledAt DateTime
+  status      SiteVisitStatus @default(SCHEDULED)
+  notes       String?         @db.Text
+  createdById String?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  lead      Lead  @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  createdBy User? @relation("SiteVisitCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([leadId])
+  @@map("site_visits")
 }

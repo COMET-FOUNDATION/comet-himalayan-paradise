@@ -8,6 +8,7 @@ import { FoldersModule } from './folders/folders.module';
 import { AssetsModule } from './assets/assets.module';
 import { CampBookingsModule } from './camp-bookings/camp-bookings.module';
 import { LeadsModule } from './leads/leads.module';
+import { ProjectsModule } from './projects/projects.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { LeadsModule } from './leads/leads.module';
     AssetsModule,
     CampBookingsModule,
     LeadsModule,
+    ProjectsModule,
   ],
 })
 export class AppModule {}

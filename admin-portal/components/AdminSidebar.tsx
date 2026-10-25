@@ -1,6 +1,6 @@
 "use client";
 
-import { FolderTree, Images, LayoutDashboard, Mountain, Users as UsersIcon } from "lucide-react";
+import { Building2, FolderTree, Images, LayoutDashboard, Mountain, Users as UsersIcon, UserSquare2 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "../lib/utils";
@@ -13,8 +13,12 @@ interface NavItem {
   roles?: readonly Role[];
 }
 
+const SALES_ROLES: readonly Role[] = ["SUPER_ADMIN", "ADMIN", "SALES_MANAGER", "SALES_AGENT"];
+
 const NAV_ITEMS: readonly NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/leads", label: "Leads", icon: UserSquare2, roles: SALES_ROLES },
+  { href: "/projects", label: "Projects", icon: Building2, roles: SALES_ROLES },
   { href: "/assets", label: "Assets", icon: Images },
   { href: "/folders", label: "Folders", icon: FolderTree },
   { href: "/users", label: "Users", icon: UsersIcon, roles: ["SUPER_ADMIN"] },

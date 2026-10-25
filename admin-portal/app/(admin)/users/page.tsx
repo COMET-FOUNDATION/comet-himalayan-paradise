@@ -13,7 +13,7 @@ import { useAuth } from "../../../lib/auth-context";
 import { cn } from "../../../lib/utils";
 import { Role, User } from "../../../lib/types";
 
-const ROLES: Role[] = ["SUPER_ADMIN", "ADMIN", "EDITOR", "VIEWER"];
+const ROLES: Role[] = ["SUPER_ADMIN", "ADMIN", "EDITOR", "VIEWER", "SALES_MANAGER", "SALES_AGENT"];
 const ROLE_OPTIONS = ROLES.map((role) => ({ value: role, label: role }));
 
 export default function UsersPage() {

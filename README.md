@@ -165,8 +165,32 @@ All responses use `{ success: true, data }` or `{ success: false, message, statu
 | POST | `/assets/upload` | SUPER_ADMIN, ADMIN, EDITOR |
 | GET | `/assets`, `/assets/:id` | authenticated |
 | PATCH/DELETE | `/assets/:id` | SUPER_ADMIN, ADMIN |
+| POST | `/leads` | key-gated (public enquiry form) |
+| GET | `/leads`, `/leads/:id`, `/leads/assignees` | SUPER_ADMIN, ADMIN, SALES_MANAGER, SALES_AGENT (agents see only their own leads) |
+| PATCH | `/leads/:id` | same roles — status, assignment, project/unit link, follow-up date |
+| POST | `/leads/:id/notes`, `/leads/:id/site-visits` | same roles |
+| PATCH | `/leads/:id/site-visits/:visitId` | same roles |
+| GET | `/projects`, `/projects/:id` | SUPER_ADMIN, ADMIN, SALES_MANAGER, SALES_AGENT |
+| POST/PATCH/DELETE | `/projects`, `/projects/:id` | SUPER_ADMIN, ADMIN, SALES_MANAGER (DELETE archives, does not hard-delete) |
+| POST/PATCH/DELETE | `/projects/:id/unit-types/:unitTypeId` | SUPER_ADMIN, ADMIN, SALES_MANAGER |
 
 Full interactive docs: `http://localhost:4001/api/docs` (Swagger, with JWT bearer auth wired in).
+
+### Sales CRM (leads, projects) — added on top of the asset management system above
+
+The public lead-capture form (`/leads`, used by the website's enquiry pages) is unchanged. What's
+new is the admin-portal **Leads** and **Projects** sections: staff can now see every submitted
+enquiry, assign it to a sales agent, log calls/notes, schedule site visits, link it to a project
+and cottage/unit type, and move it through a pipeline (`NEW → ... → CONVERTED/LOST/CLOSED`).
+Sales agents only see leads assigned to them; managers and admins see everything. See
+[docs/ecosystem/](docs/ecosystem/) for the fuller product/architecture plan this was scoped from.
+
+**New migration**: `backend/prisma/migrations/20261024120000_sales_crm` adds the `SALES_MANAGER`
+and `SALES_AGENT` roles, new `projects` / `project_unit_types` / `lead_activities` / `site_visits`
+tables, and new columns on `leads`. It has not been applied to any database yet — run
+`cd backend && npm run prisma:migrate:deploy` (or `prisma:migrate` in dev) before deploying this
+code, since the existing public enquiry form will start failing once the app expects these columns
+to exist.
 
 ## Known v1 tradeoffs / next steps for scaling this further
 
