@@ -36,7 +36,7 @@ export function AboutHero() {
         <div className="absolute inset-0 bg-black/[0.04]" />
 
         {/* =====================================================
-            MENU NAME PILL — INSIDE THE IMAGE, TOP CENTRE
+            HEADER TEXT — kept as plain, readable text rather than a button-like badge
         ===================================================== */}
         <div className="absolute inset-x-0 top-3 sm:top-4 md:top-6 flex justify-center px-4">
           <motion.h2
@@ -46,22 +46,7 @@ export function AboutHero() {
               duration: 0.6,
               ease: "easeOut",
             }}
-            className="
-              rounded-full
-              bg-green-900
-              px-3
-              py-1
-              sm:px-4
-              sm:py-1.5
-              text-white
-              text-[10px]
-              sm:text-xs
-              md:text-sm
-              font-semibold
-              uppercase
-              tracking-[0.24em]
-              shadow-md
-            "
+            className="text-white text-[11px] sm:text-xs md:text-sm font-semibold uppercase tracking-[0.24em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
           >
             About CHP
           </motion.h2>

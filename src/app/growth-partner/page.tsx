@@ -380,7 +380,7 @@ export default function GrowthPartnerPage() {
               What is CHP Growth Partnership?
             </h2>
 
-            <p className="mt-6 text-justify text-base leading-8 text-slate-600">
+            <p className="mt-3 text-justify text-base leading-8 text-slate-600">
               CHP Growth Partnership is a collaborative business-development
               model where partners help expand the CHP ecosystem through:
             </p>
@@ -406,14 +406,8 @@ export default function GrowthPartnerPage() {
                 </div>
               ))}
             </div>
+            
 
-            <div
-              className={`mt-7 rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm leading-7 text-slate-600`}
-            >
-              The partnership is designed around a mutually agreed,
-              target-based framework, with benefits linked to the contribution
-              and performance of the Growth Partner.
-            </div>
           </motion.div>
 
           <motion.div
@@ -422,6 +416,12 @@ export default function GrowthPartnerPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="relative lg:col-span-7"
           >
+            <p className="mb-3 text-sm leading-7 text-slate-600 sm:text-base">
+              The partnership is designed around a mutually agreed,
+              target-based framework, with benefits linked to the contribution
+              and performance of the Growth Partner.
+            </p>
+
             <div className="grid grid-cols-12 gap-3 sm:gap-4">
               <div className="relative col-span-7 h-[430px] overflow-hidden rounded-[2rem]">
                 <Image
@@ -459,6 +459,50 @@ export default function GrowthPartnerPage() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+      {/* WHY JOIN */}
+      <section className="bg-white py-20 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+              Growth Partner Network
+            </p>
+
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
+              Why Join CHP Growth Partner Network?
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {whyJoin.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.article
+                  key={item.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ delay: index * 0.04 }}
+                  className={`rounded-[1.5rem] border ${CARD_BORDER} ${CARD_BG} p-7 transition hover:-translate-y-1 hover:shadow-lg`}
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
+                    <Icon className="h-5 w-5" />
+                  </div>
+
+                  <h3 className="mt-5 font-serif text-xl font-bold text-slate-950">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {item.text}
+                  </p>
+                </motion.article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -579,6 +623,8 @@ export default function GrowthPartnerPage() {
           </div>
         </div>
       </section>
+
+      
 
       {/* A PERFORMANCE-BASED PARTNERSHIP */}
       <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
@@ -783,51 +829,6 @@ export default function GrowthPartnerPage() {
               ))}
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* WHY JOIN */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-
-          <div className="max-w-3xl">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
-              Growth Partner Network
-            </p>
-
-            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
-              Why Join CHP Growth Partner Network?
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {whyJoin.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <motion.article
-                  key={item.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.15 }}
-                  transition={{ delay: index * 0.04 }}
-                  className={`rounded-[1.5rem] border ${CARD_BORDER} ${CARD_BG} p-7 transition hover:-translate-y-1 hover:shadow-lg`}
-                >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#7d9a67] shadow-sm">
-                    <Icon className="h-5 w-5" />
-                  </div>
-
-                  <h3 className="mt-5 font-serif text-xl font-bold text-slate-950">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    {item.text}
-                  </p>
-                </motion.article>
-              );
-            })}
           </div>
         </div>
       </section>

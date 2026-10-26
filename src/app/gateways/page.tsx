@@ -57,6 +57,37 @@ const ecosystemGateways = [
         links: [{ label: "Explore", href: "/chp-biz-partnership" }],
     },
     {
+        icon: Compass,
+        key: "experience",
+        title: "Experience CHP",
+        description: "Homestays, holiday camps, adventure, treks and trails, wellness, and community activities.",
+        points: [],
+        links: [
+            { label: "Explore Holiday Camp", href: "/camps" },
+            { label: "Explore Treks and Trails", href: "/treks" },
+        ],
+    },
+    {
+        icon: Building2,
+        key: "organization",
+        title: "Associate as an Organization",
+        description: "Corporate partnerships, housing societies, schools, and institutions.",
+        points: [],
+        links: [{ label: "Explore", href: "/himalayan-enclaves-for-companies-societies" }],
+    },
+    {
+        icon: GraduationCap,
+        key: "mission",
+        title: "Contribute to the Mission",
+        description: "Mentoring, education, Gaushala, and Isht Dev Sthal.",
+        points: [],
+        links: [
+            { label: "Explore Comet Educational Services", href: "/comet-educational-services" },
+            { label: "Explore Comet Gaushala", href: "/purpose-driven-space" },
+            { label: "Explore Comet Isht Dev Sthal", href: "/sanaatan-isht-dev-sthal" },
+        ],
+    },
+    {
         icon: Award,
         key: "sponsorship",
         title: "Sponsorship",
@@ -101,37 +132,6 @@ const ecosystemGateways = [
             "Exclusive benefits & privileges",
         ],
         cta: "Start an Adoption",
-    },
-    {
-        icon: Compass,
-        key: "experience",
-        title: "Experience CHP",
-        description: "Homestays, holiday camps, adventure, treks and trails, wellness, and community activities.",
-        points: [],
-        links: [
-            { label: "Explore Holiday Camp", href: "/camps" },
-            { label: "Explore Treks and Trails", href: "/treks" },
-        ],
-    },
-    {
-        icon: Building2,
-        key: "organization",
-        title: "Associate as an Organization",
-        description: "Corporate partnerships, housing societies, schools, and institutions.",
-        points: [],
-        links: [{ label: "Explore", href: "/himalayan-enclaves-for-companies-societies" }],
-    },
-    {
-        icon: GraduationCap,
-        key: "mission",
-        title: "Contribute to the Mission",
-        description: "Mentoring, education, Gaushala, and Isht Dev Sthal.",
-        points: [],
-        links: [
-            { label: "Explore Comet Educational Services", href: "/comet-educational-services" },
-            { label: "Explore Comet Gaushala", href: "/purpose-driven-space" },
-            { label: "Explore Comet Isht Dev Sthal", href: "/sanaatan-isht-dev-sthal" },
-        ],
     },
 ];
 

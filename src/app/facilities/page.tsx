@@ -264,6 +264,30 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
+      <section className="bg-slate-50 py-12 lg:py-16">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <SectionHeading title="Why Work from CHP?" />
+
+          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {whyWork.map(([title, text]) => (
+              <Card key={title} className="p-5">
+                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-green-50 text-green-700">
+                  <Leaf className="h-4 w-4" />
+                </div>
+
+                <h3 className="text-base font-bold text-slate-900">
+                  {title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {text}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* =========================================================
           02 — LIGHT GREY
           ========================================================= */}
@@ -515,32 +539,7 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          10 — LIGHT GREY
-          ========================================================= */}
-      <section className="bg-slate-50 py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-          <SectionHeading title="Why Work from CHP?" />
-
-          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {whyWork.map(([title, text]) => (
-              <Card key={title} className="p-5">
-                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-green-50 text-green-700">
-                  <Leaf className="h-4 w-4" />
-                </div>
-
-                <h3 className="text-base font-bold text-slate-900">
-                  {title}
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {text}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* =========================================================
           BACK TO HOME

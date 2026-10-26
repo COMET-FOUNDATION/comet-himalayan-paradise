@@ -502,13 +502,6 @@ export default function CHPOperationsPage() {
           ========================================================= */}
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
-          <p className="text-base font-medium leading-7 text-slate-600">
-            A coordinated operations and common-services framework allows CHP
-            to grow as one connected destination while maintaining safety,
-            cleanliness, functionality, quality and long-term sustainability
-            across the ecosystem.
-          </p>
-
           <div className="mt-8">
             <Link
               href="/"

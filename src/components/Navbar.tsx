@@ -21,15 +21,15 @@ const navGroups = [
   {
     label: "Explore CHP",
     items: [
+      { href: "/why-chp", label: "Why Choose CHP" },
       { href: "/chp-enclave", label: "CHP Enclave" },
-      { href: "/chp-operations", label: "CHP Shared Services" },
       { href: "/accommodation", label: "Homestay" },
       { href: "/camps", label: "Holiday Camp" },
       { href: "/treks", label: "Treks & Trails" },
       { href: "/experiences", label: "Experiences" },
       { href: "/facilities", label: "Remote Work from himalayas" },
       { href: "/health-retreat-program", label: "Health & Wellness Retreats" },
-      { href: "/why-chp", label: "Why Choose CHP" },
+      { href: "/chp-operations", label: "CHP Shared Services" },
     ],
   },
   {
@@ -40,7 +40,7 @@ const navGroups = [
       { href: "/group-ownership-model", label: "Group Ownership Model" },
       { href: "/business-investment", label: "Investment Options" },
       { href: "/dream-spaces", label: "16 Dream Spaces" },
-      { href: "/biz-facilities", label: "12 Biz Facilities" },
+      { href: "/biz-facilities", label: "12 Business Facilities" },
       { href: "/gateways", label: "Associate with CHP" },
     ],
   },

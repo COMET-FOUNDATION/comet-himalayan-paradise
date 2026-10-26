@@ -169,33 +169,23 @@ const partnerTypes = [
 const partnershipModels = [
   [
     "01",
-    "Individual Ownership",
-    "An entrepreneur establishes and operates a selected business facility independently within the CHP ecosystem.",
+    "Group Ownership Model",
+    "A collaborative structure where multiple stakeholders come together around a selected CHP business opportunity.",
   ],
   [
     "02",
-    "Partnership Model",
-    "CHP and the business partner collaborate through a mutually agreed business and operating arrangement.",
+    "Partnership Based on Cottages",
+    "A partnership model built around private cottages and related hospitality or ownership opportunities within CHP.",
   ],
   [
     "03",
-    "Group Ownership",
-    "Multiple individuals, families, professionals, investors or organizations collectively participate in ownership of a selected facility.",
+    "Partnership Based on Dream Spaces",
+    "A collaborative structure centred on custom dream-space concepts and personalized Himalayan living offerings.",
   ],
   [
     "04",
-    "Facility-Based Partnership",
-    "A partner develops, owns or operates a specific facility or business unit within CHP.",
-  ],
-  [
-    "05",
-    "Plot-Based Investment",
-    "An investor participates through a plot-based model for an appropriate CHP development.",
-  ],
-  [
-    "06",
-    "Long-Term Lease Model",
-    "Selected business opportunities may be structured through a long-term lease arrangement.",
+    "Partnership Based on Business Facilities",
+    "A partnership model designed for operators, investors, or organizations engaged with CHP business facilities and ecosystem offerings.",
   ],
 ] as const;
 
@@ -641,10 +631,13 @@ export default function CHPBizPartnershipPage() {
           />
 
           <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {partnershipModels.map(([number, title, description]) => (
+            {partnershipModels.map(([number, title, description], index) => (
               <div
                 key={number}
-                className="relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-lg"
+                className={[
+                  "relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-lg",
+                  index === partnershipModels.length - 1 ? "xl:col-start-2" : "",
+                ].join(" ")}
               >
                 <span className="text-5xl font-bold tracking-[-0.05em] text-emerald-200">
                   {number}

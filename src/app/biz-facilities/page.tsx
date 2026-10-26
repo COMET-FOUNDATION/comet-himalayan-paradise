@@ -14,7 +14,7 @@ export default function BizFacilitiesPage() {
       <section className="relative isolate flex min-h-[420px] items-center overflow-hidden bg-green-950 sm:min-h-[460px]">
         <Image
           src={bizFacilitiesHero}
-          alt="CHP 12 Biz Facilities"
+          alt="CHP 12 Business Facilities"
           fill
           priority
           unoptimized
@@ -30,7 +30,7 @@ export default function BizFacilitiesPage() {
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            12 CHP Biz Facilities
+            12 CHP Business Facilities
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
