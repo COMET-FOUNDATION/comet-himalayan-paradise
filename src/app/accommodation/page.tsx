@@ -138,7 +138,7 @@ export default function AccommodationPage() {
             </p>
 
             <p className="mt-4 max-w-xl text-center text-xl font-bold leading-relaxed text-white/90 sm:mt-6 sm:text-2xl md:text-[28px]">
-  Don't just visit the Himalayas — live like you belong here.
+  Don&apos;t just visit the Himalayas — live like you belong here.
 </p>
           </div>
         </div>
