@@ -10,8 +10,6 @@ import { PurposeDrivenSpace } from "@/components/home/PurposeDrivenSpace";
 import { CHPGatewaysSection } from "@/components/home/CHPGatewaysSection";
 import { GallerySection } from "@/components/home/GallerySection";
 import { Testimonials } from "@/components/home/Testimonials";
-import { FAQ } from "@/components/home/FAQ";
-import { CTABanner } from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
   title: {
@@ -35,7 +33,6 @@ export default function HomePage() {
       <CHPGatewaysSection />
       <GallerySection />
       <Testimonials />
-      <FAQ />
       <StatsSection />
      
     </>

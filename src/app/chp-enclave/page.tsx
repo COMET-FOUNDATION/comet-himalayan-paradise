@@ -1,13 +1,10 @@
-import { CategoryPdfLink } from "@/components/navigation/CategoryPdfLink";
-import { BackToPreviousPage } from "@/components/navigation/BackToPreviousPage";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, FileText, CalendarCheck } from "lucide-react";
+import { ArrowRight, ArrowLeft, CalendarCheck } from "lucide-react";
 import { CHPEnclaveHero } from "./CHPEnclaveHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { CTABanner } from "@/components/home/CTABanner";
 
 // Same frame for every content image on this page (4:3, same max width, no border).
 // Matches the frame used on the About page.
@@ -111,19 +108,10 @@ export default function CHPEnclavePage() {
                 CHP&apos;s Group Ownership Model enables friends, families, or like-minded investors to co-own premium Himalayan assets through shared investment. This collaborative approach reduces individual investment costs while creating opportunities for <Highlight>shared returns, lower financial risk, and long-term wealth creation</Highlight>.
               </p>
 
-              {/* Two green buttons side by side, just below the Group Ownership text */}
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/group-ownership-model" className={BUTTON_CLASS}>
-                  Explore Group Ownership <ArrowRight className="h-4 w-4" />
+                <Link href="/group-ownership-model" className="text-sm font-semibold text-green-800 underline decoration-green-600 underline-offset-4 hover:text-green-900">
+                  Explore Group Ownership
                 </Link>
-                <a
-                  href="https://drive.google.com/file/d/1mXsGLcjSbzOMMpYKMF6oebXCP81H3YAN/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={BUTTON_CLASS}
-                >
-                  <FileText className="h-4 w-4" /> Show Business Proposal
-                </a>
               </div>
             </ScrollReveal>
           </div>
@@ -268,9 +256,6 @@ export default function CHPEnclavePage() {
         </div>
       </section>
 
-      <CTABanner />
-
-      {/* Go back to source page */}
       <div className="py-6 text-center">
         <Link
           href="/"
@@ -279,10 +264,6 @@ export default function CHPEnclavePage() {
           <ArrowLeft className="h-4 w-4" />
           Back to Home
         </Link>
-      </div>
-          <div className="flex justify-center px-4 pb-12 pt-4 sm:pb-16">
-        <CategoryPdfLink href="https://drive.google.com/file/d/1XJ_E724jn1DnkU8RGt-2QZ4GNLQdSXAH/view?usp=sharing" />
-                <BackToPreviousPage fallbackHref="/dream-spaces" />
       </div>
 
 </>
