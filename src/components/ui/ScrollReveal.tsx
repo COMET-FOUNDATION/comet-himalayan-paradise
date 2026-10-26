@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface ScrollRevealProps {
@@ -16,11 +16,10 @@ export function ScrollReveal({
   delay = 0,
   direction = "up",
 }: ScrollRevealProps) {
-  const reduceMotion = useReducedMotion();
   const initial = {
-    opacity: reduceMotion ? 1 : 0,
-    y: reduceMotion ? 0 : direction === "up" ? 32 : 0,
-    x: reduceMotion ? 0 : direction === "left" ? -32 : direction === "right" ? 32 : 0,
+    opacity: 0,
+    y: direction === "up" ? 32 : 0,
+    x: direction === "left" ? -32 : direction === "right" ? 32 : 0,
   };
 
   return (
@@ -28,7 +27,7 @@ export function ScrollReveal({
       initial={initial}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : delay, ease: "easeOut" }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
       className={cn(className)}
     >
       {children}
@@ -45,17 +44,16 @@ export function StaggerContainer({
   className?: string;
   staggerDelay?: number;
 }) {
-  const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={reduceMotion ? false : "hidden"}
+      initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-60px" }}
       variants={{
         hidden: {},
         visible: {
           transition: {
-            staggerChildren: reduceMotion ? 0 : staggerDelay,
+            staggerChildren: staggerDelay,
           },
         },
       }}
@@ -73,11 +71,9 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
-  const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={reduceMotion ? false : undefined}
-      variants={reduceMotion ? undefined : {
+      variants={{
         hidden: { opacity: 0, y: 24 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } },
       }}

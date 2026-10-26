@@ -2,12 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const stats = [
@@ -18,7 +13,6 @@ const stats = [
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
-  const reduceMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -49,7 +43,7 @@ export function Hero() {
       ========================================================= */}
       <motion.div
         className="absolute inset-0 scale-110"
-        style={{ y: reduceMotion ? 0 : bgY }}
+        style={{ y: bgY }}
       >
         <Image
           src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ddcc4252-ab86-4945-8a5f-8be2e830e121-hp.webp"
@@ -73,8 +67,8 @@ export function Hero() {
           ========================================================= */}
       <motion.div
         style={{
-          opacity: reduceMotion ? 1 : contentOpacity,
-          y: reduceMotion ? 0 : contentY,
+          opacity: contentOpacity,
+          y: contentY,
         }}
         className="relative z-10 -top-6 flex h-full flex-col items-center justify-start px-4 pt-20 text-center sm:-top-8 sm:px-6 sm:pt-24 md:pt-28 lg:pt-32"
       >
@@ -82,7 +76,7 @@ export function Hero() {
             EYEBROW
         ===================================================== */}
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.7,
@@ -105,7 +99,7 @@ export function Hero() {
             HEADLINE
         ===================================================== */}
         <motion.h1
-          initial={reduceMotion ? false : { opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.9,
@@ -126,7 +120,7 @@ export function Hero() {
             SUBHEAD
         ===================================================== */}
         <motion.p
-          initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.8,
@@ -148,7 +142,7 @@ export function Hero() {
             STATS BAR
         ===================================================== */}
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.7,
@@ -183,7 +177,7 @@ export function Hero() {
           SCROLL INDICATOR
       ========================================================= */}
       <motion.div
-        initial={reduceMotion ? false : { opacity: 0 }}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
         className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-1 text-white/40"
@@ -193,12 +187,12 @@ export function Hero() {
         </span>
 
         <motion.div
-          animate={reduceMotion ? { y: 0 } : { y: [0, 6, 0] }}
-          transition={
-            reduceMotion
-              ? { duration: 0 }
-              : { repeat: Infinity, duration: 2, ease: "easeInOut" }
-          }
+          animate={{ y: [0, 6, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            ease: "easeInOut",
+          }}
         >
           <ChevronDown className="h-3.5 w-3.5" />
         </motion.div>

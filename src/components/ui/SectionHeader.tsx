@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface SectionHeaderProps {
@@ -20,13 +20,12 @@ export function SectionHeader({
   light = false,
   className,
 }: SectionHeaderProps) {
-  const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: reduceMotion ? 0 : 0.6 }}
+      transition={{ duration: 0.6 }}
       className={cn(
         "max-w-2xl",
         align === "center" && "mx-auto text-center",
