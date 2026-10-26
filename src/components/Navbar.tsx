@@ -237,7 +237,7 @@ export function Navbar() {
 
                     <div
                       className={cn(
-                        "absolute left-0 top-full pt-2 transition-all duration-150 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100",
+                        "absolute left-0 top-full pt-2 transition-all duration-150",
                         openGroup === group.label
                           ? "opacity-100 visible translate-y-0"
                           : "opacity-0 invisible translate-y-1"

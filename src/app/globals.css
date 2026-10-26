@@ -123,12 +123,12 @@ body {
 
 /* ── Card hover shadow ── */
 .card-shadow {
-  box-shadow: 0 4px 20px -8px rgba(17, 47, 39, 0.16);
-  transition: box-shadow 0.28s ease, transform 0.28s ease;
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .card-shadow:hover {
-  box-shadow: 0 12px 30px -12px rgba(17, 47, 39, 0.24);
-  transform: translateY(-2px);
+  box-shadow: 0 16px 48px -8px rgba(0, 0, 0, 0.18);
+  transform: translateY(-4px);
 }
 
 @keyframes activity-preview-in {
@@ -180,6 +180,11 @@ body {
 .site-main :where(input, select, textarea):focus-visible {
   outline: 2px solid var(--chp-forest);
   outline-offset: 2px;
+}
+
+.site-main [class~="bg-white"][class*="rounded-"]:not(:hover) {
+  border-color: var(--chp-line);
+  box-shadow: 0 12px 32px -24px rgba(24, 54, 42, 0.3);
 }
 
 .site-main :where(a, button) {
