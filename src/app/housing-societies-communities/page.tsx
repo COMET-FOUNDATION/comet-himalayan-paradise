@@ -170,7 +170,7 @@ export default function HousingSocietiesCommunitiesPage() {
           <ScrollReveal>
             <Eyebrow>A place for people to come together</Eyebrow>
             <h1 className="mt-3 max-w-3xl font-serif text-3xl leading-tight text-[#173f32] sm:text-4xl lg:text-[2.75rem]">
-              Give Your Company an Address in the Himalayas.
+              Give Your Community an Address in the Himalayas.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>

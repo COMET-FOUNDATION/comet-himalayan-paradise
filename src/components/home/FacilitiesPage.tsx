@@ -243,7 +243,7 @@ const facilities: EcosystemItem[] = [
     "6b4639aa-6587-42b1-b090-25528b23f341-scaled-adventure-club.webp",
   ],
   [
-    "CHP River Camping",
+    "CHP River Rafting",
     "29038f8a-40b2-4d3d-9808-a5b9aa443cf6-scaled-river-camping.webp",
   ],
   [
@@ -325,15 +325,14 @@ const facilities: EcosystemItem[] = [
    *
    * Existing card names mapped:
    * - CHP Himalayan Adventure Club
-   * - CHP River Camping
+   * - CHP River Rafting
    */
-  if (
-    [
-      "CHP Himalayan Adventure Club",
-      "CHP River Camping",
-    ].includes(title)
-  ) {
-    href = "/chp-himalayan-adventure-world";
+  if (title === "CHP Himalayan Adventure Club") {
+    href = "/chp-himalayan-adventure-club";
+  }
+
+  if (title === "CHP River Rafting") {
+    href = "/chp-river-rafting";
   }
 
   return {
