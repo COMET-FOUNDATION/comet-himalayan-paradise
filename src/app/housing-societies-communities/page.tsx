@@ -87,6 +87,37 @@ const experiences = [
   },
 ];
 
+const audiences = [
+  {
+    title: "NGOs & Non-Profit Organisations",
+    text: "A space for organisations to conduct retreats, community initiatives, awareness programmes, volunteering activities, and social-impact gatherings.",
+  },
+  {
+    title: "Housing Societies & Residential Communities",
+    text: "Opportunities for apartment associations, gated communities, and residential societies to organise group retreats, holiday experiences, wellness programmes, and community getaways.",
+  },
+  {
+    title: "Corporate Teams & Companies",
+    text: "An ideal setting for companies looking to organise team outings, employee retreats, leadership programmes, corporate offsites, and work-from-the-Himalayas experiences.",
+  },
+  {
+    title: "Groups of Friends & Social Communities",
+    text: "Bring your circle together for memorable group holidays, celebrations, adventure activities, nature experiences, and shared escapes.",
+  },
+  {
+    title: "Clubs, Associations & Interest Groups",
+    text: "A destination for sports clubs, cultural associations, hobby groups, trekking communities, and other organised groups looking for meaningful experiences.",
+  },
+  {
+    title: "Educational Institutions & Student Groups",
+    text: "Opportunities for educational trips, nature learning, student camps, workshops, volunteering, and experiential programmes.",
+  },
+  {
+    title: "Spiritual & Wellness Communities",
+    text: "A peaceful environment for yoga groups, meditation communities, spiritual organisations, wellness retreats, and holistic programmes.",
+  },
+];
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#a6643d] sm:text-xs">
@@ -132,6 +163,72 @@ export default function HousingSocietiesCommunitiesPage() {
           priority
           className="block h-auto w-full"
         />
+      </section>
+
+      <section className="bg-[#e9e7dc] px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto grid max-w-7xl gap-6 border-l-2 border-[#c9753e] pl-6 sm:gap-8 sm:pl-9 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+          <ScrollReveal>
+            <Eyebrow>A place for people to come together</Eyebrow>
+            <h1 className="mt-3 max-w-3xl font-serif text-3xl leading-tight text-[#173f32] sm:text-4xl lg:text-[2.75rem]">
+              Give Your Company an Address in the Himalayas.
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-justify text-base leading-8 text-[#53625a] sm:text-lg">
+              Bring your people closer to nature. Create a space where your team, community, and members can connect, recharge, collaborate, and experience the Himalayas.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal>
+            <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+              <Eyebrow>Shared experiences, made for your group</Eyebrow>
+              <h2 className="mt-3 font-serif text-3xl leading-tight text-[#173f32] sm:text-4xl">
+                Who Can Be Part of This?
+              </h2>
+              <p className="mx-auto mt-4 max-w-3xl text-justify text-base leading-8 text-[#68756e] sm:text-center">
+                Whether you represent an organisation, manage a community, or simply want to bring people together, CHP offers a Himalayan space designed around shared experiences, meaningful connections, and collective well-being.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {audiences.map((audience, index) => (
+              <ScrollReveal key={audience.title} delay={(index % 3) * 0.05}>
+                <article className="group h-full border border-[#173f32]/15 bg-white/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#c9753e]/55 hover:bg-white sm:p-7">
+                  <span className="font-serif text-sm text-[#a6643d]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-3 font-serif text-xl leading-snug text-[#173f32] sm:text-2xl">
+                    {audience.title}
+                  </h3>
+                  <p className="mt-3 text-justify text-sm leading-7 text-[#68756e]">
+                    {audience.text}
+                  </p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={0.1}>
+            <div className="mt-10 flex flex-col gap-5 bg-[#173f32] px-6 py-8 text-white sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:px-9 sm:py-9">
+              <div className="max-w-3xl">
+                <h3 className="font-serif text-2xl leading-tight sm:text-3xl">
+                  Bring Your Community to the Himalayas.
+                </h3>
+                <p className="mt-3 text-justify text-sm leading-7 text-white/75 sm:text-base">
+                  Have a group, organisation, or community in mind? Let&apos;s explore how CHP can create a meaningful Himalayan experience for you.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <CommunityButton href="/contact?tab=query" light>
+                  Contact CHP
+                </CommunityButton>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       <section id="community-life" className="px-5 py-20 sm:px-8 sm:py-28">
