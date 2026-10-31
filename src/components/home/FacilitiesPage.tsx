@@ -152,7 +152,9 @@ const dreamSpaces: EcosystemItem[] = [
       "Housing Societies & Communities Guest House",
     ].includes(title)
   ) {
-      href = "/himalayan-enclaves-for-companies-societies";
+      href = title === "Housing Societies & Communities Guest House"
+        ? "/housing-societies-communities"
+        : "/corporate-guest-house-remote-work";
   }
 
   /*
