@@ -83,6 +83,33 @@ const stories = [
   },
 ];
 
+const corporateAudiences = [
+  {
+    title: "Companies & Organisations",
+    text: "A dedicated Himalayan base for employee stays, visiting colleagues, team gatherings and organisational retreats.",
+  },
+  {
+    title: "Leadership & Management Teams",
+    text: "A quieter setting for leadership programmes, planning sessions, focused conversations and management retreats.",
+  },
+  {
+    title: "Remote & Hybrid Teams",
+    text: "Bring distributed colleagues together for selected work periods, collaboration and work-from-the-Himalayas experiences.",
+  },
+  {
+    title: "Project Teams & Departments",
+    text: "Create space for teams to align, share ideas and build stronger working relationships beyond the everyday office.",
+  },
+  {
+    title: "People, Culture & Wellness Teams",
+    text: "Plan employee retreats, team-building activities and restorative experiences shaped around your people and programme.",
+  },
+  {
+    title: "Startups, Founders & Business Groups",
+    text: "Bring founders, partners or business communities together for focused work, fresh perspectives and meaningful time outdoors.",
+  },
+];
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-[10px] font-semibold uppercase tracking-[0.23em] text-[#c98559] sm:text-xs">
@@ -182,6 +209,70 @@ export default function CorporateGuestHouseRemoteWorkPage() {
           </ScrollReveal>
         </div>
         <div className="absolute bottom-0 left-0 right-0 hidden h-px bg-white/30 lg:block" />
+      </section>
+
+      <section className="bg-[#e6e8e1] px-5 py-12 sm:px-8 sm:py-16">
+        <div className="mx-auto grid max-w-7xl gap-6 border-l-2 border-[#c98559] pl-6 sm:gap-8 sm:pl-9 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+          <ScrollReveal>
+            <Eyebrow>A setting for work and connection</Eyebrow>
+            <h2 className="mt-3 max-w-3xl font-serif text-3xl leading-tight text-[#173f32] sm:text-4xl lg:text-[2.75rem]">
+              Give Your Organisation an Address in the Himalayas.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-base leading-8 text-[#53625a] sm:text-lg">
+              Bring your people closer to nature. Create a space where your team can connect, recharge, collaborate, and experience the Himalayas.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal>
+            <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+              <Eyebrow>Designed around how your people work</Eyebrow>
+              <h2 className="mt-3 font-serif text-3xl leading-tight text-[#173f32] sm:text-4xl">
+                Who Can Be Part of This?
+              </h2>
+              <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-[#68756e]">
+                Whether you lead an organisation, bring a team together, or are planning a focused retreat, CHP offers a Himalayan base for work, shared experiences, and collective well-being.
+              </p>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {corporateAudiences.map((audience, index) => (
+              <ScrollReveal key={audience.title} delay={(index % 3) * 0.05}>
+                <article className="group h-full border border-[#173f32]/15 bg-white/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#c98559]/55 hover:bg-white sm:p-7">
+                  <span className="font-serif text-sm text-[#a6643d]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-3 font-serif text-xl leading-snug text-[#173f32] sm:text-2xl">
+                    {audience.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[#68756e]">
+                    {audience.text}
+                  </p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal delay={0.1}>
+            <div className="mt-10 flex flex-col gap-5 bg-[#173f32] px-6 py-8 text-white sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:px-9 sm:py-9">
+              <div className="max-w-3xl">
+                <h3 className="font-serif text-2xl leading-tight sm:text-3xl">
+                  Bring Your Team to the Himalayas.
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-white/75 sm:text-base">
+                  Have an organisation or team in mind? Let&apos;s explore a meaningful Himalayan experience shaped around the way your people work and connect.
+                </p>
+              </div>
+              <div className="shrink-0">
+                <CorporateLink href="/contact?tab=query">Contact CHP</CorporateLink>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       <section className="px-5 py-20 sm:px-8 sm:py-28">
