@@ -10,12 +10,12 @@ const image = (photo: string, width = 1200) =>
 const raftingImage = image("photo-1690905765810-665a1e6f294f", 2000);
 
 export const metadata: Metadata = {
-  title: "CHP Himalayan River Rafting",
+  title: "CHP Himalayan River Adventures",
   description:
-    "Explore CHP's vision for Himalayan river rafting, river-based experiences and responsible tourism partnerships in India's mountain landscapes.",
+    "Explore CHP's vision for Himalayan river adventures, including rafting, riverside experiences and responsible tourism partnerships.",
   alternates: { canonical: "https://www.thehimalayancamp.com/chp-river-rafting" },
   openGraph: {
-    title: "CHP Himalayan River Rafting | Ride the Rapids",
+    title: "CHP Himalayan River Adventures | Explore the River",
     description:
       "Discover the potential for river-based adventure experiences and partnership in the Himalayas.",
     url: "https://www.thehimalayancamp.com/chp-river-rafting",
@@ -97,13 +97,13 @@ function Breadcrumbs() {
         <li aria-hidden="true">/</li>
         <li><Link href="/biz-facilities" className="hover:text-white">Business Facilities</Link></li>
         <li aria-hidden="true">/</li>
-        <li aria-current="page" className="text-white">River Rafting</li>
+        <li aria-current="page" className="text-white">River Adventures</li>
       </ol>
     </nav>
   );
 }
 
-export default function HimalayanRiverRaftingPage() {
+export default function HimalayanRiverAdventuresPage() {
   return (
     <main className="overflow-hidden bg-[#f2f6f4] pt-16 text-[#26352f]">
       <section className="relative isolate flex min-h-[650px] items-end overflow-hidden bg-[#082c34] text-white sm:min-h-[700px] lg:min-h-[760px]">
@@ -115,8 +115,8 @@ export default function HimalayanRiverRaftingPage() {
           <ScrollReveal>
             <div className="mt-12 max-w-4xl">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200 sm:text-sm">CHP · River adventures · Partnership opportunities</p>
-              <h1 className="mt-5 font-serif text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">CHP Himalayan River Rafting</h1>
-              <p className="mt-4 font-serif text-2xl text-cyan-100 sm:text-3xl">Ride the Rapids. Experience the Himalayas.</p>
+              <h1 className="mt-5 font-serif text-5xl leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">CHP Himalayan River Adventures</h1>
+              <p className="mt-4 font-serif text-2xl text-cyan-100 sm:text-3xl">Explore the River. Experience the Himalayas.</p>
               <p className="mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-lg">
                 Discover the thrill of Himalayan rivers and explore opportunities to develop memorable water-based adventure experiences in one of India&apos;s most extraordinary landscapes.
               </p>
@@ -144,7 +144,7 @@ export default function HimalayanRiverRaftingPage() {
               Experience the energy of Himalayan rivers through unforgettable water-based adventures.
             </p>
             <p className="mt-4 text-justify text-base leading-8 text-[#607378]">
-              CHP envisions developing opportunities around river rafting and river-based tourism, bringing together adventure enthusiasts, experienced operators, tourism professionals, and strategic partners.
+              CHP envisions developing river adventures that bring together rafting, riverside experiences and outdoor exploration, alongside adventure enthusiasts, experienced operators, tourism professionals, and strategic partners.
             </p>
           </ScrollReveal>
         </div>
