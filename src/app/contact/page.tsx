@@ -172,7 +172,7 @@ const journeyInterests = [
 function JourneyTab() {
   const [form, setForm] = useState({
     name: "", email: "", phone: "", interest: "",
-    groupSize: "", days: "", dates: "", message: "",
+    days: "", dates: "", message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -212,24 +212,11 @@ function JourneyTab() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
+        <div className="sm:col-span-2">
           <label className={labelCls}>Phone Number</label>
           <input type="tel" value={form.phone}
             onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
             placeholder="+91 XXXXX XXXXX" className={inputCls} />
-        </div>
-        <div>
-          <label className={labelCls}>Group Size</label>
-          <select value={form.groupSize}
-            onChange={(e) => setForm((f) => ({ ...f, groupSize: e.target.value }))}
-            className={inputCls}>
-            <option value="">Select size</option>
-            <option>Solo</option>
-            <option>1–4 Guests</option>
-            <option>5–8 Guests</option>
-            <option>9–12 Guests</option>
-            <option>12+ Guests</option>
-          </select>
         </div>
       </div>
 

@@ -9,6 +9,7 @@ import { AssetsModule } from './assets/assets.module';
 import { CampBookingsModule } from './camp-bookings/camp-bookings.module';
 import { LeadsModule } from './leads/leads.module';
 import { ProjectsModule } from './projects/projects.module';
+import { TrekEnquiriesModule } from './trek-enquiries/trek-enquiries.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { ProjectsModule } from './projects/projects.module';
     CampBookingsModule,
     LeadsModule,
     ProjectsModule,
+    TrekEnquiriesModule,
   ],
 })
 export class AppModule {}

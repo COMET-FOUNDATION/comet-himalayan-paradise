@@ -1,9 +1,25 @@
+import { getTrekBookingHref } from "@/lib/trekBooking";
+import { MultipleTreksNotice } from "@/components/treks/MultipleTreksNotice";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { treks, getTrekBySlug } from "@/data/treks";
 import { Clock, MapPin, TrendingUp, Calendar, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { CTABanner } from "@/components/home/CTABanner";
+import { VillageHeritageTrekDetail } from "./VillageHeritageTrekDetail";
+import { BirdWatchingTrekDetail } from "./BirdWatchingTrekDetail";
+import { ForestEcosystemTrekDetail } from "./ForestEcosystemTrekDetail";
+import { GaushalaMedicineFarmTrekDetail } from "./GaushalaMedicineFarmTrekDetail";
+import { MountainCyclingTrekDetail } from "./MountainCyclingTrekDetail";
+import { RamGangaRiverCampingTrekDetail } from "./RamGangaRiverCampingTrekDetail";
+import { NightJungleSafariDetail } from "./NightJungleSafariDetail";
+import { ChandikaGhatTrekDetail } from "./ChandikaGhatTrekDetail";
+import { KapileshwarMahadevTrekDetail } from "./KapileshwarMahadevTrekDetail";
+import { KotviDeviCaveTrekDetail } from "./KotviDeviCaveTrekDetail";
+import { ThalkedarTrekDetail } from "./ThalkedarTrekDetail";
+import { DhwajTempleTrekDetail } from "./DhwajTempleTrekDetail";
+import { KhaliaTopTrekDetail } from "./KhaliaTopTrekDetail";
+import { MilamGlacierTrekDetail } from "./MilamGlacierTrekDetail";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,11 +37,256 @@ export async function generateStaticParams() {
 }
 
 const BASE_URL = "https://comet-himalayan-paradise.vercel.app";
+const VILLAGE_HERITAGE_TREK_ID = "village-heritage-and-nature-walk";
+const VILLAGE_HERITAGE_TITLE = "Village Heritage Tour & Nature Walk";
+const VILLAGE_HERITAGE_DESCRIPTION =
+  "Explore the authentic Himalayan lifestyle through traditional Kumaoni villages, heritage homes, local food, indigenous knowledge and peaceful nature trails.";
+const BIRD_WATCHING_TREK_ID = "bird-watching-and-crop-discovery-walk";
+const BIRD_WATCHING_TITLE = "Bird Watching & Crop Discovery Walk";
+const BIRD_WATCHING_DESCRIPTION =
+  "Discover Himalayan birds, native crops and the rich biodiversity of mountain landscapes on a guided walk through traditional fields and natural habitats.";
+const FOREST_ECOSYSTEM_TREK_ID =
+  "forest-ecosystem-discovery-and-herbal-medicine-trail";
+const FOREST_ECOSYSTEM_TITLE =
+  "Forest Ecosystem Discovery and Herbal Medicine Trail";
+const FOREST_ECOSYSTEM_DESCRIPTION =
+  "Explore the rich Himalayan forest ecosystem through guided nature trails, indigenous medicinal plants, aromatic herbs and traditional knowledge of local communities. Discover the interconnected world of forest flora, wildlife habitats and natural healing resources.";
+const GAUSHALA_TREK_ID = "gaushala-and-medicine-farm-visit";
+const GAUSHALA_TITLE = "Gaushala and Medicine Farm Visit";
+const GAUSHALA_DESCRIPTION =
+  "Experience the traditional Himalayan farming lifestyle through a guided visit to a local Gaushala and medicinal plant farm. Discover indigenous cattle breeds, traditional dairy practices, Himalayan herbs, medicinal plants and sustainable mountain agriculture.";
+const MOUNTAIN_CYCLING_TREK_ID = "mountain-cycling";
+const MOUNTAIN_CYCLING_TITLE = "Mountain Cycling";
+const MOUNTAIN_CYCLING_DESCRIPTION =
+  "Experience the thrill of cycling through the beautiful Himalayan countryside. Explore winding mountain roads, traditional villages, pine forests and breathtaking viewpoints while enjoying an active outdoor adventure.";
+const RAM_GANGA_RIVER_CAMPING_TREK_ID = "ram-ganga-river-camping";
+const RAM_GANGA_RIVER_CAMPING_TITLE = "Ram Ganga River Camping";
+const RAM_GANGA_RIVER_CAMPING_DESCRIPTION =
+  "Experience the beauty of the Ram Ganga River through an immersive riverside camping experience. Enjoy scenic mountain surroundings, riverside relaxation, outdoor activities, bonfire evenings and the peaceful charm of Himalayan nature.";
+const NIGHT_JUNGLE_SAFARI_TREK_ID = "night-jungle-safari";
+const NIGHT_JUNGLE_SAFARI_TITLE = "Night Jungle Safari";
+const NIGHT_JUNGLE_SAFARI_DESCRIPTION =
+  "Explore Himalayan forest trails after dark with a local nature guide. Discover nocturnal wildlife, forest sounds, night sky observation and the hidden activities of the jungle.";
+const CHANDIKA_GHAT_TREK_ID = "chandika-ghat-trek";
+const CHANDIKA_GHAT_TREK_TITLE = "Chandika Ghat Trek";
+const CHANDIKA_GHAT_TREK_DESCRIPTION =
+  "Discover the natural beauty and spiritual charm of Chandika Ghat on a scenic Himalayan trek through peaceful mountain trails and surrounding forests, connecting with local traditions and spiritual heritage.";
+const KAPILESHWAR_MAHADEV_TREK_ID = "kapileshwar-mahadev-cave-temple-trek";
+const KAPILESHWAR_MAHADEV_TREK_TITLE = "Kapileshwar Mahadev Cave Temple Trek";
+const KAPILESHWAR_MAHADEV_TREK_DESCRIPTION =
+  "Discover the spiritual and natural beauty of Kapileshwar Mahadev Cave Temple. Explore the sacred cave shrine dedicated to Lord Shiva, scenic mountain trails and the peaceful surrounding forests and Himalayan landscapes.";
+const KOTVI_DEVI_TREK_ID = "kotvi-devi-cave-temple-trail";
+const KOTVI_DEVI_TREK_TITLE = "Kotvi Devi Cave Temple Trek";
+const KOTVI_DEVI_TREK_DESCRIPTION =
+  "Experience a combination of spirituality, nature and adventure at Kotvi Devi Cave Temple. Explore the natural cave surroundings and spiritual significance of this sacred destination in the beautiful Himalayan landscape.";
+const THALKEDAR_TREK_ID = "thalkedar-trek";
+const THALKEDAR_TREK_TITLE = "Thalkedar Trek";
+const THALKEDAR_TREK_DESCRIPTION =
+  "Discover the spiritual and natural beauty of Thalkedar. Explore a scenic mountain route, panoramic Himalayan views and the sacred Thalkedar Mahadev Temple surrounded by peaceful forests and landscapes.";
+const DHWAJ_TEMPLE_TREK_ID = "dhwaj-temple-trek";
+const DHWAJ_TEMPLE_TREK_TITLE = "Dhwaj Temple Trek";
+const DHWAJ_TEMPLE_TREK_DESCRIPTION =
+  "Discover the spiritual and natural beauty of Dhwaj Temple in the mountains of Pithoragarh, with forest trails, Himalayan views, spiritual exploration and a peaceful connection with nature.";
+const KHALIA_TOP_TREK_ID = "khalia-top-trek";
+const KHALIA_TOP_TREK_TITLE = "Khalia Top Trek";
+const KHALIA_TOP_TREK_DESCRIPTION =
+  "Experience the spectacular beauty of the Himalayas near Munsiyari. Walk through dense forests, alpine meadows and mountain trails with views of the Panchachuli peaks and surrounding Himalayan ranges.";
+const MILAM_GLACIER_TREK_ID = "milam-glacier-trek";
+const MILAM_GLACIER_TREK_TITLE = "Milam Glacier Trek";
+const MILAM_GLACIER_TREK_DESCRIPTION =
+  "Trek through remote mountain villages, dramatic valleys, pristine rivers and rugged Himalayan terrain to Milam Glacier, with mountain views and the natural and cultural heritage of the Kumaon Himalayas.";
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const trek = getTrekBySlug(slug);
   if (!trek) return {};
+  if (trek.id === VILLAGE_HERITAGE_TREK_ID) {
+    return {
+      title: VILLAGE_HERITAGE_TITLE,
+      description: VILLAGE_HERITAGE_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${VILLAGE_HERITAGE_TITLE} | CHP Himalayan Paradise`,
+        description: VILLAGE_HERITAGE_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: trek.image, alt: VILLAGE_HERITAGE_TITLE }],
+      },
+    };
+  }
+  if (trek.id === BIRD_WATCHING_TREK_ID) {
+    return {
+      title: BIRD_WATCHING_TITLE,
+      description: BIRD_WATCHING_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${BIRD_WATCHING_TITLE} | CHP Himalayan Paradise`,
+        description: BIRD_WATCHING_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: trek.image, alt: BIRD_WATCHING_TITLE }],
+      },
+    };
+  }
+  if (trek.id === FOREST_ECOSYSTEM_TREK_ID) {
+    return {
+      title: FOREST_ECOSYSTEM_TITLE,
+      description: FOREST_ECOSYSTEM_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${FOREST_ECOSYSTEM_TITLE} | CHP Himalayan Paradise`,
+        description: FOREST_ECOSYSTEM_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: trek.image, alt: FOREST_ECOSYSTEM_TITLE }],
+      },
+    };
+  }
+  if (trek.id === GAUSHALA_TREK_ID) {
+    return {
+      title: GAUSHALA_TITLE,
+      description: GAUSHALA_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${GAUSHALA_TITLE} | CHP Himalayan Paradise`,
+        description: GAUSHALA_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: trek.image, alt: GAUSHALA_TITLE }],
+      },
+    };
+  }
+  if (trek.id === MOUNTAIN_CYCLING_TREK_ID) {
+    return {
+      title: MOUNTAIN_CYCLING_TITLE,
+      description: MOUNTAIN_CYCLING_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${MOUNTAIN_CYCLING_TITLE} | CHP Himalayan Paradise`,
+        description: MOUNTAIN_CYCLING_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: trek.image, alt: MOUNTAIN_CYCLING_TITLE }],
+      },
+    };
+  }
+  if (trek.id === RAM_GANGA_RIVER_CAMPING_TREK_ID) {
+    return {
+      title: RAM_GANGA_RIVER_CAMPING_TITLE,
+      description: RAM_GANGA_RIVER_CAMPING_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${RAM_GANGA_RIVER_CAMPING_TITLE} | CHP Himalayan Paradise`,
+        description: RAM_GANGA_RIVER_CAMPING_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [
+          {
+            url: `${BASE_URL}/images/treks/ram-ganga-river-camping-hero.webp`,
+            alt: RAM_GANGA_RIVER_CAMPING_TITLE,
+          },
+        ],
+      },
+    };
+  }
+  if (trek.id === NIGHT_JUNGLE_SAFARI_TREK_ID) {
+    return {
+      title: NIGHT_JUNGLE_SAFARI_TITLE,
+      description: NIGHT_JUNGLE_SAFARI_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${NIGHT_JUNGLE_SAFARI_TITLE} | CHP Himalayan Paradise`,
+        description: NIGHT_JUNGLE_SAFARI_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/night-jungle-forest.webp", alt: NIGHT_JUNGLE_SAFARI_TITLE }],
+      },
+    };
+  }
+  if (trek.id === CHANDIKA_GHAT_TREK_ID) {
+    return {
+      title: CHANDIKA_GHAT_TREK_TITLE,
+      description: CHANDIKA_GHAT_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${CHANDIKA_GHAT_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: CHANDIKA_GHAT_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/chandika-ghat-trek.webp", alt: CHANDIKA_GHAT_TREK_TITLE }],
+      },
+    };
+  }
+  if (trek.id === KAPILESHWAR_MAHADEV_TREK_ID) {
+    return {
+      title: KAPILESHWAR_MAHADEV_TREK_TITLE,
+      description: KAPILESHWAR_MAHADEV_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${KAPILESHWAR_MAHADEV_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: KAPILESHWAR_MAHADEV_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/kapileshwar-mahadev-cave-temple.webp", alt: KAPILESHWAR_MAHADEV_TREK_TITLE }],
+      },
+    };
+  }
+  if (trek.id === KOTVI_DEVI_TREK_ID) {
+    return {
+      title: KOTVI_DEVI_TREK_TITLE,
+      description: KOTVI_DEVI_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${KOTVI_DEVI_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: KOTVI_DEVI_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/kotvi-devi-cave-temple.webp", alt: KOTVI_DEVI_TREK_TITLE }],
+      },
+    };
+  }
+  if (trek.id === THALKEDAR_TREK_ID) {
+    return {
+      title: THALKEDAR_TREK_TITLE,
+      description: THALKEDAR_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${THALKEDAR_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: THALKEDAR_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/thalkedar-trek.webp", alt: THALKEDAR_TREK_TITLE }],
+      },
+    };
+  }
+  if (trek.id === DHWAJ_TEMPLE_TREK_ID) {
+    return {
+      title: DHWAJ_TEMPLE_TREK_TITLE,
+      description: DHWAJ_TEMPLE_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${DHWAJ_TEMPLE_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: DHWAJ_TEMPLE_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/dhwaj-temple-trek.webp", alt: DHWAJ_TEMPLE_TREK_TITLE }],
+      },
+    };
+  }
+  if (trek.id === KHALIA_TOP_TREK_ID) {
+    return {
+      title: KHALIA_TOP_TREK_TITLE,
+      description: KHALIA_TOP_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${KHALIA_TOP_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: KHALIA_TOP_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/khalia-top-trek.webp", alt: KHALIA_TOP_TREK_TITLE }],
+      },
+    };
+  }
+  if (trek.id === MILAM_GLACIER_TREK_ID) {
+    return {
+      title: MILAM_GLACIER_TREK_TITLE,
+      description: MILAM_GLACIER_TREK_DESCRIPTION,
+      alternates: { canonical: `${BASE_URL}/treks/${trek.slug}` },
+      openGraph: {
+        title: `${MILAM_GLACIER_TREK_TITLE} | CHP Himalayan Paradise`,
+        description: MILAM_GLACIER_TREK_DESCRIPTION,
+        url: `${BASE_URL}/treks/${trek.slug}`,
+        images: [{ url: "/images/treks/milam-glacier-trek.webp", alt: MILAM_GLACIER_TREK_TITLE }],
+      },
+    };
+  }
   return {
     title: trek.name,
     description: `${trek.description.slice(0, 155)}...`,
@@ -50,6 +311,53 @@ export default async function TrekDetailPage({ params }: Props) {
   const { slug } = await params;
   const trek = getTrekBySlug(slug);
   if (!trek) notFound();
+  if (trek.id === VILLAGE_HERITAGE_TREK_ID) {
+    return <VillageHeritageTrekDetail trek={trek} />;
+  }
+  if (trek.id === BIRD_WATCHING_TREK_ID) {
+    return <BirdWatchingTrekDetail trek={trek} />;
+  }
+  if (trek.id === FOREST_ECOSYSTEM_TREK_ID) {
+    return <ForestEcosystemTrekDetail trek={trek} />;
+  }
+  if (trek.id === GAUSHALA_TREK_ID) {
+    return <GaushalaMedicineFarmTrekDetail trek={trek} />;
+  }
+  if (trek.id === MOUNTAIN_CYCLING_TREK_ID) {
+    return <MountainCyclingTrekDetail trek={trek} />;
+  }
+  if (trek.id === RAM_GANGA_RIVER_CAMPING_TREK_ID) {
+    return <RamGangaRiverCampingTrekDetail />;
+  }
+  if (trek.id === NIGHT_JUNGLE_SAFARI_TREK_ID) {
+    return <NightJungleSafariDetail trek={trek} />;
+  }
+  if (trek.id === CHANDIKA_GHAT_TREK_ID) {
+    return <ChandikaGhatTrekDetail trek={trek} />;
+  }
+  if (trek.id === KAPILESHWAR_MAHADEV_TREK_ID) {
+    return <KapileshwarMahadevTrekDetail trek={trek} />;
+  }
+  if (trek.id === KOTVI_DEVI_TREK_ID) {
+    return <KotviDeviCaveTrekDetail trek={trek} />;
+  }
+  if (trek.id === THALKEDAR_TREK_ID) {
+    return <ThalkedarTrekDetail trek={trek} />;
+  }
+  if (trek.id === DHWAJ_TEMPLE_TREK_ID) {
+    return <DhwajTempleTrekDetail trek={trek} />;
+  }
+  if (trek.id === KHALIA_TOP_TREK_ID) {
+    return <KhaliaTopTrekDetail trek={trek} />;
+  }
+  if (trek.id === MILAM_GLACIER_TREK_ID) {
+    return <MilamGlacierTrekDetail trek={trek} />;
+  }
+
+  const heroImage =
+    trek.id === "adi-kailash-om-parvat-trek"
+      ? "/images/treks/adi-kailash-om-parvat-hero.jpg"
+      : trek.image;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -84,14 +392,29 @@ export default async function TrekDetailPage({ params }: Props) {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] overflow-hidden">
         <Image
-          src={trek.image}
-          alt={trek.name}
+          src={heroImage}
+          alt={
+            trek.id === "adi-kailash-om-parvat-trek"
+              ? "Om Parvat in Uttarakhand"
+              : trek.name
+          }
           fill
           priority
           sizes="100vw"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+
+        {trek.id === "adi-kailash-om-parvat-trek" && (
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Om_parvat,_uttarakhand.jpg"
+            target="_blank"
+            rel="noreferrer"
+            className="absolute bottom-2 right-3 z-10 text-xs text-white/75 underline underline-offset-2 hover:text-white"
+          >
+            Photo: Sujithshivam511 / Wikimedia Commons (cropped, CC BY-SA 4.0)
+          </a>
+        )}
 
         <div className="absolute inset-0 flex flex-col justify-end pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <Link
@@ -233,8 +556,9 @@ export default async function TrekDetailPage({ params }: Props) {
                   )}
                 </div>
 
+                <MultipleTreksNotice />
                 <Link
-                  href="/contact"
+                  href={getTrekBookingHref(trek.id)}
                   className="w-full block text-center bg-green-900 hover:bg-green-800 text-white font-semibold py-3.5 rounded-xl transition-colors mb-3"
                 >
                   Book This Trek

@@ -29,3 +29,5 @@ services:
         sync: false
       - key: CHP_LEADS_API_KEY
         sync: false
+      - key: CHP_BOOKING_API_KEY
+        sync: false

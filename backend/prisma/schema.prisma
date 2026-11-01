@@ -23,6 +23,19 @@ enum CampBookingStatus {
   CANCELLED
 }
 
+enum TrekEnquiryStatus {
+  NEW
+  UNDER_REVIEW
+  CONTACTED
+  CLOSED
+}
+
+enum TrekEnquiryContactMethod {
+  EMAIL
+  PHONE
+  WHATSAPP
+}
+
 enum ProjectStatus {
   DRAFT
   PUBLISHED
@@ -145,6 +158,48 @@ model CampBooking {
 
   @@index([status, createdAt])
   @@map("camp_bookings")
+}
+
+model TrekEnquiry {
+  id                     String                   @id @default(uuid())
+  reference              String                   @unique
+  idempotencyKey         String                   @unique
+  status                 TrekEnquiryStatus        @default(NEW)
+  arrivalDate            DateTime                 @db.Date
+  departureDate          DateTime                 @db.Date
+  fullName               String
+  email                  String
+  mobile                 String
+  country                String
+  preferredContactMethod TrekEnquiryContactMethod
+  specialRequests        String?                  @db.Text
+  additionalInformation  String?                  @db.Text
+  consent                Boolean                  @default(false)
+  consentedAt            DateTime?
+  createdAt              DateTime                 @default(now())
+  updatedAt              DateTime                 @updatedAt
+
+  selections TrekEnquirySelection[]
+
+  @@index([status, createdAt])
+  @@index([email, createdAt])
+  @@map("trek_enquiries")
+}
+
+model TrekEnquirySelection {
+  id        String   @id @default(uuid())
+  enquiryId String
+  trekId    String
+  trekName  String
+  position  Int
+  createdAt DateTime @default(now())
+
+  enquiry TrekEnquiry @relation(fields: [enquiryId], references: [id], onDelete: Cascade)
+
+  @@unique([enquiryId, trekId])
+  @@unique([enquiryId, position])
+  @@index([trekId])
+  @@map("trek_enquiry_selections")
 }
 
 model Lead {
