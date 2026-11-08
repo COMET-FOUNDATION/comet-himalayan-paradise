@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { BriefcaseBusiness, Flower2, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -10,21 +9,18 @@ const HEADER_IMAGE =
 
 const pathways = [
   {
-    href: "/second-home",
     label: "Your Cottage",
     icon: Home,
     color:
       "bg-gradient-to-b from-[#095ea5] to-[#094c86] hover:brightness-110 focus-visible:ring-offset-[#094c86]",
   },
   {
-    href: "/chp-biz-partnership",
     label: "Your Business",
     icon: BriefcaseBusiness,
     color:
       "bg-gradient-to-b from-[#e96404] to-[#bd4c0b] hover:brightness-110 focus-visible:ring-offset-[#bd4c0b]",
   },
   {
-    href: "/sanaatan-isht-dev-sthal",
     label: "Your Himalayan Legacy",
     icon: Flower2,
     color:
@@ -66,23 +62,24 @@ export function AboutHero() {
           </motion.h2>
         </div>
 
-        <nav
-          aria-label="Explore CHP"
+        <div
+          role="group"
+          aria-label="CHP pathways"
           className="absolute left-1/2 top-[75%] z-10 grid w-[67%] -translate-x-1/2 grid-cols-[1fr_1fr_1.2fr] gap-[2.3%] sm:w-[34.6%]"
         >
-          {pathways.map(({ href, label, icon: Icon, color }) => (
-            <Link
+          {pathways.map(({ label, icon: Icon, color }) => (
+            <button
               key={label}
-              href={href}
+              type="button"
               className={`${pathwayButtonClass} ${color}`}
             >
               <span className="flex h-[clamp(12px,4.2vw,42px)] w-[clamp(12px,4.2vw,42px)] shrink-0 items-center justify-center rounded-full border border-white/75 bg-white/10 sm:h-[clamp(14px,2.2vw,42px)] sm:w-[clamp(14px,2.2vw,42px)]">
                 <Icon aria-hidden="true" className="h-[62%] w-[62%]" />
               </span>
               <span className="whitespace-nowrap">{label}</span>
-            </Link>
+            </button>
           ))}
-        </nav>
+        </div>
       </motion.div>
     </section>
   );
