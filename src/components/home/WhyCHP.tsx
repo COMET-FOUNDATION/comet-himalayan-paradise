@@ -21,8 +21,6 @@ const features = [
   {
     icon: Sun,
     title: "Cool summers",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/0b6a0e6b-c30c-46ef-a485-0a27d10e8a03-cool-summers.png",
     description:
       "Escape the sweltering plains to pleasant mountain climates with refreshing alpine breeze all summer long.",
     color: "bg-amber-50 text-amber-600",
@@ -31,7 +29,6 @@ const features = [
   {
     icon: Shield,
     title: "Safety First",
-    image: "/images/driving-factors/safety first.png",
     description:
       "Certified guides, comprehensive safety protocols, and emergency response systems across all treks and camps.",
     color: "bg-sky-50 text-sky-600",
@@ -40,7 +37,6 @@ const features = [
   {
     icon: Map,
     title: "Expert-Guided Experiences",
-    image: "/images/driving-factors/Expert guided experience.png",
     description:
       "Our naturalists, trekking guides, and cultural experts bring decades of local knowledge to every experience.",
     color: "bg-green-50 text-green-600",
@@ -49,8 +45,6 @@ const features = [
   {
     icon: Users,
     title: "For Every Traveler",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/a22fc63c-4cd4-4b8e-b891-fa85a867b080-for-every-traveller.png",
     description:
       "Programs designed for children (5+), families, students, working professionals, and senior citizens alike.",
     color: "bg-orange-50 text-orange-600",
@@ -58,8 +52,6 @@ const features = [
   {
     icon: Leaf,
     title: "Responsible Tourism",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/e502a07d-2b24-4710-b2ee-041c83d51c72-responsible-tourism.png",
     description:
       "We operate with deep respect for Himalayan ecosystems — minimal-impact camping and community-first practices.",
     color: "bg-emerald-50 text-emerald-600",
@@ -67,8 +59,6 @@ const features = [
   {
     icon: Compass,
     title: "Fully Customizable",
-    image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/public/images/356e064f-f9f9-4089-8c13-051a474a39ff-fully-customizable.png",
     description:
       "1-day adventures to 45-day expeditions — mix treks, camps, wellness, culture, and wildlife to build your perfect journey.",
     color: "bg-purple-50 text-purple-600",
@@ -76,7 +66,6 @@ const features = [
   {
     icon: Heart,
     title: "Wellness Integrated",
-    image: "/images/driving-factors/wellness integrated.png",
     description:
       "Yoga, meditation, organic food, and forest bathing are woven into every program for holistic mountain wellness.",
     color: "bg-rose-50 text-rose-600",
@@ -84,7 +73,6 @@ const features = [
   {
     icon: Clock,
     title: "Hassle-Free Planning",
-    image: "/images/driving-factors/hassle free planning.png",
     description:
       "Pickup & drop, accommodation, meals, permits, and guides — we handle every detail so you just show up and breathe.",
     color: "bg-amber-50 text-amber-600",
@@ -92,7 +80,6 @@ const features = [
   {
     icon: Star,
     title: "Authentic Experiences",
-    image: "/images/driving-factors/authentic experience.png",
     description:
       "No manufactured tourism. Real village visits, genuine cultural exchange, and honest Himalayan wilderness.",
     color: "bg-indigo-50 text-indigo-600",
@@ -109,20 +96,37 @@ export function WhyCHP() {
         />
 
         <StaggerContainer
-          className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-6"
+          className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           staggerDelay={0.08}
         >
-          {features.slice(0, 3).map((f) => (
-              <StaggerItem key={f.title}>
+          {features.slice(0, 3).map((f) => {
+            const Icon = f.icon;
+
+            return (
+              <StaggerItem key={f.title} className="h-full">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className="overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-sm transition-shadow duration-300 hover:shadow-xl"
+                  className={`flex h-full min-h-40 items-center gap-5 rounded-2xl border border-[#b7c8bb] ${f.surface} p-5 shadow-sm transition-shadow duration-300 hover:shadow-lg sm:p-6`}
                 >
-                  <img src={f.image!} alt={f.title} className="block h-auto w-full" />
+                  <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${f.color} sm:h-[5.25rem] sm:w-[5.25rem}`}>
+                    <Icon className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
+                  </div>
+
+                  <div className="h-20 w-px shrink-0 bg-[#b7c8bb]" aria-hidden="true" />
+
+                  <div className="min-w-0">
+                    <h3 className="mb-1.5 text-lg font-bold leading-tight text-[#10372b] sm:text-xl">
+                      {f.title}
+                    </h3>
+                    <p className="text-sm leading-snug text-slate-700">
+                      {f.description}
+                    </p>
+                  </div>
                 </motion.div>
               </StaggerItem>
-          ))}
+            );
+          })}
         </StaggerContainer>
 
         <div className="mt-12 text-center">

@@ -62,7 +62,7 @@ export default function GalleryPage() {
     <>
       {/* ── Top Header with 5-image crisp crossfade blend ── */}
       <section className="relative bg-slate-950 pt-36 pb-24 overflow-hidden border-b border-slate-800">
-        {/* Animated background slideshow with high sharpness & unoptimized full resolution */}
+        {/* Animated background slideshow with high sharpness & full resolution */}
         <div className="absolute inset-0 z-0">
           <AnimatePresence mode="wait">
             <motion.div
@@ -79,7 +79,6 @@ export default function GalleryPage() {
                 fill
                 priority
                 quality={100}
-                unoptimized
                 className="object-cover"
               />
             </motion.div>
@@ -94,7 +93,6 @@ export default function GalleryPage() {
                   alt={`Header blend ${idx}`}
                   fill
                   quality={95}
-                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -184,7 +182,6 @@ export default function GalleryPage() {
                       alt={img.alt}
                       fill
                       quality={95}
-                      unoptimized
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -231,7 +228,6 @@ export default function GalleryPage() {
                 alt="Gallery image"
                 fill
                 quality={100}
-                unoptimized
                 sizes="100vw"
                 className="object-contain"
               />

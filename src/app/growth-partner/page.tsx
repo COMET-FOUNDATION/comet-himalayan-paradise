@@ -309,7 +309,6 @@ export default function GrowthPartnerPage() {
           src={HEADER_IMAGE}
           alt="CHP Growth Partnership in the Himalayas"
           fill
-          unoptimized
           priority
           sizes="100vw"
           className="object-cover"
@@ -428,7 +427,6 @@ export default function GrowthPartnerPage() {
                   src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea9d5a29-444d-466f-9c4e-c6e97d747ec2-hospitality-stays-1.webp"
                   alt="Himalayan hospitality"
                   fill
-                  unoptimized
                   sizes="(max-width: 1024px) 60vw, 45vw"
                   className="object-cover transition duration-700 hover:scale-105"
                 />
@@ -440,7 +438,6 @@ export default function GrowthPartnerPage() {
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a94f636-fbe3-498a-a43a-8eb27a69761d-adventure-tourism.jpg"
                     alt="Himalayan tourism and adventure"
                     fill
-                    unoptimized
                     sizes="(max-width: 1024px) 40vw, 30vw"
                     className="object-cover transition duration-700 hover:scale-105"
                   />
@@ -451,7 +448,6 @@ export default function GrowthPartnerPage() {
                     src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg"
                     alt="Himalayan wellness"
                     fill
-                    unoptimized
                     sizes="(max-width: 1024px) 40vw, 30vw"
                     className="object-cover transition duration-700 hover:scale-105"
                   />
