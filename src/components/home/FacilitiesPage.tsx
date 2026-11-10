@@ -66,6 +66,10 @@ const dreamSpaces: EcosystemItem[] = [
     "a3af37eb-ebca-4a9e-ac59-7396a612b0aa-scaled-corp-guest-house.webp",
   ],
   [
+    "C1 Officers Guest House",
+    "a3af37eb-ebca-4a9e-ac59-7396a612b0aa-scaled-corp-guest-house.webp",
+  ],
+  [
     "Housing Societies & Communities Guest House",
     "62e1636b-fd9e-4f7c-8ebb-ed605d3a6174-scaled-hoa-aoa-guest-hosue-1.webp",
   ],
@@ -149,12 +153,15 @@ const dreamSpaces: EcosystemItem[] = [
     [
       "Himalayan Mind-space",
       "Corporate Guest House",
+      "C1 Officers Guest House",
       "Housing Societies & Communities Guest House",
     ].includes(title)
   ) {
       href = title === "Housing Societies & Communities Guest House"
         ? "/housing-societies-communities"
-        : "/corporate-guest-house-remote-work";
+        : title === "C1 Officers Guest House"
+          ? "/c1-officers-guest-house"
+          : "/corporate-guest-house-remote-work";
   }
 
   /*
@@ -196,7 +203,9 @@ const dreamSpaces: EcosystemItem[] = [
    */
   return {
     title,
-    image: `https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/${filename}`,
+    image: title === "C1 Officers Guest House"
+      ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/881055fe-b28d-4dd4-9eb2-8f0f43d1f866-card.webp"
+      : `https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/${filename}`,
     href,
   };
 });
