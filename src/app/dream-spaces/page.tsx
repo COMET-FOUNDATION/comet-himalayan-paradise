@@ -16,7 +16,7 @@ export default function DreamSpacesPage() {
       <section className="relative isolate flex min-h-[420px] items-center overflow-hidden bg-green-950 sm:min-h-[460px]">
         <Image
           src={dreamSpacesHero}
-          alt="CHP 16 Himalayan Dream Spaces"
+          alt="CHP Himalayan Dream Spaces"
           fill
           priority
           sizes="100vw"
@@ -31,7 +31,7 @@ export default function DreamSpacesPage() {
           </p>
 
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            16 Himalayan Dream Spaces
+            17 Himalayan Dream Spaces
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
