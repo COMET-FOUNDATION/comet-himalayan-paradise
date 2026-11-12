@@ -21,6 +21,7 @@ const features = [
   {
     icon: Sun,
     title: "Cool summers",
+    image: "/images/driving-factors/cool summers.png",
     description:
       "Escape the sweltering plains to pleasant mountain climates with refreshing alpine breeze all summer long.",
     color: "bg-amber-50 text-amber-600",
@@ -29,6 +30,7 @@ const features = [
   {
     icon: Shield,
     title: "Safety First",
+    image: "/images/driving-factors/safety first.png",
     description:
       "Certified guides, comprehensive safety protocols, and emergency response systems across all treks and camps.",
     color: "bg-sky-50 text-sky-600",
@@ -37,6 +39,7 @@ const features = [
   {
     icon: Map,
     title: "Expert-Guided Experiences",
+    image: "/images/driving-factors/Expert guided experience.png",
     description:
       "Our naturalists, trekking guides, and cultural experts bring decades of local knowledge to every experience.",
     color: "bg-green-50 text-green-600",
@@ -99,34 +102,17 @@ export function WhyCHP() {
           className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
           staggerDelay={0.08}
         >
-          {features.slice(0, 3).map((f) => {
-            const Icon = f.icon;
-
-            return (
-              <StaggerItem key={f.title} className="h-full">
+          {features.slice(0, 3).map((f) => (
+              <StaggerItem key={f.title}>
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.2 }}
-                  className={`flex h-full min-h-40 items-center gap-5 rounded-2xl border border-[#b7c8bb] ${f.surface} p-5 shadow-sm transition-shadow duration-300 hover:shadow-lg sm:p-6`}
+                  className="overflow-hidden rounded-2xl border border-white/80 bg-slate-100 shadow-sm transition-shadow duration-300 hover:shadow-xl"
                 >
-                  <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${f.color} sm:h-[5.25rem] sm:w-[5.25rem}`}>
-                    <Icon className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
-                  </div>
-
-                  <div className="h-20 w-px shrink-0 bg-[#b7c8bb]" aria-hidden="true" />
-
-                  <div className="min-w-0">
-                    <h3 className="mb-1.5 text-lg font-bold leading-tight text-[#10372b] sm:text-xl">
-                      {f.title}
-                    </h3>
-                    <p className="text-sm leading-snug text-slate-700">
-                      {f.description}
-                    </p>
-                  </div>
+                  <img src={f.image!} alt={f.title} className="block h-auto w-full" />
                 </motion.div>
               </StaggerItem>
-            );
-          })}
+          ))}
         </StaggerContainer>
 
         <div className="mt-12 text-center">

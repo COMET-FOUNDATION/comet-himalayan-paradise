@@ -52,14 +52,8 @@ export default function DreamSpacesPage() {
             subtitle="Discover CHP concepts designed around nature, connection, and the enduring character of the Himalayas."
           />
 
-          <div
-            className="
-              mt-12
-              [&_img]:!object-contain
-              [&_img]:!object-center
-            "
-          >
-            <EcosystemGallery items={dreamSpaces} />
+          <div className="mt-12">
+            <EcosystemGallery items={dreamSpaces} layout="dream-spaces" />
           </div>
 
           {/* ============================================================
