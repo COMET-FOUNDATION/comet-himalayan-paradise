@@ -66,7 +66,7 @@ const dreamSpaces: EcosystemItem[] = [
     "a3af37eb-ebca-4a9e-ac59-7396a612b0aa-scaled-corp-guest-house.webp",
   ],
   [
-    "C1 Officers Guest House",
+    "C1 Officers Enclave",
     "a3af37eb-ebca-4a9e-ac59-7396a612b0aa-scaled-corp-guest-house.webp",
   ],
   [
@@ -153,13 +153,13 @@ const dreamSpaces: EcosystemItem[] = [
     [
       "Himalayan Mind-space",
       "Corporate Guest House",
-      "C1 Officers Guest House",
+      "C1 Officers Enclave",
       "Housing Societies & Communities Guest House",
     ].includes(title)
   ) {
       href = title === "Housing Societies & Communities Guest House"
         ? "/housing-societies-communities"
-        : title === "C1 Officers Guest House"
+        : title === "C1 Officers Enclave"
           ? "/c1-officers-guest-house"
           : "/corporate-guest-house-remote-work";
   }
@@ -203,9 +203,17 @@ const dreamSpaces: EcosystemItem[] = [
    */
   return {
     title,
-    image: title === "C1 Officers Guest House"
-      ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-education-services/881055fe-b28d-4dd4-9eb2-8f0f43d1f866-card.webp"
-      : `https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/${filename}`,
+    image: title === "C1 Officers Enclave"
+      ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/e13b10e3-aea8-43a4-81de-3939c37880f5-c1-officers-enclave-table-under-500kb.jpg"
+      : title === "CHP Floral Paradise"
+        ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/f7a1bf14-b1a5-4255-859d-5a4ab4bb4d3d-chp-floral-paradise-distinct-cottages-under-500kb.jpg"
+        : title === "Floral Escape Maze"
+          ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/b3aaf6f8-8971-47f4-97a0-782c4b90ace7-chatgpt-image-nov-14-2026-10-46-33-am.jpg"
+          : title === "CHP Friends Enclave"
+            ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/4fa2661e-771b-4cc7-b4f7-324c9029a009-chatgpt-image-nov-14-2026-10-50-16-am.jpg"
+            : title === "Mystic Cave Retreat"
+              ? "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/holiday-camps/57f9273b-4179-49dd-a527-f7b015e2183e-chatgpt-image-nov-14-2026-10-55-04-am.jpg"
+              : `https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/${filename}`,
     href,
   };
 });
