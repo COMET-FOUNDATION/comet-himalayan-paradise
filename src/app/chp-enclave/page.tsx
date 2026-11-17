@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, CalendarCheck } from "lucide-react";
+import { ArrowLeft, CalendarCheck } from "lucide-react";
 import { CHPEnclaveHero } from "./CHPEnclaveHero";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://comet-himalayan-paradise.vercel.app/chp-enclave" },
   openGraph: {
     title: "CHP Enclave | CHP Himalayan Paradise",
-    description: "A thoughtfully planned Himalayan mountain community — premium cottages, group ownership, and a shared-services lifestyle.",
+    description: "A thoughtfully planned Himalayan mountain community — premium cottages, sweeping views, and a shared-services lifestyle.",
     url: "https://comet-himalayan-paradise.vercel.app/chp-enclave",
     images: [{ url: "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/8a2998d6-8c90-4122-848d-917500bfc92d-scaled-chp-enclave-2.webp", width: 1200, height: 630, alt: "CHP Enclave" }],
   },
@@ -77,44 +77,32 @@ export default function CHPEnclavePage() {
         </div>
       </section>
 
-      {/* Group Ownership Model */}
-      <section id="group-ownership" className="py-8 sm:py-10 bg-stone-50 overflow-hidden">
+      {/* Aerial Tour */}
+      <section id="aerial-tour" className="py-6 sm:py-8 bg-stone-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
-            <ScrollReveal direction="left">
-              <div className="flex w-full justify-center lg:justify-start">
-                <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/06532a1c-fee9-4c16-aeb7-491ee5299b07-scaled-group-ownership-1.webp"
-                  alt="Group Ownership Model"
-                  width={640}
-                  height={480}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className={IMAGE_FRAME_CLASS}
-                />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right">
+          <ScrollReveal direction="up">
+            <div className="mx-auto max-w-2xl">
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-orange-500" />
                 <p className="text-orange-500 text-xs font-semibold uppercase tracking-[0.2em]">
-                  Ownership
+                  Aerial Tour
                 </p>
               </div>
-              <h2 className="text-slate-800 text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-                Group-Ownership Model
+              <h2 className="text-slate-800 text-2xl sm:text-3xl font-bold mb-4 leading-tight">
+                CHP Enclave: 360° Aerial Tour
               </h2>
-              <p className="text-slate-600 leading-relaxed text-lg text-justify">
-                CHP&apos;s Group Ownership Model enables friends, families, or like-minded investors to co-own premium Himalayan assets through shared investment. This collaborative approach reduces individual investment costs while creating opportunities for <Highlight>shared returns, lower financial risk, and long-term wealth creation</Highlight>.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link href="/group-ownership-model" className="text-sm font-semibold text-green-800 underline decoration-green-600 underline-offset-4 hover:text-green-900">
-                  Explore Group Ownership
-                </Link>
+              <div className="aspect-video overflow-hidden rounded-2xl bg-slate-900 shadow-xl">
+                <iframe
+                  className="h-full w-full"
+                  src="https://www.youtube-nocookie.com/embed/2btkK1ktfCA?rel=0"
+                  title="360° Aerial Drone View of CHP Enclave"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
               </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
