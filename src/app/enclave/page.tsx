@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "CHP Enclave | CHP Himalayan Paradise",
     description: "A thoughtfully planned Himalayan mountain community — premium cottages, group ownership, and a shared-services lifestyle.",
     url: "https://comet-himalayan-paradise.vercel.app/chp-enclave",
-    images: [{ url: "/CHP Enclave 2.png", width: 1200, height: 630, alt: "CHP Enclave" }],
+    images: [{ url: "/CHPEnclave2.png", width: 1200, height: 630, alt: "CHP Enclave" }],
   },
 };
 
