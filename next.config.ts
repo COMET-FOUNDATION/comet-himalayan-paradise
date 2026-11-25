@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   images: {
+    // Vercel currently returns 402 for fresh optimization requests on this project.
+    // Serve source images directly until image optimization is available again.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",

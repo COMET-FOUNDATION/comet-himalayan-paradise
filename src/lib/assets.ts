@@ -1,5 +1,5 @@
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const STORAGE_BUCKET = process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET ?? "assets";
+const STORAGE_BUCKET = process.env.NEXT_PUBLIC_SUPABASE_STORAGE_BUCKET ?? "images";
 
 /**
  * Builds a public URL for an asset uploaded through the CHP asset management system,
