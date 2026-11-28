@@ -79,12 +79,12 @@ const ecosystemGateways = [
         icon: GraduationCap,
         key: "mission",
         title: "Contribute to the Mission",
-        description: "Mentoring, education, Gaushala, and Isht Dev Sthal.",
+        description: "Mentoring, education, Gaushala, and Sanatan Dev Sthal.",
         points: [],
         links: [
             { label: "Explore Comet Educational Services", href: "/comet-educational-services" },
             { label: "Explore Comet Gaushala", href: "/purpose-driven-space" },
-            { label: "Explore Comet Isht Dev Sthal", href: "/sanaatan-isht-dev-sthal" },
+            { label: "Explore Sanatan Dev Sthal", href: "/sanaatan-isht-dev-sthal" },
         ],
     },
     {
@@ -93,11 +93,11 @@ const ecosystemGateways = [
         title: "Sponsorship",
         tagline: "Support a Cause. Unlock a Himalayan Opportunity.",
         description:
-        "Sponsor a student's education, a cow at the Gaushala, or development work at an Isht Dev Sthal, and receive a special discount on plot pricing as a token of appreciation toward a plot in CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
+        "Sponsor a student's education, a cow at the Gaushala, or development work at Sanatan Dev Sthal, and receive a special discount on plot pricing as a token of appreciation toward a plot in CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
         points: [
             "Sponsor a student's education",
             "Sponsor a cow at the Gaushala",
-            "Sponsor Isht Dev Sthal development",
+            "Sponsor Sanatan Dev Sthal development",
             "Special discount on plot pricing",
         ],
         cta: "Become a Sponsor",
@@ -109,11 +109,11 @@ const ecosystemGateways = [
         subtitle: "80G, CSR Eligible",
         tagline: "Support a Purpose. Own a Dream.",
         description:
-            "Support initiatives such as Comet Educational Services, Gaushala, and Isht Dev Sthal, and unlock special plot-price benefits toward a plot at CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
+            "Support initiatives such as Comet Educational Services, Gaushala, and Sanatan Dev Sthal, and unlock special plot-price benefits toward a plot at CHP Enclave or a Dream Space of your choice, or privileged access to selected CHP facilities, experiences, and services.",
         points: [
             "80G & CSR eligible contributions",
             "Comet Educational Services",
-            "Gaushala & Isht Dev Sthal initiatives",
+            "Gaushala & Sanatan Dev Sthal initiatives",
             "Special plot-price benefits in return",
         ],
         cta: "Explore Donation Benefits",

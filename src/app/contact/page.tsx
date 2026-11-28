@@ -20,6 +20,7 @@ import {
   Sparkles,
   Tent,
 } from "lucide-react";
+import { siteEmails } from "@/lib/siteContact";
 
 /* ─── Tab definitions ────────────────────────────────────────────── */
 type TabId = "query" | "journey" | "cottage" | "dreamspace";
@@ -122,29 +123,29 @@ function QueryTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Full Name *</label>
-          <input required type="text" value={form.name}
+          <label htmlFor="query-name" className={labelCls}>Full Name *</label>
+          <input id="query-name" autoComplete="name" required type="text" value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             placeholder="Your name" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Email Address *</label>
-          <input required type="email" value={form.email}
+          <label htmlFor="query-email" className={labelCls}>Email Address *</label>
+          <input id="query-email" autoComplete="email" required type="email" value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
             placeholder="your@email.com" className={inputCls} />
         </div>
       </div>
 
       <div>
-        <label className={labelCls}>Phone Number</label>
-        <input type="tel" value={form.phone}
+        <label htmlFor="query-phone" className={labelCls}>Phone Number</label>
+        <input id="query-phone" autoComplete="tel" type="tel" value={form.phone}
           onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
           placeholder="+91 XXXXX XXXXX" className={inputCls} />
       </div>
 
       <div>
-        <label className={labelCls}>Your Query *</label>
-        <textarea required rows={5} value={form.query}
+        <label htmlFor="query-message" className={labelCls}>Your Query *</label>
+        <textarea id="query-message" required rows={5} value={form.query}
           onChange={(e) => setForm((f) => ({ ...f, query: e.target.value }))}
           placeholder="Tell us what you&apos;d like to know about CHP Himalayan Paradise…"
           className={`${inputCls} resize-none`} />
@@ -198,14 +199,14 @@ function JourneyTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Full Name *</label>
-          <input required type="text" value={form.name}
+          <label htmlFor="journey-name" className={labelCls}>Full Name *</label>
+          <input id="journey-name" autoComplete="name" required type="text" value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             placeholder="Your name" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Email Address *</label>
-          <input required type="email" value={form.email}
+          <label htmlFor="journey-email" className={labelCls}>Email Address *</label>
+          <input id="journey-email" autoComplete="email" required type="email" value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
             placeholder="your@email.com" className={inputCls} />
         </div>
@@ -213,20 +214,21 @@ function JourneyTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="sm:col-span-2">
-          <label className={labelCls}>Phone Number</label>
-          <input type="tel" value={form.phone}
+          <label htmlFor="journey-phone" className={labelCls}>Phone Number</label>
+          <input id="journey-phone" autoComplete="tel" type="tel" value={form.phone}
             onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
             placeholder="+91 XXXXX XXXXX" className={inputCls} />
         </div>
       </div>
 
       <div>
-        <label className={labelCls}>I&apos;m Interested In</label>
-        <div className="flex flex-wrap gap-2">
+        <p id="journey-interests-label" className={labelCls}>I&apos;m Interested In</p>
+        <div role="group" aria-labelledby="journey-interests-label" className="flex flex-wrap gap-2">
           {journeyInterests.map((item) => (
             <button key={item} type="button"
               onClick={() => setForm((f) => ({ ...f, interest: f.interest === item ? "" : item }))}
-              className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${form.interest === item
+              aria-pressed={form.interest === item}
+              className={`min-h-10 text-xs font-semibold px-3.5 py-2 rounded-full border transition-colors ${form.interest === item
                   ? "bg-green-900 text-white border-green-900"
                   : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
                 }`}>
@@ -238,8 +240,8 @@ function JourneyTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Number of Days</label>
-          <select value={form.days}
+          <label htmlFor="journey-days" className={labelCls}>Number of Days</label>
+          <select id="journey-days" value={form.days}
             onChange={(e) => setForm((f) => ({ ...f, days: e.target.value }))}
             className={inputCls}>
             <option value="">Select days</option>
@@ -256,16 +258,16 @@ function JourneyTab() {
           </select>
         </div>
         <div>
-          <label className={labelCls}>Preferred Dates</label>
-          <input type="text" value={form.dates}
+          <label htmlFor="journey-dates" className={labelCls}>Preferred Dates</label>
+          <input id="journey-dates" type="text" value={form.dates}
             onChange={(e) => setForm((f) => ({ ...f, dates: e.target.value }))}
             placeholder="e.g. Oct 10–20 or flexible" className={inputCls} />
         </div>
       </div>
 
       <div>
-        <label className={labelCls}>Message / Special Requirements</label>
-        <textarea rows={3} value={form.message}
+        <label htmlFor="journey-message" className={labelCls}>Message / Special Requirements</label>
+        <textarea id="journey-message" rows={3} value={form.message}
           onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
           placeholder="Fitness level, dietary needs, or anything that helps us plan perfectly…"
           className={`${inputCls} resize-none`} />
@@ -315,14 +317,14 @@ function CottageTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Full Name *</label>
-          <input required type="text" value={form.name}
+          <label htmlFor="cottage-name" className={labelCls}>Full Name *</label>
+          <input id="cottage-name" autoComplete="name" required type="text" value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             placeholder="Your name" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Email Address *</label>
-          <input required type="email" value={form.email}
+          <label htmlFor="cottage-email" className={labelCls}>Email Address *</label>
+          <input id="cottage-email" autoComplete="email" required type="email" value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
             placeholder="your@email.com" className={inputCls} />
         </div>
@@ -330,14 +332,14 @@ function CottageTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Phone Number *</label>
-          <input required type="tel" value={form.phone}
+          <label htmlFor="cottage-phone" className={labelCls}>Phone Number *</label>
+          <input id="cottage-phone" autoComplete="tel" required type="tel" value={form.phone}
             onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
             placeholder="+91 XXXXX XXXXX" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Number of Guests</label>
-          <select value={form.guests}
+          <label htmlFor="cottage-guests" className={labelCls}>Number of Guests</label>
+          <select id="cottage-guests" value={form.guests}
             onChange={(e) => setForm((f) => ({ ...f, guests: e.target.value }))}
             className={inputCls}>
             <option value="">Select guests</option>
@@ -351,12 +353,13 @@ function CottageTab() {
       </div>
 
       <div>
-        <label className={labelCls}>Preferred Cottage Type</label>
-        <div className="flex flex-wrap gap-2">
+        <p id="cottage-types-label" className={labelCls}>Preferred Cottage Type</p>
+        <div role="group" aria-labelledby="cottage-types-label" className="flex flex-wrap gap-2">
           {cottageTypes.map((ct) => (
             <button key={ct} type="button"
               onClick={() => setForm((f) => ({ ...f, cottageType: f.cottageType === ct ? "" : ct }))}
-              className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${form.cottageType === ct
+              aria-pressed={form.cottageType === ct}
+              className={`min-h-10 text-xs font-semibold px-3.5 py-2 rounded-full border transition-colors ${form.cottageType === ct
                   ? "bg-green-900 text-white border-green-900"
                   : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
                 }`}>
@@ -368,22 +371,22 @@ function CottageTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Check-In Date *</label>
-          <input required type="date" value={form.checkIn}
+          <label htmlFor="cottage-checkin" className={labelCls}>Check-In Date *</label>
+          <input id="cottage-checkin" required type="date" value={form.checkIn}
             onChange={(e) => setForm((f) => ({ ...f, checkIn: e.target.value }))}
             className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Check-Out Date *</label>
-          <input required type="date" value={form.checkOut}
+          <label htmlFor="cottage-checkout" className={labelCls}>Check-Out Date *</label>
+          <input id="cottage-checkout" required type="date" value={form.checkOut}
             onChange={(e) => setForm((f) => ({ ...f, checkOut: e.target.value }))}
             className={inputCls} />
         </div>
       </div>
 
       <div>
-        <label className={labelCls}>Special Requirements</label>
-        <textarea rows={3} value={form.requirements}
+        <label htmlFor="cottage-requirements" className={labelCls}>Special Requirements</label>
+        <textarea id="cottage-requirements" rows={3} value={form.requirements}
           onChange={(e) => setForm((f) => ({ ...f, requirements: e.target.value }))}
           placeholder="Dietary preferences, accessibility needs, celebration setup, etc."
           className={`${inputCls} resize-none`} />
@@ -434,14 +437,14 @@ function DreamSpaceTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Full Name *</label>
-          <input required type="text" value={form.name}
+          <label htmlFor="dreamspace-name" className={labelCls}>Full Name *</label>
+          <input id="dreamspace-name" autoComplete="name" required type="text" value={form.name}
             onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             placeholder="Your name" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Email Address *</label>
-          <input required type="email" value={form.email}
+          <label htmlFor="dreamspace-email" className={labelCls}>Email Address *</label>
+          <input id="dreamspace-email" autoComplete="email" required type="email" value={form.email}
             onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
             placeholder="your@email.com" className={inputCls} />
         </div>
@@ -449,14 +452,14 @@ function DreamSpaceTab() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={labelCls}>Phone Number *</label>
-          <input required type="tel" value={form.phone}
+          <label htmlFor="dreamspace-phone" className={labelCls}>Phone Number *</label>
+          <input id="dreamspace-phone" autoComplete="tel" required type="tel" value={form.phone}
             onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
             placeholder="+91 XXXXX XXXXX" className={inputCls} />
         </div>
         <div>
-          <label className={labelCls}>Duration of Stay</label>
-          <select value={form.duration}
+          <label htmlFor="dreamspace-duration" className={labelCls}>Duration of Stay</label>
+          <select id="dreamspace-duration" value={form.duration}
             onChange={(e) => setForm((f) => ({ ...f, duration: e.target.value }))}
             className={inputCls}>
             <option value="">Select duration</option>
@@ -472,12 +475,13 @@ function DreamSpaceTab() {
       </div>
 
       <div>
-        <label className={labelCls}>Type of Dream Space</label>
-        <div className="flex flex-wrap gap-2">
+        <p id="dreamspace-types-label" className={labelCls}>Type of Dream Space</p>
+        <div role="group" aria-labelledby="dreamspace-types-label" className="flex flex-wrap gap-2">
           {dreamSpaceTypes.map((st) => (
             <button key={st} type="button"
               onClick={() => setForm((f) => ({ ...f, spaceType: f.spaceType === st ? "" : st }))}
-              className={`text-xs font-semibold px-3.5 py-1.5 rounded-full border transition-colors ${form.spaceType === st
+              aria-pressed={form.spaceType === st}
+              className={`min-h-10 text-xs font-semibold px-3.5 py-2 rounded-full border transition-colors ${form.spaceType === st
                   ? "bg-green-900 text-white border-green-900"
                   : "bg-white text-slate-600 border-slate-200 hover:border-green-900/30 hover:text-green-900"
                 }`}>
@@ -488,15 +492,15 @@ function DreamSpaceTab() {
       </div>
 
       <div>
-        <label className={labelCls}>Preferred Start Date</label>
-        <input type="date" value={form.checkIn}
+        <label htmlFor="dreamspace-date" className={labelCls}>Preferred Start Date</label>
+        <input id="dreamspace-date" type="date" value={form.checkIn}
           onChange={(e) => setForm((f) => ({ ...f, checkIn: e.target.value }))}
           className={inputCls} />
       </div>
 
       <div>
-        <label className={labelCls}>Describe Your Vision *</label>
-        <textarea required rows={4} value={form.vision}
+        <label htmlFor="dreamspace-vision" className={labelCls}>Describe Your Vision *</label>
+        <textarea id="dreamspace-vision" required rows={4} value={form.vision}
           onChange={(e) => setForm((f) => ({ ...f, vision: e.target.value }))}
           placeholder="What does your ideal Himalayan dream space look like? Share your vision, needs, and what you hope to achieve…"
           className={`${inputCls} resize-none`} />
@@ -630,10 +634,10 @@ function ContactPageInner() {
                   <div>
                     <p className="text-slate-800 font-semibold text-sm mb-0.5">Email</p>
                     <a
-                      href="mailto:himalayan.pradise@gmail.com"
+                      href={`mailto:${siteEmails.contactPage}`}
                       className="block text-slate-600 text-sm hover:text-sky-600 transition-colors"
                     >
-                      himalayan.pradise@gmail.com
+                      {siteEmails.contactPage}
                     </a>
                   </div>
                 </div>
@@ -663,15 +667,17 @@ function ContactPageInner() {
                 </p>
                 <div className="flex gap-3">
                   {[
-                    { Icon: Share2, label: "Instagram", color: "hover:text-pink-500" },
-                    { Icon: Globe, label: "Facebook", color: "hover:text-blue-600" },
-                    { Icon: Video, label: "YouTube", color: "hover:text-red-500" },
-                  ].map(({ Icon, label, color }) => (
+                    { Icon: Share2, label: "Instagram", href: "https://www.instagram.com/chphimalayanparadise/", color: "hover:text-pink-500" },
+                    { Icon: Globe, label: "Facebook", href: "https://www.facebook.com/groups/1844944899612110", color: "hover:text-blue-600" },
+                    { Icon: Video, label: "YouTube", href: "https://www.youtube.com/@CHP_2316", color: "hover:text-red-500" },
+                  ].map(({ Icon, label, href, color }) => (
                     <a
                       key={label}
-                      href="#"
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={label}
-                      className={`w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-slate-400 ${color} transition-colors`}
+                      className={`flex h-11 w-11 items-center justify-center rounded-xl bg-white text-slate-600 shadow-sm transition-colors ${color}`}
                     >
                       <Icon className="w-5 h-5" />
                     </a>
@@ -725,13 +731,13 @@ function ContactPageInner() {
               <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
 
                 {/* Tab bar */}
-                <div className="flex border-b border-slate-100 overflow-x-auto">
+                <div className="flex overflow-x-auto border-b border-slate-100" aria-label="Contact request types">
                   {tabs.map((tab) => (
                     tab.id === "camp" ? (
                       <Link
                         key={tab.id}
                         href="/camp-activities/book?type=stay"
-                        className="flex items-center gap-1.5 border-b-2 border-transparent px-4 py-4 text-xs font-semibold whitespace-nowrap text-slate-400 transition-colors hover:text-slate-700"
+                        className="flex min-h-12 items-center gap-1.5 border-b-2 border-transparent px-4 py-4 text-xs font-semibold whitespace-nowrap text-slate-600 transition-colors hover:text-slate-800"
                       >
                         {tab.icon}
                         <span className="hidden sm:inline">{tab.label}</span>
@@ -741,7 +747,8 @@ function ContactPageInner() {
                       <button
                         key={tab.id}
                         onClick={() => { if (tab.id !== "camp") setActiveTab(tab.id); }}
-                        className={`flex items-center gap-1.5 border-b-2 -mb-px px-4 py-4 text-xs font-semibold whitespace-nowrap transition-colors ${activeTab === tab.id
+                        aria-pressed={activeTab === tab.id}
+                        className={`flex min-h-12 items-center gap-1.5 border-b-2 -mb-px px-4 py-4 text-xs font-semibold whitespace-nowrap transition-colors ${activeTab === tab.id
                             ? "border-green-800 text-green-800"
                             : "border-transparent text-slate-400 hover:text-slate-700"
                           }`}
@@ -755,7 +762,7 @@ function ContactPageInner() {
                 </div>
 
                 {/* Tab content */}
-                <div className="p-8">
+                <div className="p-5 sm:p-8">
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeTab}

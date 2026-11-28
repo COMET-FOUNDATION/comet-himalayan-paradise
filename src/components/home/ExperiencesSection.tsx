@@ -81,24 +81,23 @@ export function ExperiencesSection() {
             <StaggerItem key={exp.title}>
               <Link href={exp.href} className="group block">
                 <motion.article
-                  whileHover={{ y: -5 }}
-                  transition={{ duration: 0.25 }}
-                  className="overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl hover:shadow-black/12 transition-shadow duration-300"
+                  whileHover={{ y: -3 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--chp-line)] bg-white shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-black/10"
                 >
                   {/* Image */}
-                  <div className="w-full overflow-hidden">
+                  <div className="chp-card-media relative aspect-[3/2] w-full overflow-hidden">
                     <Image
                       src={exp.image}
                       alt={exp.title}
-                      width={1536}
-                      height={1024}
+                      fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="h-auto w-full object-cover"
+                      className={`${exp.showCompleteImage ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-[1.03]`}
                     />
                   </div>
 
                   {/* Content */}
-                  <div className="p-5">
+                  <div className="flex grow flex-col p-5">
                     <span className="inline-flex rounded-full bg-green-900/5 px-3 py-1.5 text-xs font-semibold text-green-900">
                       {exp.badge}
                     </span>
@@ -107,7 +106,7 @@ export function ExperiencesSection() {
                       {exp.title}
                     </h3>
 
-                    <p className="mb-4 text-sm leading-relaxed text-slate-600 line-clamp-2">
+                    <p className="mb-4 mt-auto pt-2 text-sm leading-relaxed text-slate-600 line-clamp-2">
                       {exp.description}
                     </p>
 

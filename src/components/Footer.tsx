@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { SocialBrandIcon } from "@/components/ui/SocialBrandIcon";
+import { siteEmails } from "@/lib/siteContact";
 
 const footerLinks = {
   Explore: [
@@ -20,7 +21,7 @@ const footerLinks = {
     { href: "/business-investment", label: "Business & Investment" },
     { href: "/growth-partner", label: "CHP Growth Partner" },
     { href: "/comet-educational-services", label: "Comet Educational Services" },
-    { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
+    { href: "/sanaatan-isht-dev-sthal", label: "Sanatan Dev Sthal" },
   ],
 
   Popular: [
@@ -128,10 +129,10 @@ export function Footer() {
                 <Mail className="w-4 h-4 text-green-400 shrink-0" />
 
                 <a
-                  href="mailto:himalayan.pradise@gmail.com"
+                  href={`mailto:${siteEmails.contactPage}`}
                   className="text-slate-400 hover:text-white transition-colors"
                 >
-                  himalayan.pradise@gmail.com
+                  {siteEmails.contactPage}
                 </a>
               </li>
             </ul>

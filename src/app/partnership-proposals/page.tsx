@@ -124,7 +124,7 @@ const businessOpportunities = [
     {
         icon: HeartHandshake,
         title: "Purpose Driven Space",
-        subItems: ["Comet Educational Services", "Comet Gaushala", "Isht Dev Sthal Development"],
+        subItems: ["Comet Educational Services", "Comet Gaushala", "Sanatan Dev Sthal Development"],
         proposalUrl: null, // TODO: no proposal link provided yet
     },
 ];

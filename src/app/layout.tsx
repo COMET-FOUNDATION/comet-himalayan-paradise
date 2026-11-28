@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { siteEmails } from "@/lib/siteContact";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -107,7 +108,7 @@ const jsonLd = {
         addressCountry: "IN",
       },
       telephone: "+91-99499-94989",
-      email: "hello@chphimalayanparadise.com",
+      email: siteEmails.structuredData,
       sameAs: [],
       areaServed: {
         "@type": "Place",
