@@ -18,7 +18,7 @@ import { CTABanner } from "@/components/home/CTABanner";
 import { DonationQRCode } from "@/components/social-impact/DonationQRCode";
 
 export const metadata: Metadata = {
-    title: "Sanaatan Isht Dev Sthal",
+    title: "Sanatan Dev Sthal",
     description:
         "A sacred initiative to reconnect generations with their Isht-Devas, Sanatan traditions and Uttarakhand's rich spiritual heritage. One Place. Divine Unity. A Temple for Every Heart.",
     alternates: {
@@ -144,7 +144,7 @@ const selfSustainability = [
 
 const callsToAction = [
     {
-        label: "Explore Isht Dev Sthal",
+        label: "Explore Sanatan Dev Sthal",
         href: "/contact",
         style: "bg-amber-600 hover:bg-amber-700 text-white",
     },
@@ -176,8 +176,8 @@ export default function SanaatanIshtDevSthalPage() {
                 <div className="relative aspect-[1000/333] w-full overflow-hidden">
                     {/* Header Background Image */}
                     <Image
-                        src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-gaushala/075cabe3-34b8-45d5-a44e-9a7d84dbed07-chp-isht-dev-sthal.png"
-                        alt="Sanaatan Isht Dev Sthal – sacred shrine complex in the Himalayas"
+                        src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-gaushala/80b82943-02a1-446b-b910-6a81bd8e44ae-sanatan-dev-sthal-header.webp"
+                        alt="Sanatan Dev Sthal – sacred shrine complex in the Himalayas"
                         fill
                         priority
                         sizes="100vw"
@@ -296,7 +296,7 @@ export default function SanaatanIshtDevSthalPage() {
                             </p>
 
                             <p className="text-justify leading-relaxed text-slate-600">
-                                This makes Isht Dev Sthal potentially relevant
+                                This makes Sanatan Dev Sthal potentially relevant
                                 not only to devotees, but also to students,
                                 families, cultural explorers, pilgrims and
                                 visitors interested in{" "}
@@ -364,8 +364,8 @@ export default function SanaatanIshtDevSthalPage() {
 
                     <SectionHeader
                         eyebrow="A Community-Supported Initiative"
-                        title="The Isht Dev Sthal Trust"
-                        subtitle="The Isht Dev Sthal Trust is the spiritual wing operating within the CHP framework and the driving force behind the initiative. The Trust proposes to develop a dedicated space where Hindu deities are represented along with their names and glory through stone inscriptions."
+                        title="The Sanatan Dev Sthal Trust"
+                        subtitle="The Sanatan Dev Sthal Trust is the spiritual wing operating within the CHP framework and the driving force behind the initiative. The Trust proposes to develop a dedicated space where Hindu deities are represented along with their names and glory through stone inscriptions."
                     />
 
                     <div className="mt-10">
@@ -465,7 +465,7 @@ export default function SanaatanIshtDevSthalPage() {
                         </h2>
 
                         <p className="mx-auto mb-10 max-w-2xl text-justify text-slate-600 sm:text-center">
-                            The proposed Isht Dev Sthal is envisioned as a{" "}
+                            The proposed Sanatan Dev Sthal is envisioned as a{" "}
                             <strong className="font-bold text-amber-800">
                                 complete destination for devotees, students,
                                 families and visitors

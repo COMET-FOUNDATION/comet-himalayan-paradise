@@ -16,7 +16,6 @@ import {
   MapPin,
   Megaphone,
   Mountain,
-  Rocket,
   Sparkles,
   TrendingUp,
   Users,
@@ -139,19 +138,43 @@ const businessCategories = [
 ];
 
 const ecosystemBenefits = [
-  "Himalayan location and destination infrastructure",
-  "Shared community facilities",
-  "Hospitality and accommodation ecosystem",
-  "Tourism and visitor experiences",
-  "Cross-promotion with other CHP businesses",
-  "Marketing and promotional support",
-  "Referral opportunities",
-  "Local coordination and community connect",
-  "Shared operational infrastructure",
-  "Opportunities for collaborative packages",
-  "Multiple customer segments",
-  "Year-round business possibilities",
-];
+  [
+    "A Himalayan Destination",
+    "A distinctive location for businesses built around nature, visitor experiences and destination-based demand.",
+  ],
+  [
+    "An Integrated Business Ecosystem",
+    "Hospitality, accommodation, wellness, adventure, education, agriculture, creativity and entrepreneurship within one connected destination.",
+  ],
+  [
+    "Shared Facilities & Infrastructure",
+    "Partners can benefit from shared community facilities and operational infrastructure.",
+  ],
+  [
+    "Business Collaboration",
+    "Complementary CHP businesses can cross-promote, refer customers and create collaborative packages.",
+  ],
+  [
+    "Marketing & Promotional Support",
+    "CHP can support partners in promoting their businesses and reaching potential customers.",
+  ],
+  [
+    "Local Coordination & Community Connect",
+    "Connect with local communities and receive support with on-ground coordination.",
+  ],
+  [
+    "Diverse Customer Segments",
+    "Families, tourists, corporate groups, students, institutions, event planners, creators, wellness seekers and adventure enthusiasts.",
+  ],
+  [
+    "Year-Round Business Possibilities",
+    "Different activities and experiences can attract visitors across seasons.",
+  ],
+  [
+    "Professional Operations & Maintenance Support",
+    "Selected partnership models can include professional support for business operations and maintenance.",
+  ],
+] as const;
 
 const partnershipModels = [
   [
@@ -205,66 +228,6 @@ const revenueStreams = [
   "Equipment or facility rentals",
   "Specialized services",
 ];
-
-const journey = [
-  [
-    "01",
-    "Share Your Idea",
-    "Tell us about your business, expertise or proposed venture.",
-  ],
-  [
-    "02",
-    "Explore the Opportunity",
-    "Identify the right CHP business category or facility.",
-  ],
-  [
-    "03",
-    "Develop the Partnership Model",
-    "Discuss ownership, investment, operations and responsibilities.",
-  ],
-  [
-    "04",
-    "Plan the Venture",
-    "Develop the facility, business plan and implementation roadmap.",
-  ],
-  [
-    "05",
-    "Integrate with CHP",
-    "Connect the business with the wider CHP ecosystem.",
-  ],
-  [
-    "06",
-    "Launch & Grow",
-    "Market the business, attract customers and develop new opportunities.",
-  ],
-] as const;
-
-const whyChp = [
-  [
-    "A Himalayan Destination",
-    "A distinctive environment for businesses that depend on nature, experiences and destination-based demand.",
-  ],
-  [
-    "An Integrated Ecosystem",
-    "Hospitality, wellness, adventure, education, agriculture, creativity and entrepreneurship planned within one ecosystem.",
-  ],
-  [
-    "Shared Opportunities",
-    "Businesses can complement and support one another.",
-  ],
-  [
-    "Diverse Customer Segments",
-    "Families, tourists, corporate groups, students, institutions, event planners, creators, wellness seekers and adventure enthusiasts.",
-  ],
-  [
-    "Multiple Business Concepts",
-    "From second homes and hospitality to education, agriculture, adventure, events and creative industries.",
-  ],
-  [
-    "Professional Ecosystem Support",
-    "Selected partnership models include CHP support for infrastructure, marketing, operations, maintenance and ecosystem integration.",
-  ],
-] as const;
 
 function SectionHeading({
   eyebrow,
@@ -497,21 +460,21 @@ export default function CHPBizPartnershipPage() {
             }
           />
 
-          <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {ecosystemBenefits.map((item, i) => (
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {ecosystemBenefits.map(([title, text]) => (
               <SoftCard
-                key={item}
-                className="p-5 transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg"
+                key={title}
+                className="p-7 transition hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg"
               >
-                <div className="flex items-start gap-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-[11px] font-bold text-emerald-800">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
+                <div className="h-1 w-12 rounded-full bg-emerald-600" />
 
-                  <p className="pt-1 text-sm font-medium leading-6 text-slate-700">
-                    {item}
-                  </p>
-                </div>
+                <h3 className="mt-6 text-lg font-bold text-slate-950">
+                  {title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-slate-600">
+                  {text}
+                </p>
               </SoftCard>
             ))}
           </div>
@@ -632,65 +595,6 @@ export default function CHPBizPartnershipPage() {
             The exact responsibilities would be defined separately for each
             business partnership.
           </p>
-        </div>
-      </section>
-
-      {/* =========================================================
-          REVENUE
-      ========================================================== */}
-      <section className="bg-[#f4f5f2] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading
-            title="Multiple Revenue Opportunities"
-            description={
-              <>
-                One of the recurring themes across the CHP proposals is the
-                ability to create{" "}
-                <strong className="font-semibold text-slate-950">
-                  multiple revenue streams
-                </strong>{" "}
-                rather than relying on a single business activity.
-              </>
-            }
-          />
-
-          <div className="mx-auto mt-12 grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {revenueStreams.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm font-medium text-slate-700"
-              >
-                <CircleDollarSign className="h-4 w-4 shrink-0 text-emerald-600" />
-                {item}
-              </div>
-            ))}
-          </div>
-
-          <div className="mx-auto mt-8 max-w-5xl border-t border-slate-200 pt-6 text-sm leading-7 text-slate-600 sm:p-0 sm:pt-6">
-            For example, the Destination Wedding proposal identifies{" "}
-            <strong className="font-semibold text-slate-950">
-              venue bookings, wedding packages, catering, decoration,
-              photography, event management, accommodation, transportation,
-              pre-wedding shoots, corporate events, wellness retreats and
-              adventure packages
-            </strong>{" "}
-            as potential revenue streams. The Eco-Agri proposal similarly
-            combines agriculture with{" "}
-            <strong className="font-semibold text-slate-950">
-              food processing, herbal products, agri-tourism and
-              wellness-oriented enterprises
-            </strong>
-            .
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
-          ADVANTAGE
-      ========================================================== */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading title="The CHP Advantage" />
 
           <p className="mt-5 text-center text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
             CHP aims to create:
@@ -767,66 +671,51 @@ export default function CHPBizPartnershipPage() {
       </section>
 
       {/* =========================================================
-          JOURNEY
+          REVENUE
       ========================================================== */}
       <section className="bg-[#f4f5f2] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <SectionHeading
-            title="From Business Idea to Himalayan Venture"
-            description="CHP Biz Partnership can support a journey such as:"
+            title="Multiple Revenue Opportunities"
+            description={
+              <>
+                One of the recurring themes across the CHP proposals is the
+                ability to create{" "}
+                <strong className="font-semibold text-slate-950">
+                  multiple revenue streams
+                </strong>{" "}
+                rather than relying on a single business activity.
+              </>
+            }
           />
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {journey.map(([number, title, description]) => (
+          <div className="mx-auto mt-12 grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {revenueStreams.map((item) => (
               <div
-                key={number}
-                className="rounded-[1.5rem] border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-xl"
+                key={item}
+                className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm font-medium text-slate-700"
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold tracking-[0.2em] text-emerald-700">
-                    {number}
-                  </span>
-
-                  <Rocket className="h-5 w-5 text-emerald-400" />
-                </div>
-
-                <h3 className="mt-7 text-xl font-bold tracking-tight text-slate-950">
-                  {title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {description}
-                </p>
+                <CircleDollarSign className="h-4 w-4 shrink-0 text-emerald-600" />
+                {item}
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* =========================================================
-          WHY CHP
-      ========================================================== */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading title="Why CHP?" />
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChp.map(([title, text]) => (
-              <div
-                key={title}
-                className="rounded-[1.5rem] border border-slate-200 bg-white p-7 shadow-sm"
-              >
-                <div className="h-1 w-12 rounded-full bg-emerald-600" />
-
-                <h3 className="mt-6 text-lg font-bold text-slate-950">
-                  {title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  {text}
-                </p>
-              </div>
-            ))}
+          <div className="mx-auto mt-8 max-w-5xl border-t border-slate-200 pt-6 text-sm leading-7 text-slate-600 sm:p-0 sm:pt-6">
+            For example, the Destination Wedding proposal identifies{" "}
+            <strong className="font-semibold text-slate-950">
+              venue bookings, wedding packages, catering, decoration,
+              photography, event management, accommodation, transportation,
+              pre-wedding shoots, corporate events, wellness retreats and
+              adventure packages
+            </strong>{" "}
+            as potential revenue streams. The Eco-Agri proposal similarly
+            combines agriculture with{" "}
+            <strong className="font-semibold text-slate-950">
+              food processing, herbal products, agri-tourism and
+              wellness-oriented enterprises
+            </strong>
+            .
           </div>
         </div>
       </section>
@@ -840,7 +729,7 @@ export default function CHPBizPartnershipPage() {
             Build. Partner. Grow.
           </p>
 
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 text-[2rem] font-bold leading-tight tracking-tight text-slate-950 sm:text-[2.75rem] lg:text-[3.5rem]">
             Bring Your Business to the Himalayas.
           </h2>
 

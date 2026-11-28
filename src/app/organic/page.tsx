@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/ScrollReveal";
 import { CTABanner } from "@/components/home/CTABanner";
 import { DonationQRCode } from "@/components/social-impact/DonationQRCode";
+import { siteEmails } from "@/lib/siteContact";
 
 export const metadata: Metadata = {
   title: "Himalayan Organic & Medicinal Farming",
@@ -830,7 +831,7 @@ export default function OrganicFarmingPage() {
                   </a>
 
                   <a
-                    href="mailto:chp.organicfarming.community@gmail.com"
+                    href={`mailto:${siteEmails.organicCommunity}`}
                     className="flex items-center gap-4 rounded-xl bg-green-50 p-4 transition-colors hover:bg-green-100"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-green-900 text-white">
@@ -843,7 +844,7 @@ export default function OrganicFarmingPage() {
                       </span>
 
                       <span className="block break-all font-semibold text-green-900">
-                        chp.organicfarming.community@gmail.com
+                        {siteEmails.organicCommunity}
                       </span>
                     </span>
                   </a>

@@ -55,7 +55,7 @@ const HERO_SUBTITLE_CLASS =
   "text-white text-base sm:text-lg font-bold tracking-wide mb-4";
 
 const HERO_DESCRIPTION_CLASS =
-  "text-white text-base sm:text-lg font-bold leading-relaxed whitespace-nowrap";
+  "max-w-3xl text-white text-sm sm:text-base md:text-lg font-bold leading-relaxed";
 
 const IMAGE_BOX =
   "relative aspect-video w-full overflow-hidden";

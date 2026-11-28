@@ -50,7 +50,7 @@ const navGroups = [
       { href: "/comet-educational-services", label: "Comet Educational Services" },
       { href: "/purpose-driven-space", label: "CHP Gauseva" },
       { href: "/organic", label: "Himalayan Organic & Herbal Farms" },
-      { href: "/sanaatan-isht-dev-sthal", label: "Sanaatan Isht Dev Sthal" },
+      { href: "/sanaatan-isht-dev-sthal", label: "Sanatan Dev Sthal" },
     ],
   },
 ];

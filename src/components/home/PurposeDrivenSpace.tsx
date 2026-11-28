@@ -27,11 +27,11 @@ const spaces = [
     href: "/purpose-driven-space",
   },
   {
-    title: "Isht Dev Sthal",
+    title: "Sanatan Dev Sthal",
     description:
       "A sacred space for prayer and reflection, honoring the spiritual traditions of the Himalayan region.",
     image:
-      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/5f46b59a-3451-42a2-a8f6-22079fad4369-isht.webp",
+      "https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/comet-gaushala/80b82943-02a1-446b-b910-6a81bd8e44ae-sanatan-dev-sthal-header.webp",
     href: "/sanaatan-isht-dev-sthal",
   },
   {

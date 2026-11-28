@@ -39,10 +39,10 @@ const pillars = [
     },
     {
         icon: Flame,
-        title: "Isht Dev Sthal & Sacred Fire",
+        title: "Sanatan Dev Sthal & Sacred Fire",
         description: (
             <>
-                Our traditional Isht Dev Sthal hosts daily{" "}
+                Our traditional Sanatan Dev Sthal hosts daily{" "}
                 <span className="font-bold text-slate-800">
                     Agni Puja, Havans, and Kumaoni spiritual ceremonies
                 </span>{" "}
@@ -87,7 +87,7 @@ const pillars = [
 
 const traditions = [
     {
-        label: "Isht Dev Sthal",
+        label: "Sanatan Dev Sthal",
         desc: "CHP's sacred deity space with daily Agni Puja",
         bg: "bg-violet-50",
         border: "border-violet-200",

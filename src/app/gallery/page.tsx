@@ -32,6 +32,13 @@ export default function GalleryPage() {
   const [lightbox, setLightbox] = useState<string | null>(null);
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
+  const openImage = (src: string) => {
+    setLightbox(src);
+  };
+  const closeImage = () => {
+    setLightbox(null);
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentBgIndex((prev) => (prev + 1) % headerImages.length);
@@ -46,17 +53,19 @@ export default function GalleryPage() {
     };
   }, [lightbox]);
 
+  useEffect(() => {
+    if (!lightbox) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") closeImage();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightbox]);
+
   const filtered =
     activeCategory === "all"
       ? galleryImages
       : galleryImages.filter((img) => img.category === activeCategory);
-
-  const openImage = (src: string) => {
-    setLightbox(src);
-  };
-  const closeImage = () => {
-    setLightbox(null);
-  };
 
   return (
     <>
@@ -77,22 +86,23 @@ export default function GalleryPage() {
                 src={headerImages[currentBgIndex]}
                 alt="CHP Gallery Header"
                 fill
-                priority
-                quality={100}
+                preload={currentBgIndex === 0}
+                quality={85}
                 className="object-cover"
               />
             </motion.div>
           </AnimatePresence>
 
           {/* Multi-image strip blending overlay without blur */}
-          <div className="absolute inset-0 grid grid-cols-5 opacity-30 pointer-events-none mix-blend-overlay">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 grid grid-cols-5 opacity-30 mix-blend-overlay">
             {headerImages.map((imgSrc, idx) => (
               <div key={idx} className="relative h-full overflow-hidden border-r border-white/10">
                 <Image
                   src={imgSrc}
-                  alt={`Header blend ${idx}`}
+                  alt=""
                   fill
-                  quality={95}
+                  loading="lazy"
+                  quality={80}
                   className="object-cover"
                 />
               </div>
@@ -108,7 +118,7 @@ export default function GalleryPage() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs font-semibold uppercase tracking-[0.2em] mb-4"
           >
             <span>Visual Stories</span>
           </motion.div>
@@ -146,7 +156,8 @@ export default function GalleryPage() {
               <button
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
-                className={`text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 ${activeCategory === cat.value
+                aria-pressed={activeCategory === cat.value}
+                className={`min-h-11 text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200 ${activeCategory === cat.value
                     ? "bg-green-900 text-white shadow-md shadow-green-900/20"
                     : "bg-white text-slate-600 hover:bg-slate-100 shadow-sm"
                   }`}
@@ -170,25 +181,30 @@ export default function GalleryPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.35 }}
-                  className="group relative overflow-hidden rounded-xl cursor-pointer break-inside-avoid mb-3"
-                  onClick={() => openImage(img.src)}
+                  className="group relative overflow-hidden rounded-xl break-inside-avoid mb-3"
                 >
-                  <div
-                    className="relative w-full overflow-hidden rounded-xl"
-                    style={{ paddingBottom: `${(img.height / img.width) * 100}%` }}
+                  <button
+                    type="button"
+                    onClick={() => openImage(img.src)}
+                    aria-label={`Open image: ${img.alt}`}
+                    className="group relative block w-full overflow-hidden rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-900"
                   >
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      quality={95}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                      <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div
+                      className="relative w-full overflow-hidden rounded-xl bg-[var(--chp-sage)]"
+                      style={{ paddingBottom: `${(img.height / img.width) * 100}%` }}
+                    >
+                      <Image
+                        src={img.src}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/0 transition-colors duration-300 group-hover:bg-black/25">
+                        <ZoomIn aria-hidden="true" className="h-6 w-6 text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      </div>
                     </div>
-                  </div>
+                  </button>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -204,12 +220,15 @@ export default function GalleryPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Gallery image preview"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
             onClick={closeImage}
           >
             <button
               onClick={closeImage}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+              className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
               aria-label="Close lightbox"
             >
               <X className="w-5 h-5" />

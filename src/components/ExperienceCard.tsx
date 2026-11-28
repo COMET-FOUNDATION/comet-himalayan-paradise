@@ -44,21 +44,21 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
 
   return (
     <motion.article
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      whileHover={{ y: -3 }}
+      transition={{ duration: 0.2, ease: "easeOut" }}
       className={cn(
-        "group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/8 transition-shadow duration-300",
+        "group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--chp-line)] bg-white shadow-sm transition-shadow duration-200 hover:shadow-lg hover:shadow-black/10",
         className
       )}
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="chp-card-media relative aspect-[3/2] overflow-hidden">
         <Image
           src={experience.image}
           alt={experience.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
 
@@ -79,15 +79,15 @@ export function ExperienceCard({ experience, className }: ExperienceCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      <div className="flex grow flex-col p-5">
         <h3 className="font-bold text-slate-800 text-base leading-snug mb-2">
           {experience.title}
         </h3>
-        <p className="text-slate-500 text-sm leading-relaxed line-clamp-3 mb-4">
+        <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-slate-600">
           {experience.description}
         </p>
 
-        <div className="flex items-center justify-between">
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-2 border-t border-stone-100 pt-4">
           <span className="flex items-center gap-1.5 text-xs text-slate-500">
             <Clock className="w-3.5 h-3.5" />
             {experience.duration}
