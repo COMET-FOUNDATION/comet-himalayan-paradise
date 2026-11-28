@@ -132,7 +132,7 @@ const businessCategories = [
     items: [
       "Comet Educational Services",
       "Comet Gaushala",
-      "Isht Dev Sthal development",
+      "Sanatan Dev Sthal development",
       "Rural and community-oriented initiatives",
     ],
   },
@@ -151,19 +151,6 @@ const ecosystemBenefits = [
   "Opportunities for collaborative packages",
   "Multiple customer segments",
   "Year-round business possibilities",
-];
-
-const partnerTypes = [
-  "Entrepreneurs",
-  "Existing Businesses & Brands",
-  "Investors & Business Groups",
-  "Professionals & Specialists",
-  "Educational Institutions",
-  "Corporate Organizations",
-  "Tourism & Hospitality Businesses",
-  "Creative Professionals & Media",
-  "Companies",
-  "CSR & Social Organizations",
 ];
 
 const partnershipModels = [
@@ -402,7 +389,7 @@ export default function CHPBizPartnershipPage() {
                 </a>
 
                 <a
-                  href="#partnership-form"
+                  href="/contact"
                   className="group inline-flex items-center gap-1.5 rounded-full bg-emerald-950/90 px-5 py-2.5 text-xs font-semibold text-white shadow-lg ring-1 ring-white/20 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-emerald-900"
                 >
                   Start a Partnership Conversation
@@ -429,7 +416,7 @@ export default function CHPBizPartnershipPage() {
                 CHP Biz Partnership
               </h2>
 
-              <p className="mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
+              <p className="mt-6 max-w-3xl text-justify text-base leading-8 text-slate-600 sm:text-lg">
                 CHP Biz Partnership brings together{" "}
                 <strong className="font-semibold text-slate-950">
                   entrepreneurs, investors, professionals, organizations,
@@ -582,44 +569,6 @@ export default function CHPBizPartnershipPage() {
       </section>
 
       {/* =========================================================
-          PARTNER TYPES
-      ========================================================== */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
-          <SectionHeading
-            title="Who Can Become a CHP Business Partner?"
-            description="CHP welcomes partnership discussions with:"
-          />
-
-          <div className="mx-auto mt-12 max-w-5xl rounded-[1.75rem] border border-slate-200 bg-white p-7 shadow-sm sm:p-9">
-            <div className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
-              {partnerTypes.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 rounded-xl border border-slate-100 bg-white px-4 py-3"
-                >
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" />
-
-                  <span className="text-sm font-medium text-slate-700">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-7 border-t border-slate-200 pt-6 text-sm leading-7 text-slate-600">
-              The CHP proposal portfolio explicitly identifies{" "}
-              <strong className="font-semibold text-slate-950">
-                entrepreneurs, investors, organizations, educational
-                institutions, CSR partners and business groups
-              </strong>{" "}
-              as potential long-term ecosystem partners.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
           PARTNERSHIP MODELS
       ========================================================== */}
       <section className="bg-[#f4f5f2] py-20 sm:py-24 lg:py-28">
@@ -629,16 +578,13 @@ export default function CHPBizPartnershipPage() {
             description="CHP can explore different partnership structures depending on the nature of the business, investment, ownership requirements and operational responsibilities."
           />
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {partnershipModels.map(([number, title, description], index) => (
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {partnershipModels.map(([number, title, description]) => (
               <div
                 key={number}
-                className={[
-                  "relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:shadow-lg",
-                  index === partnershipModels.length - 1 ? "xl:col-start-2" : "",
-                ].join(" ")}
+                className="relative overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:shadow-lg sm:p-6"
               >
-                <span className="text-5xl font-bold tracking-[-0.05em] text-emerald-200">
+                <span className="text-4xl font-bold tracking-[-0.05em] text-emerald-200">
                   {number}
                 </span>
 
@@ -708,7 +654,7 @@ export default function CHPBizPartnershipPage() {
             }
           />
 
-          <div className="mx-auto mt-12 grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {revenueStreams.map((item) => (
               <div
                 key={item}
@@ -886,150 +832,6 @@ export default function CHPBizPartnershipPage() {
       </section>
 
       {/* =========================================================
-          FORM / CTA
-      ========================================================== */}
-      <section
-        id="partnership-form"
-        className="scroll-mt-24 bg-[#f4f5f2] py-20 sm:py-24 lg:py-28"
-      >
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_25px_80px_-35px_rgba(15,23,42,0.28)]">
-            <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-              <div className="border-b border-slate-200 bg-white p-8 sm:p-10 lg:border-b-0 lg:border-r lg:p-12">
-                <p className="text-xs font-bold uppercase tracking-[0.28em] text-emerald-700">
-                  Start the conversation
-                </p>
-
-                <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
-                  Explore your place in the CHP ecosystem.
-                </h2>
-
-                <p className="mt-5 text-sm leading-7 text-slate-600 sm:text-base">
-                  Share your{" "}
-                  <strong className="font-semibold text-slate-950">
-                    business idea
-                  </strong>
-                  , expertise or proposed venture and start a conversation
-                  around the right CHP partnership opportunity.
-                </p>
-
-                <div className="mt-8 space-y-3">
-                  {[
-                    "Tell us what you want to build",
-                    "Identify the right CHP opportunity",
-                    "Discuss partnership and operating models",
-                    "Explore the next steps together",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
-
-                      <p className="text-sm leading-6 text-slate-600">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white p-7 sm:p-10 lg:p-12">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-700">
-                  Partnership enquiry
-                </p>
-
-                <h3 className="mt-2 text-2xl font-bold text-slate-950 sm:text-3xl">
-                  Tell us about your idea
-                </h3>
-
-                <form
-                  className="mt-8 space-y-5"
-                  action="/contact"
-                  method="get"
-                >
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <input
-                      aria-label="Full name"
-                      name="name"
-                      type="text"
-                      required
-                      placeholder="Full name"
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
-                    />
-
-                    <input
-                      aria-label="Email address"
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="Email address"
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
-                    />
-                  </div>
-
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <input
-                      aria-label="Phone number"
-                      name="phone"
-                      type="tel"
-                      placeholder="Phone number"
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
-                    />
-
-                    <input
-                      aria-label="Business / organization"
-                      name="organization"
-                      type="text"
-                      placeholder="Business / organization"
-                      className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
-                    />
-                  </div>
-
-                  <select
-                    aria-label="What are you interested in?"
-                    name="partnershipType"
-                    defaultValue=""
-                    required
-                    className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
-                  >
-                    <option value="" disabled>
-                      What are you interested in?
-                    </option>
-
-                    {businessCategories.map(({ title }) => (
-                      <option key={title} value={title}>
-                        {title}
-                      </option>
-                    ))}
-                  </select>
-
-                  <textarea
-                    aria-label="Tell us about your idea"
-                    name="message"
-                    required
-                    rows={5}
-                    placeholder="Tell us about your business idea, expertise or proposed venture."
-                    className="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm leading-6 outline-none focus:border-emerald-600 focus:ring-4 focus:ring-emerald-600/10"
-                  />
-
-                  <button
-                    type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-950 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-emerald-900"
-                  >
-                    Start Partnership Conversation
-                    <ArrowRight className="h-4 w-4" />
-                  </button>
-
-                  <p className="text-center text-xs leading-5 text-slate-400">
-                    By submitting this enquiry, you are sharing your details
-                    with CHP for partnership discussions.
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================
           FINAL CTA
       ========================================================== */}
       <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
@@ -1056,7 +858,7 @@ export default function CHPBizPartnershipPage() {
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a
-              href="#partnership-form"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-emerald-950 px-7 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-emerald-900"
             >
               Start a Partnership Conversation
