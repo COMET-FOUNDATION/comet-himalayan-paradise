@@ -129,33 +129,17 @@ const contributionSteps = [
   {
     number: "01",
     title: "Promote CHP",
-    intro: "Help introduce CHP to relevant audiences through:",
-    items: [
-      "Social media",
-      "Digital campaigns",
-      "Personal and professional networks",
-      "Offline campaigns",
-      "Business communities",
-      "Events and presentations",
-      "Influencer outreach",
-      "Word-of-mouth promotion",
-    ],
+    intro:
+      "Introduce CHP to relevant audiences through your professional networks, community relationships and suitable promotional channels.",
+    items: [],
     icon: Megaphone,
   },
   {
     number: "02",
     title: "Generate Leads",
-    intro: "Identify and introduce potential:",
-    items: [
-      "Cottage owners",
-      "Facility partners",
-      "Investors",
-      "Business collaborators",
-      "Tourists and guests",
-      "Corporate groups",
-      "Institutional partners",
-      "Entrepreneurs",
-    ],
+    intro:
+      "Identify and connect CHP with prospective customers, investors, facility partners and organizations suited to the ecosystem.",
+    items: [],
     icon: Users,
   },
   {
@@ -358,33 +342,57 @@ export default function GrowthPartnerPage() {
         </div>
       </section>
 
-      {/* WHAT IS CHP GROWTH PARTNERSHIP? */}
+      {/* CHP GROWTH PARTNERSHIP OVERVIEW */}
       <section
         id="program"
         className="scroll-mt-24 bg-white py-20 sm:py-24 lg:py-28"
       >
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:px-10">
-
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            className="lg:col-span-5"
           >
             <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
               CHP Growth Partnership
             </p>
 
             <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-tight text-slate-950 sm:text-4xl">
-              What is CHP Growth Partnership?
+              A Structured Partnership for Himalayan Growth
             </h2>
 
-            <p className="mt-3 text-justify text-base leading-8 text-slate-600">
-              CHP Growth Partnership is a collaborative business-development
-              model where partners help expand the CHP ecosystem through:
+            <p className="mt-6 border-l-4 border-[#d5ae5b] bg-[#faf8f2] px-5 py-4 font-serif text-lg font-semibold leading-8 text-slate-800 sm:px-7 sm:text-xl">
+              Together, we can create businesses, experiences and opportunities
+              in the Himalayas.
             </p>
 
-            <div className="mt-7 space-y-3">
+            <p className="mt-6 text-justify text-base leading-8 text-slate-600">
+              CHP Growth Partnership is a collaborative business-development
+              model where partners help expand the CHP ecosystem through
+              promotion, referrals, networking and strategic collaborations.
+              The partnership is designed around a mutually agreed,
+              target-based framework, with benefits linked to each Growth
+              Partner&apos;s contribution and performance.
+            </p>
+
+            <div className="mt-8 rounded-[1.75rem] border border-[#e7dfcc] bg-[#faf8f2] p-6 sm:p-8">
+              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+                Current partnership framework
+              </p>
+              <h3 className="mt-3 font-serif text-2xl font-bold leading-tight text-slate-950 sm:text-3xl">
+                A Performance-Based Partnership
+              </h3>
+              <p className="mt-4 text-base leading-8 text-slate-600">
+                CHP Growth Partnership follows a target-based approach. Specific
+                targets, terms and applicable conditions may be mutually agreed
+                between CHP and each Growth Partner.
+              </p>
+            </div>
+
+            <p className="mt-8 text-sm font-bold uppercase tracking-[0.2em] text-[#8d6a2d]">
+              Partners help grow the CHP ecosystem through
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 "Digital marketing and social media promotion",
                 "Brand awareness and outreach",
@@ -404,55 +412,6 @@ export default function GrowthPartnerPage() {
                   <span>{item}</span>
                 </div>
               ))}
-            </div>
-            
-
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="relative lg:col-span-7"
-          >
-            <p className="mb-3 text-sm leading-7 text-slate-600 sm:text-base">
-              The partnership is designed around a mutually agreed,
-              target-based framework, with benefits linked to the contribution
-              and performance of the Growth Partner.
-            </p>
-
-            <div className="grid grid-cols-12 gap-3 sm:gap-4">
-              <div className="relative col-span-7 h-[430px] overflow-hidden rounded-[2rem]">
-                <Image
-                  src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/ea9d5a29-444d-466f-9c4e-c6e97d747ec2-hospitality-stays-1.webp"
-                  alt="Himalayan hospitality"
-                  fill
-                  sizes="(max-width: 1024px) 60vw, 45vw"
-                  className="object-cover transition duration-700 hover:scale-105"
-                />
-              </div>
-
-              <div className="col-span-5 grid gap-3 sm:gap-4">
-                <div className="relative h-[205px] overflow-hidden rounded-[2rem]">
-                  <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/6a94f636-fbe3-498a-a43a-8eb27a69761d-adventure-tourism.jpg"
-                    alt="Himalayan tourism and adventure"
-                    fill
-                    sizes="(max-width: 1024px) 40vw, 30vw"
-                    className="object-cover transition duration-700 hover:scale-105"
-                  />
-                </div>
-
-                <div className="relative h-[205px] overflow-hidden rounded-[2rem]">
-                  <Image
-                    src="https://gmnnifngyjjksorcziow.supabase.co/storage/v1/object/public/images/website-images/4b7c56df-d9d5-4eed-98e8-ae8bcdd4e8a6-wellness-retreats.jpg"
-                    alt="Himalayan wellness"
-                    fill
-                    sizes="(max-width: 1024px) 40vw, 30vw"
-                    className="object-cover transition duration-700 hover:scale-105"
-                  />
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -622,36 +581,6 @@ export default function GrowthPartnerPage() {
 
       
 
-      {/* A PERFORMANCE-BASED PARTNERSHIP */}
-      <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-
-          <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
-            Current partnership framework
-          </p>
-
-          <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
-            A Performance-Based Partnership
-          </h2>
-
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600">
-            CHP Growth Partnership follows a target-based approach.
-          </p>
-
-          <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">
-            Under the current partnership framework, the indicative
-            performance targets include:
-          </p>
-
-          {/* The two performance target boxes have been removed as requested. */}
-
-          <p className="mt-7 max-w-3xl text-sm leading-7 text-slate-600">
-            Specific targets, terms and applicable conditions may be mutually
-            agreed between CHP and the individual Growth Partner.
-          </p>
-        </div>
-      </section>
-
       {/* GROWTH PARTNER BENEFITS */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -747,40 +676,31 @@ export default function GrowthPartnerPage() {
       {/* WHAT WE EXPECT */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+              Active participation
+            </p>
 
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
+              What We Expect From Our Growth Partners
+            </h2>
 
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
-                Active participation
-              </p>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              A successful Growth Partner relationship depends on active
+              participation. Partners are expected to:
+            </p>
+          </div>
 
-              <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
-                What We Expect From Our Growth Partners
-              </h2>
-
-              <p className="mt-5 text-base leading-8 text-slate-600">
-                A successful Growth Partner relationship depends on active
-                participation.
-              </p>
-
-              <p className="mt-4 text-sm leading-7 text-slate-600">
-                Growth Partners are expected to:
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {expectations.map((item) => (
-                <div
-                  key={item}
-                  className={`rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm font-medium leading-6 text-slate-700`}
-                >
-                  <CheckCircle2 className="mb-3 h-5 w-5 text-[#7d9a67]" />
-                  {item}
-                </div>
-              ))}
-            </div>
-
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {expectations.map((item) => (
+              <div
+                key={item}
+                className={`rounded-2xl border ${CARD_BORDER} ${CARD_BG} p-5 text-sm font-medium leading-6 text-slate-700`}
+              >
+                <CheckCircle2 className="mb-3 h-5 w-5 text-[#7d9a67]" />
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -788,43 +708,33 @@ export default function GrowthPartnerPage() {
       {/* YOUR NETWORK */}
       <section className="bg-[#f7f7f5] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
+              Network opportunity
+            </p>
 
-          <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
+            <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
+              Your Network Can Become a Himalayan Opportunity
+            </h2>
 
-            <div className="lg:col-span-5">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8d6a2d]">
-                Network opportunity
-              </p>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              You may already know people who are looking for a Himalayan
+              opportunity. Your introduction could become the beginning of a
+              new CHP partnership.
+            </p>
+          </div>
 
-              <h2 className="mt-4 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] text-slate-950 sm:text-4xl lg:text-5xl">
-                Your Network Can Become a Himalayan Opportunity
-              </h2>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {networkOpportunities.map((item) => (
+              <div
+                key={item}
+                className={`group rounded-[1.25rem] border ${CARD_BORDER} ${CARD_BG} p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg`}
+              >
+                <Mountain className="h-5 w-5 text-[#7d9a67]" />
 
-              <p className="mt-6 text-base leading-8 text-slate-600">
-                You may already know people who are looking for:
-              </p>
-
-              <p className="mt-5 text-base font-semibold leading-8 text-slate-900">
-                Your introduction could become the beginning of a new CHP
-                partnership.
-              </p>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2 lg:col-span-7 lg:grid-cols-3">
-              {networkOpportunities.map((item) => (
-                <div
-                  key={item}
-                  className={`group rounded-[1.25rem] border ${CARD_BORDER} ${CARD_BG} p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg`}
-                >
-                  <Mountain className="h-5 w-5 text-[#7d9a67]" />
-
-                  <p className="mt-5 text-sm font-semibold leading-6">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-
+                <p className="mt-5 text-sm font-semibold leading-6">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1061,8 +971,7 @@ export default function GrowthPartnerPage() {
           </p>
 
           <h2 className="mt-5 font-serif text-3xl font-bold leading-tight tracking-[-0.025em] sm:text-4xl lg:text-5xl">
-            Together, we can create businesses, experiences and opportunities
-            in the Himalayas.
+            Ready to Grow with CHP?
           </h2>
 
           <a
